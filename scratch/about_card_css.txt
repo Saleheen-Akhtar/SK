@@ -1,0 +1,29 @@
+
+--- Match 1 at index 15772 ---
+ content card — mirrors stories card style ── */
+.av16-content-card {
+  background: rgba(255, 251, 243, 0.05); /* Very light warm wash (95% transparent) */
+  backdrop-filter: blur(3px); /* Lowered blur so background image is clearly seen through it */
+  -webkit-backdrop-filter: blur(3px);
+  border-radius: 18px; /* Restored elegant rounded corners */
+  max-width: 550px; /* Wider max-width so the ca
+
+--- Match 2 at index 32261 ---
+argin-top: 1.2rem;
+    text-align: center;
+  }
+  .av16-content-card {
+    padding: 1.5rem 1.2rem;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 100% !important;
+  }
+  body .about-v16 {
+    padding-top: clamp(4rem, 8vw, 6rem);
+    padding-bottom: clamp(4rem, 8vw, 6rem);
+  }
+  .av16-org-desc {
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
+  }
+  .av16-heading {
+    

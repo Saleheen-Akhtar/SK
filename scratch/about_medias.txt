@@ -1,0 +1,223 @@
+
+--- Media Query 1 at index 18273 ---
+@media (max-width: 860px){
+  .about-v16-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    min-height: auto;
+    align-items: start;
+  }
+  .av16-left {
+    position: static;
+    justify-content: flex-start;
+    align-self: auto;
+  }
+  .av16-right { align-self: auto; }
+  .av16-sacred, .av16-kompass { font-size: clamp(2.8rem, 14vw, 5rem); }
+  .av16-tagline-inner { font-size: 0.85rem; }
+}
+
+--- Media Query 2 at index 19793 ---
+@media (min-width: 901px) {
+  .about-v16 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers the content vertically */
+    min-height: 100vh;       /* Stretches to fill viewport height exactly */
+    min-height: 100dvh;
+    box-sizing: border-box;
+    background-position: center center;
+    padding-top: clamp(5rem, 7vw, 7.5rem);
+    padding-bottom: clamp(5rem, 7vw, 7.5rem);
+  }
+  body.admin-bar .about-v16 {
+    min-height: calc(100vh - 32px);
+    min-height: calc(100dvh - 32px);
+    background-position: center center;
+    padding-top: clamp(5rem, 7vw, 7.5rem);
+    padding-bottom: clamp(5rem, 7vw, 7.5rem);
+  }
+}
+
+--- Media Query 3 at index 20541 ---
+@media (min-width: 1441px) and (max-width: 1920px) {
+  body .av16-left {
+    transform: translate(1.5rem, 3rem);
+  }
+}
+
+--- Media Query 4 at index 20727 ---
+@media (min-width: 1441px) {
+  .av16-welcome {
+    white-space: nowrap;
+  }
+}
+
+--- Media Query 5 at index 22035 ---
+@media (hover: hover) and (pointer: fine){
+
+  /* ── Buttons: glow + scale ── */
+  .btn {
+    transition: background 0.4s ease, color 0.4s ease, transform 0.4s ease,
+                box-shadow 0.4s ease, border-color 0.4s ease;
+  }
+  .btn-primary:hover {
+    transform: scale(1.02) translateY(-2px);
+    box-shadow: 0 0 0 6px rgba(184,98,63,0.14), 0 8px 28px rgba(184,98,63,0.38);
+  }
+  .btn-outline:hover {
+    transform: scale(1.02) translateY(-2px);
+    box-shadow: 0 0 0 5px rgba(184,98,63,0.10), var(--shadow-lift);
+  }
+  .btn-light:hover {
+    transform: scale(1.02) translateY(-2px);
+    box-shadow: 0 0 0 5px rgba(26,22,18,0.06), var(--shadow-lift);
+  }
+
+  /* ── Cards: subtle lift ── */
+  .offering-card,
+  .value-card,
+  .sk-post-card,
+  .ct-card,
+  .founder-card {
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+  }
+  .offering-card:hover,
+  .value-card:hover,
+  .sk-post-card:hover,
+  .ct-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(26,22,18,0.14);
+  }
+
+  /* ── Body links: underline width animation ── */
+  .sk-post-body a,
+  .founders-editorial-col a:not(.btn),
+  .about-v16 a:not(.btn),
+  p a:not(.btn) {
+    position: relative;
+    text-decoration: none;
+    background-image: linear-gradient(var(--terra), var(--terra));
+    background-size: 0% 1px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: background-size 0.35s ease, color 0.25s ease;
+    padding-bottom: 1px;
+  }
+  .sk-post-body a:hover,
+  .founders-editorial-col a:not(.btn):hover,
+  .about-v16 a:not(.btn):hover,
+  p a:not(.btn):hover {
+    background-size: 100% 1px;
+    color: var(--terra);
+  }
+
+  /* ── Images: subtle zoom on hover ── */
+  .offering-img,
+  .sk-post-card-img,
+  .sk-client-story-img,
+  .about-v16-img-wrap,
+  .hero-bg-image {
+    overflow: hidden;
+  }
+  .offering-img img,
+  .sk-post-card-img img,
+  .sk-client-story-img img,
+  .about-v16-img-wrap img {
+    transition: transform 0.8s ease;
+  }
+  .offering-card:hover .offering-img img,
+  .sk-post-card:hover .sk-post-card-img img,
+  .sk-client-story:hover .sk-client-story-img img,
+  .about-v16-img-wrap:hover img {
+    transform: scale(1.03);
+  }
+
+}
+
+--- Media Query 6 at index 26064 ---
+@media (prefers-reduced-motion: reduce) {
+  .sk-lotus-wrap { animation: none; opacity: 0.6; }
+  .sk-geo-mandala { animation: none; opacity: 0.05; }
+}
+
+--- Media Query 7 at index 26257 ---
+@media (max-width: 600px) {
+  .sk-mist-edge { height: 60px; }
+  .sk-lotus-wrap { bottom: calc(100% - 35px); }
+}
+
+--- Media Query 8 at index 30378 ---
+@media (max-width: 900px){
+  .about-v16-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+--- Media Query 9 at index 31066 ---
+@media (max-width: 900px) {
+  .av16-left  { justify-content: flex-start; align-items: center; }
+  .av16-brand { align-items: center; }
+  .av16-tagline { margin-top: 1.2rem; text-align: center; align-self: auto; }
+  .av16-right { justify-content: flex-start; align-self: auto; }
+  .av16-sacred, .av16-kompass { font-size: clamp(2.8rem, 14vw, 5rem); }
+}
+
+--- Media Query 10 at index 32212 ---
+@media (max-width: 900px) {
+  body .about-v16-inner,
+  .about-v16-inner {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    min-height: auto !important;
+  }
+  body .av16-left,
+  .av16-left {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  body .av16-right,
+  .av16-right {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0;
+  }
+  .av16-brand {
+    align-items: center;
+  }
+  .av16-sacred,
+  .av16-kompass {
+    font-size: clamp(2.8rem, 14vw, 5rem);
+  }
+  .av16-tagline {
+    margin-top: 1.2rem;
+    text-align: center;
+  }
+  .av16-content-card {
+    padding: 1.5rem 1.2rem;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 100% !important;
+  }
+  body .about-v16 {
+    padding-top: clamp(4rem, 8vw, 6rem);
+    padding-bottom: clamp(4rem, 8vw, 6rem);
+  }
+  .av16-org-desc {
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
+  }
+  .av16-heading {
+    font-size: clamp(1.3rem, 5vw, 2rem);
+  }
+  .av16-bridge {
+    font-size: clamp(0.95rem, 3.5vw, 1.3rem);
+  }
+  .av16-body {
+    font-size: clamp(0.9rem, 3.2vw, 1.2rem);
+  }
+  .av16-welcome {
+    font-size: clamp(0.9rem, 3.2vw, 1.2rem);
+  }
+}

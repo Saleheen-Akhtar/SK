@@ -1,0 +1,108 @@
+/* ── SINGLE STORY — immersive reading template ────────────── */
+.sk-story-single {
+  background: var(--ivory);
+  min-height: 100vh;
+  padding-bottom: 8rem;
+}
+.sk-story-single__cover {
+  position: relative;
+  height: clamp(300px, 50vh, 520px);
+  overflow: hidden;
+}
+.sk-story-single__cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.sk-story-single__cover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(251,250,246,0.9));
+}
+.sk-story-single__header {
+  padding: 3rem 0 0;
+}
+.sk-story-single__header-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+.sk-story-single__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.15;
+  margin: 0 0 1.2rem;
+  letter-spacing: -0.01em;
+}
+.sk-story-single__pullquote {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--terra);
+  line-height: 1.6;
+  margin: 0 0 1.5rem;
+  border-left: 2px solid var(--gold);
+  padding-left: 1.2rem;
+}
+.sk-story-single__byline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1.2rem 0;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 3rem;
+}
+.sk-story-single__body {
+  padding-top: 1rem;
+}
+.sk-story-single__content {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--ink);
+}
+.sk-story-single__content p { margin: 0 0 1.6rem; }
+.sk-story-single__content h2,
+.sk-story-single__content h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--ink);
+  margin: 2.5rem 0 1rem;
+}
+.sk-story-single__content blockquote {
+  border-left: 2px solid var(--gold);
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: var(--ink-muted);
+}
+.sk-story-single__back {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-light);
+}
+.sk-story-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  text-decoration: none;
+  transition: color 0.2s, gap 0.2s;
+}
+.sk-story-back-link:hover,
+.sk-story-back-link:focus-visible {
+  color: var(--terra);
+  gap: 0.7rem;
+}

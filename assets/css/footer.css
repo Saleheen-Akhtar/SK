@@ -1,0 +1,133 @@
+/* ── FOOTER v2 — Making Today inspired typographic style ─── */
+.footer.sk-footer-v2{background:var(--footer-bg);color:rgba(255,255,255,.55);padding:0;border:none !important;border-top:none !important;box-shadow:none !important}
+.footer.sk-footer-v2::before,
+.footer.sk-footer-v2::after { display: none !important; }
+.footer.sk-footer-v2 .wrap {
+  padding-left: clamp(1.25rem, 4vw, 3rem);
+  padding-right: clamp(1.25rem, 4vw, 3rem);
+}
+
+/* Top section: giant wordmark + CTA */
+.sk-foot-top{padding:clamp(2.5rem, 5vw, 5rem) 0 clamp(1.8rem, 3.5vw, 3.5rem);border-top:none !important}
+.sk-foot-brand-row{display:flex;align-items:flex-end;justify-content:space-between;gap:clamp(1rem, 2vw, 2rem);margin-bottom:clamp(1rem, 2vw, 1.5rem)}
+.sk-foot-wordmark-wrap{display:flex;align-items:center;gap:clamp(0.6rem, 1.25vw, 1.25rem)}
+.sk-foot-logo-img{display:block;height:clamp(48px, 5vw, 72px);width:auto;max-width:clamp(52px, 6vw, 80px);object-fit:contain}
+.sk-foot-wordmark{font-family:var(--font-display);font-size:clamp(3.2rem,8vw,7rem);font-weight:700;line-height:.9;letter-spacing:-.03em;color:rgba(255,255,255,.9)}
+.sk-foot-wordmark em{font-style:italic;color:var(--blush)}
+.sk-foot-cta{border-color:rgba(255,255,255,.22);color:rgba(255,255,255,.7);flex-shrink:0;align-self:center;font-size:clamp(0.58rem, 0.62vw, 0.62rem);padding:clamp(0.5rem, 0.75vw, 0.75rem) clamp(1.2rem, 1.6vw, 1.6rem)}
+.sk-foot-cta:hover,
+.sk-foot-cta:focus-visible{border-color:rgba(255,255,255,.6);color:#fff;background:rgba(255,255,255,.06)}
+.sk-foot-tagline{font-family:var(--font-display);font-size:clamp(0.85rem, 1vw, 1rem);font-weight:300;line-height:1.75;color:rgba(255,255,255,.52);max-width:480px}
+
+/* Horizontal rule */
+.sk-foot-divider{width:100%;height:1px;background:rgba(255,255,255,.06)}
+/* Hide ALL dividers on desktop — the column border-tops provide enough separation */
+@media(min-width:769px){
+  .sk-foot-divider{display:none}
+}
+/* On mobile keep dividers visible for structure */
+@media(max-width:768px){
+  .sk-foot-divider{display:block}
+  .sk-foot-divider:first-of-type{display:none}
+}
+
+/* Mid columns */
+.sk-foot-mid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1.25rem, 2.5vw, 2.5rem);padding:clamp(1.8rem, 3.5vw, 3.5rem) 0}
+.sk-foot-col{padding-top:clamp(1rem, 1.6vw, 1.6rem);border-top:1px solid rgba(255,255,255,.1)}
+.sk-foot-col-label{font-family:var(--font-ui);font-size:clamp(0.5rem, 0.56vw, 0.56rem);font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.48);margin-bottom:clamp(0.8rem, 1.4vw, 1.4rem)}
+.sk-foot-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.sk-foot-col a{font-family:var(--font-display);font-size:clamp(0.8rem, 0.95vw, 0.95rem);font-weight:300;color:rgba(255,255,255,.58);transition:color .22s;text-decoration:none;position:relative;display:inline-block}
+.sk-foot-col a::after{content:'';position:absolute;bottom:-1px;left:0;right:100%;height:1px;background:rgba(255,255,255,.35);transition:right .35s var(--ease)}
+.sk-foot-col a:hover,
+.sk-foot-col a:focus-visible{color:rgba(255,255,255,.82)}
+.sk-foot-col a:hover::after,
+.sk-foot-col a:focus-visible::after{right:0}
+
+/* Bottom bar */
+.sk-foot-bottom{display:flex;align-items:center;justify-content:space-between;padding:clamp(1.25rem, 2vw, 2rem) 0 clamp(1.5rem, 3vw, 3rem);gap:clamp(0.75rem, 1vw, 1rem)}
+.sk-foot-copy{font-family:var(--font-ui);font-size:clamp(0.55rem, 0.6vw, 0.6rem);letter-spacing:.08em;color:rgba(255,255,255,.46)}
+.sk-foot-location{font-family:var(--font-ui);font-size:clamp(0.55rem, 0.6vw, 0.6rem);letter-spacing:.1em;color:rgba(255,255,255,.2)}
+
+
+/* ── FIXES FOR FOOTER ALIGNMENT ── */
+body{
+  margin: 0;
+  padding-bottom: 0;
+}
+html {
+  margin: 0;
+  padding: 0;
+}
+body footer.footer.sk-footer-v2{
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.site-content,
+body .site,
+body #page,
+body .page-wrap,
+body main{
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.sk-foot-bottom{
+  padding-bottom: 2rem;
+}
+
+/* ── RESPONSIVE MOBILE OVERRIDES ── */
+@media(max-width:768px){
+  .footer.sk-footer-v2{
+    width:100%;
+    max-width:100vw;
+    overflow-x:clip;
+  }
+  .footer.sk-footer-v2 .wrap{padding-left:1.5rem;padding-right:1.5rem}
+  .sk-foot-top{padding:3rem 0 2rem}
+  .sk-foot-wordmark{font-size:clamp(2.8rem,14vw,4.5rem)}
+  .sk-foot-tagline{font-size:.9rem}
+  .sk-foot-mid{
+    grid-template-columns:1fr 1fr;
+    gap:2.2rem 1.5rem;
+    padding:2rem 0;
+  }
+  .sk-foot-col-label{margin-bottom:1rem}
+  .sk-foot-col a{font-size:.88rem}
+  .sk-foot-col ul{gap:.75rem}
+  .sk-foot-brand-row{flex-direction:column;align-items:flex-start;gap:1rem}
+  .sk-foot-bottom{
+    flex-direction:column;
+    gap:.65rem;
+    text-align:center;
+    padding:1.5rem 0 2.5rem;
+  }
+  .sk-foot-location{display:none;}
+}
+
+@media(max-width:480px){
+  .footer.sk-footer-v2{
+    width:100%;
+    max-width:100vw;
+    overflow-x:clip;
+  }
+  .footer.sk-footer-v2 .wrap{padding-left:1.25rem;padding-right:1.25rem}
+  .sk-foot-mid{grid-template-columns:1fr 1fr;gap:1.8rem 1.2rem;padding:1.8rem 0}
+  .sk-foot-col{padding-top:1.2rem}
+  .sk-foot-wordmark{font-size:clamp(2.4rem,16vw,3.5rem)}
+  .sk-foot-top{padding:2.5rem 0 1.5rem}
+  .sk-foot-bottom{padding:1.2rem 0 2rem;gap:.5rem}
+  .sk-foot-brand-row{gap:.75rem}
+  .sk-foot-col a{font-size:.8rem}
+  .sk-foot-col ul{gap:.55rem}
+  .sk-foot-copy,
+  .sk-foot-location{
+    max-width:100%;
+    overflow-wrap:anywhere;
+  }
+}
+
+/* iOS home bar safe area — prevents copyright being hidden behind home indicator */
+@media (max-width: 768px) {
+  .sk-foot-bottom {
+    padding-bottom: max(2.5rem, calc(1.5rem + env(safe-area-inset-bottom))) !important;
+  }
+}

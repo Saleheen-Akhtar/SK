@@ -1,0 +1,242 @@
+.home .nav:not(.scrolled) .nav-hamburger span{background:#fff}
+.home .nav:not(.scrolled) .btn-primary{background:var(--terra);color:#fff}
+/* Hamburger always dark/visible once scrolled (past hero into about section) */
+.home .nav.scrolled .nav-hamburger span,
+body .nav.scrolled .nav-hamburger span { background: var(--ink); }
+
+/* ── HERO — single column, bg image + overlay, white text ── */
+.hero--split,.hero--fullscreen{
+  position:relative;
+  overflow:hidden;
+  min-height:65vh;
+  display:flex;
+  flex-direction:column;
+  background:var(--ink);
+}
+
+/* Full-bleed background layer */
+.hero-bg-layer{position:absolute;inset:0;z-index:0}
+.hero-bg-image{position:absolute;inset:0}
+.hero-bg-image img{width:100%;height:100%;object-fit:cover;object-position:center;will-change:transform}
+
+/* ── Hero video background ── */
+.hero-bg-video{position:absolute;inset:0;overflow:hidden}
+.hero-bg-video video{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  display:block;
+  /* GPU-accelerated to prevent flicker on loop */
+  transform:translateZ(0);
+  will-change:transform;
+  backface-visibility:hidden;
+}
+.hero-bg-gradient{
+  position:absolute;inset:0;
+  display: none;
+}
+
+/* Dark overlay for text legibility */
+.hero-bg-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(105deg,rgba(10,8,12,.75) 0%,rgba(10,8,12,.55) 55%,rgba(10,8,12,.35) 100%);
+}
+
+/* Hide navbar only when it overlaps the hero section */
+.hero--fullscreen ~ * .nav,
+.hero--fullscreen + .nav,
+body.home .nav { /* fallback if nav is before hero */ }
+/* Use JS-free approach: hide via sticky + hero height */
+.hero--fullscreen .hero-nav-hide { display: none; }
+
+/* FROM word — just above the midline, slightly left of center */
+.hero-from-wrap {
+  position: absolute;
+  top: 42%;                /* anchor above the TO word */
+  left: 18vw;              /* shifted right for better alignment */
+  z-index: 4;
+  line-height: 1;
+  transform: translateY(-100%); /* bottom edge sits exactly AT anchor, touching TO word top */
+}
+
+/* TO word — centered vertically in the hero section */
+.hero-to-wrap {
+  position: absolute;
+  top: 38%;              /* center of the hero height */
+  left: 0;
+  right: 0;
+  z-index: 4;
+  text-align: center;
+  line-height: 1;
+  pointer-events: none;
+  transform: translateY(-20%); /* slight upward nudge so it reads centered */
+}
+
+/* Right panel hidden — single column */
+.hero--split .hero-right{display:none}
+.hero--split .hero-left{display:none}
+.hero-rule{display:none}
+.hero-features-strip{display:none}
+
+/* Journey text — all white */
+.hero--split .hero-left .stage-chaos  {color:rgba(255,255,255,.55)}
+.hero--split .hero-left .stage-turning{color:rgba(255,255,255,.82)}
+.hero--split .hero-left .stage-calm   {color:#fff}
+.hero--split .hero-left .stage-calm em{font-style:italic;color:var(--blush)}
+.hero--split .hero-left .hero-sub     {color:rgba(255,255,255,.72);max-width:560px}
+.hero--split .hero-left .hero-location{color:rgba(255,255,255,.42)}
+.hero--split .hero-left .hero-location::before{background:rgba(212,175,106,.5)}
+
+/* Stage animations */
+.hero-journey{display:flex;flex-direction:column;gap:0;margin-bottom:3.5rem}
+.journey-stage{opacity:0;transform:translateY(16px)}
+.journey-stage.visible{animation:stage-appear 1.1s var(--ease-soft) forwards}
+@keyframes stage-appear{to{opacity:1;transform:none}}
+.stage-chaos  {font-family:var(--font-display);font-size:clamp(1rem,1.8vw,1.25rem);font-weight:400;font-style:italic;letter-spacing:.04em;padding-bottom:1.4rem;animation-delay:.1s}
+.stage-turning{font-family:var(--font-display);font-size:clamp(2rem,4vw,3.5rem);font-weight:600;line-height:1.08;letter-spacing:-.01em;padding-bottom:1.2rem;animation-delay:.3s}
+.stage-calm   {font-family:var(--font-display);font-size:clamp(2.8rem,5.5vw,5.2rem);font-weight:800;line-height:.95;letter-spacing:-.02em;padding-bottom:1.8rem;animation-delay:.52s}
+.hero-sub     {font-family:var(--font-display);font-size:1.1rem;font-weight:300;line-height:1.85;margin-bottom:2rem;opacity:0;animation:stage-appear .9s var(--ease-soft) .72s forwards}
+.hero-actions {display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:1.2rem;opacity:0;animation:stage-appear .85s var(--ease-soft) .88s forwards}
+.hero-location{margin-top:2rem;font-family:var(--font-ui);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;display:flex;justify-content:center;align-items:center;gap:1rem;opacity:0;animation:stage-appear .75s var(--ease-soft) 1.05s forwards}
+.hero-location::before{content:'';width:24px;height:1px;display:block;opacity:.6}
+
+/* .hcw base removed — using .hcw-from / .hcw-to */
+
+/* FROM — top-left area, warm amber, non-italic, locked — large, near-TO size */
+.hcw-from {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5.5vw, 8rem);
+  font-weight: 400;
+  font-style: normal;
+  color: rgba(228, 168, 95, 0.85);
+  text-shadow: 0 0 40px rgba(228, 140, 60, 0.3);
+  white-space: normal;
+  line-height: 1.05;
+  letter-spacing: -.02em;
+  opacity: 0;
+}
+
+/* TO — bold italic, JS sets font-size, position never changes */
+.hcw-to {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 10vw, 10rem);
+  font-weight: 800;
+  font-style: italic;
+  color: #fff;
+  text-shadow: 0 2px 40px rgba(0,0,0,.2);
+  white-space: nowrap;
+  line-height: 1;
+  letter-spacing: -.03em;
+  text-align: center;
+  opacity: 1;
+  overflow: visible;
+  will-change: transform, filter, opacity;
+}
+
+/* Legacy .hcw rules — kept for compatibility */
+.hcw { display: none; }
+
+/* Divider: thin horizontal rule only, no glyph */
+.hero-cycle-rule {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(228,189,160,.45), transparent);
+  margin: 1.1rem auto;
+  width: 80px;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════
+   ABOUT — v13. LEFT = Expression + Collective. RIGHT = Wisdom + Heading.
+   No decorative icons. SEO-friendly. Clean.
+   ══════════════════════════════════════════════════════════════════════ */
+
+.about-layout--v13 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(4rem, 8vw, 9rem);
+  align-items: start;
+  margin-top: 4.5rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .about-layout--v13 {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  .about-right-col {
+    padding-top: 0;
+    order: -1;
+  }
+  .about-wisdom-word {
+    font-size: clamp(3.5rem, 16vw, 6rem);
+  }
+  .about-confluence-heading {
+    font-size: clamp(1.5rem, 5.5vw, 2.2rem);
+  }
+  .about-collective-name--clipped {
+    font-size: clamp(2.2rem, 10vw, 3.8rem);
+  }
+  .acn-kompass,
+  .acn-sacred,
+  .acn-collective {
+    font-size: clamp(2.2rem, 10vw, 3.8rem);
+  }
+  .about-expr-line1,
+  .about-expr-line2 {
+    font-size: clamp(1.3rem, 5.5vw, 2rem);
+  }
+  .hcw-to {
+    font-size: clamp(2.8rem, 14vw, 7rem); /* JS will override */
+  }
+  .hcw-from {
+    font-size: clamp(2.2rem, 10vw, 6rem);
+  }
+  .hero--split,
+  .hero--fullscreen {
+    min-height: 74vh;
+    min-height: 74dvh; /* dynamic viewport height to handle mobile address bars */
+  }
+  /* FROM word higher on mobile so both words are clearly separated */
+  .hero-from-wrap { left: 18vw; top: 42%; transform: translateY(-100%); }
+  .hero-to-wrap   { top: 38%; transform: translateY(-20%); }
+}
+
+/* ── Hero ── */
+@media (max-width: 860px) {
+  .sk-collective-hero {
+    padding: 5rem 0 2rem;
+  }
+  body .sk-collective-hero .display-xl,
+  body .sk-collective-hero .sk-section-display {
+    font-size: clamp(2.6rem, 11vw, 4rem);
+    line-height: 1.08;
+  }
+  .sk-collective-hero-sub {
+    font-size: 0.95rem;
+    padding: 0;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
+/* Extra narrow screens — 320px to 400px (Galaxy Z Fold outer, iPhone SE) */
+@media (max-width: 400px) {
+  .hcw-to {
+    font-size: clamp(3rem, 16vw, 5rem) !important;
+    white-space: normal !important; /* allow wrapping so it doesn't overflow */
+  }
+  .hcw-from {
+    font-size: clamp(2rem, 12vw, 4rem) !important;
+  }
+  .hero-from-wrap {
+    left: 8vw !important; /* tighter to edge on very narrow screens */
+  }
+  .hero--split,
+  .hero--fullscreen {
+    min-height: 85svh !important;
+    min-height: 85dvh !important;
+  }
+}
+

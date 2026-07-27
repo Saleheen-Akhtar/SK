@@ -1,0 +1,738 @@
+/* ── FAQ SECTION (Fluid Responsive Height & Breathing Space) ── */
+.faq-section {
+  padding: clamp(3rem, 5vw, 4.5rem) 0 !important;
+  min-height: auto !important;
+  height: auto !important;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: #000000 !important; /* Black fallback prevents light ivory body bleed */
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: scroll !important;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: none !important; /* Zero outer section height inflation! */
+  margin-bottom: -2px !important; /* Seamless subpixel overlap with footer */
+}
+
+/* Letterbox Bars: Heavy Cinemascope on Mobile, Double Thickness on Desktop (1024px+) */
+.faq-cinemascope-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: clamp(115px, 22vh, 200px) !important;
+  background-color: #000000 !important;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.faq-cinemascope-bar.top {
+  top: 0;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.9);
+}
+
+.faq-cinemascope-bar.bottom {
+  bottom: -4px !important; /* Extends 4px down to seal any subpixel gap at section bottom */
+  box-shadow: 0 -12px 32px rgba(0, 0, 0, 0.9);
+}
+
+/* ── DECORATIVE LUXURY GOLD FILIGREE GRADIENT BORDER (Top & Bottom) ── */
+.faq-cinemascope-bar.top::after,
+.faq-cinemascope-bar.bottom::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(196, 144, 42, 0.25) 10%,
+    #c4902a 30%,
+    #fce8b8 50%,
+    #c4902a 70%,
+    rgba(196, 144, 42, 0.25) 90%,
+    transparent 100%
+  );
+  box-shadow: 0 0 12px rgba(212, 175, 106, 0.7);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.faq-cinemascope-bar.top::after {
+  bottom: 0;
+}
+
+.faq-cinemascope-bar.bottom::before {
+  top: 0;
+}
+
+/* Balanced Desktop Letterbox Overlay (Unified across Standard and Admin views) */
+@media (min-width: 1024px) {
+  .faq-cinemascope-bar {
+    height: clamp(135px, 20vh, 195px) !important;
+  }
+}
+
+/* Orange sunlit glow overlay removed per request */
+.faq-section::before {
+  display: none !important;
+}
+
+.faq-section > .wrap {
+  width: 100%;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  position: relative;
+  z-index: 2;
+}
+
+/* Top Right Corner Narrator Box ("Frequently Asked") */
+.faq-narrator-box {
+  position: absolute;
+  top: calc(clamp(115px, 22vh, 200px) - 22px) !important;
+  right: 36px;
+  max-width: 380px;
+  background: linear-gradient(135deg, #fce8b8 0%, #e89569 52%, #c46440 100%) !important;
+  border: 4px solid #3d210b !important;
+  box-shadow: 4px 4px 0px #3d210b !important;
+  transform: none !important;
+  padding: 14px 22px;
+  z-index: 10;
+  border-radius: 12px;
+}
+
+@media (min-width: 1024px) {
+  .faq-narrator-box {
+    top: calc(clamp(135px, 20vh, 195px) - 22px) !important;
+  }
+}
+
+/* Reduced Letterbox Overlay Size on Larger Screens (1024px+) for Standard View Only */
+@media (min-width: 1024px) {
+  body:not(.logged-in) .faq-cinemascope-bar,
+  body:not(.admin-bar) .faq-cinemascope-bar {
+    height: clamp(75px, 10vh, 115px) !important;
+  }
+
+  body:not(.logged-in) .faq-narrator-box,
+  body:not(.admin-bar) .faq-narrator-box {
+    top: calc(clamp(75px, 10vh, 115px) - 22px) !important;
+  }
+}
+
+.faq-narrator-box > * {
+  transform: none !important;
+}
+
+.narrator-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: none !important;
+  letter-spacing: 0.02em;
+  color: #2b1404;
+  margin: 0 0 6px 0;
+  line-height: 1.1;
+}
+
+.narrator-desc {
+  font-family: var(--font-ui, 'Jost', system-ui, sans-serif);
+  font-size: 1.08rem;
+  font-weight: 400;
+  color: #3d1d07;
+  margin: 0;
+  line-height: 1.45;
+  text-transform: none !important;
+  letter-spacing: 0.01em;
+}
+
+.faq-left-placeholder {
+  display: block;
+  width: 100%;
+}
+
+.faq-layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.25fr;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: center;
+  width: 100%;
+}
+
+.faq-layout.no-left {
+  grid-template-columns: 1fr;
+}
+
+/* ── SNIP1157 CATEGORY SPEECH BUBBLES GRID ── */
+.faq-bubbles-container {
+  width: 100%;
+  max-width: 480px;
+  margin-left: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.faq-snip-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+figure.snip1157 {
+  font-family: var(--font-sans, system-ui, -apple-system, sans-serif) !important;
+  position: relative;
+  overflow: visible;
+  margin: 8px 0;
+  width: max-content !important;
+  min-width: 170px !important;
+  max-width: 270px !important;
+  color: #333;
+  text-align: left;
+  box-shadow: none !important;
+  cursor: pointer;
+  outline: none;
+  transform: translate(var(--bubble-x, 0px), var(--bubble-y, 0px));
+  transition: transform 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9) !important;
+}
+
+/* Up / Down & Left / Right Utility Position Overrides */
+figure.snip1157.pos-up-sm { --bubble-y: -15px; }
+figure.snip1157.pos-up-md { --bubble-y: -30px; }
+figure.snip1157.pos-up-lg { --bubble-y: -50px; }
+figure.snip1157.pos-down-sm { --bubble-y: 15px; }
+figure.snip1157.pos-down-md { --bubble-y: 30px; }
+figure.snip1157.pos-down-lg { --bubble-y: 50px; }
+
+figure.snip1157.pos-left-sm { --bubble-x: -20px; }
+figure.snip1157.pos-left-md { --bubble-x: -40px; }
+figure.snip1157.pos-left-lg { --bubble-x: -60px; }
+figure.snip1157.pos-right-sm { --bubble-x: 20px; }
+figure.snip1157.pos-right-md { --bubble-x: 40px; }
+figure.snip1157.pos-right-lg { --bubble-x: 60px; }
+
+/* Fixed Unified Base Alignment across Admin & Standard Views */
+figure.snip1157.tail-left,
+figure.snip1157.tail-right {
+  align-self: flex-start;
+  margin-left: 0;
+}
+
+/* Floating Keyframe Animations on Inner Box */
+@keyframes floatBubbleInner1 {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes floatBubbleInner2 {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes floatBubbleInner3 {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+figure.snip1157.float-anim-1 blockquote.snip-bubble-box { animation: floatBubbleInner1 4.8s ease-in-out infinite; }
+figure.snip1157.float-anim-2 blockquote.snip-bubble-box { animation: floatBubbleInner2 5.4s ease-in-out infinite 0.8s; }
+figure.snip1157.float-anim-3 blockquote.snip-bubble-box { animation: floatBubbleInner3 4.2s ease-in-out infinite 1.4s; }
+
+figure.snip1157 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+  transition: all 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
+}
+
+/* Clean Borderless Bubble Box with Graphic Offset Shadow */
+figure.snip1157 blockquote.snip-bubble-box {
+  display: block;
+  border-radius: 14px !important;
+  position: relative;
+  background-color: #fdfaf3 !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: none !important;
+  padding: 14px 18px 15px 18px !important;
+  font-size: 0.95em;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.45em;
+  box-shadow: 6px 6px 0px #3d210b, 0 10px 24px rgba(40, 20, 5, 0.25) !important;
+  transform: skewX(-7deg);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.snip-inner-content {
+  transform: skewX(7deg);
+}
+
+figure.snip1157 blockquote.snip-bubble-box:before,
+figure.snip1157 blockquote.snip-bubble-box:after {
+  font-family: serif;
+  content: "\201C";
+  position: absolute;
+  font-size: 36px;
+  opacity: 0.22;
+  font-style: normal;
+  color: #000000;
+  line-height: 1;
+}
+
+figure.snip1157 blockquote.snip-bubble-box:before {
+  top: 10px;
+  left: 10px;
+}
+
+figure.snip1157 blockquote.snip-bubble-box:after {
+  content: "\201D";
+  right: 10px;
+  bottom: -4px;
+}
+
+.snip-sparkle {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 1rem;
+  color: #d4af37;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+/* Sans-Serif Typography for Category Speech Bubbles */
+.snip-cat-title {
+  display: block;
+  font-family: var(--font-sans, system-ui, -apple-system, sans-serif) !important;
+  font-size: 1.05rem !important;
+  font-weight: 800 !important;
+  color: #000000 !important;
+  line-height: 1.3;
+  margin-bottom: 0.15rem;
+  letter-spacing: -0.01em;
+}
+
+.snip-cat-count {
+  display: inline-block;
+  font-family: var(--font-sans, system-ui, -apple-system, sans-serif) !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  color: #444444 !important;
+  letter-spacing: 0.02em;
+}
+
+/* Pure CSS Arrow Pointers with Warm Ivory Fill */
+figure.snip1157 .arrow {
+  top: 100%;
+  width: 0;
+  height: 0;
+  margin: 0;
+  position: absolute;
+  z-index: 3;
+}
+
+figure.snip1157 .arrow.arrow-left {
+  left: 32px;
+  border-left: 0 solid transparent;
+  border-right: 22px solid transparent;
+  border-top: 22px solid #fdfaf3 !important;
+}
+
+figure.snip1157 .arrow.arrow-right {
+  right: 32px;
+  border-right: 0 solid transparent;
+  border-left: 22px solid transparent;
+  border-top: 22px solid #fdfaf3 !important;
+}
+
+/* ── ADMIN ONLY VISUAL DRAG & DROP ── */
+.sk-admin-draggable {
+  user-select: none !important;
+  touch-action: none !important;
+}
+
+.sk-admin-drag-handle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  z-index: 20;
+  background: #7a561e !important;
+  color: #ffffff !important;
+  font-family: sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  cursor: grab !important;
+  cursor: -webkit-grab !important;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.sk-admin-drag-handle:hover {
+  background: #9c6e26 !important;
+  transform: scale(1.08);
+}
+
+.sk-admin-draggable.is-dragging {
+  cursor: grabbing !important;
+  cursor: -webkit-grabbing !important;
+  opacity: 0.95;
+  transition: none !important; /* Instant real-time movement while dragging */
+}
+
+.sk-admin-draggable.is-dragging .sk-admin-drag-handle {
+  cursor: grabbing !important;
+  background: #d4af37 !important;
+  color: #1a1005 !important;
+}
+
+.sk-admin-save-bar {
+  margin-top: 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+/* Pure CSS Arrow Pointers */
+figure.snip1157 .arrow {
+  top: 100%;
+  width: 0;
+  height: 0;
+  margin: 0;
+  position: absolute;
+  z-index: 3;
+}
+
+figure.snip1157 .arrow.arrow-left {
+  left: 32px;
+  border-left: 0 solid transparent;
+  border-right: 22px solid transparent;
+  border-top: 22px solid rgba(255, 253, 248, 0.96);
+}
+
+figure.snip1157 .arrow.arrow-right {
+  right: 32px;
+  border-right: 0 solid transparent;
+  border-left: 22px solid transparent;
+  border-top: 22px solid rgba(255, 253, 248, 0.96);
+}
+
+/* Author / Footer Metadata */
+figure.snip1157 .author {
+  padding: 12px 10px 0 10px;
+  margin: 0;
+  text-transform: uppercase;
+  color: #7a561e;
+}
+
+figure.snip1157 .author h5 {
+  opacity: 0.9;
+  margin: 0;
+  font-weight: 700;
+  font-size: 0.86rem;
+  letter-spacing: 0.05em;
+  color: #7a561e;
+}
+
+figure.snip1157 .author h5 span {
+  font-weight: 500;
+  text-transform: none;
+  padding-left: 6px;
+  color: #a0845c;
+  font-size: 0.82rem;
+}
+
+/* Hover & Active States (Preserves static --bubble-x and --bubble-y coordinates on figure) */
+figure.snip1157:hover blockquote.snip-bubble-box,
+figure.snip1157.hover blockquote.snip-bubble-box,
+figure.snip1157:focus blockquote.snip-bubble-box {
+  transform: translateY(-6px) scale(1.02) !important;
+  background-color: #ffffff;
+  border-color: rgba(212, 175, 55, 0.85);
+  box-shadow: 0 18px 45px rgba(212, 175, 55, 0.25), inset 0 1px 0 #ffffff;
+}
+
+figure.snip1157:hover .snip-cat-title,
+figure.snip1157:focus .snip-cat-title {
+  color: #9c6e26;
+}
+
+figure.snip1157:hover .arrow.arrow-left,
+figure.snip1157.hover .arrow.arrow-left,
+figure.snip1157:focus .arrow.arrow-left,
+figure.snip1157:hover .arrow.arrow-right,
+figure.snip1157.hover .arrow.arrow-right,
+figure.snip1157:focus .arrow.arrow-right {
+  border-top-color: #ffffff;
+}
+
+/* ── INSTANT VIEWPORT SACRED CATEGORY MODAL OVERLAY ── */
+.faq-modal-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  z-index: 9999999 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 1.5rem !important;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-sizing: border-box !important;
+}
+
+.faq-modal-overlay.is-active {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* Modal Backdrop Blur */
+.faq-modal-backdrop {
+  position: absolute !important;
+  inset: 0 !important;
+  background: rgba(12, 7, 3, 0.76) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+/* Imperial Gold Manuscript Modal Content Card */
+.faq-modal-card {
+  position: relative !important;
+  z-index: 2 !important;
+  width: min(92vw, 680px) !important;
+  max-height: 85vh !important;
+  background: linear-gradient(135deg, rgba(255, 253, 248, 0.98), rgba(250, 242, 228, 0.96)) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 2px solid rgba(212, 175, 55, 0.6) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 28px 80px rgba(10, 5, 2, 0.45), 0 0 30px rgba(212, 175, 55, 0.2), inset 0 1px 0 #ffffff !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  transform: scale(0.9) translateY(30px);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+}
+
+.faq-modal-overlay.is-active .faq-modal-card {
+  transform: scale(1) translateY(0) !important;
+}
+
+/* Close Button */
+.faq-modal-close {
+  position: absolute !important;
+  top: 1.25rem !important;
+  right: 1.25rem !important;
+  z-index: 10 !important;
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+  background: rgba(212, 175, 55, 0.12) !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  color: #7a561e !important;
+  font-size: 1.15rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+}
+
+.faq-modal-close:hover {
+  background: #7a561e !important;
+  color: #ffffff !important;
+  border-color: #7a561e !important;
+  transform: rotate(90deg) !important;
+}
+
+/* Modal Header */
+.faq-modal-header {
+  padding: 2.25rem 2.25rem 1.15rem !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25) !important;
+  text-align: center !important;
+}
+
+.faq-modal-ornament {
+  font-size: 0.85rem;
+  color: #d4af37;
+  letter-spacing: 0.3em;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.faq-modal-eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #a0845c !important;
+  margin: 0 0 0.35rem !important;
+}
+
+.faq-modal-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 1.95rem) !important;
+  font-weight: 600;
+  color: #7a561e !important;
+  line-height: 1.25 !important;
+  margin: 0 !important;
+  text-shadow: 0 1px 1px rgba(255, 248, 225, 0.8) !important;
+}
+
+/* Modal Body & Accordion List */
+.faq-modal-body {
+  padding: 1.75rem 2.25rem 2.25rem !important;
+  overflow-y: auto !important;
+  flex-grow: 1 !important;
+}
+
+.faq-modal-accordion {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.95rem !important;
+}
+
+.faq-modal-item {
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2) !important;
+  padding-bottom: 0.95rem !important;
+}
+
+.faq-modal-item:last-child {
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+
+.faq-modal-trigger {
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 1.15rem !important;
+  padding: 0.75rem 0 !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+  text-align: left !important;
+}
+
+.faq-modal-q {
+  font-family: var(--font-display);
+  font-size: 1.12rem !important;
+  font-weight: 600 !important;
+  color: #7a561e !important;
+  line-height: 1.35 !important;
+  transition: color 0.25s ease !important;
+}
+
+.faq-modal-trigger:hover .faq-modal-q,
+.faq-modal-trigger[aria-expanded="true"] .faq-modal-q {
+  color: #9c6e26 !important;
+}
+
+.faq-modal-icon {
+  font-size: 1.4rem !important;
+  font-weight: 600 !important;
+  color: #7a561e !important;
+  flex-shrink: 0 !important;
+  line-height: 1 !important;
+  transition: transform 0.25s ease !important;
+}
+
+.faq-modal-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+}
+
+.faq-modal-answer.is-open {
+  max-height: 400px;
+}
+
+.faq-modal-ans-inner {
+  padding: 0.5rem 0 0.5rem !important;
+  font-family: var(--font-display);
+  font-size: 0.98rem !important;
+  font-weight: 400 !important;
+  color: #4a3828 !important;
+  line-height: 1.65 !important;
+}
+
+.faq-modal-ans-inner p {
+  margin: 0 !important;
+}
+
+/* ── MOBILE REFINEMENTS (< 1025px) ── */
+@media (max-width: 1024px) {
+  .faq-section {
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 3rem 0 !important;
+    overflow: hidden !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-image: var(--faq-bg-mobile, var(--faq-bg)) !important;
+  }
+  .faq-layout {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  .faq-left-placeholder {
+    display: none !important;
+  }
+  .faq-bubbles-container {
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+  .faq-snip-grid {
+    gap: 1.5rem !important;
+  }
+  figure.snip1157 {
+    max-width: 100% !important;
+  }
+  figure.snip1157 blockquote.snip-bubble-box {
+    padding: 18px 24px 20px 24px !important;
+  }
+  .snip-cat-title {
+    font-size: 1.15rem !important;
+  }
+  .faq-modal-card {
+    width: 95vw !important;
+    max-height: 80vh !important;
+    border-radius: 18px !important;
+  }
+  .faq-modal-header {
+    padding: 1.5rem 1.5rem 0.85rem !important;
+  }
+  .faq-modal-body {
+    padding: 1.25rem 1.5rem 1.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  figure.snip1157 blockquote.snip-bubble-box {
+    padding: 16px 20px 18px 20px !important;
+  }
+  .snip-cat-title {
+    font-size: 1.05rem !important;
+  }
+}

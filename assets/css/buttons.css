@@ -1,0 +1,65 @@
+/* ── BUTTONS ─────────────────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;font-family:var(--font-ui);font-size:.7rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;padding:.9rem 2.2rem;transition:all .35s var(--ease);cursor:pointer;white-space:nowrap;border-radius:var(--r-btn);position:relative}
+.btn-primary{background:var(--terra);color:#fff;box-shadow:0 4px 20px rgba(184,98,63,.28);font-weight:600;letter-spacing:.18em}
+.btn-primary:hover,
+.btn-primary:focus-visible{background:var(--terra-dark);box-shadow:0 8px 32px rgba(184,98,63,.42);transform:translateY(-2px)}
+.btn-sm{padding:.72rem 1.8rem;font-size:.64rem;letter-spacing:.16em}
+.btn-outline{background:transparent;color:var(--ink);border:1px solid var(--border);box-shadow:var(--shadow-card)}
+.btn-outline:hover,
+.btn-outline:focus-visible{border-color:var(--terra);color:var(--terra);transform:translateY(-2px);box-shadow:var(--shadow-lift)}
+.btn-outline--light{color:#fff;border:1px solid rgba(255,255,255,.55);background:transparent}
+.btn-outline--light:hover,
+.btn-outline--light:focus-visible{background:rgba(255,255,255,.12);border-color:#fff;color:#fff}
+.btn-ghost{background:transparent;color:var(--terra);padding-left:0;padding-right:0;font-size:.66rem;letter-spacing:.22em;border-radius:0}
+.btn-ghost::after{content:'';display:block;position:absolute;bottom:.65rem;left:0;right:100%;height:1px;background:var(--terra);transition:right .4s var(--ease)}
+.btn-ghost:hover::after,
+.btn-ghost:focus-visible::after{right:0}
+.btn-light{background:#fff;color:var(--ink);box-shadow:var(--shadow-card)}
+.btn-light:hover,
+.btn-light:focus-visible{background:var(--ivory-warm);transform:translateY(-2px);box-shadow:var(--shadow-lift)}
+
+/* Button active press feedback */
+.btn{
+  transition:
+    background .28s var(--ease),
+    box-shadow .28s var(--ease),
+    transform  .22s var(--ease-spring),
+    border-color .22s var(--ease),
+    color .22s var(--ease);
+}
+body .btn:active{
+  transform:translateY(1px) scale(.985);
+  box-shadow:none;
+  transition-duration:.08s;
+}
+body .btn-primary:active{background:var(--terra-dark)}
+body .btn-outline:active{background:var(--parchment)}
+
+/* ── TRAD TAGS ───────────────────────────────────────────── */
+.trad-tag {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: .62rem;
+  font-weight: 300;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: .4rem 1.1rem;
+  border: 1px solid var(--border);
+  color: var(--ink-muted);
+  border-radius: var(--r-pill);
+  background: var(--ivory);
+  transition:
+    background .25s var(--ease),
+    border-color .25s var(--ease),
+    color .25s var(--ease),
+    transform .22s var(--ease-spring),
+    box-shadow .22s var(--ease);
+}
+.trad-tag:hover,
+.trad-tag:focus-visible {
+  border-color: var(--terra);
+  color: var(--terra);
+  background: var(--terra-soft);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(184,98,63,.14);
+}

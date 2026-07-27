@@ -1,0 +1,743 @@
+/* ── FOUNDERS ────────────────────────────────────────────── */
+.founders-section{padding:var(--section-py) 0}
+.founders-header{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:5rem;border-bottom:1px solid var(--border);padding-bottom:4rem}
+.founders-header-left .display-h2{margin-top:1rem}
+.founders-header-right{font-family:var(--font-display);font-size:1.12rem;font-weight:300;color:var(--ink-muted);line-height:1.85}
+.founders-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.founder-card{appearance:none;-webkit-appearance:none;border:none;background:none;text-align:left;font:inherit;color:inherit;cursor:pointer;padding:0;width:100%;display:block;position:relative;border-radius:var(--r-card);overflow:hidden;aspect-ratio:3/4;box-shadow:var(--shadow-card);opacity:1}
+.founder-card:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:var(--r-card)}
+.founder-card-image{position:absolute;inset:0;background:linear-gradient(150deg,var(--parchment),var(--parchment-deep))}
+.founder-card-image img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .8s var(--ease),filter .5s var(--ease)}
+.founder-card-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,var(--parchment),var(--parchment-deep));transition:filter .5s var(--ease)}
+.founder-placeholder-halo{width:140px;height:140px;border-radius:50%;border:1px solid rgba(196,144,42,.25);display:flex;align-items:center;justify-content:center;position:relative}
+.founder-placeholder-halo::before{content:'';position:absolute;inset:-14px;border-radius:50%;border:1px solid rgba(196,144,42,.12)}
+.founder-placeholder-initial{font-family:var(--font-display);font-size:4rem;font-weight:300;font-style:italic;color:var(--terra);opacity:.4;line-height:1}
+
+/* Placeholder body — visible content below the halo */
+.founder-placeholder-body{
+  display:none;
+}
+.founder-placeholder-origin{
+  font-family:var(--font-ui);
+  font-size:.58rem;font-weight:400;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--terra);
+  opacity:.75;
+}
+/* Bio preview text — clamp to 3 lines */
+.founder-placeholder-bio{
+  font-family:var(--font-display);
+  font-size:.9rem;font-weight:300;
+  color:var(--ink-muted);
+  line-height:1.65;
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+  pointer-events:none;
+}
+/* Tags row in placeholder */
+.founder-placeholder-tags{
+  display:flex;flex-wrap:wrap;gap:.35rem;
+  pointer-events:none;
+}
+.founder-placeholder-tags .trad-tag{
+  font-size:.52rem;
+  padding:.28rem .75rem;
+  background:rgba(184,98,63,.06);
+  border-color:rgba(184,98,63,.18);
+}
+.founder-card-name-strip{position:absolute;bottom:0;left:0;right:0;padding:1.4rem 1.8rem 1.8rem;background:linear-gradient(to top,rgba(26,22,18,.72) 0%,transparent 100%);z-index:2;transition:opacity .4s var(--ease)}
+.founder-strip-name{font-family:var(--font-display);font-size:1.6rem;font-weight:300;color:#fff;line-height:1.1;letter-spacing:.01em}
+.founder-strip-name em{font-style:italic;color:var(--blush)}
+.founder-strip-role{font-family:var(--font-ui);font-size:.6rem;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:.35rem;display:block}
+.founder-card-overlay{position:absolute;inset:0;background:rgba(26,22,18,.78);z-index:3;display:flex;flex-direction:column;justify-content:flex-end;padding:2.5rem 2rem;opacity:0;transform:translateY(12px);transition:opacity .45s var(--ease-soft),transform .45s var(--ease-soft);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
+.founder-overlay-name{font-family:var(--font-display);font-size:1.8rem;font-weight:300;color:#fff;line-height:1.1;margin-bottom:.35rem}
+.founder-overlay-name em{font-style:italic;color:var(--blush)}
+.founder-overlay-role{font-family:var(--font-ui);font-size:.6rem;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--blush);margin-bottom:1.2rem;display:block}
+.founder-overlay-bio{font-family:var(--font-display);font-size:.95rem;font-weight:300;color:rgba(255,255,255,.75);line-height:1.75;margin-bottom:1.4rem}
+.founder-overlay-origin{font-family:var(--font-ui);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:1.2rem;display:block}
+.founder-overlay-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.founder-overlay-tags .trad-tag{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.65)}
+.founder-overlay-tags .trad-tag:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.35);color:#fff;transform:none}
+.founder-card-hover-hint{position:absolute;top:1.2rem;right:1.2rem;z-index:4;background:rgba(26,22,18,.65);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:.35rem .9rem;font-family:var(--font-ui);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75);opacity:0;transform:translateY(-4px);transition:opacity .3s var(--ease),transform .3s var(--ease);pointer-events:none}
+.founder-card:hover .founder-card-hover-hint,
+.founder-card:focus-visible .founder-card-hover-hint{opacity:1;transform:none}
+
+/* Asymmetric founders layout */
+.founders-asymgrid{display:grid;grid-template-columns:1.5fr 1fr;gap:1.8rem;align-items:stretch;margin-top:3rem}
+.founder-card--primary{aspect-ratio:unset;height:100%;border-radius:var(--r-card);overflow:hidden;background:var(--parchment);box-shadow:var(--shadow-card);cursor:pointer;position:relative}
+.founders-secondary-col{display:flex;flex-direction:column;gap:1.5rem;height:100%}
+.founder-card--secondary{aspect-ratio:unset;flex:1 1 0;min-height:240px;border-radius:var(--r-card);overflow:hidden;background:var(--parchment);box-shadow:var(--shadow-card);cursor:pointer;position:relative}
+.founder-card--primary .founder-card-image,
+.founder-card--secondary .founder-card-image{position:absolute;inset:0;background:linear-gradient(150deg,var(--parchment),var(--parchment-deep))}
+.founder-card--primary .founder-card-image img,
+.founder-card--secondary .founder-card-image img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .8s var(--ease),filter .5s var(--ease)}
+/* Hover reveal REMOVED — overlay always hidden, name strip always visible */
+.founder-card--primary .founder-card-image img,
+.founder-card--secondary .founder-card-image img{transition:transform .8s var(--ease)}
+.founder-card--primary:hover .founder-card-image img,
+.founder-card--secondary:hover .founder-card-image img{transform:scale(1.03)}
+.founder-card--primary .founder-card-placeholder,
+.founder-card--secondary .founder-card-placeholder{transition:none}
+.founder-card--primary .founder-card-name-strip,
+.founder-card--secondary .founder-card-name-strip{opacity:1}
+.founder-card--primary .founder-card-overlay,
+.founder-card--secondary .founder-card-overlay{opacity:0;pointer-events:none}
+.founder-card-hover-hint{display:none}
+.founder-card--primary .founder-card-placeholder,
+.founder-card--secondary .founder-card-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,var(--parchment),var(--parchment-deep))}
+.founder-card--primary .founder-card-name-strip,
+.founder-card--secondary .founder-card-name-strip{position:absolute;bottom:0;left:0;right:0;padding:1.4rem 1.8rem 1.8rem;background:linear-gradient(to top,rgba(26,22,18,.72) 0%,transparent 100%);z-index:2;opacity:1}
+.founder-card--primary .founder-card-overlay,
+.founder-card--secondary .founder-card-overlay{display:none}
+
+
+/* ── 5. FOUNDER CARDS — richer hover with overlay slide-up ── */
+.founder-card{
+  transition:
+    transform .42s var(--ease-soft),
+    box-shadow .42s var(--ease-soft);
+}
+/* Hint badge animates in on hover */
+.founder-card-hover-hint{
+  transition:
+    opacity .28s var(--ease),
+    transform .28s var(--ease-spring);
+}
+/* Name strip fades smoothly */
+.founder-card-name-strip{
+  transition:opacity .38s var(--ease-soft);
+}
+/* Overlay slides from below — spring feel */
+.founder-card-overlay,
+.founder-card--primary .founder-card-overlay,
+.founder-card--secondary .founder-card-overlay{
+  transition:
+    opacity .38s var(--ease-soft),
+    transform .4s var(--ease-spring);
+}
+
+/* ── 15. FOUNDER PLACEHOLDER (no hover reveal) ─────── */
+.founder-card-placeholder{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(150deg,var(--parchment),var(--parchment-deep));
+}
+.founder-placeholder-bio{ display:none; }
+
+/* ── 16. FOUNDER TAGS in modal — stagger ───────────────────── */
+.sk-founder-modal-tags .trad-tag{
+  opacity:0;
+  transform:translateY(6px);
+  animation:tag-appear .35s var(--ease-soft) forwards;
+}
+.sk-founder-modal.is-open .sk-founder-modal-tags .trad-tag:nth-child(1){animation-delay:.15s}
+.sk-founder-modal.is-open .sk-founder-modal-tags .trad-tag:nth-child(2){animation-delay:.22s}
+.sk-founder-modal.is-open .sk-founder-modal-tags .trad-tag:nth-child(3){animation-delay:.29s}
+.sk-founder-modal.is-open .sk-founder-modal-tags .trad-tag:nth-child(4){animation-delay:.36s}
+.sk-founder-modal.is-open .sk-founder-modal-tags .trad-tag:nth-child(5){animation-delay:.43s}
+
+@keyframes tag-appear{
+  to{opacity:1;transform:none}
+}
+
+/* ══════════════════════════════════════════════════════════
+   TEAM-LIST POPUP MODAL — photo card grid (v9.0)
+   Triggered by the "Meet the Team" pill on the primary card.
+   Final view — no click-through to individual profiles.
+   ══════════════════════════════════════════════════════════ */
+
+/* Wider modal box for the grid layout */
+body .sk-team-list-box {
+  max-width: 860px;
+  max-height: 88vh;
+  overflow-y: auto;
+  padding: 0;
+  border-radius: var(--r-card);
+}
+
+/* Header band */
+.sk-team-list-header {
+  padding: 2.8rem 2.8rem 2rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.sk-team-list-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--ink);
+  margin: .5rem 0 .6rem;
+}
+
+.sk-team-list-sub {
+  font-family: var(--font-display);
+  font-size: .97rem;
+  font-weight: 300;
+  color: var(--ink-muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Card grid inside the popup */
+.sk-team-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.6rem;
+  padding: 2.4rem 2.8rem;
+}
+
+/* Individual member card */
+.sk-team-member-card {
+  background: var(--ivory);
+  border: 1px solid var(--border-light);
+  border-radius: var(--r-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 16px rgba(26,22,18,.07);
+  transition: box-shadow .3s var(--ease), transform .3s var(--ease);
+}
+
+.sk-team-member-card:hover {
+  box-shadow: 0 8px 32px rgba(26,22,18,.13);
+  transform: translateY(-3px);
+}
+
+/* Photo area — portrait aspect */
+.sk-tmc-photo {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: var(--parchment);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sk-tmc-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform .5s var(--ease);
+}
+
+.sk-team-member-card:hover .sk-tmc-photo img {
+  transform: scale(1.04);
+}
+
+/* Initial placeholder when no photo */
+.sk-tmc-initial {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(150deg, var(--parchment), var(--parchment-deep));
+}
+
+.sk-tmc-initial span {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--terra);
+  opacity: .35;
+}
+
+/* Text body */
+.sk-tmc-body {
+  padding: 1rem 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  flex: 1;
+}
+
+.sk-tmc-name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin: 0;
+}
+
+.sk-tmc-role {
+  font-family: var(--font-ui);
+  font-size: .6rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--terra);
+  font-weight: 400;
+  margin: 0;
+}
+
+.sk-tmc-origin {
+  font-family: var(--font-ui);
+  font-size: .6rem;
+  letter-spacing: .1em;
+  color: var(--ink-muted);
+  margin: .1rem 0 0;
+}
+
+.sk-tmc-bio {
+  font-family: var(--font-display);
+  font-size: .88rem;
+  font-weight: 300;
+  color: var(--ink-muted);
+  line-height: 1.65;
+  margin: .4rem 0 0;
+}
+
+.sk-tmc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+  margin-top: .6rem;
+}
+
+/* Footer CTA */
+.sk-team-list-footer {
+  padding: 1.6rem 2.8rem 2.4rem;
+  text-align: center;
+  border-top: 1px solid var(--border-light);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .sk-team-list-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1.6rem 1.4rem;
+  }
+  .sk-team-list-header {
+    padding: 2rem 1.4rem 1.4rem;
+  }
+  .sk-team-list-footer {
+    padding: 1.2rem 1.4rem 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .sk-team-list-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TEAM MODAL v2 — Redesigned member cards grid
+   Replaces the old generic "Our Team" info card popup.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Wider, taller modal box — flex column so only the grid scrolls */
+body .sk-team-modal-v2-box {
+  max-width: 980px;
+  height: 90vh;
+  max-height: 90vh;
+  overflow: hidden;
+  padding: 0;
+  border-radius: var(--r-card);
+  display: flex;
+  flex-direction: column;
+  position: relative; /* anchors the absolute close button */
+}
+
+/* ── Founders slider: full rebuild for mobile ── */
+@media (max-width: 860px) {
+  /* Section */
+  body .sk-collective-founders-section {
+    padding: 2rem 0 3rem;
+  }
+  body .sk-collective-section-eyebrow {
+    padding: 0 1.25rem;
+    margin-bottom: 1.2rem;
+  }
+
+  /* Grid: single column, no gaps */
+  body .sk-fts {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    min-height: unset;
+  }
+
+  /* Photo col: first, full width */
+  body .sk-fts-col--photo {
+    order: 1;
+    width: 100%;
+    position: relative;
+  }
+  body .sk-fts-photo-stage {
+    width: 100%;
+    min-height: 300px;
+    max-height: 420px;
+    aspect-ratio: 4 / 3;
+    border-radius: var(--r-card);
+    overflow: hidden;
+    position: relative;
+  }
+  body .sk-fts-photo-frame {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+  }
+  body .sk-fts-photo-frame.is-active {
+    opacity: 1;
+  }
+  body .sk-fts-photo-badge {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  /* Text col: second, full width with generous padding */
+  body .sk-fts-col--text {
+    order: 2;
+    width: 100%;
+    padding: 1.6rem 1.25rem 0;
+  }
+  body .sk-fts-text-stage {
+    position: relative;
+    min-height: 290px;
+    overflow: hidden;
+  }
+  body .sk-fts-country {
+    font-size: 0.65rem;
+    margin-bottom: 0.4rem;
+  }
+  body .sk-fts-name {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+    margin-bottom: 0.3rem;
+    line-height: 1.15;
+  }
+  body .sk-fts-role {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.9rem;
+  }
+  body .sk-fts-bio {
+    font-size: 0.93rem;
+    line-height: 1.7;
+    color: var(--ink-muted);
+    margin-bottom: 1rem;
+  }
+  body .sk-fts-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0;
+  }
+
+  /* Thumbnails: third, centred row */
+  body .sk-fts-col--meta {
+    order: 3;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem 1.25rem 0;
+    gap: 0.6rem;
+  }
+  body .sk-fts-thumbs {
+    display: flex;
+    flex-direction: row;
+    gap: 0.6rem;
+    align-items: center;
+  }
+  body .sk-fts-thumb {
+    width: 44px;
+    height: 56px;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  body .sk-fts-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  body .sk-fts-count-wrap,
+  body .sk-fts-nav {
+    display: none;
+  }
+  body .sk-fts-meta-top { display: none; }
+}
+
+/* ── Swipe hint ── */
+@media (max-width: 860px) {
+  body .sk-fts-swipe-hint {
+    display: flex;
+  }
+}
+@media (min-width: 861px) {
+  body .sk-fts-swipe-hint { display: none; }
+}
+
+/* ── Team grid ── */
+@media (max-width: 860px) {
+  body .sk-collective-grid--team {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  body .sk-collective-card {
+    aspect-ratio: 3 / 4;
+  }
+  body .sk-collective-name--strip {
+    font-size: 0.8rem;
+  }
+  body .sk-collective-role--strip {
+    font-size: 0.5rem;
+  }
+}
+@media (max-width: 400px) {
+  body .sk-collective-grid--team {
+    grid-template-columns: 1fr;
+  }
+  body .sk-collective-card {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* ── FOUNDERS SECTION — homepage ── */
+body .founders-section {
+  position: relative;
+  overflow: hidden;
+  background-size: 250%;
+  background-position: center center; /* center the pattern symmetrically */
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  padding: var(--section-py) 0;
+  min-height: 600px;
+}
+
+body .founders-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(251, 250, 246, 0.85); /* Full luxurious parchment overlay */
+  z-index: 0;
+  pointer-events: none;
+}
+
+body .founders-section .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── SPLIT GRID — text left, arch image right ── */
+body .founders-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+body .founders-mobile-title-wrap {
+  margin-bottom: 2.2rem;
+}
+
+/* ── ARCH COLUMN ── */
+body .founders-arch-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body .founders-arch-link {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  text-decoration: none;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+body .founders-arch-frame {
+  width: 420px;
+  height: 550px;
+
+  /* ARCH SHAPE */
+  border-radius: 50% 50% 0 0 / 20% 20% 0 0;
+
+  /* FRAME SPACING */
+  padding: 14px;
+
+  /* GOLD FRAME */
+  background: rgba(212, 175, 106, 0.18);
+  border: 6px solid rgba(212, 175, 106, 0.75);
+
+  /* MULTI-LAYER DEPTH */
+  box-shadow:
+    inset 0 0 0 3px rgba(212, 175, 106, 0.35),
+    inset 0 0 0 6px rgba(212, 175, 106, 0.12),
+    0 0 0 10px rgba(212, 175, 106, 0.10),
+    0 0 0 20px rgba(212, 175, 106, 0.05),
+    0 24px 60px rgba(26, 22, 18, 0.18);
+
+  overflow: hidden;
+  position: relative;
+}
+
+body .founders-arch-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  object-fit: cover;
+  object-position: center center;
+
+  /* SAME ARCH SHAPE AS FRAME */
+  border-radius: 50% 50% 0 0 / 20% 20% 0 0;
+
+  /* INNER GOLD BORDER */
+  border: 4px solid rgba(212, 175, 106, 0.55);
+
+  box-sizing: border-box;
+
+  transition: transform 0.8s var(--ease);
+}
+
+body .founders-arch-link:hover .founders-arch-img {
+  transform: scale(1.04);
+}
+
+body .founders-arch-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(150deg, var(--parchment), var(--parchment-deep));
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  body .founders-section {
+    padding: 3.5rem 0 3rem;
+    background-image: var(--founders-bg-mobile, var(--founders-bg)) !important;
+  }
+
+  body .founders-split-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  body .founders-editorial-col {
+    display: contents;
+  }
+  body .founders-mobile-title-wrap {
+    order: 1;
+    text-align: left;
+    margin-bottom: 1.2rem;
+  }
+  body .founders-arch-col {
+    order: 2;
+    margin-top: 0;
+  }
+  body .founders-mobile-info-wrap {
+    order: 3;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body .founders-arch-link {
+    max-width: 320px;
+    margin: 0 auto;
+    margin-top: 0;
+  }
+  body .founders-arch-frame {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+  }
+  body .founders-mobile-info-wrap .btn {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  body .founders-arch-link {
+    max-width: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+  body .founders-arch-link {
+    max-width: 220px;
+  }
+}
+
+body .sk-collective-founders-section { padding: 0.5rem 0 4rem; }
+body .sk-collective-section-eyebrow  { margin-bottom: 1rem; }
+
+body .founders-editorial-lead {
+  font-family: var(--font-ui);
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--ink);
+  margin-bottom: 1.8rem;
+}
+
+body .founders-editorial-body {
+  font-family: var(--font-ui);
+  font-size: clamp(1.05rem, 1.3vw, 1.15rem);
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--ink-muted);
+  margin-bottom: 2.2rem;
+}
+
+@media (max-width: 900px) {
+  /* Stack header 2-col → 1-col */
+  body .founders-header {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    margin-bottom: 3rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  /* Stack asymmetric card grid → single column */
+  body .founders-asymgrid {
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem !important;
+  }
+
+  /* Secondary cards row — side by side horizontally */
+  body .founders-secondary-col {
+    flex-direction: row !important;
+    gap: 1rem !important;
+  }
+  body .founder-card--secondary {
+    min-height: 180px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body .founders-section {
+    background-size: 120vw !important; /* fluid vw instead of hardcoded 1400px */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Stack secondary cards vertically on very small screens */
+  body .founders-secondary-col {
+    flex-direction: column !important;
+  }
+  body .founder-card--secondary {
+    min-height: 160px !important;
+  }
+}
+

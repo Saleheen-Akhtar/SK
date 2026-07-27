@@ -1,0 +1,12 @@
+/* ── WP ADMIN BAR OFFSET FOR FIXED HEADERS ── */
+@media (min-width: 901px) {
+  .admin-bar .sk-sidenav {
+    top: 32px;
+  }
+  .admin-bar .sk-hamburger {
+    top: calc(32px + 0.75rem);
+  }
+  .admin-bar .sk-progress {
+    top: 32px;
+  }
+}

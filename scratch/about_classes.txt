@@ -1,0 +1,99 @@
+
+Selector .av16-heading (found at index 14186):
+.av16-heading,
+body .av16-bridge,
+body .av16-body,
+body .av16-welcome{
+  max-width: 100%;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* ④ Org descriptor — top row */
+.av16-org-desc {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.2vw, 1.9rem);
+  font-weight: 400;
+  font-style: italic;
+  color: #000000; /* Black color for the descriptor text */
+  margin: 0;
+  line-heigh
+
+Selector .av16-org-desc (found at index 14165):
+.av16-org-desc,
+body .av16-heading,
+body .av16-bridge,
+body .av16-body,
+body .av16-welcome{
+  max-width: 100%;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* ④ Org descriptor — top row */
+.av16-org-desc {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.2vw, 1.9rem);
+  font-weight: 400;
+  font-style: italic;
+  color: #000000; /* Black color for the descriptor text */
+  ma
+
+Selector .av16-bridge (found at index 14206):
+.av16-bridge,
+body .av16-body,
+body .av16-welcome{
+  max-width: 100%;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* ④ Org descriptor — top row */
+.av16-org-desc {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.2vw, 1.9rem);
+  font-weight: 400;
+  font-style: italic;
+  color: #000000; /* Black color for the descriptor text */
+  margin: 0;
+  line-height: 1.35;
+  letter-sp
+
+Selector .av16-body (found at index 14225):
+.av16-body,
+body .av16-welcome{
+  max-width: 100%;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* ④ Org descriptor — top row */
+.av16-org-desc {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.2vw, 1.9rem);
+  font-weight: 400;
+  font-style: italic;
+  color: #000000; /* Black color for the descriptor text */
+  margin: 0;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  w
+
+Selector .av16-welcome (found at index 14242):
+.av16-welcome{
+  max-width: 100%;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* ④ Org descriptor — top row */
+.av16-org-desc {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.2vw, 1.9rem);
+  font-weight: 400;
+  font-style: italic;
+  color: #000000; /* Black color for the descriptor text */
+  margin: 0;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  white-space: norma

@@ -1,0 +1,1747 @@
+/* ── CTA / CONTACT ───────────────────────────────────────── */
+/*
+ * Redesigned v2: full-bleed background image (set via ACF/Elementor or
+ * WordPress Customizer as background-image on .cta-section or its parent).
+ * Section uses --ivory fallback so it degrades gracefully without the image.
+ * The overlay gives warm-golden tint + readability over the photo.
+ */
+.cta-section {
+  background: var(--cta-bg, var(--ivory-warm));
+  background-image: var(--cta-bg, none);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 0;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  overflow: hidden;
+}
+/* No overlay */
+.cta-section::before { display: none; }
+.cta-section > * { position: relative; z-index: 1; width: 100%; }
+/* .wrap inside cta uses standard max-width:1360px — same as other sections */
+.cta-section .wrap {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 4.5rem;
+  padding-bottom: 2rem;
+  width: 100%;
+  min-height: 0;
+}
+
+/* Layout — single column for mobile/tablet, 3-column grid for desktop */
+.cta-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 3vw, 3.5rem);
+  align-items: flex-start;
+  width: 100%;
+  min-height: 0;
+}
+.cta-text-col {
+  position: relative;
+  z-index: 2;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+}
+/* Form col: top offset = space for celestial arch art at top of bg image */
+.cta-form-col {
+  padding-top: clamp(1.5rem, 4vw, 3.5rem);
+  padding-bottom: 0;
+  width: 100%;
+}
+
+@media (min-width: 1025px) {
+  .cta-section {
+    min-height: 100vh;
+    height: auto;
+    overflow: hidden;
+  }
+  .cta-section .wrap {
+    padding-top: 4rem;
+    padding-bottom: 1.5rem;
+    align-items: flex-start;
+  }
+  .cta-layout {
+    grid-template-columns: 1.15fr 1.5fr 1.15fr;
+    align-items: start;
+    gap: 2.5rem;
+  }
+  .cta-text-col {
+    align-self: start;
+    padding-top: 16rem;
+    padding-left: 0 !important; /* Shifts title and eyebrow further towards the left */
+    max-width: 350px;
+    grid-column: 1;
+    text-align: left;
+  }
+  .cta-form-col {
+    align-self: start;
+    padding-top: 10rem; /* Brings the form further down */
+    grid-column: 2;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+/* Tablet & Mobile Layout Refinements (< 1025px) */
+@media (max-width: 1024px) {
+  .cta-section {
+    background-image: var(--cta-bg-mobile, var(--cta-bg, none)) !important;
+    background-position: center top !important;
+    background-size: cover !important;
+    min-height: auto !important;
+    padding: 2.5rem 0 3.5rem !important;
+  }
+  .cta-section .wrap {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  .cta-layout {
+    grid-template-columns: 1fr !important;
+    gap: 1.8rem !important;
+  }
+  .cta-text-col {
+    text-align: center !important;
+    padding-top: 1rem !important;
+    padding-left: 0 !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+  .cta-divider {
+    justify-content: center !important;
+    margin: 0.8rem auto 0 !important;
+  }
+  .cta-form-col {
+    padding-top: 0.5rem !important;
+    max-width: 540px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+}
+
+/* Custom Consent Checkbox Styling — Flush Left Alignment across all screen sizes */
+body .forminator-field-consent,
+body .forminator-checkbox,
+body .forminator-field-checkbox {
+    margin-top: 0.35rem !important;
+    margin-bottom: 0.65rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    display: block !important;
+}
+
+body .forminator-field-consent .forminator-label {
+    margin-bottom: 0.35rem !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+body .forminator-checkbox label,
+body .cta-form-col label.forminator-checkbox-label,
+body .forminator-field-consent label {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 0.65rem !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    font-family: var(--font-ui) !important;
+    font-size: 0.85rem !important;
+    font-weight: 400 !important;
+    color: var(--ink-mid) !important;
+    line-height: 1.4 !important;
+    cursor: pointer !important;
+    text-transform: none !important;
+    letter-spacing: 0.01em !important;
+}
+
+body .forminator-checkbox input[type="checkbox"],
+body .cta-form-col input[type="checkbox"],
+body .forminator-field-consent input[type="checkbox"] {
+    appearance: checkbox !important;
+    -webkit-appearance: checkbox !important;
+    width: 17px !important;
+    height: 17px !important;
+    accent-color: var(--terra) !important;
+    cursor: pointer !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex-shrink: 0 !important;
+}
+
+body .forminator-checkbox label a,
+body .cta-form-col label.forminator-checkbox-label a,
+body .forminator-field-consent label a,
+body label a.sk-privacy-link {
+    color: var(--terra-dark) !important;
+    background: rgba(184, 98, 63, 0.12) !important;
+    padding: 2px 8px !important;
+    border-radius: 4px !important;
+    border: 1px solid rgba(184, 98, 63, 0.32) !important;
+    font-weight: 600 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 2px !important;
+    display: inline-block !important;
+    line-height: 1.2 !important;
+    transition: all 0.25s ease !important;
+}
+
+body .forminator-checkbox label a:hover,
+body .cta-form-col label.forminator-checkbox-label a:hover,
+body .forminator-field-consent label a:hover,
+body label a.sk-privacy-link:hover {
+    background: rgba(184, 98, 63, 0.24) !important;
+    border-color: var(--terra) !important;
+    box-shadow: 0 2px 8px rgba(184, 98, 63, 0.18) !important;
+    color: var(--terra) !important;
+}
+
+/* Eyebrow — terra, no line prefix */
+.cta-eyebrow-row { margin-bottom: .5rem; }
+.cta-eyebrow-label {
+  font-family: var(--font-ui);
+  font-size: var(--label-size-floor);
+  font-weight: 600;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--terra);
+  display: inline-block;
+}
+body .cta-section .cta-eyebrow-label::before { display: none; }
+
+/* Heading — matches Image 2: large serif, ~5–6rem, ink + italic terra em */
+.cta-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 4.2vw, 4.2rem);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: .95;
+  letter-spacing: -.03em;
+  margin-bottom: 0;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+.cta-h2 em {
+  font-style: italic;
+  color: var(--terra);
+  font-weight: 700;
+  padding-right: 0.06em;
+}
+
+/* Decorative divider — hand-drawn brush stroke + small 4-point star */
+.cta-divider {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin: 1rem 0 1.2rem;
+}
+.cta-divider__brush {
+  display: block;
+  width: 80px;
+  height: 8px;
+}
+
+/* Sub-copy — matches Image 2: ~1rem, light weight, ink-muted, 2 lines */
+.cta-sub {
+  font-family: var(--font-ui);
+  font-size: var(--body-size-floor);
+  font-weight: 300;
+  color: var(--ink-mid);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 38ch;
+}
+
+/* Contact info links — icon circles + text */
+.sk-contact-info-links {
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.sk-info-link {
+  font-family: var(--font-ui);
+  font-size: var(--label-size-floor);
+  font-weight: 400;
+  letter-spacing: .02em;
+  color: var(--ink-mid);
+  text-decoration: none;
+  transition: color .25s, opacity .25s;
+  opacity: .9;
+}
+.sk-info-link--icon {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+}
+.sk-info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(184,98,63,.35);
+  color: var(--terra);
+  flex-shrink: 0;
+  transition: background .25s, border-color .25s;
+}
+.sk-info-link--icon:hover { color: var(--terra); opacity: 1; }
+.sk-info-link--icon:hover .sk-info-icon {
+  background: rgba(184,98,63,.08);
+  border-color: var(--terra);
+}
+
+/* .display-h2--light: lightweight h2 variant — keep for other sections */
+.display-h2--light{font-family:var(--font-display);font-size:clamp(2.4rem,4vw,3.8rem);font-weight:300;line-height:1.08;letter-spacing:-.005em}
+.display-h2--light em{font-style:italic;color:var(--blush)}
+/* Map block in CTA */
+.cta-map-block{
+  padding-top:2.5rem;
+  border-top:1px solid rgba(255,255,255,.06);
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+}
+.cta-map-frame{
+  position:relative;
+  width:100%;
+  height:240px;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid rgba(212,175,106,.18);
+  box-shadow:0 4px 24px rgba(0,0,0,.35),inset 0 0 0 1px rgba(255,255,255,.04);
+}
+.cta-map-frame iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  filter:sepia(20%) saturate(80%) brightness(.88) contrast(1.05);
+  transition:filter .35s;
+}
+.cta-map-frame:hover iframe{
+  filter:sepia(8%) saturate(95%) brightness(.95) contrast(1.02);
+}
+.cta-map-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:.55rem;
+  font-family:var(--font-ui);
+  font-size:var(--label-size-floor);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.28);
+}
+.cta-map-pin{
+  color:rgba(212,175,106,.65);
+  display:flex;
+  align-items:center;
+}
+.cta-map-divider{
+  color:rgba(255,255,255,.14);
+  margin:0 .1rem;
+}
+
+/* ── Contact Globe ── */
+.sk-contact-globe-wrap {
+  margin-top: 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  /* Subtle gold border matching dark section palette */
+  border: 1px solid rgba(212,175,106,0.12);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.45), inset 0 0 0 1px rgba(212,175,106,0.06);
+  background: radial-gradient(ellipse 80% 70% at 50% 60%, rgba(196,144,42,0.06) 0%, transparent 70%),
+              #0d0b09;
+}
+.sk-contact-globe-wrap canvas {
+  display: block;
+  width: 100%;
+  cursor: grab;
+}
+.sk-contact-globe-wrap canvas:active {
+  cursor: grabbing;
+}
+/* Mobile: full width */
+@media (max-width: 900px) {
+  .sk-contact-globe-wrap {
+    max-width: 100%;
+  }
+}
+
+/* ── CONTACT FORM ─────────────────────────────────────────── */
+.sk-contact-fallback-form{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:2.8rem 2.4rem}
+.sk-form-title{font-family:var(--font-ui);font-size:var(--label-size-floor);letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:2rem;display:block}
+.sk-form-row{margin-bottom:1.2rem}
+.sk-form-row-double{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.2rem}
+.sk-contact-fallback-form label{display:block;font-family:var(--font-ui);font-size:var(--label-size-floor);font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:.5rem}
+.sk-contact-fallback-form input,
+.sk-contact-fallback-form textarea,
+.sk-contact-fallback-form select{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:rgba(255,255,255,.82);font-family:var(--font-display);font-size:1rem;font-weight:300;padding:.85rem 1.1rem;outline:none;transition:border-color .3s,background .3s,box-shadow .3s;-webkit-appearance:none}
+.sk-contact-fallback-form input::placeholder,
+.sk-contact-fallback-form textarea::placeholder{color:rgba(255,255,255,.22)}
+.sk-contact-fallback-form input:focus,
+.sk-contact-fallback-form textarea:focus,
+.sk-contact-fallback-form select:focus{border-color:rgba(184,98,63,.5);background:rgba(184,98,63,.07);box-shadow:0 0 0 3px rgba(184,98,63,.12)}
+.sk-contact-fallback-form textarea{min-height:140px;resize:vertical;line-height:1.7}
+.sk-form-select-wrap{position:relative}
+.sk-form-select-wrap::after{content:'↓';position:absolute;right:1.1rem;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.3);font-family:var(--font-ui);font-size:var(--micro-size-floor);pointer-events:none}
+body .sk-form-select-wrap select{cursor:pointer;padding-right:2.5rem;color:rgba(255,255,255,.82);background-color:rgba(255,255,255,.06)}
+body .sk-form-select-wrap select option{background-color:var(--ink-mid);color:rgba(255,255,255,.85)}
+.sk-form-submit{margin-top:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.sk-form-note{font-family:var(--font-display);font-size:.9rem;font-style:italic;color:rgba(255,255,255,.2);line-height:1.5}
+/* Form feedback — success / error zone */
+.sk-form-feedback{
+  font-family:var(--font-ui);
+  font-size:var(--label-size-floor);
+  letter-spacing:.04em;
+  line-height:1.6;
+  padding:0;
+  margin-top:.5rem;
+  width:100%;
+  min-height:0;
+  transition:opacity .3s;
+}
+.sk-form-feedback:empty{display:none}
+.sk-form-feedback--success{
+  color:#7dba8b;
+  padding:.75rem 1rem;
+  background:rgba(125,186,139,.08);
+  border:1px solid rgba(125,186,139,.2);
+  border-radius:10px;
+}
+.sk-form-feedback--error{
+  color:var(--blush);
+  padding:.75rem 1rem;
+  background:rgba(228,189,160,.07);
+  border:1px solid rgba(228,189,160,.18);
+  border-radius:10px;
+}
+.sk-contact-fallback-form .btn,.sk-contact-fallback-form .btn-primary{font-family:var(--font-ui);font-size:var(--label-size-floor);letter-spacing:.2em;text-transform:uppercase;padding:.95rem 2.6rem;border-radius:var(--r-btn);background:var(--terra);color:#fff;border:none;cursor:pointer;transition:background .3s,transform .3s,box-shadow .3s;box-shadow:0 4px 20px rgba(184,98,63,.3);display:inline-flex;align-items:center;gap:.6rem;position:relative;white-space:nowrap}
+.sk-contact-fallback-form .btn span,.sk-contact-fallback-form .btn-primary span{transition:transform .3s var(--ease);display:inline-block}
+.sk-contact-fallback-form .btn:hover,.sk-contact-fallback-form .btn-primary:hover{background:var(--terra-dark);transform:translateY(-2px);box-shadow:0 8px 32px rgba(184,98,63,.38)}
+.sk-contact-fallback-form .btn:hover span,.sk-contact-fallback-form .btn-primary:hover span{transform:translateX(4px)}
+body .sk-contact-fallback-form input.sk-invalid,
+body .sk-contact-fallback-form textarea.sk-invalid,
+body .sk-contact-fallback-form select.sk-invalid{border-color:#c94f4f;background:rgba(201,79,79,.07)}
+.sk-field-error{font-family:var(--font-ui);font-size:var(--label-size-floor);letter-spacing:.1em;color:#e07070;margin-top:.35rem;display:block}
+body .sk-contact-fallback-form input.sk-valid,
+body .sk-contact-fallback-form textarea.sk-valid,
+body .sk-contact-fallback-form select.sk-valid{border-color:rgba(122,149,121,.55)}
+
+/* ── CTA section — add subtle texture ── */
+/* cta-section::after — removed; was adding invisible height below section */
+
+/* ── Stacking cards mobile responsive ── */
+@media(max-width:768px){
+  .founders-asymgrid{min-height:unset}
+}
+@media(max-width:480px){}
+
+
+/* ═══════════════════════════════════════════════════════════
+   MICROINTERACTIONS v10 — Dan Saffer's 4-part framework
+   Trigger → Rules → Feedback → Loops
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── 12. FORM INPUTS — focus ring with spring ─────────────── */
+.sk-contact-fallback-form input,
+.sk-contact-fallback-form textarea,
+.sk-contact-fallback-form select{
+  transition:
+    border-color .28s var(--ease),
+    background .28s var(--ease),
+    box-shadow .28s var(--ease);
+}
+
+/* ── 13. MODAL CLOSE BUTTON — terra primary, spin on hover ── */
+
+/* ── NEWSLETTER SECTION — cinematic asymmetric 2-column Framer Motion-inspired redesign ─── */
+.sk-newsletter-section {
+  padding: 7rem 0 8rem;
+  text-align: left;
+}
+
+.sk-newsletter-card {
+  position: relative;
+  background: linear-gradient(135deg, #120f0c 0%, #080605 100%);
+  border: 1px solid rgba(196, 144, 42, 0.12);
+  border-radius: calc(var(--r-card) + 6px);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  padding: 5.5rem 5rem;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.6s var(--ease), border-color 0.6s var(--ease), box-shadow 0.6s var(--ease);
+}
+
+.sk-newsletter-card:hover {
+  border-color: rgba(196, 144, 42, 0.28);
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Framer Spotlight effect (Hover pointer tracker) */
+.sk-newsletter-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(212, 175, 106, 0.14) 0%,
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.sk-newsletter-card:hover::before {
+  opacity: 1;
+}
+
+/* Shimmering Border Beam Effect */
+.sk-newsletter-border-beam {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 1;
+  border: 1.5px solid transparent;
+  background: linear-gradient(90deg, transparent, rgba(196, 144, 42, 0.35), rgba(228, 189, 160, 0.45), transparent) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  background-size: 200% auto;
+  animation: border-beam-slide 6s linear infinite;
+}
+
+@keyframes border-beam-slide {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* Ethereal background aurora blobs */
+.sk-newsletter-aurora {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.sk-aurora-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  -webkit-filter: blur(80px);
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.sk-aurora-blob--1 {
+  top: -150px;
+  left: -100px;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(196, 144, 42, 0.12) 0%, transparent 70%);
+  animation: aurora-float-1 14s infinite ease-in-out;
+}
+
+.sk-aurora-blob--2 {
+  bottom: -150px;
+  right: -100px;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(184, 98, 63, 0.08) 0%, transparent 70%);
+  animation: aurora-float-2 16s infinite ease-in-out;
+}
+
+@keyframes aurora-float-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, -30px) scale(1.15); }
+}
+
+@keyframes aurora-float-2 {
+  0%, 100% { transform: translate(0, 0) scale(1.1); }
+  50% { transform: translate(-40px, 30px) scale(0.9); }
+}
+
+/* Grid Layout */
+.sk-newsletter-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 5rem;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+}
+
+/* Info Column & Typography */
+.sk-newsletter-col--info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sk-newsletter-badge-wrap {
+  margin-bottom: 1.4rem;
+}
+
+.sk-newsletter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: rgba(196, 144, 42, 0.06);
+  border: 1px solid rgba(196, 144, 42, 0.16);
+  color: var(--gold-light);
+  padding: 0.35rem 0.95rem;
+  border-radius: 100px;
+  font-family: var(--font-ui);
+  font-size: var(--label-size-floor);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.sk-newsletter-badge-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--terra);
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse-badge-dot 2.5s infinite ease-in-out;
+}
+
+@keyframes pulse-badge-dot {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.4); opacity: 1; }
+}
+
+.sk-newsletter-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0 0 1.5rem;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.sk-newsletter-heading em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--gold-light);
+}
+
+.sk-newsletter-body {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0;
+  max-width: 44ch;
+}
+
+/* Glassmorphic Form Column Container */
+.sk-newsletter-col--form {
+  width: 100%;
+}
+
+.sk-newsletter-form-container {
+  background: rgba(26, 22, 18, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--r-card);
+  padding: 3rem 2.6rem 2.8rem;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
+  position: relative;
+  z-index: 2;
+}
+
+.sk-newsletter-form-wrap {
+  width: 100%;
+  margin-bottom: 1.4rem;
+}
+
+.sk-newsletter-disclaimer {
+  font-family: var(--font-ui);
+  font-size: var(--label-size-floor);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.32);
+  text-align: center;
+  margin: 0;
+}
+
+/* Forminator Newsletter Overrides - Ethereal Stacked Column Layout */
+html body .sk-newsletter-form-wrap .forminator-edit-module {
+  display: none;
+}
+
+html body .sk-newsletter-form-wrap .forminator-response-message.forminator-error {
+  display: none;
+}
+
+/* Stack inputs vertically */
+body .sk-newsletter-form-wrap .forminator-custom-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+body .sk-newsletter-form-wrap .forminator-row {
+  width: 100%;
+  flex: 1 1 auto;
+  margin-bottom: 0;
+  padding: 0;
+  position: relative; 
+}
+
+body .sk-newsletter-form-wrap .forminator-row-last {
+  width: 100%;
+  flex: 0 0 auto;
+  margin-bottom: 0;
+}
+
+body .sk-newsletter-form-wrap .forminator-label {
+  display: none;
+}
+
+/* Translucent Glass Inputs */
+body .sk-newsletter-form-wrap .forminator-custom-form input[type="email"],
+body .sk-newsletter-form-wrap .forminator-input {
+  width: 100%;
+  padding: 1.1rem 1.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--r-btn);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.03);
+  outline: none;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+  height: auto;
+  min-height: 54px;
+  transition: border-color 0.4s var(--ease), background-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+body .sk-newsletter-form-wrap .forminator-custom-form input[type="email"]::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+  font-style: italic;
+}
+
+body .sk-newsletter-form-wrap .forminator-custom-form input[type="email"]:focus {
+  border-color: var(--gold);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 0 4px rgba(196, 144, 42, 0.15), inset 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Error text styling */
+body .sk-newsletter-form-wrap .forminator-field .forminator-error-message {
+  font-family: var(--font-ui);
+  font-size: var(--label-size-floor);
+  color: #ef9a9a;
+  background: transparent;
+  padding: 0.4rem 0 0 0.1rem;
+  margin: 0;
+  position: absolute; 
+  bottom: -20px; 
+  left: 0;
+  list-style: none;
+  text-align: left;
+}
+
+body .sk-newsletter-form-wrap .forminator-field .forminator-error-message::before {
+  display: none;
+}
+
+body .sk-newsletter-form-wrap .forminator-has_error input {
+  border-color: #ef9a9a !important;
+  background: rgba(239, 154, 154, 0.05) !important;
+}
+
+/* Premium Gold Action Button - Full Width Stacked */
+body .sk-newsletter-form-wrap .forminator-custom-form button.forminator-button {
+  width: 100%;
+  background: var(--gold);
+  color: var(--ink);
+  border: none;
+  border-radius: var(--r-btn);
+  font-family: var(--font-ui);
+  font-size: var(--label-size-floor);
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 0 2rem;
+  height: 54px; 
+  cursor: pointer;
+  margin-top: 0.2rem;
+  box-shadow: 0 4px 16px rgba(196, 144, 42, 0.2);
+  transition: background 0.4s var(--ease), color 0.4s var(--ease), transform 0.4s var(--ease-spring), box-shadow 0.4s var(--ease);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body .sk-newsletter-form-wrap .forminator-custom-form button.forminator-button:hover,
+body .sk-newsletter-form-wrap .forminator-custom-form button.forminator-button:focus-visible {
+  background: #fff;
+  color: var(--ink);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(196, 144, 42, 0.4);
+}
+
+body .sk-newsletter-form-wrap .forminator-custom-form button.forminator-button:active {
+  transform: translateY(-1px);
+}
+
+/* Responsive Adaptive Styling */
+@media (max-width: 960px) {
+  .sk-newsletter-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  .sk-newsletter-card {
+    padding: 4.5rem 3.5rem;
+  }
+  .sk-newsletter-heading {
+    font-size: clamp(2rem, 6vw, 2.8rem);
+  }
+  .sk-newsletter-body {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .sk-newsletter-section {
+    padding: 4.5rem 0 5.5rem;
+  }
+  .sk-newsletter-card {
+    padding: 4rem 1.8rem 3.5rem;
+  }
+  .sk-newsletter-form-container {
+    padding: 2.2rem 1.6rem 2.2rem;
+  }
+  body .sk-newsletter-form-wrap .forminator-field .forminator-error-message {
+    position: relative; 
+    bottom: auto;
+    padding-bottom: 0.2rem;
+  }
+}
+
+
+
+/* ═══════════════════════════════════════════════════════════
+   SACRED KOMPASS: CONTACT FORM — CARDLESS, OVER BG PHOTO
+   v3: No card box. Fields float directly over the background
+   image. The celestial art lives in the photo itself.
+   ═══════════════════════════════════════════════════════════ */
+
+/*
+ * .sk-contact-card exists in markup only as a pass-through wrapper
+ * when Forminator is active. Strip all visual box styles from it.
+ * The cta-form-col div itself provides the column; no card needed.
+ */
+body .sk-contact-card {
+    background: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: 0;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+}
+
+/* Row & Column Layout — shared by Forminator and fallback form */
+body .sk-contact-card .forminator-custom-form,
+body .cta-form-col .sk-contact-fallback-form {
+    display: block;
+}
+
+body .sk-contact-card .forminator-row,
+body .cta-form-col .forminator-row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.55rem !important;
+    margin-bottom: 0.65rem !important;
+    padding-bottom: 0 !important;
+}
+body .sk-contact-card .forminator-row-last,
+body .cta-form-col .forminator-row-last {
+    margin-bottom: 0 !important;
+}
+body .sk-contact-card .forminator-col,
+body .cta-form-col .forminator-col,
+body .sk-contact-card .forminator-field,
+body .cta-form-col .forminator-field {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+body .sk-contact-card .forminator-col-6,
+body .cta-form-col .forminator-col-6 {
+    flex: 1 1 calc(50% - 0.375rem);
+    min-width: 0;
+}
+body .sk-contact-card .forminator-col-12,
+body .cta-form-col .forminator-col-12 {
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+/* Labels */
+body .sk-contact-card .forminator-label,
+body .cta-form-col .forminator-label {
+    font-family: var(--font-ui);
+    font-size: var(--label-size-floor);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-muted, #78695a);
+    margin-bottom: 0.25rem;
+    display: block;
+    font-weight: 500;
+}
+
+/* Inputs — Lotus Leaf Green fill color matching the elephant & lion art */
+body .sk-contact-card input,
+body .sk-contact-card textarea,
+body .sk-contact-card select,
+body .cta-form-col input,
+body .cta-form-col textarea,
+body .cta-form-col select {
+    width: 100%;
+    padding: 0.65rem 1.15rem;
+    background: rgba(62, 107, 102, 0.14) !important; /* Lotus leaf green fill */
+    border: 1px solid rgba(62, 107, 102, 0.38) !important; /* Lotus leaf green border */
+    border-radius: 50px;
+    font-family: var(--font-display);
+    font-size: 0.93rem;
+    font-weight: 400;
+    color: #1e3330 !important; /* Deep lotus-leaf ink for crisp readability */
+    box-sizing: border-box;
+    transition: border-color 0.3s var(--ease), background 0.3s var(--ease), box-shadow 0.3s;
+}
+
+/* Placeholder */
+body .sk-contact-card input::placeholder,
+body .sk-contact-card textarea::placeholder,
+body .cta-form-col input::placeholder,
+body .cta-form-col textarea::placeholder {
+    color: rgba(30, 51, 48, 0.55) !important;
+    font-style: italic;
+}
+
+/* Focus — richer lotus leaf green glow */
+body .sk-contact-card input:focus,
+body .sk-contact-card textarea:focus,
+body .sk-contact-card select:focus,
+body .cta-form-col input:focus,
+body .cta-form-col textarea:focus,
+body .cta-form-col select:focus {
+    border-color: #3e6b66 !important;
+    box-shadow: 0 0 0 3px rgba(62, 107, 102, 0.22) !important;
+    outline: none;
+    background: rgba(62, 107, 102, 0.22) !important;
+}
+
+/* ALL PARENT WRAPPERS — COMPLETELY TRANSPARENT (ZERO NESTED BOXES) */
+body #contact .forminator-select,
+body #contact .forminator-field-select,
+body #contact .forminator-custom-select,
+body #contact .forminator-field-single,
+body #contact .forminator-select-element,
+body #contact .select2-container,
+body #contact .select2-container .selection,
+body .cta-form-col .forminator-select,
+body .cta-form-col .forminator-field-select,
+body .cta-form-col .forminator-custom-select,
+body .cta-form-col .forminator-field-single,
+body .cta-form-col .forminator-select-element,
+body .cta-form-col .select2-container,
+body .cta-form-col .select2-container .selection {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    outline: none !important;
+    width: 100% !important;
+}
+
+/* ONLY THE SINGLE INNER FIELD GETS THE LOTUS LEAF GREEN PILL BOX */
+html body #contact .forminator-custom-form .select2-container--default .select2-selection--single,
+html body #contact .forminator-custom-form .select2-selection,
+html body #contact .forminator-field-select .select2-selection,
+html body #contact .forminator-field-select select,
+html body #contact .forminator-select--default,
+html body #contact select,
+html body #contact select[name^="select"],
+html body #contact [id^="forminator-field-select"],
+html body .cta-form-col .forminator-custom-form .select2-container--default .select2-selection--single,
+html body .cta-form-col .select2-container--default .select2-selection--single,
+html body .cta-form-col select,
+body #contact select,
+body #contact select[name^="select"],
+body #contact [id^="forminator-field-select"],
+body #contact .forminator-select--default,
+body #contact .forminator-field-select select,
+body #contact .forminator-select-element select,
+body #contact .select2-container--default .select2-selection--single,
+body #contact .select2-selection,
+body .cta-form-col select,
+body .cta-form-col select[name^="select"],
+body .cta-form-col [id^="forminator-field-select"],
+body .cta-form-col .forminator-select--default,
+body .cta-form-col .forminator-field-select select,
+body .cta-form-col .select2-container--default .select2-selection--single,
+body select.forminator-select--default,
+body select[name^="select"],
+body [id^="forminator-field-select"],
+body .select2-container--default .select2-selection--single {
+    background-color: rgba(62, 107, 102, 0.14) !important;
+    background: rgba(62, 107, 102, 0.14) !important;
+    border: 1px solid rgba(62, 107, 102, 0.38) !important;
+    border-radius: 50px !important;
+    height: 42px !important;
+    min-height: 42px !important;
+    padding: 0 1.15rem !important;
+    display: flex !important;
+    align-items: center !important;
+    box-shadow: none !important;
+    outline: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+body .select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: rgba(30, 51, 48, 0.85) !important;
+    font-family: var(--font-display);
+    font-size: 0.93rem;
+    font-weight: 400;
+    padding-left: 0 !important;
+    padding-right: 2rem !important;
+    line-height: normal !important;
+}
+
+body .select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 100% !important;
+    top: 0 !important;
+    right: 1.1rem !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+body .select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: #3e6b66 transparent transparent transparent !important;
+    border-width: 6px 5px 0 5px !important;
+}
+
+/* Open Select Dropdown Menu — Floating Lotus Leaf Green Theme (No Overlap) */
+body .select2-dropdown,
+body .forminator-select-dropdown,
+body .forminator-dropdown,
+body .forminator-select2-dropdown,
+body .select2-container--open .select2-dropdown,
+body .forminator-custom-form .select2-dropdown {
+    background-color: #355b57 !important; /* Lotus leaf green background */
+    border: 1.5px solid #284744 !important;
+    border-radius: 18px !important;
+    box-shadow: 0 14px 36px rgba(15, 30, 28, 0.4) !important;
+    overflow: hidden !important;
+    padding: 6px !important;
+    margin-top: 6px !important; /* Spacing so it floats cleanly without overlapping the select box */
+    z-index: 999999 !important;
+}
+
+body .select2-results__options,
+body .forminator-select-dropdown ul {
+    max-height: 220px !important;
+    overflow-y: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+body .select2-results__option,
+body .forminator-select-dropdown li,
+body .forminator-dropdown option {
+    color: #f5f0e8 !important; /* Luminous soft warm ivory text */
+    background-color: transparent !important;
+    padding: 10px 16px !important;
+    border-radius: 10px !important;
+    font-family: var(--font-display);
+    font-size: 0.94rem !important;
+    font-weight: 400 !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+body .select2-results__option--highlighted[aria-selected],
+body .select2-results__option--highlighted,
+body .select2-results__option[aria-selected="true"],
+body .forminator-select-dropdown li:hover,
+body .forminator-select-dropdown li.is-selected {
+    background-color: #24413e !important; /* Rich dark lotus green hover state */
+    color: #f7d695 !important; /* Golden active text */
+    font-weight: 600 !important;
+}
+
+/* Highlight Privacy Policy & Terms of Use links directly in Terra Color (NO UNDERLINE) */
+body .forminator-checkbox a,
+body .cta-form-col a,
+body .forminator-field-consent a,
+body a.sk-privacy-link,
+body a[href*="privacy"],
+body a[href*="terms"],
+body .forminator-checkbox label a,
+body .cta-form-col label.forminator-checkbox-label a,
+body .forminator-field-consent label a,
+body label a.sk-privacy-link {
+    color: var(--terra, #b8623f) !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    font-weight: 600 !important;
+    text-decoration: none !important; /* Underline removed per request */
+    border-bottom: none !important;
+    display: inline !important;
+    line-height: inherit !important;
+    transition: color 0.25s ease !important;
+}
+
+body .forminator-checkbox a:hover,
+body .cta-form-col a:hover,
+body .forminator-field-consent a:hover,
+body a.sk-privacy-link:hover,
+body a[href*="privacy"]:hover,
+body a[href*="terms"]:hover {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: var(--terra-dark, #8e4425) !important;
+}
+
+/* Textarea — rounded rectangle (pill doesn't work for multiline) */
+body .sk-contact-card textarea,
+body .cta-form-col textarea {
+    min-height: 80px;
+    max-height: 100px;
+    height: 90px;
+    overflow: auto;
+    resize: none;
+    border-radius: 18px;
+}
+
+/* Position Forminator character counter inside the bottom-right corner of the textarea */
+.sk-textarea-wrap {
+    position: relative !important;
+    width: 100% !important;
+    display: block !important;
+}
+
+.sk-textarea-wrap textarea {
+    padding-bottom: 1.8rem !important;
+}
+
+.sk-textarea-wrap .forminator-description {
+    display: inline-block !important;
+    position: absolute !important;
+    right: 1.1rem !important;
+    bottom: 1.05rem !important;
+    top: auto !important;
+    left: auto !important;
+    margin: 0 !important;
+    padding: 2px 7px !important;
+    background: rgba(253, 248, 240, 0.9) !important;
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+    border-radius: 6px !important;
+    font-family: var(--font-ui) !important;
+    font-size: 0.72rem !important;
+    font-weight: 500 !important;
+    color: var(--ink-muted) !important;
+    pointer-events: none !important;
+    z-index: 5 !important;
+    border: 1px solid rgba(26, 22, 18, 0.15) !important;
+}
+
+/* Submit button — styled alongside Reset button in a button group */
+body .cta-form-col .forminator-row-last,
+body .cta-form-col .forminator-row-last .forminator-col,
+body .sk-button-group,
+body .sk-form-submit {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important; /* Spaced apart: Reset on far left, Submit on far right */
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 0.25rem !important; /* Brings buttons higher up closer to consent field */
+}
+
+body .sk-form-reset,
+body .sk-contact-card .forminator-button-submit,
+body .cta-form-col .forminator-button-submit,
+body .cta-form-col .sk-form-submit .forminator-button-submit {
+    flex: none !important;
+    width: auto !important;
+    min-width: 160px !important; /* Substantial width for buttons */
+    padding: 0.95rem 1.8rem;
+    font-family: var(--font-ui);
+    font-size: var(--label-size-floor);
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s var(--ease), border-color 0.3s var(--ease), transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+    margin-top: 0 !important;
+    position: relative;
+    box-sizing: border-box;
+}
+
+body .sk-form-reset {
+    margin-right: auto !important;
+}
+
+/* Submit button specific */
+body .sk-contact-card .forminator-button-submit,
+body .cta-form-col .forminator-button-submit,
+body .cta-form-col .sk-form-submit .forminator-button-submit {
+    background: var(--terra);
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 20px rgba(184,98,63,.22);
+    margin-left: auto !important;
+}
+
+body .sk-contact-card .forminator-button-submit:hover,
+body .cta-form-col .forminator-button-submit:hover,
+body .cta-form-col .sk-form-submit .forminator-button-submit:hover {
+    background: var(--terra-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(184,98,63,.38);
+}
+
+body .sk-contact-card .forminator-button-submit:active,
+body .cta-form-col .forminator-button-submit:active,
+body .cta-form-col .sk-form-submit .forminator-button-submit:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(184,98,63,.15);
+}
+
+/* Reset button specific */
+body .sk-form-reset {
+    background: rgba(253, 248, 240, 0.2) !important;
+    border: 1.2px solid rgba(184, 98, 63, 0.35) !important;
+    color: var(--terra) !important;
+    box-shadow: none;
+}
+
+body .sk-form-reset:hover {
+    background: rgba(184, 98, 63, 0.08) !important;
+    border-color: var(--terra) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 15px rgba(184, 98, 63, 0.08) !important;
+}
+
+body .sk-form-reset:active {
+    transform: translateY(0) !important;
+}
+
+/* Interactive Error States & Micro-Animations */
+@keyframes skErrorShake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-4px); }
+    40%, 80% { transform: translateX(4px); }
+}
+
+@keyframes skErrorSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes skIconPulse {
+    0%, 100% { transform: scale(1); opacity: 0.85; }
+    50% { transform: scale(1.22); opacity: 1; }
+}
+
+body .forminator-has_error input,
+body .forminator-has_error textarea,
+body .forminator-has_error select,
+body .forminator-has_error .select2-selection {
+    animation: skErrorShake 0.4s var(--ease) !important;
+    border-color: #d64545 !important; /* Distinct red border */
+    background: rgba(214, 69, 69, 0.06) !important;
+    box-shadow: 0 0 0 3px rgba(214, 69, 69, 0.2) !important;
+}
+
+body .forminator-has_error input:focus,
+body .forminator-has_error textarea:focus,
+body .forminator-has_error select:focus {
+    border-color: var(--terra) !important;
+    box-shadow: 0 0 0 3px rgba(184, 98, 63, 0.2) !important;
+    background: rgba(253, 248, 240, 0.35) !important;
+}
+
+/* Hide text error messages — user is alerted by red field border & shake motion */
+body .forminator-ui .forminator-error-message,
+body .sk-contact-card .forminator-error-message,
+body .sk-contact-card .forminator-field--error .forminator-error-message,
+body .cta-form-col .forminator-error-message,
+body .cta-form-col .forminator-field--error .forminator-error-message,
+body .forminator-error-message {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+  body .sk-contact-card input,
+  body .sk-contact-card textarea,
+  body .sk-contact-card select,
+  body .cta-form-col input,
+  body .cta-form-col textarea,
+  body .cta-form-col select {
+    font-size: 16px !important; /* Prevents iOS Safari auto-zoom on input focus */
+  }
+}
+
+/* Mobile — stack name fields */
+@media (max-width: 650px) {
+    body .sk-contact-card .forminator-col-6,
+    body .cta-form-col .forminator-col-6 {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   JOURNAL PREVIEW — Editorial Magazine Layout v3
+   ══════════════════════════════════════════════════════════ */
+
+.sk-journal-preview-section {
+  /* Footer-adjacent position: reduced top breathing room,
+     ivory-warm bg signals a gentle section change from the dark CTA above */
+  padding: 4rem 0 5rem;
+  background: var(--ivory-warm);
+  border-top: none !important;
+}
+
+/* Masthead title — now uses global .display-h2; this rule kept for layout context */
+.sk-jp-masthead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2.8rem;
+  flex-wrap: wrap;
+}
+.sk-jp-masthead h2 {
+  margin-top: 0.6rem;
+  margin-bottom: 0;
+}
+/* Read-time badge on featured card overlay */
+.sk-jp-feat-readtime {
+  font-family: var(--font-ui);
+  font-size: var(--label-size-floor);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  background: rgba(26,22,18,0.35);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+.sk-jp-see-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-ui);
+  font-size: var(--label-size-floor);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--terra);
+  text-decoration: none;
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--r-btn);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s, gap 0.2s;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(184,98,63,0.28);
+  align-self: flex-end;
+}
+.sk-jp-see-all:hover {
+  background: var(--terra-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(184,98,63,0.38);
+  gap: 0.7rem;
+  color: #fff;
+}
+.sk-jp-see-all svg { flex-shrink: 0; }
+
+/* Honeypot field display reset */
+body #sk-hp {
+  display: none;
+}
+
+/* ── Mobile: CTA single column stack ── */
+@media (max-width: 768px) {
+  .cta-layout {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+  .cta-section {
+    min-height: 100dvh;
+    height: auto;
+    padding: 0 0 1.5rem;
+    background-image: none !important;   /* Strip the inline bg — use ::before instead */
+    background-color: var(--ivory-warm); /* Ivory shows below the image as user scrolls into form */
+    background-attachment: scroll;
+    overflow-x: clip;
+    position: relative;
+  }
+  /*
+   * ::before is position:absolute (NOT fixed) so it is clipped to .cta-section
+   * and NEVER bleeds into adjacent sections.
+   * height: 100dvh = the image only ever covers one viewport height,
+   * so background-size:cover scales relative to that height → always sharp.
+   */
+  .cta-section::before {
+    content: '' !important;
+    display: block !important;
+    position: absolute !important;    /* absolute, not fixed → no bleed */
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 100dvh !important;        /* locked to viewport height */
+    background-image: var(--cta-bg-mobile, var(--cta-bg, none)) !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+  }
+
+
+  .cta-section .wrap {
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
+    align-items: flex-start;
+  }
+  .cta-text-col {
+    padding-top: 0;
+    padding-left: 0;
+    padding-bottom: 2.5rem;
+  }
+  .cta-form-col {
+    padding-top: 0;
+    background: transparent;
+    padding: 2rem 0 3rem;
+    border-radius: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .cta-h2 {
+    font-size: clamp(2rem, 8vw, 3.2rem);
+  }
+  body .sk-contact-card .forminator-col-6,
+  body .cta-form-col .forminator-col-6 {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+  body .sk-contact-card .forminator-row,
+  body .cta-form-col .forminator-row {
+    flex-direction: column;
+  }
+  body .forminator-button.forminator-button-submit {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+  .sk-contact-fallback-form {
+    background: transparent;
+    border: none;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+  .sk-contact-fallback-form input,
+  .sk-contact-fallback-form textarea,
+  .sk-contact-fallback-form select {
+    background: rgba(255,255,255,0.85);
+    border: 1px solid rgba(212,175,106,0.35);
+    color: var(--ink);
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-h2 {
+    font-size: clamp(1.8rem, 9vw, 2.6rem);
+  }
+  .cta-section {
+    min-height: 96svh;
+    padding-bottom: 2rem;
+  }
+  .cta-section .wrap {
+    padding-top: 3.25rem;
+    padding-bottom: 1.75rem;
+  }
+  .cta-form-col {
+    padding: 2rem 0 3.25rem;
+  }
+}
+
+/* ── FORMINATOR SELECT2 SELECTION BOX OVERRIDES ── */
+body .cta-form-col .select2-container .select2-selection,
+body .cta-form-col select {
+  background: rgba(253, 248, 240, 0.18) !important;
+  border: 0.8px solid rgba(26, 22, 18, 0.22) !important;
+  border-radius: 50px !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 1.25rem !important;
+  box-sizing: border-box !important;
+  transition: border-color 0.3s, background 0.3s, box-shadow 0.3s !important;
+}
+
+body .cta-form-col .select2-container .select2-selection--single,
+body .cta-form-col select {
+  height: 40px !important;
+  min-height: 40px !important;
+}
+
+body .cta-form-col .select2-container .select2-selection--multiple {
+  height: auto !important;
+  min-height: 40px !important;
+  padding: 4px 1.25rem !important;
+}
+
+/* Hover & Focus states */
+body .cta-form-col .select2-container .select2-selection:hover,
+body .cta-form-col .select2-container--default.select2-container--focus .select2-selection,
+body .cta-form-col .select2-container--default.select2-container--open .select2-selection,
+body .cta-form-col select:focus {
+  background: rgba(253, 248, 240, 0.35) !important;
+  border-color: var(--terra) !important;
+  box-shadow: 0 0 0 3px rgba(184, 98, 63, 0.15) !important;
+}
+
+body .cta-form-col .select2-container .select2-selection__rendered {
+  padding: 0 !important;
+  margin: 0 !important;
+  color: var(--ink) !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.92rem !important;
+  line-height: 38px !important; /* Vertically center rendering inside 40px height */
+}
+
+/* Placeholder styling */
+body .cta-form-col .select2-container .select2-selection .select2-selection__placeholder {
+  color: rgba(26, 22, 18, 0.35) !important;
+  font-style: italic !important;
+  font-weight: 300 !important;
+}
+
+body .cta-form-col .select2-container .select2-selection__clear {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+body .cta-form-col .select2-container .select2-selection__arrow {
+  position: absolute !important;
+  top: 0 !important;
+  right: 1.25rem !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transform: none !important;
+  transition: transform 0.3s ease !important;
+}
+
+body .cta-form-col .select2-container .select2-selection__arrow b {
+  position: static !important;
+  margin: 0 !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+}
+
+/* Multiple choices / selected tags */
+body .cta-form-col .select2-container .select2-selection__choice {
+  background-color: rgba(184, 98, 63, 0.1) !important;
+  border: 1px solid rgba(184, 98, 63, 0.2) !important;
+  border-radius: 4px !important;
+  padding: 1px 6px !important;
+  margin: 0 4px 0 0 !important;
+  font-size: var(--label-size-floor) !important;
+  color: var(--terra) !important;
+  line-height: 1.4 !important;
+}
+body .cta-form-col .select2-container .select2-selection__choice__remove {
+  color: var(--terra) !important;
+  margin-right: 4px !important;
+}
+
+/* Dropdown list popup & Forminator wrapper */
+html body .select2-dropdown,
+body .select2-container .select2-dropdown,
+.select2-dropdown,
+body .forminator-select-dropdown {
+  position: absolute !important;
+  background: var(--parchment) !important;
+  border: 1.2px solid rgba(184, 98, 63, 0.35) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 12px 48px rgba(18, 12, 8, 0.22) !important;
+  overflow: hidden !important;
+  z-index: 99999 !important;
+  box-sizing: border-box !important;
+}
+
+body .select2-results__option,
+body .forminator-select-dropdown .select2-results__option {
+  padding: 0.85rem 1.4rem !important;
+  font-family: var(--font-display) !important;
+  font-size: 0.95rem !important;
+  font-weight: 300 !important;
+  color: var(--ink) !important;
+  background-color: transparent !important;
+  transition: background-color 0.25s, color 0.25s !important;
+}
+
+body .select2-results__option--highlighted[aria-selected],
+body .forminator-select-dropdown .select2-results__option--highlighted[aria-selected] {
+  background-color: var(--terra) !important;
+  color: #fff !important;
+}
+
+body .select2-results__option[aria-selected=true],
+body .forminator-select-dropdown .select2-results__option[aria-selected=true] {
+  background-color: rgba(184, 98, 63, 0.12) !important;
+  color: var(--terra) !important;
+}
+
+body .cta-form-col .select2-container .select2-selection__arrow,
+body .cta-form-col .select2-container .select2-selection__arrow span,
+body .cta-form-col .select2-container .select2-selection__arrow i {
+  color: var(--terra) !important;
+}
+body .cta-form-col .select2-container--open .select2-selection__arrow {
+  transform: rotate(180deg) !important;
+}
+
+/* Search input field */
+body .forminator-select-dropdown .select2-search__field {
+  background: rgba(253, 248, 240, 0.4) !important;
+  border: 1px solid rgba(184, 98, 63, 0.22) !important;
+  border-radius: 20px !important;
+  padding: 0.5rem 1rem !important;
+  color: var(--ink) !important;
+  font-family: var(--font-display) !important;
+}
+
+/* Custom elegant thin terracotta themed scrollbar */
+body .forminator-select-dropdown .select2-results__options {
+  max-height: 220px !important;
+  overflow-y: auto !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(184, 98, 63, 0.4) rgba(26, 22, 18, 0.03) !important;
+}
+body .forminator-select-dropdown .select2-results__options::-webkit-scrollbar {
+  width: 6px !important;
+  display: block !important;
+}
+body .forminator-select-dropdown .select2-results__options::-webkit-scrollbar-track {
+  background: rgba(26, 22, 18, 0.03) !important;
+  border-radius: 10px !important;
+}
+body .forminator-select-dropdown .select2-results__options::-webkit-scrollbar-thumb {
+  background: rgba(184, 98, 63, 0.4) !important;
+  border-radius: 10px !important;
+  transition: background 0.3s ease !important;
+}
+body .forminator-select-dropdown .select2-results__options::-webkit-scrollbar-thumb:hover {
+  background: rgba(184, 98, 63, 0.7) !important;
+}
+
+/* ── NEWSLETTER — Mobile responsive ── */
+@media (max-width: 768px) {
+  .sk-newsletter-section {
+    padding: 4rem 0 5rem !important;
+  }
+  .sk-newsletter-card {
+    padding: 2.5rem 1.5rem !important;
+    border-radius: var(--r-card) !important;
+  }
+  .sk-newsletter-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  .sk-newsletter-col--info {
+    align-items: center !important;
+    text-align: center !important;
+  }
+  /* Globe: prevent page scroll conflict on touch */
+  .sk-contact-globe-wrap canvas {
+    touch-action: none !important;
+  }
+  .sk-contact-globe-wrap {
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .sk-newsletter-card {
+    padding: 2rem 1.2rem !important;
+  }
+}
+
+/* ── GLOBAL: prefers-reduced-motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── GLOBAL: touch-action on sliders — allow horizontal swipe without blocking scroll ── */
+.sk-sp-v4-track-wrap,
+.sk-astrology-track-wrap {
+  touch-action: pan-y;
+}

@@ -1,0 +1,559 @@
+/* ── FLOATING PILL NAVBAR ─────────────────────────────────── */
+.sk-sidenav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  transform: translateY(-110%);
+  width: 100%;
+  min-width: unset;
+  max-width: unset;
+  height: auto;
+  min-height: 60px;
+  max-height: none;
+  z-index: 8000;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+  padding: 0.35rem 1.5rem;
+  background: rgba(253,250,245,0.97);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: none !important;
+  border-bottom: none !important;
+  box-shadow: 0 4px 24px rgba(26,22,18,0.08), 0 1px 4px rgba(212,175,106,0.12);
+  overflow: visible;
+  border-radius: 0;
+    transition: transform 0.5s var(--ease-spring), opacity 0.4s ease;
+  opacity: 0;
+  margin-bottom: env(safe-area-inset-bottom, 0px);
+}
+.sk-sidenav.sk-sidenav--visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.sk-sidenav-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 0;
+  margin-right: 0.4rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+.sk-sidenav-logo:hover,
+.sk-sidenav-logo:focus-visible { transform: scale(1.08); }
+.sk-sidenav-logo-img { display: block; height: 34px; width: auto; max-width: 34px; object-fit: contain; }
+.sk-sidenav-logo-name { display: none; }
+.sk-sidenav-logo-name em { font-style: italic; color: var(--terra); }
+
+/* Nav links — horizontal row for bottom pill */
+.sk-sidenav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+  flex: 1;
+  justify-content: space-evenly;
+  border-top: none !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  width: auto;
+  height: auto;
+  min-height: 48px;
+  padding: 0.25rem 0;
+}
+.sk-sidenav-links li {
+  position: relative;
+  width: auto;
+  flex: 1;
+  min-width: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  min-height: 44px;
+}
+.sk-sidenav-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  min-height: 44px;
+  height: auto;
+  border-radius: 50px;
+  font-family: var(--font-ui);
+  font-size: var(--label-size-floor);
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  writing-mode: horizontal-tb;
+  white-space: normal;
+  word-break: break-word;
+  overflow: visible;
+  padding: 0.5rem 0.8rem;
+  line-height: 1.25;
+}
+/* Tooltip on hover — shows above the bottom pill */
+.sk-sidenav-links li::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--ink);
+  color: var(--ivory);
+  font-family: var(--font-ui);
+  font-size: var(--micro-size-floor);
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 0.28em 0.65em;
+  border-radius: 4px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.14s, transform 0.14s;
+  z-index: 100;
+}
+
+.sk-sidenav-links li:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.sk-sidenav-links a:hover,
+.sk-sidenav-links a:focus-visible,
+.sk-sidenav-links a.active {
+  color: var(--terra);
+  background: rgba(184,98,63,0.25);
+  transform: scale(1.06);
+}
+.sk-sidenav-links a.active { background: rgba(184,98,63,0.13); transform: none; }
+
+/* CTA — compact contact button */
+.sk-sidenav-cta {
+  margin-top: 0;
+  margin-left: 0.4rem;
+  padding-top: 0;
+  padding-left: 0.5rem;
+  border-top: none;
+  border-left: 1px solid rgba(212,175,106,0.2);
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-shrink: 0;
+}
+.sk-sidenav-cta .btn,
+.sk-sidenav-cta-btn {
+  min-width: 0;
+  width: auto;
+  height: auto;
+  min-height: 44px;
+  padding: 0.4rem 0.9rem;
+  font-family: var(--font-ui);
+  font-size: var(--label-size-floor);
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  background: var(--terra-dark);
+  color: white;
+  border: none;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(184,98,63,0.35);
+  white-space: nowrap;
+}
+.sk-sidenav-cta .btn:hover,
+.sk-sidenav-cta-btn:hover {
+  background: #9e4e29;
+  transform: scale(1.04);
+  box-shadow: 0 4px 14px rgba(184,98,63,0.45);
+}
+
+/* Sidenav CTA — show compact contact button */
+.sk-sidenav-cta{ display: flex; }
+
+/* Hamburger styles */
+.sk-hamburger{ display: none; }
+.sk-hamburger span {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: transform 0.35s ease, opacity 0.25s ease, width 0.25s ease;
+  transform-origin: center;
+}
+
+/* Backdrop */
+.sk-sidenav-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(26,22,18,0.45);
+  z-index: 7900;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.sk-sidenav-backdrop.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── FIXES FOR FLOATING NAV PILL ───────────────────────────── */
+body {
+  padding-left: 0;
+}
+.sk-sidenav-links li::after{
+  display: none;
+  opacity: 0;
+  content: none;
+}
+.sk-sidenav-links li{
+  border-right: none;
+  border-left: none;
+}
+.sk-sidenav-links a::after,
+.sk-sidenav-links a::before{
+  display: none;
+  content: none;
+}
+.sk-sidenav-links a,
+.sk-sidenav-links a:hover,
+.sk-sidenav-links a:focus,
+.sk-sidenav-links a.active{
+  text-decoration: none;
+  text-underline-offset: unset;
+}
+.sk-sidenav-links a[href*="collective"]{
+  text-decoration: none;
+}
+.sk-sidenav-links a[href*="collective"]::after,
+.sk-sidenav-links a[href*="collective"]::before{
+  display: none;
+  content: none;
+}
+.sk-sidenav-cta::after{
+  display: none;
+  opacity: 0;
+  content: none;
+  visibility: hidden;
+}
+.sk-sidenav-cta:hover::after{
+  display: none;
+  opacity: 0;
+}
+.sk-sidenav-links li[data-label]::after{
+  display: none;
+}
+.sk-sidenav-links li + li{
+  border-left: none;
+}
+.sk-sidenav-links{
+  border: none;
+  gap: 0;
+}
+
+/* ── DESKTOP TOP BAR LAYOUT ────────────────────────────────── */
+
+/* ── Sidenav Drawer Mobile overrides ── */
+@media (max-width: 900px) {
+  .sk-sidenav-backdrop {
+    display: block;
+    pointer-events: none;
+  }
+  .sk-sidenav-backdrop.visible {
+    pointer-events: auto;
+  }
+  .sk-sidenav.open .sk-sidenav-links li + li {
+    border-left: none;
+  }
+  .sk-sidenav.open .sk-sidenav-logo {
+    padding: 0;
+    margin-bottom: 1.2rem;
+  }
+}
+
+/* ── COMPREHENSIVE MOBILE NAV FIX ─────────────────────────── */
+@media (max-width: 900px) {
+  body {
+    overflow-x: hidden !important;
+  }
+
+
+
+  /* 1. Closed state — completely hidden/transparent floating container */
+  .sk-sidenav {
+    position: fixed !important;
+    top: 12px !important;
+    left: 12px !important;
+    right: 12px !important;
+    transform: translateY(-20px) scale(0.9) !important;
+    width: auto !important;
+    max-width: none !important;
+    height: auto !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: transform 0.4s var(--ease-expo), opacity 0.3s ease !important;
+    z-index: 8000 !important;
+    padding: 16px !important;
+    border-radius: 16px !important;
+  }
+
+  /* Logo visibility closed vs open on mobile */
+  .sk-sidenav .sk-sidenav-logo {
+    display: none !important;
+  }
+  .sk-sidenav.open .sk-sidenav-logo {
+    display: flex !important;
+    margin-bottom: 1.5rem !important;
+    padding: 0 !important;
+    border: none !important;
+    height: 32px !important;
+  }
+  .sk-sidenav.open .sk-sidenav-logo-img {
+    height: 32px !important;
+    width: auto !important;
+  }
+
+  .sk-hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(3px, 1.2vw, 5px);
+    cursor: pointer;
+    position: fixed;
+    top: 22px;
+    right: 22px;
+    z-index: 8001;
+    height: 44px;
+    width: 44px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(253, 250, 245, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 106, 0.25);
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(26, 22, 18, 0.08);
+    padding: 0 clamp(6px, 2.5vw, 10px);
+    box-sizing: border-box;
+    
+    /* Scroll visibility toggling */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-110%);
+    transition: transform 0.5s var(--ease-spring), opacity 0.4s ease, background 0.2s, border-color 0.2s;
+  }
+  .sk-hamburger span {
+    display: block;
+    height: 2px;
+    background: var(--ink);
+    border-radius: 16px;
+    transition: all 500ms ease;
+  }
+  .sk-hamburger span:nth-child(1) {
+    width: 10px;
+    align-self: flex-start;
+    transform-origin: right center;
+  }
+  .sk-hamburger span:nth-child(2) {
+    width: 20px;
+  }
+  .sk-hamburger span:nth-child(3) {
+    width: 10px;
+    align-self: flex-end;
+    transform-origin: left center;
+  }
+  .sk-hamburger.sk-hamburger--visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  /* 3. Hide links and CTA by default */
+  .sk-sidenav-links {
+    display: none;
+  }
+  .sk-sidenav-cta {
+    display: none;
+  }
+
+  /* 4. Open state — elegant floating Mobbin-style rounded card modal */
+  .sk-sidenav.open {
+    transform: translateY(0) scale(1) !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    background: rgba(253, 250, 245, 0.99) !important;
+    border: 1px solid rgba(212, 175, 106, 0.25) !important;
+    box-shadow: 0 20px 48px rgba(26, 22, 18, 0.16), 0 4px 12px rgba(26, 22, 18, 0.08) !important;
+    backdrop-filter: blur(24px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    overflow: visible !important;
+  }
+
+  /* Stack links vertically inside card */
+  .sk-sidenav.open .sk-sidenav-links {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    border-left: none !important;
+    padding: 0 !important;
+    margin: 0 0 1.5rem 0 !important;
+    gap: 0.15rem !important;
+  }
+  .sk-sidenav.open .sk-sidenav-links li {
+    width: 100% !important;
+    justify-content: flex-start !important;
+    min-height: auto !important;
+  }
+  .sk-sidenav.open .sk-sidenav-links a {
+    width: 100% !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    padding: clamp(0.5rem, 2vw, 0.85rem) clamp(0.3rem, 1.5vw, 0.6rem) !important;
+    font-family: var(--font-display) !important;
+    font-size: clamp(0.95rem, 3vw, 1.2rem) !important;
+    font-weight: 500 !important;
+    color: var(--ink) !important;
+    text-transform: capitalize !important;
+    letter-spacing: 0.03em !important;
+    background: transparent !important;
+    border-radius: 8px !important;
+    transition: color 0.2s, background 0.2s !important;
+    height: auto !important;
+    min-height: auto !important;
+  }
+  .sk-sidenav.open .sk-sidenav-links a:hover,
+  .sk-sidenav.open .sk-sidenav-links a.active {
+    color: var(--terra) !important;
+    background: rgba(184, 98, 63, 0.06) !important;
+    transform: none !important;
+  }
+
+  /* Full-width CTA button at card bottom */
+  .sk-sidenav.open .sk-sidenav-cta {
+    display: flex !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-left: none !important;
+  }
+  .sk-sidenav.open .sk-sidenav-cta .btn,
+  .sk-sidenav.open .sk-sidenav-cta-btn {
+    width: 100% !important;
+    height: clamp(44px, 10vw, 48px) !important;
+    border-radius: 50px !important;
+    background: var(--terra) !important;
+    color: #fff !important;
+    font-family: var(--font-ui) !important;
+    font-size: var(--label-size-floor) !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: none !important;
+    box-shadow: 0 4px 16px rgba(184, 98, 63, 0.25) !important;
+    transition: background 0.2s, transform 0.2s !important;
+  }
+  .sk-sidenav.open .sk-sidenav-cta .btn:hover,
+  .sk-sidenav.open .sk-sidenav-cta-btn:hover {
+    background: var(--terra-dark) !important;
+    transform: scale(1.02) !important;
+  }
+
+  .sk-hamburger.open {
+    position: fixed !important;
+    left: auto !important;
+    z-index: 10000 !important;
+    display: block !important;
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  .sk-hamburger.open span {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 18px !important;
+    height: 2px !important;
+    margin-top: -1px !important;
+    margin-left: -9px !important;
+    transform-origin: center center !important;
+    transition: transform 0.35s ease, opacity 0.25s ease !important;
+  }
+  .sk-hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) !important;
+  }
+  .sk-hamburger.open span:nth-child(2) {
+    opacity: 0 !important;
+    transform: scale(0) !important;
+  }
+  .sk-hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) !important;
+  }
+
+  /* 6. Backdrop when open (completely disabled on mobile) */
+  .sk-sidenav-backdrop {
+    display: none !important;
+  }
+
+
+}
+
+/* ── NAVBAR CLEARANCE FOR INNER PAGES ────────────────────────── */
+body:not(.home) {
+  padding-top: 64px;
+}
+@media (max-width: 768px) {
+  body:not(.home) {
+    padding-top: 48px;
+  }
+}/* ── NAV: iOS safe area + narrow screen protection ── */
+@media (max-width: 1024px) {
+  /* Protect very narrow screens — links shrink proportionally */
+  .sk-sidenav-links a {
+    font-size: clamp(0.48rem, 2vw, var(--label-size-floor)) !important;
+    padding: 0.5rem clamp(0.3rem, 1.5vw, 0.8rem) !important;
+  }
+  /* iOS safe area at bottom of mobile nav */
+  .sk-sidenav {
+    padding-bottom: max(0.35rem, env(safe-area-inset-bottom)) !important;
+  }
+}

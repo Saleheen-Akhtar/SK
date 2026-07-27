@@ -1,0 +1,246 @@
+/* ── SECTION FLOAT TRANSITIONS ───────────────────────────────
+   Each major section "floats" into view — soft shadow beneath
+   creates the illusion of the section lifting off the page.
+   Sections with different backgrounds blend seamlessly via
+   pseudo-element gradient fades at top edge.
+   ──────────────────────────────────────────────────────────── */
+
+/* Sections that need a top gradient bleed into the previous bg */
+.offerings-section::after,
+.founders-section::after,
+.faq-section::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 6rem;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* strip--circular::before intentionally absent — no top gradient on philosophy strip */
+
+
+/* Gentle ambient glow at top of ivory-warm sections */
+.offerings-section::after {
+  top: 0;
+  background: linear-gradient(to bottom, var(--ivory) 0%, transparent 100%);
+}
+
+/* Section floating shadow — creates depth separation between sections */
+.about-section,
+.founders-section,
+.faq-section,
+.sk-journal-preview-section,
+.sk-home-posts-section {
+  position: relative;
+}
+
+/* Hero bottom blend — melts into next section */
+.hero--split::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 12rem;
+  background: linear-gradient(to bottom, transparent 0%, rgba(26,22,18,.18) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+/* Parallax containers — GSAP sets transform; contain:layout prevents reflow cascade */
+.parallax-slow, .parallax-med, .parallax-fast { will-change: transform; contain: layout style; }
+
+/* Hero parallax — override CSS !important so GSAP can set transform */
+.hero-bg-image img { transform: none; will-change: transform; }
+
+/* ── Elevated hero particle / grain texture feel ── */
+.hero--split::before{
+  content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:radial-gradient(ellipse 60% 40% at 15% 80%,rgba(196,144,42,.08) 0%,transparent 60%),
+             radial-gradient(ellipse 40% 60% at 85% 20%,rgba(228,189,160,.06) 0%,transparent 55%);
+}
+
+/* ── Section eyebrow — add golden accent line ── */
+.eyebrow{position:relative}
+
+/* ── Selection colour — brand touch ── */
+::selection{background:rgba(196,144,42,.18);color:var(--ink)}
+::-moz-selection{background:rgba(196,144,42,.18);color:var(--ink)}
+
+/* ═══════════════════════════════════════════════════════════════
+   STIRRED BY STORIES — homepage teaser (values-section repurposed)
+   Background identical to about-v16
+   ═══════════════════════════════════════════════════════════════ */
+
+.sk-stories-teaser{
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll; /* Performance fix: changed from fixed to scroll to prevent laptop lag */
+  transform: none;
+  will-change: auto;
+  backface-visibility: visible;
+}
+@supports (-webkit-touch-callout: none) {
+  .sk-stories-teaser {
+    background-attachment: scroll;
+    background-size: cover;
+  }
+}
+@media (max-width: 900px) {
+  .sk-stories-teaser {
+    background-attachment: scroll !important;
+    background-size: cover;
+    background-position: center center;
+  }
+}
+.sk-stories-teaser::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(251, 250, 246, 0.93);
+  z-index: 0;
+  pointer-events: none;
+}
+.sk-stories-teaser > * {
+  position: relative;
+  z-index: 1;
+}
+.sk-stories-teaser .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+/* Prose paragraph */
+.sk-stories-teaser__prose {
+  max-width: 680px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+.sk-stories-teaser__prose p {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--ink-muted);
+  margin: 0 0 1rem;
+}
+.sk-stories-teaser__prose p:last-child { margin-bottom: 0; }
+
+/* Preview cards grid */
+.sk-stories-teaser__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+@media (max-width: 900px) {
+  .sk-stories-teaser__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .sk-stories-teaser__grid { grid-template-columns: 1fr; }
+}
+
+.sk-story-preview-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(253, 251, 245, 0.85);
+  border: 1px solid var(--border-light);
+  border-radius: var(--r-card);
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+  box-shadow: var(--shadow-card);
+}
+.sk-story-preview-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+}
+.sk-story-preview-card__img {
+  height: 160px;
+  overflow: hidden;
+}
+.sk-story-preview-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--ease);
+}
+.sk-story-preview-card:hover .sk-story-preview-card__img img {
+  transform: scale(1.04);
+}
+.sk-story-preview-card__body {
+  padding: 1.4rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.sk-story-preview-card__cat {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.sk-story-preview-card__body h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin: 0 0 0.6rem;
+  line-height: 1.3;
+}
+.sk-story-preview-card__excerpt {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--ink-muted);
+  line-height: 1.7;
+  margin: 0 0 1rem;
+  flex: 1;
+}
+.sk-story-preview-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+.sk-story-preview-card__author {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+}
+.sk-story-preview-card__arrow {
+  color: var(--terra);
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s;
+}
+.sk-story-preview-card:hover .sk-story-preview-card__arrow {
+  transform: translateX(4px);
+}
+
+/* CTA */
+.sk-stories-teaser__cta {
+  text-align: center;
+  padding-top: 1rem;
+}
+.sk-stories-teaser__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sk-stories-teaser__btn svg {
+  transition: transform 0.2s;
+}
+.sk-stories-teaser__btn:hover svg {
+  transform: translateX(3px);
+}

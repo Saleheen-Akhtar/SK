@@ -1,0 +1,576 @@
+/**
+ * Sacred Kompass — Art for Peace Section & Single Art Styles
+ */
+
+:root {
+  --sk-space-4: 1rem;       /* 16px */
+  --sk-space-6: 1.5rem;     /* 24px */
+  --sk-space-8: 2rem;       /* 32px */
+}
+
+/* Homepage Art Section Grid */
+.sk-art-section {
+  padding: var(--section-py, 10rem) 0;
+  position: relative;
+  background-color: var(--bg-neutral-light, #FAF8F5);
+  background-size: cover;
+  background-position: center;
+}
+
+.sk-art-header {
+  max-width: 680px;
+  margin: 0 auto 5rem;
+  text-align: center;
+}
+
+.sk-art-header .eyebrow {
+  margin-bottom: 12px;
+}
+
+.sk-art-title {
+  margin: 0 auto 1.5rem;
+}
+
+.sk-art-sub {
+  margin: 0 auto;
+}
+
+/* New Grid Layout System */
+.sk-art-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sk-space-6);
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 16px;
+  position: relative;
+}
+
+/* Aceternity-style sliding hover backdrop */
+.sk-art-hover-backdrop {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  background: rgba(26, 22, 18, 0.035);
+  border: 1px solid rgba(26, 22, 18, 0.05);
+  border-radius: 26px;
+  z-index: 1;
+  transition: 
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), 
+    opacity 0.25s ease, 
+    width 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), 
+    height 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@media (max-width: 768px) {
+  .sk-art-hover-backdrop {
+    display: none !important;
+  }
+
+  /* Disable focus/blur hover effects — no hover on touch */
+  .sk-art-grid:not(:hover) .sk-art-card:not(:first-child),
+  .sk-art-grid:hover .sk-art-card {
+    opacity: 1 !important;
+    filter: none !important;
+  }
+  .sk-art-grid:hover .sk-art-card:hover {
+    opacity: 1 !important;
+    filter: none !important;
+  }
+
+  /* Reset stagger offsets (nth-child margins) — only valid in 3-col layout */
+  .sk-art-card:nth-child(3n + 2),
+  .sk-art-card:nth-child(3n),
+  .sk-art-card:nth-child(2n) {
+    margin-top: 0 !important;
+  }
+
+  /* Reduce section vertical padding */
+  .sk-art-section {
+    padding: 4rem 0 !important;
+  }
+
+  /* Header side padding so text doesn't touch edges */
+  .sk-art-header {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    box-sizing: border-box !important;
+    margin-bottom: 2.5rem !important;
+  }
+}
+
+/* Asymmetric offsets for visual rhythm (3 columns) */
+.sk-art-card:nth-child(3n + 2) {
+  margin-top: var(--sk-space-8);
+}
+
+.sk-art-card:nth-child(3n) {
+  margin-top: var(--sk-space-4);
+}
+
+/* Card Design Wrapper */
+.sk-art-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.5s var(--ease-expo),
+              filter 0.5s var(--ease-expo);
+}
+
+/* Soft Spotlight Halo centered on the top edge Y */
+.sk-art-card::before {
+  content: '';
+  position: absolute;
+  top: -80px; /* Starts above the frame top */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140%;
+  height: 160px;
+  /* Soft golden/white glow */
+  background: radial-gradient(ellipse at 50% 80px, 
+    rgba(255, 255, 255, 0.95) 0%, 
+    rgba(255, 253, 240, 0.4) 40%, 
+    rgba(255, 253, 240, 0) 70%
+  );
+  filter: blur(12px);
+  opacity: 0.25; /* Dim ambient state */
+  z-index: -1;
+  pointer-events: none;
+  transition: opacity 0.6s var(--ease-expo), filter 0.6s var(--ease-expo);
+}
+
+/* Default state: first card spotlight is bright/sharp */
+.sk-art-grid:not(:hover) .sk-art-card:first-child::before {
+  opacity: 0.85;
+  filter: blur(10px);
+}
+
+/* Interactive Spotlight Hovers */
+.sk-art-grid:hover .sk-art-card::before {
+  opacity: 0.2;
+}
+.sk-art-grid:hover .sk-art-card:hover::before {
+  opacity: 0.95;
+  filter: blur(8px);
+}
+
+/* Focus/Blur state effects */
+.sk-art-grid:not(:hover) .sk-art-card:not(:first-child) {
+  opacity: 0.55;
+  filter: blur(1.5px);
+}
+
+.sk-art-grid:hover .sk-art-card {
+  opacity: 0.55;
+  filter: blur(1.5px);
+}
+
+.sk-art-grid:hover .sk-art-card:hover {
+  opacity: 1;
+  filter: blur(0);
+}
+
+/* Keyboard accessibility focus outline */
+.sk-art-card:focus-visible .sk-art-card__frame {
+  outline: 2px solid var(--gold, #C4902A);
+  outline-offset: 4px;
+}
+
+/* Image Container Frame with original radius and soft drop shadow */
+.sk-art-card__frame {
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  border-radius: var(--r-card, 18px);
+  background: #EFECE8;
+  position: relative;
+  border: none;
+  padding: 0 !important;
+  /* Elegantly floating drop shadow */
+  box-shadow: 
+    0 25px 50px -12px rgba(26, 22, 18, 0.12), 
+    0 8px 20px -6px rgba(26, 22, 18, 0.08);
+  box-sizing: border-box;
+  transition: transform 0.45s var(--ease-expo), box-shadow 0.45s var(--ease-expo);
+}
+
+/* Image inside container */
+.sk-art-card__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s var(--ease-expo);
+}
+
+/* Hover state zoom and elegant float lift */
+.sk-art-card:hover .sk-art-card__frame {
+  transform: scale(1.02) translateY(-8px);
+  box-shadow: 
+    0 40px 70px -15px rgba(26, 22, 18, 0.22), 
+    0 15px 35px -10px rgba(26, 22, 18, 0.12);
+}
+
+.sk-art-card:hover .sk-art-card__frame img {
+  transform: scale(1.03);
+}
+
+/* Card Metadata below image */
+.sk-art-card__meta {
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.sk-art-card__title {
+  font-family: var(--font-display, "Cormorant Garamond", serif);
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--ink, #1F1B17);
+  margin-bottom: 4px;
+}
+
+.sk-art-card__tag {
+  display: block;
+  font-family: var(--font-ui, "Jost", sans-serif);
+  font-size: 0.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--ink-muted, #7C7164);
+}
+
+.sk-art-mobile-cta {
+  display: none;
+}
+
+/* ── Standalone Detail Page ── */
+.sk-art-single {
+  padding-top: clamp(7rem, 12vw, 9.5rem);
+  padding-bottom: clamp(6rem, 10vw, 8rem);
+  background-color: var(--bg-neutral-light, #FAF8F5) !important;
+  background-image: none !important;
+  min-height: 100vh;
+}
+
+.sk-art-single-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.sk-art-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-ui, "Jost", sans-serif);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink-muted, #7C7164);
+  margin-bottom: 28px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.sk-art-back-link svg {
+  transition: transform 0.3s;
+}
+
+.sk-art-back-link:hover {
+  color: var(--ink, #1F1B17);
+}
+
+.sk-art-back-link:hover svg {
+  transform: translateX(-4px);
+}
+
+.sk-art-single-image-col {
+  position: relative;
+}
+
+.sk-art-single-image-col::after {
+  content: '';
+  position: absolute;
+  top: 60px; /* Aligned with top edge of frame */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140%;
+  height: 160px;
+  background: radial-gradient(ellipse at 50% 80px, 
+    rgba(255, 255, 255, 0.95) 0%, 
+    rgba(255, 253, 240, 0.4) 40%, 
+    rgba(255, 253, 240, 0) 70%
+  );
+  filter: blur(12px);
+  opacity: 0.9;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.sk-art-single-frame {
+  position: relative;
+  z-index: 2;
+  max-width: 420px;
+  background: #EFECE8;
+  border: none;
+  border-radius: var(--r-card, 18px);
+  padding: 0 !important;
+  /* Elegantly floating drop shadow */
+  box-shadow: 
+    0 30px 60px -12px rgba(26, 22, 18, 0.15), 
+    0 10px 24px -8px rgba(26, 22, 18, 0.1);
+  transition: transform 0.6s var(--ease-expo), 
+              box-shadow 0.6s var(--ease-expo);
+  box-sizing: border-box;
+}
+
+.sk-art-single-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--r-card, 18px);
+}
+
+.sk-art-single-frame:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 45px 80px -15px rgba(26, 22, 18, 0.25), 
+    0 20px 40px -10px rgba(26, 22, 18, 0.15);
+}
+
+.sk-art-single-tag {
+  display: block;
+  font-family: var(--font-ui, "Jost", sans-serif);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted, #7C7164);
+  margin-bottom: 12px;
+}
+
+.sk-art-single-title {
+  font-family: var(--font-display, "Cormorant Garamond", serif);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--ink, #1F1B17);
+  margin: 0 0 2.5rem;
+}
+
+.sk-art-story-label {
+  font-family: var(--font-ui, "Jost", sans-serif);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted, #7C7164);
+  margin: 0 0 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding-bottom: 8px;
+}
+
+.sk-art-story-content {
+  font-family: var(--font-display, "Cormorant Garamond", serif);
+  font-size: clamp(1.05rem, 1.6vw, 1.22rem);
+  line-height: 1.7;
+  color: var(--ink-body, #2D2722);
+  margin-bottom: 40px;
+}
+
+.sk-art-story-content p {
+  margin: 0 0 1.2em;
+}
+
+.sk-art-specifications {
+  margin-bottom: 40px;
+}
+
+.sk-art-spec-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sk-art-spec-table tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.sk-art-spec-table tr:last-child {
+  border-bottom: 0;
+}
+
+.sk-art-spec-table th, 
+.sk-art-spec-table td {
+  padding: 14px 0;
+  font-size: 0.88rem;
+  text-align: left;
+}
+
+.sk-art-spec-table th {
+  width: 32%;
+  font-family: var(--font-ui, "Jost", sans-serif);
+  color: var(--ink-muted, #7C7164);
+  font-weight: 500;
+}
+
+.sk-art-spec-table td {
+  font-family: var(--font-ui, "Jost", sans-serif);
+  color: var(--ink, #1F1B17);
+  font-weight: 400;
+}
+
+.sk-art-single-cta {
+  margin-top: 36px;
+}
+
+.sk-art-inquire-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+  .sk-art-grid {
+    gap: var(--sk-space-6);
+  }
+
+  .sk-art-single-wrap {
+    gap: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  main.sk-art-gallery-pg {
+    padding-top: 3.5rem;
+  }
+  
+  .sk-art-single {
+    padding-top: 3.5rem;
+  }
+
+  .sk-art-section {
+    padding: 6rem 0;
+    background-image: var(--art-bg-mobile, var(--art-bg)) !important;
+  }
+
+  
+  .sk-art-header {
+    margin-bottom: 3.5rem;
+  }
+
+  .sk-art-single-wrap {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .sk-art-single-image-col {
+    order: 1;
+  }
+  
+  .sk-art-single-details-col {
+    order: 2;
+  }
+  
+  .sk-art-back-link {
+    margin-bottom: 20px;
+  }
+
+  .sk-art-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sk-space-6);
+    padding: 0 24px;
+  }
+
+  /* Reset offsets for single-column mobile view */
+  .sk-art-card:nth-child(2n) {
+    margin-top: 0;
+  }
+  
+  .sk-art-card__frame {
+    aspect-ratio: 4/5;
+  }
+  
+  .sk-art-card__title {
+    font-size: 0.95rem;
+  }
+
+  .sk-art-mobile-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+  }
+}
+
+/* Premium Minimal Art Navigation */
+.sk-art-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  margin: 3.5rem auto 0;
+  max-width: 220px;
+  user-select: none;
+}
+
+.sk-art-nav-arrow {
+  background: transparent;
+  border: 1px solid rgba(26, 22, 18, 0.16);
+  color: var(--ink, #1F1B17);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-expo);
+  padding: 0;
+}
+
+.sk-art-nav-arrow:hover:not(:disabled) {
+  background: var(--ink, #1F1B17);
+  color: #fff;
+  border-color: var(--ink, #1F1B17);
+  transform: translateY(-1px);
+}
+
+.sk-art-nav-arrow:disabled {
+  opacity: 0.22;
+  cursor: not-allowed;
+}
+
+.sk-art-nav-dots {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.sk-art-nav-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(26, 22, 18, 0.22);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sk-art-nav-dot.active {
+  background: var(--terra, #B8623F);
+  transform: scale(1.3);
+}
+
+@media (max-width: 768px) {
+  .sk-art-nav {
+    margin-top: 2.5rem;
+  }
+}
+

@@ -1,0 +1,72 @@
+/* ══════════════════════════════════════════════════════════
+   SACRED KOMPASS — transitions.css v4.0
+   1. Page overlay (ink wipe on enter/exit)
+   2. Heading curtain gold line
+   3. Section ambient pulse bar
+   All motion is GSAP-driven; CSS only defines shape + initial state.
+   ══════════════════════════════════════════════════════════ */
+
+/* ── 1. PAGE OVERLAY ─────────────────────────────────────── */
+/* Full-screen ink-coloured veil. Starts opaque, GSAP fades  */
+/* it out on load; fades back in before navigating away.     */
+#sk-page-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--ink, #1A1612);
+  z-index: 99998;
+  pointer-events: none;   /* JS toggles to 'all' during exit */
+  will-change: opacity;
+}
+
+/* ── 2. HEADING CURTAIN LINE ─────────────────────────────── */
+/* Thin gold-to-terra gradient bar injected after .display-h2 */
+/* and section headings. GSAP animates scaleX 0 → 1.         */
+.sk-heading-curtain-line {
+  display: block;
+  width: 72px;
+  height: 1.5px;
+  background: linear-gradient(
+    to right,
+    var(--gold, #C4902A)  0%,
+    var(--terra, #B8623F) 55%,
+    transparent 100%
+  );
+  border-radius: 2px;
+  margin-top: 0.75rem;
+  margin-bottom: 0.1rem;
+  transform-origin: left center;
+  transform: scaleX(0);   /* GSAP initial state */
+  opacity: 0;
+}
+
+/* ── 3. SECTION AMBIENT PULSE BAR ────────────────────────── */
+/* Fixed 2px vertical bar on the right edge that shifts color */
+/* as the user scrolls through sections.                      */
+#sk-section-pulse {
+  position: fixed;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 2px;
+  background-color: var(--gold, #C4902A);
+  opacity: 0.18;
+  z-index: 200;
+  border-radius: 2px 0 0 2px;
+  pointer-events: none;
+  will-change: background-color, opacity;
+}
+
+/* Hidden on mobile — sidebar space is too precious */
+@media (max-width: 860px) {
+  #sk-section-pulse { display: none; }
+}
+
+/* ── 4. SPLIT HEADING WORD WRAPPERS ──────────────────────── */
+/* Overflow-clipped containers injected by JS around each     */
+/* SplitType word so words slide upward within a masked box.  */
+.sk-word-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  line-height: 1.1;
+}

@@ -1,0 +1,348 @@
+/*
+Theme Name:  Sacred Kompass
+Theme URI:   https://sacredkompass.org
+Author:      Sacred Kompass Collective
+Version:     8.5.0
+License:     GNU General Public License v2 or later
+Text Domain: sacred-kompass
+Description: Luxury spiritual wellness. ACF + CPT. Fully free stack. Zero paid plugins.
+*/
+
+/* ── SELF-HOSTED FONTS ──────────────────────────────────── */
+
+/* Cormorant Garamond */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../fonts/cormorant-garamond-v21-latin-300.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../fonts/cormorant-garamond-v21-latin-300italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/cormorant-garamond-v21-latin-regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/cormorant-garamond-v21-latin-italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/cormorant-garamond-v21-latin-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/cormorant-garamond-v21-latin-500italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/cormorant-garamond-v21-latin-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/cormorant-garamond-v21-latin-600italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/cormorant-garamond-v21-latin-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/cormorant-garamond-v21-latin-700italic.woff2') format('woff2');
+}
+
+/* Cormorant */
+@font-face {
+  font-family: 'Cormorant';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../fonts/cormorant-v24-latin-300.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../fonts/cormorant-v24-latin-300italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/cormorant-v24-latin-regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cormorant';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/cormorant-v24-latin-italic.woff2') format('woff2');
+}
+
+/* Jost */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../fonts/jost-v20-latin-300.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/jost-v20-latin-regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/jost-v20-latin-500.woff2') format('woff2');
+}
+
+/* ── TOKENS ─────────────────────────────────────────────── */
+:root {
+  /* Dynamic sidenav offset — updated by JS to match actual pill width + gap.
+     Applied to all page sections so content never hides behind the pill. */
+  --sidenav-offset: 0px;
+
+  --ivory:          #FBFAF6;
+  --ivory-warm:     #F6F0E7;
+  --parchment:      #EDE3D2;
+  --parchment-deep: #E3D5C0;
+  --border:         #E0D5C4;
+  --border-light:   #EDE5D8;
+  --terra:          #B8623F;
+  --terra-dark:     #9A4D2E;
+  --terra-soft:     rgba(184,98,63,.10);
+  --rose-maroon:    #8A0303; /* Blood red color */
+  --blush:          #E4BDA0;
+  --sage:           #7A9579;
+  --gold:           #C4902A;
+  --gold-light:     #D4AF6A;
+  --gold-pale:      rgba(212,175,106,.12);
+  --gold-glow:      rgba(196,144,42,.07);
+  --ink:            #1A1612;
+  --ink-mid:        #3A332C;
+  --ink-muted:      #78695A;
+  --ink-ghost:      #7E7063;
+  --footer-bg:      #130F0C;
+  --celestial:      #FDFBF5;
+
+  --body-size-floor:    1rem;
+  --label-size-floor:   0.875rem;
+  --micro-size-floor:   0.75rem;
+
+  --body-size:          1.15rem;
+  --body-size-ui:       1rem;
+  --body-size-small:    0.95rem;
+  --font-size-display-mid: clamp(2.4rem, 4vw, 3.2rem);
+
+  --font-display: 'Cormorant Garamond','Times New Roman',serif;
+  --font-alt:     'Cormorant',serif;
+  --font-ui:      'Jost',system-ui,sans-serif;
+
+  --max-w:       1360px;
+  --section-py:  10rem;
+  --r-card:      18px;
+  --r-pill:      100px;
+  --r-btn:       8px;
+  --shadow-card: 0 4px 24px rgba(26,22,18,.07), 0 1px 4px rgba(26,22,18,.04);
+  --shadow-lift: 0 12px 40px rgba(26,22,18,.11), 0 2px 8px rgba(26,22,18,.05);
+
+  --ease:        cubic-bezier(.25,.46,.45,.94);
+  --ease-spring: cubic-bezier(.34,1.56,.64,1);
+  --ease-soft:   cubic-bezier(.22,1,.36,1);
+  --ease-expo:   cubic-bezier(.16,1,.3,1);
+  --ease-quart:  cubic-bezier(.77,0,.175,1);
+  --ease-back:   cubic-bezier(.22,.68,0,1.2);
+
+  /* Missing Variables mapped to design system tokens */
+  --font-body:          var(--font-ui);
+  --font-serif:         var(--font-display);
+  --bg:                 var(--ivory);
+  --shadow-card-hover:  0 12px 40px rgba(26,22,18,.12);
+}
+
+/* ── RESET ───────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{background-color:var(--ivory) !important;scroll-behavior:auto;font-size:16px;scroll-padding-top:80px;overscroll-behavior-y:none;height:100%;overflow-x:hidden !important}
+/* Lenis smooth scroll — requires html to not have overflow:hidden */
+html.lenis,html.lenis body{height:auto}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{border:none;background:none;cursor:pointer;font:inherit}
+
+/* ── PROGRESS BAR ────────────────────────────────────────── */
+.sk-progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--terra),var(--blush));z-index:10000;width:100%;transform:scaleX(0);transform-origin:left center;pointer-events:none;transition:opacity 0.2s ease}
+.sk-progress[style*="width: 0%"],
+.sk-progress[style*="width: 0px"]{opacity:0 !important}
+
+/* ── SUBPIXEL SEAM SEALING (Eliminates 1px hairline gap artifacts across all screens) ── */
+section, header, footer, .sk-announcement-bar, .hero {
+  box-sizing: border-box;
+  background-clip: padding-box;
+}
+.sk-announcement-bar + header,
+.sk-announcement-bar + .sk-sidenav,
+.hero + section,
+section + section {
+  margin-top: -1px;
+}
+
+/* ── BODY ────────────────────────────────────────────────── */
+body{background:var(--ivory);color:var(--ink);font-family:var(--font-ui);font-weight:300;line-height:1.75;overflow-x:hidden !important;min-height:100%;-webkit-font-smoothing:antialiased}
+/* Grain texture: position:fixed + will-change:transform promotes to own GPU layer,
+   preventing repaint on every scroll frame. contain:strict isolates layout/paint. */
+body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.022;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;will-change:transform;contain:strict;transform:translateZ(0)}
+
+/* ── LAYOUT ──────────────────────────────────────────────── */
+.wrap       {max-width:var(--max-w);margin:0 auto;padding:0 3rem}
+.wrap-narrow{max-width:800px;margin:0 auto;padding:0 3rem}
+.wrap-wide  {max-width:1560px;margin:0 auto;padding:0 3rem}
+
+/* Responsive .wrap padding — prevent content from touching screen edges on phones */
+@media (max-width: 768px) {
+  .wrap, .wrap-narrow, .wrap-wide {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+@media (max-width: 480px) {
+  .wrap, .wrap-narrow, .wrap-wide {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* ── REVEAL / ANIMATION ──────────────────────────────────── */
+/* ── GSAP-OWNED REVEAL CLASSES ───────────────────────────────
+   CSS only sets the initial hidden state; transitions are
+   intentionally removed — GSAP / ScrollTrigger drives all
+   motion. The .visible class is no longer needed for CSS
+   transitions but is still toggled by IntersectionObserver
+   in main.js as a progressive enhancement fallback.
+   ──────────────────────────────────────────────────────────── */
+.reveal        { opacity: 0; transform: translateY(40px) scale(0.99);  transition: none; }
+.reveal-left   { opacity: 0; transform: translateX(-40px) scale(0.99); transition: none; }
+.reveal-right  { opacity: 0; transform: translateX(40px) scale(0.99);  transition: none; }
+.reveal-scale  { opacity: 0; transform: scale(.94) translateY(20px);   transition: none; }
+.section-enter { opacity: 0; transform: translateY(60px) scale(0.98);  transition: none; }
+
+/* Stagger children — hidden until GSAP fires */
+.stagger-children > * { opacity: 0; transform: translateY(28px) scale(0.98); transition: none; }
+
+
+
+/* Fallback: if GSAP fails to load, .visible restores visibility */
+.no-gsap .reveal.visible,
+.no-gsap .reveal-left.visible,
+.no-gsap .reveal-right.visible,
+.no-gsap .reveal-scale.visible,
+.no-gsap .section-enter.visible  { opacity: 1; transform: none; }
+.no-gsap .stagger-children.visible > * { opacity: 1; transform: none; }
+
+/* ── KEYBOARD FOCUS ACCESSIBILITY ────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--terra) !important;
+  outline-offset: 3px !important;
+  border-radius: 2px !important;
+}
+
+/* ── SCREEN READER ONLY UTILITY ────────────────────────────── */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0,0,0,0) !important;
+  border: 0 !important;
+}
+
+/* ── CUSTOM SCROLLBAR ────────────────────────────────────── */
+/* Hide scrollbar on mobile and tablet */
+@media (max-width: 1024px) {
+  ::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+  html, body {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+}
+
+/* Custom Scrollbar for Desktop */
+@media (min-width: 1025px) {
+  ::-webkit-scrollbar {
+    display: block !important;
+    width: 8px !important;
+    height: 8px !important;
+    background: transparent !important;
+  }
+  ::-webkit-scrollbar-button,
+  ::-webkit-resizer {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-track-piece,
+  ::-webkit-scrollbar-corner {
+    background: var(--ivory) !important; /* matches document background so no white strip shows on Windows */
+    background-color: var(--ivory) !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #d47a52 !important; /* Light terra pill scroller */
+    border-radius: 100px !important;
+    border: none !important;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b8623f !important; /* Rich terra on hover */
+  }
+  
+  html, body {
+    scrollbar-width: thin !important;
+    scrollbar-color: #d47a52 transparent !important; /* Light terra scroller handle, transparent track */
+  }
+}
