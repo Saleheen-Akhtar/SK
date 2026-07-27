@@ -1,0 +1,15 @@
+/*
+Theme Name: Sacred Kompass New
+Theme URI:   https://sacredkompass.org
+Author:      Sacred Kompass Collective
+Version:     1.3.69
+License:     GNU General Public License v2 or later
+Text Domain: sacred-kompass
+Description: Luxury spiritual wellness. ACF + CPT. Fully free stack. Zero paid plugins.
+*/
+
+/*
+ * Note: The styles for this theme have been modularised into separate files
+ * located under `assets/css/` and are conditionally enqueued dynamically
+ * in `inc/setup.php`.
+ */
