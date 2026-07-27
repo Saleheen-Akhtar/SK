@@ -37,14 +37,8 @@
   function initLenis() {
     if (typeof Lenis === 'undefined') return;
 
-    // Detect low-end CPU/RAM (<= 4 cores or <= 4GB RAM) for performance
-    const isLowEnd = (typeof navigator !== 'undefined') && (
-      (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4) ||
-      (navigator.deviceMemory && navigator.deviceMemory <= 4)
-    );
-
-    if (prefersReduced || isLowEnd) {
-      console.log('Sacred Kompass: Low-end hardware or prefers-reduced-motion detected. Bypassing Lenis scroll hijacking.');
+    if (prefersReduced) {
+      console.log('Sacred Kompass: prefers-reduced-motion detected. Bypassing Lenis scroll hijacking.');
       
       // Fallback scroll bindings
       window.skLenisReady = false;
@@ -61,7 +55,7 @@
       duration: prefersReduced ? 0 : 1.3,            /* slightly longer — smoother, more refined feel */
       easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)), /* expo ease-out: fast start, feathers at end */
       smooth: !prefersReduced,
-      smoothTouch: false,
+      smoothTouch: true,
       touchMultiplier: 1.5,     /* reduced from 1.8 — prevents over-scroll on touch */
       wheelMultiplier: 1.0,     /* normalised wheel speed */
       normalizeWheel: false,
@@ -452,21 +446,23 @@
     );
   }
 
-  /* ── 11. FAQ — intentionally no animation ───────────────── */
-  // Rationale: FAQ is a credibility / objection-handling section.
-  // Animated entries imply "here's new, exciting content" — the wrong
-  // register for answers to doubts. Static text reads as matter-of-fact
-  // authority. Also breaks the reveal monotony after 8 animated sections.
+  /* ── 11. FAQ — animated sequentially ────────────────────── */
   function initFaq() {
-    // Make all FAQ items immediately visible (no hidden state)
-    document.querySelectorAll('.faq-item, .sk-faq-item').forEach(el => {
-      el.style.opacity = '1';
-      el.style.transform = 'none';
+    if (prefersReduced) {
+      document.querySelectorAll('.faq-item, .sk-faq-item').forEach(el => {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      });
+      return;
+    }
+    const items = gsap.utils.toArray('.faq-item, .sk-faq-item');
+    if (!items.length) return;
+    gsap.fromTo(items, { opacity: 0, y: 20 }, {
+      opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: 'power2.out',
+      scrollTrigger: { trigger: '.faq-section, .sk-faq-section', start: 'top 90%', toggleActions: 'play none none none' }
     });
-    // No ScrollTrigger created. Intentional.
   }
 
-  
   /* ── 13. CTA — scale-in reveal ──────────────────────────── */
   // Rationale: the dark CTA section already creates a strong visual boundary.
   // translateY would fight the dark-section boundary. scale(0.97)→1 feels like
