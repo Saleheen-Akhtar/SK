@@ -1,0 +1,48 @@
+
+Match 1 at line 44:
+-sp-v4-rule{ 
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin: 0 0 1rem -1.5rem; 
+    color: var(--terra);
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    align-self: center;
+
+    /* INCREASE THIS VALUE to make the star larger */
+  
+
+Match 2 at line 432:
+ransform-origin: left center;
+  white-space: nowrap;
+  padding-left: -1.5rem;
+  margin-left: -0.5rem;
+  justify-content: center;
+  animation: none !important;
+}
+
+body .av16-row--eyebrow .eyebrow {
+  font-size: clamp(0.95rem, 1.25vw, 1.25rem);
+  letter-spacing: 0.26em;
+}
+
+
+body /*
+
+Match 3 at line 846:
+═════════════════ */
+
+.sk-hero-divider {
+  position: relative;
+  z-index: 10;
+  margin-top: -2px; /* prevent gap between hero and divider */
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* ── Mist SVG — fills width, fixed height ── */
+.sk-mist-edge {
+  display: block;
+  width:

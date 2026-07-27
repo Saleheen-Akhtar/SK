@@ -1,0 +1,211 @@
+
+Match 1 at line 243:
+FT — static, body section scrolls over fixed bg image ── */
+.av16-left{
+  position: static;
+  top: auto;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: start;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+/* 
+
+Match 2 at line 444:
+— expanded to stretch so bottom line fits on one line ── */
+.av16-right{
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-top: 0;
+  align-self: stretch;
+  min-width: 0;
+  max-width: 100%;
+  margin-left: 0;
+  padding-right: 0;
+  padding-left: 2rem
+
+Match 3 at line 633:
+: 2rem;
+    min-height: auto;
+    align-items: start;
+  }
+  .av16-left {
+    position: static;
+    justify-content: flex-start;
+    align-self: auto;
+  }
+  .av16-right { align-self: auto; }
+  .av16-sacred, .av16-kompass { font-size: clamp(2.8rem, 14vw, 5rem); 
+
+Match 4 at line 638:
+   justify-content: flex-start;
+    align-self: auto;
+  }
+  .av16-right { align-self: auto; }
+  .av16-sacred, .av16-kompass { font-size: clamp(2.8rem, 14vw, 5rem); }
+  .av16-tagline-inner { font-size: 0.85rem; }
+}
+
+body /* ═════════════════════════════════════
+
+Match 5 at line 696:
+@media (min-width: 1441px) and (max-width: 1920px) {
+  body .av16-left {
+    transform: translate(2.5rem, 3.5rem);
+  }
+}
+
+/* 4. Keep the welcome line in a single line on larger screens */
+@media (min-width: 1441px) {
+  .av16-welcome {
+    white-space: nowrap;
+
+
+Match 6 at line 1071:
+body static — bg scrolls via background-attachment:fixed */
+.av16-left,
+body .av16-right{
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  position: static;
+  top: auto;
+  align-self: auto;
+}
+body /* Responsive: stack on mobile */
+@media (max-width: 900px){
+
+Match 7 at line 1072:
+scrolls via background-attachment:fixed */
+.av16-left,
+body .av16-right{
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  position: static;
+  top: auto;
+  align-self: auto;
+}
+body /* Responsive: stack on mobile */
+@media (max-width: 900px){
+  .about-v16-inn
+
+Match 8 at line 1094:
+* ── Consolidated About Tagline & Alignment Overrides ── */
+.av16-left{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  position: static;
+  top: auto;
+  gap: 0;
+}
+body .av16-tagline{
+  padding-top: 0;
+  margin-top:
+
+Match 9 at line 1108:
+;       /* just below KOMPASS */
+  align-self: auto;
+}
+body .av16-right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: stretch;
+  position: static;
+}
+@media (max-width: 900px) {
+  .av16-left  { justify-content: flex
+
+Match 10 at line 1116:
+tretch;
+  position: static;
+}
+@media (max-width: 900px) {
+  .av16-left  { justify-content: flex-start; align-items: center; }
+  .av16-brand { align-items: center; }
+  .av16-tagline { margin-top: 1.2rem; text-align: center; align-self: auto; }
+  .av16-right { j
+
+Match 11 at line 1119:
+rgin-top: 1.2rem; text-align: center; align-self: auto; }
+  .av16-right { justify-content: flex-start; align-self: auto; }
+  .av16-sacred, .av16-kompass { font-size: clamp(2.8rem, 14vw, 5rem); }
+}
+
+
+
+@keyframes sk-wave-letter {
+  0%, 100% { transform: translat
+
+Match 12 at line 1161:
+rem !important;
+    min-height: auto !important;
+  }
+  body .av16-left,
+  .av16-left {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  body .av16-right,
+  .av16-right {
+    width: 100% !important;
+    max-width: 100% !import
+
+Match 13 at line 1162:
+;
+    min-height: auto !important;
+  }
+  body .av16-left,
+  .av16-left {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  body .av16-right,
+  .av16-right {
+    width: 100% !important;
+    max-width: 100% !important;
+    paddi
+
+Match 14 at line 1167:
+    align-items: center;
+    text-align: center;
+  }
+  body .av16-right,
+  .av16-right {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0;
+  }
+  .av16-brand {
+    align-items: center;
+  }
+  .av16-sacred,
+  .av16-kompass {
+    fon
+
+Match 15 at line 1168:
+: center;
+    text-align: center;
+  }
+  body .av16-right,
+  .av16-right {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0;
+  }
+  .av16-brand {
+    align-items: center;
+  }
+  .av16-sacred,
+  .av16-kompass {
+    font-size: clamp(2

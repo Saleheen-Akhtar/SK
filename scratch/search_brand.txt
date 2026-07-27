@@ -1,0 +1,159 @@
+
+Match 1 at line 257:
+ia background-clip:text ── */
+/* Base styles shared by all logo text layers */
+.av16-brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.88;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-t
+
+Match 2 at line 272:
+sible;
+  width: 100%;
+}
+
+/* Layer 1: Clouds background text, slowly panning */
+.av16-brand--clouds {
+  background-image: var(--brand-bg-url, linear-gradient(135deg, var(--gold) 0%, var(--terra) 50%, var(--gold) 100%)) !important;
+  background-size: 200% 200% !important;
+  backgro
+
+Match 3 at line 281:
+ background-position;
+}
+
+/* Layer 2: Shimmer overlay text, quickly sweeping */
+.av16-brand--shimmer {
+  position: absolute !important;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  pointer-events: none;
+  background-image: linear-gradient(
+    110deg,
+    transparent 35%,
+    rgba(255, 25
+
+Match 4 at line 327:
+cred  { letter-spacing: 0.095em; }
+.av16-kompass { letter-spacing: -0.03em; }
+
+.av16-brand-wrap {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+
+/* Radial Light Rays (God Rays) Background */
+.av16-brand-rays {
+  display: none !important;
+  position: absolute;
+  left
+
+Match 5 at line 334:
+h: 100%;
+  overflow: visible;
+}
+
+/* Radial Light Rays (God Rays) Background */
+.av16-brand-rays {
+  display: none !important;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: clamp(380px, 55vw, 650px);
+  height: clamp(380px, 55vw, 650px);
+  transform: translate(-50%, -50%)
+
+Match 6 at line 369:
+deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.av16-brand--shadow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: un
+
+Match 7 at line 382:
+unset !important;
+  filter: none !important;
+  margin-bottom: 0 !important;
+}
+
+.av16-brand--shadow .av16-sacred,
+.av16-brand--shadow .av16-kompass {
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  background: none !important;
+  text-shadow: 
+
+
+Match 8 at line 383:
+important;
+  margin-bottom: 0 !important;
+}
+
+.av16-brand--shadow .av16-sacred,
+.av16-brand--shadow .av16-kompass {
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  background: none !important;
+  text-shadow: 
+    /* Sharp bright glint on the i
+
+Match 9 at line 396:
+left, closer and a bit stronger) */
+    -14px 2px 10px rgba(0, 0, 0, 0.48);
+}
+
+.av16-brand--shadow .av16-glow-d {
+  display: inline-block;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+
+
+
+
+.av16-collective {
+  display: none; /* removed per
+
+Match 10 at line 1117:
+900px) {
+  .av16-left  { justify-content: flex-start; align-items: center; }
+  .av16-brand { align-items: center; }
+  .av16-tagline { margin-top: 1.2rem; text-align: center; align-self: auto; }
+  .av16-right { justify-content: flex-start; align-self: auto; }
+  .av16-sacred, .av16
+
+Match 11 at line 1173:
+h: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0;
+  }
+  .av16-brand {
+    align-items: center;
+  }
+  .av16-sacred,
+  .av16-kompass {
+    font-size: clamp(2.8rem, 14vw, 5rem);
+  }
+  .av16-tagline {
+    margin-top: 1.2rem;
+    text-align: center;
+  }
+  .av16-

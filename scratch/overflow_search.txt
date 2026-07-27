@@ -1,0 +1,511 @@
+File collective.css | Line 627 | Pattern: translateX\(
+Snippet:
+
+}
+.sk-fts-panel {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateX(30px);
+  pointer-events: none;
+  transition: opacity 0.38s var(--ease-soft), transform 0.38s var(--ease-soft)
+----------------------------------------
+File collective.css | Line 633 | Pattern: translateX\(
+Snippet:
+ 0.38s var(--ease-soft);
+}
+.sk-fts-panel.is-active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+.sk-fts-panel.is-exiting {
+  opacity: 0;
+  transform: translateX(-30px);
+  poin
+----------------------------------------
+File collective.css | Line 638 | Pattern: translateX\(
+Snippet:
+  pointer-events: auto;
+}
+.sk-fts-panel.is-exiting {
+  opacity: 0;
+  transform: translateX(-30px);
+  pointer-events: none;
+}
+.sk-fts-panel.is-entering {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+----------------------------------------
+File collective.css | Line 643 | Pattern: translateX\(
+Snippet:
+ pointer-events: none;
+}
+.sk-fts-panel.is-entering {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+.sk-fts-origin {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(-
+----------------------------------------
+File collective.css | Line 913 | Pattern: translateX\(
+Snippet:
+nt: '';
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 10;
+  }
+  .sk-fts-swipe-hint {
+    position: absolute;
+ 
+----------------------------------------
+File foundations.css | Line 248 | Pattern: translateX\(
+Snippet:
+40px) scale(0.99);  transition: none; }
+.reveal-left   { opacity: 0; transform: translateX(-40px) scale(0.99); transition: none; }
+.reveal-right  { opacity: 0; transform: translateX(40px) scale(0.99);
+----------------------------------------
+File foundations.css | Line 249 | Pattern: translateX\(
+Snippet:
+-40px) scale(0.99); transition: none; }
+.reveal-right  { opacity: 0; transform: translateX(40px) scale(0.99);  transition: none; }
+.reveal-scale  { opacity: 0; transform: scale(.94) translateY(20px); 
+----------------------------------------
+File home-about.css | Line 878 | Pattern: translateX\(
+Snippet:
+lute;
+  bottom: calc(100% - clamp(48px, 8vw, 100px));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  opacity: 0;
+  animation: lotus-emerge 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.8s 
+----------------------------------------
+File home-about.css | Line 894 | Pattern: translateX\(
+Snippet:
+06,0.22));
+}
+
+@keyframes lotus-emerge {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(12px);
+  }
+  to {
+    opacity: 0.7;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/*
+----------------------------------------
+File home-about.css | Line 898 | Pattern: translateX\(
+Snippet:
+ translateX(-50%) translateY(12px);
+  }
+  to {
+    opacity: 0.7;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* ── Hidden sacred geometry mandala ── */
+.sk-geo-mandala {
+  position: absolute
+----------------------------------------
+File home-about.css | Line 907 | Pattern: translateX\(
+Snippet:
+sk-geo-mandala {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(80px, 12vw, 160px);
+  height: auto;
+  opacity: 0;
+  animation: geo-appear 3s ease 1.4s 
+----------------------------------------
+File home-about.css | Line 341 | Pattern: translate\([^,)]*,
+Snippet:
+h: clamp(380px, 55vw, 650px);
+  height: clamp(380px, 55vw, 650px);
+  transform: translate(-50%, -50%);
+  z-index: -2; /* Behind the text shadow layer */
+  pointer-events: none;
+  background: repeating
+----------------------------------------
+File home-about.css | Line 362 | Pattern: translate\([^,)]*,
+Snippet:
+
+  will-change: transform;
+}
+
+@keyframes sk-rays-rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.av16-brand
+----------------------------------------
+File home-about.css | Line 365 | Pattern: translate\([^,)]*,
+Snippet:
+
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.av16-brand--shadow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index:
+----------------------------------------
+File home-about.css | Line 697 | Pattern: translate\([^,)]*,
+Snippet:
+min-width: 1441px) and (max-width: 1920px) {
+  body .av16-left {
+    transform: translate(2.5rem, 3.5rem);
+  }
+}
+
+/* 4. Keep the welcome line in a single line on larger screens */
+@media (min-width: 1
+----------------------------------------
+File home-about.css | Line 432 | Pattern: margin-left\s*:\s*-\s*[0-9]
+Snippet:
+ransform-origin: left center;
+  white-space: nowrap;
+  padding-left: -1.5rem;
+  margin-left: -0.5rem;
+  justify-content: center;
+  animation: none !important;
+}
+
+body .av16-row--eyebrow .eyebrow {
+  f
+----------------------------------------
+File home-art.css | Line 99 | Pattern: translateX\(
+Snippet:
+olute;
+  top: -80px; /* Starts above the frame top */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140%;
+  height: 160px;
+  /* Soft golden/white glow */
+  background: radial-gradient(ellipse a
+----------------------------------------
+File home-art.css | Line 259 | Pattern: translateX\(
+Snippet:
+r {
+  color: var(--ink, #1F1B17);
+}
+
+.sk-art-back-link:hover svg {
+  transform: translateX(-4px);
+}
+
+.sk-art-single-image-col {
+  position: relative;
+}
+
+.sk-art-single-image-col::after {
+  content: ''
+----------------------------------------
+File home-art.css | Line 271 | Pattern: translateX\(
+Snippet:
+te;
+  top: 60px; /* Aligned with top edge of frame */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140%;
+  height: 160px;
+  background: radial-gradient(ellipse at 50% 80px, 
+    rgba(255, 255,
+----------------------------------------
+File home-cta.css | Line 282 | Pattern: translateX\(
+Snippet:
+orm .btn:hover span,.sk-contact-fallback-form .btn-primary:hover span{transform:translateX(4px)}
+body .sk-contact-fallback-form input.sk-invalid,
+body .sk-contact-fallback-form textarea.sk-invalid,
+bo
+----------------------------------------
+File home-cta.css | Line 878 | Pattern: translateX\(
+Snippet:
+ter,
+body .cta-form-col .forminator-button-submit:hover::after {
+    transform: translateX(4px);
+}
+
+body .sk-contact-card .forminator-button-submit:active,
+body .cta-form-col .forminator-button-submit
+----------------------------------------
+File home-cta.css | Line 419 | Pattern: translate\([^,)]*,
+Snippet:
+6s infinite ease-in-out;
+}
+
+@keyframes aurora-float-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, -30px) scale(1.15); }
+}
+
+@keyframes aurora-float-2 {
+  0%
+----------------------------------------
+File home-cta.css | Line 420 | Pattern: translate\([^,)]*,
+Snippet:
+loat-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, -30px) scale(1.15); }
+}
+
+@keyframes aurora-float-2 {
+  0%, 100% { transform: translate(0, 0) scale(1.1);
+----------------------------------------
+File home-cta.css | Line 424 | Pattern: translate\([^,)]*,
+Snippet:
+x, -30px) scale(1.15); }
+}
+
+@keyframes aurora-float-2 {
+  0%, 100% { transform: translate(0, 0) scale(1.1); }
+  50% { transform: translate(-40px, 30px) scale(0.9); }
+}
+
+/* Grid Layout */
+.sk-newslette
+----------------------------------------
+File home-cta.css | Line 425 | Pattern: translate\([^,)]*,
+Snippet:
+at-2 {
+  0%, 100% { transform: translate(0, 0) scale(1.1); }
+  50% { transform: translate(-40px, 30px) scale(0.9); }
+}
+
+/* Grid Layout */
+.sk-newsletter-grid {
+  display: grid;
+  grid-template-columns
+----------------------------------------
+File home-faq.css | Line 25 | Pattern: translateX\(
+Snippet:
+r(--ease),border-color .3s,transform .3s var(--ease)}
+.faq-item:hover{transform:translateX(4px)}
+
+/* ── 4. FAQ ACCORDION — smooth icon rotation feedback ─────── */
+.faq-toggle span{
+  transition:trans
+----------------------------------------
+File home-faq.css | Line 15 | Pattern: translate\([^,)]*,
+Snippet:
+}
+.faq-toggle span:first-child{width:11px;height:1px;top:50%;left:50%;transform:translate(-50%,-50%)}
+.faq-toggle span:last-child{width:1px;height:11px;top:50%;left:50%;transform:translate(-50%,-50%)}
+----------------------------------------
+File home-faq.css | Line 16 | Pattern: translate\([^,)]*,
+Snippet:
+)}
+.faq-toggle span:last-child{width:1px;height:11px;top:50%;left:50%;transform:translate(-50%,-50%)}
+.faq-trigger[aria-expanded="true"] .faq-toggle span{background:var(--terra)}
+.faq-trigger[aria-exp
+----------------------------------------
+File home-faq.css | Line 18 | Pattern: translate\([^,)]*,
+Snippet:
+erra)}
+.faq-trigger[aria-expanded="true"] .faq-toggle span:last-child{transform:translate(-50%,-50%) rotate(90deg);opacity:0}
+.faq-body{max-height:0;overflow:hidden;transition:max-height .5s var(--eas
+----------------------------------------
+File home-philosophy.css | Line 1079 | Pattern: translateX\(
+Snippet:
+ative !important;
+  top: auto !important;
+  left: auto !important;
+  transform: translateX(clamp(-5.5rem, -7vw, -4rem)) !important; /* Shifted left so it starts before 'Kerala' */
+  margin-top: clamp(
+----------------------------------------
+File home-philosophy.css | Line 630 | Pattern: margin-right\s*:\s*-\s*[0-9]
+Snippet:
+elative to the font-size of Tradition to include flourishes */
+  width: auto;
+  margin-right: -0.52em; /* Brings the next letters closer */
+  flex-shrink: 0;
+  transform: translateY(-0.09em); /* Fine-
+----------------------------------------
+File home-philosophy.css | Line 968 | Pattern: margin-right\s*:\s*-\s*[0-9]
+Snippet:
+Slightly smaller subtitle */
+  }
+
+  .sk-pujas-letter-t {
+    height: 1.5em;
+    margin-right: -0.45em;
+  }
+
+  .sk-pujas-divider-left {
+    max-width: 180px;
+    gap: 0.4rem;
+  }
+
+  .sk-pujas-divider-l
+----------------------------------------
+File home-philosophy.css | Line 292 | Pattern: margin-left\s*:\s*-\s*[0-9]
+Snippet:
+ image styling above cards */
+.sk-philosophy-title-wrap {
+  text-align: left;
+  margin-left: -35px; /* Pulls the image to the left to align the visible text with the cards */
+  margin-bottom: 1.5rem; 
+----------------------------------------
+File home-philosophy.css | Line 380 | Pattern: margin-left\s*:\s*-\s*[0-9]
+Snippet:
+tant;
+    padding: 0 0 1.5rem !important;
+  }
+  .sk-philosophy-title-wrap {
+    margin-left: -20px;
+    width: calc(100% + 20px);
+  }
+  body .sk-astrology-card {
+    flex: 0 0 calc((100% - 1.4rem) / 2
+----------------------------------------
+File home-philosophy.css | Line 450 | Pattern: margin-left\s*:\s*-\s*[0-9]
+Snippet:
+tant;
+    padding: 0 0 1.5rem !important;
+  }
+  .sk-philosophy-title-wrap {
+    margin-left: -10px; /* Minimal offset for mobile screens */
+    width: calc(100% + 10px);
+    margin-bottom: 1rem;
+  }
+ 
+----------------------------------------
+File home-philosophy.css | Line 623 | Pattern: margin-left\s*:\s*-\s*[0-9]
+Snippet:
+  transition: margin-left 0.3s ease;
+}
+
+.sk-pujas-em-tradition.has-letter-t {
+  margin-left: -0.35em; /* Shift the entire word left to align T's vertical stem with S of SRI VIDYA */
+}
+
+.sk-pujas-lette
+----------------------------------------
+File home-philosophy.css | Line 954 | Pattern: margin-left\s*:\s*-\s*[0-9]
+Snippet:
+/* Matched to tantric scale */
+  }
+
+  .sk-pujas-em-tradition.has-letter-t {
+    margin-left: -0.25em;
+  }
+
+  /* ── Kerala & Tantric Pujas — reduced to match SriVidya ── */
+  .sk-pujas-title-kerala {
+ 
+----------------------------------------
+File home-philosophy.css | Line 1071 | Pattern: margin-left\s*:\s*-\s*[0-9]
+Snippet:
+sk-pujas-scroll-container.has-scroll-bg .sk-pujas-em-tradition.has-letter-t {
+  margin-left: -0.28em !important; /* Balanced left offset to align with the 'A' of VIDYA */
+}
+
+/* Scroll title adjustment
+----------------------------------------
+File home-philosophy.css | Line 1119 | Pattern: margin-left\s*:\s*-\s*[0-9]
+Snippet:
+-scroll-bg {
+    width: 725px !important;
+    min-height: 501px !important;
+    margin-left: -86px !important;
+    margin-top: -30px !important;
+  }
+}
+
+/* Responsive Overrides for Scroll */
+@media (ma
+----------------------------------------
+File journal-index.css | Line 136 | Pattern: translateX\(
+Snippet:
+og-card-arrow:focus-visible { background: var(--terra); color: #fff; transform: translateX(2px); }
+
+/* ── HOME.PHP — JOURNAL ARCHIVE ──────────────────────────── */
+.sk-home-hero {
+  position: relativ
+----------------------------------------
+File navigation.css | Line 119 | Pattern: translateX\(
+Snippet:
+);
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--ink);
+  color: var(--ivory);
+  font-family: var(--font-ui);
+  font
+----------------------------------------
+File navigation.css | Line 138 | Pattern: translateX\(
+Snippet:
+z-index: 100;
+}
+
+.sk-sidenav-links li:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.sk-sidenav-links a:hover,
+.sk-sidenav-links a:focus-visible,
+.sk-sidenav-links a.acti
+----------------------------------------
+File navigation.css | Line 647 | Pattern: margin-left\s*:\s*-\s*[0-9]
+Snippet:
+px !important;
+    height: 2px !important;
+    margin-top: -1px !important;
+    margin-left: -9px !important;
+    transform-origin: center center !important;
+    transition: transform 0.35s ease, opac
+----------------------------------------
+File utilities.css | Line 228 | Pattern: translateX\(
+Snippet:
+2s;
+}
+.sk-story-preview-card:hover .sk-story-preview-card__arrow {
+  transform: translateX(4px);
+}
+
+/* CTA */
+.sk-stories-teaser__cta {
+  text-align: center;
+  padding-top: 1rem;
+}
+.sk-stories-teaser_
+----------------------------------------
+File utilities.css | Line 245 | Pattern: translateX\(
+Snippet:
+ transition: transform 0.2s;
+}
+.sk-stories-teaser__btn:hover svg {
+  transform: translateX(3px);
+}
+
+----------------------------------------

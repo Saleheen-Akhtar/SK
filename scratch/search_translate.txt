@@ -1,0 +1,314 @@
+
+Match 1 at line 17:
+er-color:var(--terra);color:var(--terra);background:var(--terra-soft);transform:translateY(-1px)}
+/* Tradition tags label — reads as invitation, not a heading */
+.trad-label{display:block;width:100%;font-family:var(--font-ui);font-size:.62rem;font-weight:300;letter-spacing:.14em;
+
+Match 2 at line 341:
+h: clamp(380px, 55vw, 650px);
+  height: clamp(380px, 55vw, 650px);
+  transform: translate(-50%, -50%);
+  z-index: -2; /* Behind the text shadow layer */
+  pointer-events: none;
+  background: repeating-conic-gradient(
+    from 0deg at 50% 50%,
+    transparent 0deg,
+    rgba(255, 2
+
+Match 3 at line 362:
+
+  will-change: transform;
+}
+
+@keyframes sk-rays-rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.av16-brand--shadow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  pointer-e
+
+Match 4 at line 365:
+
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.av16-brand--shadow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: none !important;
+  -webkit-background
+
+Match 5 at line 489:
+ white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+  transform: translateY(1.5rem);
+}
+
+/* ⑤ Main body — middle row */
+.av16-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.5vw, 2.5rem);
+  font-weight: 100;
+  line-height: 1.2;
+  letter-sp
+
+Match 6 at line 552:
+0, 60, 0.22); /* Clean gold/bronze border */
+  position: relative;
+  transform: translateY(3rem);
+}
+
+/* Enforce sentence case: convert all text to lowercase, and capitalize only the first letter */
+.av16-content-card h2,
+.av16-content-card p,
+.av16-content-card li {
+  text-transf
+
+Match 7 at line 697:
+min-width: 1441px) and (max-width: 1920px) {
+  body .av16-left {
+    transform: translate(2.5rem, 3.5rem);
+  }
+}
+
+/* 4. Keep the welcome line in a single line on larger screens */
+@media (min-width: 1441px) {
+  .av16-welcome {
+    white-space: nowrap;
+  }
+}
+
+/* iOS fix: replace f
+
+Match 8 at line 765:
+, border-color 0.4s ease;
+  }
+  .btn-primary:hover {
+    transform: scale(1.02) translateY(-2px);
+    box-shadow: 0 0 0 6px rgba(184,98,63,0.14), 0 8px 28px rgba(184,98,63,0.38);
+  }
+  .btn-outline:hover {
+    transform: scale(1.02) translateY(-2px);
+    box-shadow: 0 0 0 5px rgb
+
+Match 9 at line 769:
+8px rgba(184,98,63,0.38);
+  }
+  .btn-outline:hover {
+    transform: scale(1.02) translateY(-2px);
+    box-shadow: 0 0 0 5px rgba(184,98,63,0.10), var(--shadow-lift);
+  }
+  .btn-light:hover {
+    transform: scale(1.02) translateY(-2px);
+    box-shadow: 0 0 0 5px rgba(26,22,18,0.06
+
+Match 10 at line 773:
+,0.10), var(--shadow-lift);
+  }
+  .btn-light:hover {
+    transform: scale(1.02) translateY(-2px);
+    box-shadow: 0 0 0 5px rgba(26,22,18,0.06), var(--shadow-lift);
+  }
+
+  /* ── Cards: subtle lift ── */
+  .offering-card,
+  .value-card,
+  .sk-post-card,
+  .ct-card,
+  .founder-card
+
+Match 11 at line 789:
+,
+  .value-card:hover,
+  .sk-post-card:hover,
+  .ct-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(26,22,18,0.14);
+  }
+
+  /* ── Body links: underline width animation ── */
+  .sk-post-body a,
+  .founders-editorial-col a:not(.btn),
+  .about-v16 a:not
+
+Match 12 at line 878:
+lute;
+  bottom: calc(100% - clamp(48px, 8vw, 100px));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  opacity: 0;
+  animation: lotus-emerge 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.8s forwards;
+}
+
+.sk-lotus-svg {
+  width: clamp(40px, 5vw, 70px);
+  height: auto;
+  
+
+Match 13 at line 894:
+06,0.22));
+}
+
+@keyframes lotus-emerge {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(12px);
+  }
+  to {
+    opacity: 0.7;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* ── Hidden sacred geometry mandala ── */
+.sk-geo-mandala {
+  position: absolute;
+
+Match 14 at line 894:
+yframes lotus-emerge {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(12px);
+  }
+  to {
+    opacity: 0.7;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* ── Hidden sacred geometry mandala ── */
+.sk-geo-mandala {
+  position: absolute;
+  bottom: 30%;
+ 
+
+Match 15 at line 898:
+ translateX(-50%) translateY(12px);
+  }
+  to {
+    opacity: 0.7;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* ── Hidden sacred geometry mandala ── */
+.sk-geo-mandala {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(80px
+
+Match 16 at line 898:
+ translateY(12px);
+  }
+  to {
+    opacity: 0.7;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* ── Hidden sacred geometry mandala ── */
+.sk-geo-mandala {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(80px, 12vw, 160px);
+ 
+
+Match 17 at line 907:
+sk-geo-mandala {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(80px, 12vw, 160px);
+  height: auto;
+  opacity: 0;
+  animation: geo-appear 3s ease 1.4s forwards;
+  z-index: 15;
+  color: var(--gold, #d4af6a);
+}
+
+@keyframes geo-appear
+
+Match 18 at line 1028:
+t-large {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0); /* GPU compositing hint */
+}
+/* Lenis smooth scroll container — optimize rendering */
+[data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+/* Ensure the Lenis wrapper doesn't cause 
+
+Match 19 at line 1057:
+on,
+.founders-section,
+.faq-section,
+.cta-section,
+footer.footer {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+
+body /* ── FIX 2 (v7 addendum): av16 inner grid — true 50/50 equal columns ── */
+.about-v16-inner{
+  display: grid;
+  grid-template-columns: minmax(32
+
+Match 20 at line 1126:
+2.8rem, 14vw, 5rem); }
+}
+
+
+
+@keyframes sk-wave-letter {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-5px); }
+}
+body .av16-tagline-inner{
+  animation: none !important;
+  display: inline-flex;
+  gap: 0;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+
+Match 21 at line 1127:
+wave-letter {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-5px); }
+}
+body .av16-tagline-inner{
+  animation: none !important;
+  display: inline-flex;
+  gap: 0;
+  white-space: nowrap;
+  overflow: visible;
+}
+.av16-tagline-char {
+  display: inline-blo

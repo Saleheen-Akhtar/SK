@@ -1,0 +1,128 @@
+
+--- Media Query 1 at index 5768 ---
+@media (max-width: 900px) {
+  .sk-contact-globe-wrap {
+    max-width: 100%;
+  }
+}
+
+--- Media Query 2 at index 10417 ---
+@media(max-width:768px){
+  .founders-asymgrid{min-height:unset}
+}
+
+--- Media Query 3 at index 10483 ---
+@media(max-width:480px){}
+
+--- Media Query 4 at index 19953 ---
+@media (max-width: 960px) {
+  .sk-newsletter-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  .sk-newsletter-card {
+    padding: 4.5rem 3.5rem;
+  }
+  .sk-newsletter-heading {
+    font-size: clamp(2rem, 6vw, 2.8rem);
+  }
+  .sk-newsletter-body {
+    max-width: 100%;
+  }
+}
+
+--- Media Query 5 at index 20238 ---
+@media (max-width: 600px) {
+  .sk-newsletter-section {
+    padding: 4.5rem 0 5.5rem;
+  }
+  .sk-newsletter-card {
+    padding: 4rem 1.8rem 3.5rem;
+  }
+  .sk-newsletter-form-container {
+    padding: 2.2rem 1.6rem 2.2rem;
+  }
+  body .sk-newsletter-form-wrap .forminator-field .forminator-error-message {
+    position: relative; 
+    bottom: auto;
+    padding-bottom: 0.2rem;
+  }
+}
+
+--- Media Query 6 at index 27569 ---
+@media (max-width: 650px) {
+    body .sk-contact-card .forminator-col-6,
+    body .cta-form-col .forminator-col-6 {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+}
+
+--- Media Query 7 at index 29759 ---
+@media (max-width: 768px) {
+  .cta-layout {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+  .cta-section {
+    min-height: auto;
+    height: auto;
+    padding: 0;
+    background-attachment: scroll;
+  }
+  .cta-section .wrap {
+    padding-top: 2.5rem;
+    padding-bottom: 0;
+    align-items: flex-start;
+  }
+  .cta-text-col {
+    padding-top: 0;
+    padding-left: 0;
+    padding-bottom: 2rem;
+  }
+  .cta-form-col {
+    padding-top: 0;
+    background: transparent;
+    padding: 2rem 0 2.5rem;
+    border-radius: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .cta-h2 {
+    font-size: clamp(2rem, 8vw, 3.2rem);
+  }
+  body .sk-contact-card .forminator-col-6,
+  body .cta-form-col .forminator-col-6 {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+  body .sk-contact-card .forminator-row,
+  body .cta-form-col .forminator-row {
+    flex-direction: column;
+  }
+  body .forminator-button.forminator-button-submit {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+  .sk-contact-fallback-form {
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+  .sk-contact-fallback-form input,
+  .sk-contact-fallback-form textarea,
+  .sk-contact-fallback-form select {
+    background: rgba(255,255,255,0.85);
+    border: 1px solid rgba(212,175,106,0.35);
+    color: var(--ink);
+  }
+}
+
+--- Media Query 8 at index 31126 ---
+@media (max-width: 480px) {
+  .cta-h2 {
+    font-size: clamp(1.8rem, 9vw, 2.6rem);
+  }
+}

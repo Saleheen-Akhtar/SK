@@ -1,0 +1,207 @@
+
+Match 1 at line 88:
+.4rem;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+  .sk-sp-v4-slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px; /* Reduced from 440px to make cards narrower */
+    overflow: visible; /* Allows navigation arrows to hang slightly ou
+
+Match 2 at line 101:
+  .sk-sp-v4-slider-right {
+    justify-self: center !important;
+  }
+  .sk-sp-v4-track-wrap {
+    overflow: hidden;
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+  }
+  .sk-sp-v4-track {
+    display: flex !important; /* Confined horizontal r
+
+Match 3 at line 136:
+all around for the image */
+  }
+  /* Left slider arrow overrides */
+  .sk-sp-v4-slider-container .sk-sp-v4-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rg
+
+Match 4 at line 155:
+ntent: center;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .sk-sp-v4-slider-container .sk-sp-v4-arrow:hover {
+    background: #fff !important;
+    transform: translateY(-50%) scale(1.05);
+  }
+  .sk-sp-v4-slider-container .sk-sp-v4-prev {
+    left: -22px;
+  }
+  .sk-sp-v
+
+Match 5 at line 159:
+: #fff !important;
+    transform: translateY(-50%) scale(1.05);
+  }
+  .sk-sp-v4-slider-container .sk-sp-v4-prev {
+    left: -22px;
+  }
+  .sk-sp-v4-slider-container .sk-sp-v4-next {
+    right: -22px;
+  }
+  .sk-sp-v4-center-spacer {
+    display: block;
+  }
+  /* Remove section-wide 
+
+Match 6 at line 162:
+
+  .sk-sp-v4-slider-container .sk-sp-v4-prev {
+    left: -22px;
+  }
+  .sk-sp-v4-slider-container .sk-sp-v4-next {
+    right: -22px;
+  }
+  .sk-sp-v4-center-spacer {
+    display: block;
+  }
+  /* Remove section-wide global arrows since they are now on individual sliders */
+  body > 
+
+Match 7 at line 170:
+ows since they are now on individual sliders */
+  body > .sk-sp-v4-arrow,
+  .sk-sp-v4-bottom > .sk-sp-v4-arrow {
+    display: none !important;
+  }
+}
+@media (max-width: 1024px) {
+  .sk-sp-v4-slider-right {
+    display: none !important;
+  }
+  .sk-sp-v4-center-spacer {
+    display: 
+
+Match 8 at line 185:
+ }
+  .sk-sp-v4-cols-wrap {
+    display: block;
+    width: 100%;
+  }
+  .sk-sp-v4-slider-container.sk-sp-v4-slider-left {
+    width: 100%;
+  }
+  /* Mobile slider layout fallback logic */
+  .sk-sp-v4-slider-container.sk-sp-v4-slider-left .sk-sp-v4-prev {
+    position: absolute;
+    
+
+Match 9 at line 189:
+ {
+    width: 100%;
+  }
+  /* Mobile slider layout fallback logic */
+  .sk-sp-v4-slider-container.sk-sp-v4-slider-left .sk-sp-v4-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -20px;
+    z-index: 10;
+  }
+  .sk-sp-v4-slider-container.sk-sp-v
+
+Match 10 at line 196:
+ transform: translateY(-50%);
+    left: -20px;
+    z-index: 10;
+  }
+  .sk-sp-v4-slider-container.sk-sp-v4-slider-left .sk-sp-v4-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -20px;
+    z-index: 10;
+  }
+}
+
+.sk-sp-v4-layout {
+  position: r
+
+Match 11 at line 291:
+e {
+  background: #b5552c;
+  transform: translateY(-1px);
+  color: #fff;
+}
+
+.sk-sp-v4-bottom {
+  position: relative;
+  padding: 0 calc(10.5vw + 55px) 3vw; /* Increased side padding to push cards slightly more inward */
+  margin-top: 21vw; /* Responsive margin-top that moves cards
+
+Match 12 at line 297:
+f sun/moon in proportion to screen width */
+}
+@media (max-width: 768px) {
+  .sk-sp-v4-bottom {
+    margin-top: 2rem;
+    padding: 0 calc(5vw + 56px) 2.8rem;
+  }
+}
+.sk-sp-v4-track-wrap {
+  overflow: hidden;
+  border-radius: 0;
+}
+.sk-sp-v4-track {
+  display: flex;
+  gap: 1.4rem;
+  
+
+Match 13 at line 302:
+{
+    margin-top: 2rem;
+    padding: 0 calc(5vw + 56px) 2.8rem;
+  }
+}
+.sk-sp-v4-track-wrap {
+  overflow: hidden;
+  border-radius: 0;
+}
+.sk-sp-v4-track {
+  display: flex;
+  gap: 1.4rem;
+  transition: transform 0.45s var(--ease);
+  will-change: transform;
+}
+.sk-sp-v4-card {
+  flex:
+
+Match 14 at line 995:
+max-width: 1120px) {
+  .sk-sp-v4-top {
+    padding: 3rem 1.5rem 1rem;
+  }
+  .sk-sp-v4-bottom {
+    padding: 0 1.5rem 2rem;
+  }
+  .sk-sp-v4-card {
+    flex: 0 0 calc((100% - 1.4rem) / 2);
+    height: auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .sk-sp-v4-arrow {
+    displ

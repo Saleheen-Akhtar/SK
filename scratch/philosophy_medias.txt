@@ -1,0 +1,465 @@
+
+--- Media Query 1 at index 1827 ---
+@media (max-width: 768px) {
+  body .strip--circular {
+    background-attachment: fixed !important;
+    background-size: cover;
+    background-position: center center;
+  }
+  @supports (-webkit-touch-callout: none) {
+    body .strip--circular {
+      background-attachment: scroll !important;
+    }
+  }
+}
+
+--- Media Query 2 at index 10318 ---
+@media (min-width: 1025px) {
+  .sk-astrology-track-wrap {
+    max-width: 702px !important; /* Fits exactly 2 cards of 340px width + 1.4rem gap */
+    margin-left: auto !important; /* Aligns to the right to remove the right-side gap */
+  }
+}
+
+--- Media Query 3 at index 10560 ---
+@media (max-width: 1024px) {
+  .sk-astrology-bottom {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    padding: 0 0 1.5rem !important;
+  }
+  .sk-philosophy-title-wrap {
+    margin-left: -20px;
+    width: calc(100% + 20px);
+  }
+  body .sk-astrology-card {
+    flex: 0 0 calc((100% - 1.4rem) / 2) !important;
+    height: 400px !important;
+  }
+  body .sk-astrology-card .sk-sp-v4-card-photo {
+    height: 100% !important;
+  }
+  .sk-astrology-right-col .sk-astrology-arrow {
+    bottom: calc(200px + 1.5rem - 22px);
+  }
+  .sk-astrology-right-col .sk-astrology-prev {
+    left: 10px;
+  }
+  .sk-astrology-right-col .sk-astrology-next {
+    right: 10px;
+  }
+}
+
+--- Media Query 4 at index 11317 ---
+@media (max-width: 768px) {
+  .sk-astrology-bottom {
+    gap: 1.5rem !important;
+    padding: 0 0 1.5rem !important;
+  }
+  .sk-philosophy-title-wrap {
+    margin-left: 0 !important; /* Remove negative margin on small screens */
+    width: 100% !important;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .sk-philosophy-title-img {
+    max-width: 100%; /* Fill available width */
+    margin: 0 auto;
+  }
+  body .sk-astrology-card {
+    flex: 0 0 100% !important; /* One card at a time */
+    height: 450px !important; /* Increased from 380px to prevent text cut off */
+    grid-template-columns: 1fr !important; /* Stack photo/text vertically */
+  }
+  body .sk-astrology-card .sk-sp-v4-card-photo {
+    order: 1 !important;
+    height: 180px !important;
+    border-left: none !important;
+    border-bottom: 1px solid rgba(245, 205, 95, 0.15) !important;
+  }
+  body .sk-astrology-card .sk-sp-v4-card-photo img {
+    object-position: center top !important; /* Force top focus on mobile */
+  }
+  body .sk-astrology-card .sk-sp-v4-card-text {
+    order: 2 !important;
+    padding: 1.1rem 1.4rem 1.2rem !important;
+  }
+  .sk-astrology-right-col .sk-astrology-arrow {
+    bottom: calc(225px + 1.5rem - 22px); /* Centered vertically on the 450px card */
+  }
+  .sk-astrology-right-col .sk-astrology-prev { left: 10px; }
+  .sk-astrology-right-col .sk-astrology-next { right: 10px; }
+}
+
+--- Media Query 5 at index 12700 ---
+@media (max-width: 600px) {
+  .sk-astrology-bottom {
+    grid-template-columns: 1fr !important; /* Stack vertically on mobile */
+    gap: 1.5rem !important;
+    padding: 0 0 1.5rem !important;
+  }
+  .sk-philosophy-title-wrap {
+    margin-left: -10px; /* Minimal offset for mobile screens */
+    width: calc(100% + 10px);
+    margin-bottom: 1rem;
+  }
+  .sk-philosophy-title-img {
+    max-width: 320px; /* Safe size for mobile phones */
+  }
+  body .sk-astrology-card {
+    flex: 0 0 100% !important;
+    height: 450px !important; /* Increased from 380px to prevent text cut off */
+    grid-template-columns: 1fr !important; /* Stack layout on mobile */
+  }
+  body .sk-astrology-card .sk-sp-v4-card-photo {
+    order: 1 !important; /* Photo on top */
+    height: 170px !important; /* Fixed photo height on mobile */
+    border-left: none !important;
+    border-bottom: 1px solid rgba(245, 205, 95, 0.15) !important;
+  }
+  body .sk-astrology-card .sk-sp-v4-card-photo img {
+    object-position: center top !important; /* Force top focus on mobile */
+  }
+  body .sk-astrology-card .sk-sp-v4-card-text {
+    order: 2 !important; /* Text on bottom */
+    padding: 1.1rem 1.4rem 1.2rem !important; /* Muted mobile padding */
+  }
+  .sk-astrology-right-col .sk-astrology-arrow {
+    bottom: calc(225px + 1.5rem - 22px); /* Centered vertically on the 450px card */
+  }
+  .sk-astrology-right-col .sk-astrology-prev {
+    left: 10px; /* Float on top of cards on mobile */
+  }
+  .sk-astrology-right-col .sk-astrology-next {
+    right: 10px; /* Float on top of cards on mobile */
+  }
+}
+
+--- Media Query 6 at index 23162 ---
+@media (max-width: 900px) {
+  .sk-pujas-section {
+    padding-top: clamp(3rem, 5vw, 4rem);
+    padding-bottom: clamp(3rem, 5vw, 4rem);
+    margin-top: clamp(2rem, 4vw, 3rem);
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    border-radius: 20px;
+  }
+
+  .sk-pujas-grid-v2 {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .sk-pujas-left-col {
+    align-items: center;
+    text-align: center;
+    margin-top: 0;
+  }
+  
+  .sk-pujas-eyebrow {
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: clamp(0.85rem, 1.1vw, 1rem);
+  }
+  
+  .sk-pujas-left-col .sk-pujas-display-h2 {
+    text-align: center;
+    font-size: clamp(3.2rem, 5.5vw, 4.5rem);
+  }
+
+  .sk-pujas-left-col .sk-pujas-display-h2 em {
+    align-items: center;
+    margin-top: clamp(1.2rem, 3vw, 2rem);
+  }
+
+  .sk-pujas-em-srividya {
+    font-size: clamp(3.8rem, 6vw, 5rem);
+  }
+
+  .sk-pujas-em-tradition {
+    font-size: clamp(2.6rem, 4.5vw, 3.8rem);
+  }
+
+  .sk-pujas-title-kerala {
+    font-size: clamp(3.2rem, 5.5vw, 4.5rem);
+  }
+
+  .sk-pujas-title-tantric {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+  }
+
+  .sk-pujas-heading-clip {
+    align-items: center;
+  }
+  
+  .sk-pujas-divider-left {
+    margin: 0.5rem auto 2rem auto;
+    max-width: 280px;
+  }
+  
+  .sk-pujas-actions-left {
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    margin: 1rem auto 0;
+    gap: 0.85rem;
+  }
+  
+  .sk-pujas-actions-left .btn {
+    width: 100%;
+  }
+
+  .sk-pujas-content-card {
+    padding: 1.8rem 2rem;
+  }
+
+  .sk-pujas-card-text {
+    font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+  }
+
+  .sk-pujas-right-col {
+    gap: 1.5rem;
+  }
+}
+
+--- Media Query 7 at index 24911 ---
+@media (max-width: 768px) {
+  .sk-pujas-section {
+    padding-top: clamp(2.5rem, 4.5vw, 3.5rem);
+    padding-bottom: clamp(2.5rem, 4.5vw, 3.5rem);
+    margin-top: clamp(1.5rem, 3vw, 2.5rem);
+    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    border-radius: 16px;
+  }
+
+  .sk-pujas-grid-v2 {
+    gap: 2rem;
+  }
+
+  .sk-pujas-left-col .sk-pujas-display-h2 {
+    font-size: clamp(2.6rem, 8vw, 3.5rem);
+  }
+
+  .sk-pujas-left-col .sk-pujas-display-h2 em {
+    margin-top: clamp(1rem, 2.5vw, 1.5rem);
+  }
+
+  .sk-pujas-em-srividya {
+    font-size: clamp(3rem, 8.5vw, 4rem);
+  }
+
+  .sk-pujas-em-tradition {
+    font-size: clamp(2.2rem, 6vw, 3rem);
+  }
+
+  .sk-pujas-title-kerala {
+    font-size: clamp(2.6rem, 8vw, 3.5rem);
+  }
+
+  .sk-pujas-title-tantric {
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+  }
+
+  .sk-pujas-em-srividya,
+  .sk-pujas-tradition-text {
+    filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.85)) drop-shadow(2px 4px 5px rgba(0, 0, 0, 0.7));
+  }
+
+  .sk-pujas-divider-left {
+    max-width: 220px;
+  }
+
+  .sk-pujas-letter-t {
+    height: 1.6em;
+  }
+
+  .sk-pujas-content-card {
+    padding: 1.5rem 1.6rem;
+    border-radius: 12px;
+  }
+
+  .sk-pujas-card-text {
+    font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+    line-height: 1.75;
+  }
+}
+
+--- Media Query 8 at index 26250 ---
+@media (max-width: 480px) {
+  .sk-pujas-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    border-radius: 12px;
+  }
+
+  .sk-pujas-grid-v2 {
+    gap: 1.5rem;
+  }
+
+  .sk-pujas-eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+  }
+
+  .sk-pujas-left-col .sk-pujas-display-h2 {
+    font-size: clamp(2.2rem, 10vw, 2.8rem);
+    margin-bottom: 1rem;
+  }
+
+  .sk-pujas-left-col .sk-pujas-display-h2 em {
+    margin-top: clamp(0.8rem, 2vw, 1.2rem);
+  }
+
+  /* ── PARITY FIX: Kerala & Sri Vidya same visual weight on mobile ── */
+  .sk-pujas-em-srividya {
+    font-size: clamp(2rem, 8.5vw, 2.6rem); /* Matched to kerala/tantric scale */
+  }
+
+  .sk-pujas-em-tradition {
+    font-size: clamp(1.6rem, 6.5vw, 2rem); /* Matched to tantric scale */
+  }
+
+  .sk-pujas-em-tradition.has-letter-t {
+    margin-left: -0.25em;
+  }
+
+  /* ── Kerala & Tantric Pujas — reduced to match SriVidya ── */
+  .sk-pujas-title-kerala {
+    font-size: clamp(2rem, 8.5vw, 2.6rem); /* Same as srividya above */
+  }
+
+  .sk-pujas-title-tantric {
+    font-size: clamp(1.3rem, 5.5vw, 1.7rem); /* Slightly smaller subtitle */
+  }
+
+  .sk-pujas-letter-t {
+    height: 1.5em;
+    margin-right: -0.45em;
+  }
+
+  .sk-pujas-divider-left {
+    max-width: 180px;
+    gap: 0.4rem;
+  }
+
+  .sk-pujas-divider-left svg:nth-child(3) { /* compass star */
+    width: 20px;
+    height: 20px;
+  }
+
+  .sk-pujas-heading-clip {
+    -webkit-text-stroke: 1.1px rgba(245, 205, 95, 0.75) !important;
+    filter: drop-shadow(0 0 0.3px rgba(245, 205, 95, 0.65)) !important;
+  }
+
+  .sk-pujas-content-card {
+    padding: 1.2rem 1.3rem;
+    border-radius: 10px;
+    box-shadow: -4px 0px 14px rgba(0, 0, 0, 0.45),
+                -1px 0px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .sk-pujas-card-text {
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+
+  .sk-pujas-actions-left {
+    max-width: 280px;
+    gap: 0.7rem;
+    margin-top: 0.5rem;
+  }
+
+  .sk-pujas-actions-left .btn {
+    padding: 0.7rem 1.8rem;
+    font-size: 0.82rem;
+  }
+
+  .sk-pujas-right-col {
+    gap: 1rem;
+  }
+}
+
+--- Media Query 9 at index 32683 ---
+@media (min-width: 1360px) {
+  .sk-pujas-scroll-container.has-scroll-bg {
+    width: 725px !important;
+    min-height: 501px !important;
+    margin-left: -86px !important;
+    margin-top: -30px !important;
+  }
+}
+
+--- Media Query 10 at index 32934 ---
+@media (max-width: 1024px) {
+  .sk-pujas-scroll-container.has-scroll-bg {
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 620px;
+    min-height: 480px;
+    padding: 7rem 5.5rem;
+    margin-left: auto !important;
+  }
+}
+
+--- Media Query 11 at index 33179 ---
+@media (max-width: 768px) {
+  .sk-pujas-scroll-container.has-scroll-bg {
+    /* Fit within the section which has 1.5vw side margins + .wrap 1.25rem padding */
+    width: calc(100% - 1rem) !important;
+    max-width: 480px;
+    min-height: 400px;
+    padding: 5.5rem 3rem;
+    margin: 0 auto !important;
+    margin-left: auto !important;
+    transform: none !important;
+    background-size: 100% 100%;
+  }
+  .sk-pujas-scroll-container.has-scroll-bg .sk-pujas-eyebrow {
+    transform: none !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  /* Parity text sizing inside the scroll on mobile */
+  .sk-pujas-scroll-container.has-scroll-bg .sk-pujas-title-kerala {
+    font-size: clamp(1.8rem, 6vw, 2.6rem) !important;
+  }
+  .sk-pujas-scroll-container.has-scroll-bg .sk-pujas-em-srividya {
+    font-size: clamp(1.8rem, 6vw, 2.6rem) !important;
+  }
+  .sk-pujas-scroll-container.has-scroll-bg .sk-pujas-title-tantric {
+    font-size: clamp(1.1rem, 4vw, 1.6rem) !important;
+  }
+  .sk-pujas-scroll-container.has-scroll-bg .sk-pujas-em-tradition {
+    font-size: clamp(1.1rem, 4vw, 1.6rem) !important;
+  }
+}
+
+--- Media Query 12 at index 34307 ---
+@media (max-width: 600px) {
+  .sk-pujas-scroll-container.has-scroll-bg {
+    width: calc(100% - 0.5rem) !important;
+    max-width: 400px;
+    min-height: 360px;
+    padding: 5rem 2.5rem;
+  }
+}
+
+--- Media Query 13 at index 34501 ---
+@media (max-width: 450px) {
+  .sk-pujas-scroll-container.has-scroll-bg {
+    width: 100% !important;
+    max-width: 340px;
+    min-height: 310px;
+    padding: 4.2rem 2rem;
+  }
+}

@@ -1,0 +1,62 @@
+
+--- Media Query 1 at index 6204 ---
+@media (max-width: 860px) {
+  .about-layout--v13 {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  .about-right-col {
+    padding-top: 0;
+    order: -1;
+  }
+  .about-wisdom-word {
+    font-size: clamp(3.5rem, 16vw, 6rem);
+  }
+  .about-confluence-heading {
+    font-size: clamp(1.5rem, 5.5vw, 2.2rem);
+  }
+  .about-collective-name--clipped {
+    font-size: clamp(2.2rem, 10vw, 3.8rem);
+  }
+  .acn-kompass,
+  .acn-sacred,
+  .acn-collective {
+    font-size: clamp(2.2rem, 10vw, 3.8rem);
+  }
+  .about-expr-line1,
+  .about-expr-line2 {
+    font-size: clamp(1.3rem, 5.5vw, 2rem);
+  }
+  .hcw-to {
+    font-size: clamp(2.8rem, 14vw, 7rem); /* JS will override */
+  }
+  .hcw-from {
+    font-size: clamp(2.2rem, 10vw, 6rem);
+  }
+  .hero--split,
+  .hero--fullscreen {
+    min-height: 65vh;
+    min-height: 65dvh; /* dynamic viewport height to handle mobile address bars */
+  }
+  /* FROM word higher on mobile so both words are clearly separated */
+  .hero-from-wrap { left: 18vw; top: 42%; transform: translateY(-100%); }
+  .hero-to-wrap   { top: 38%; transform: translateY(-20%); }
+}
+
+--- Media Query 2 at index 7303 ---
+@media (max-width: 860px) {
+  .sk-collective-hero {
+    padding: 5rem 0 2rem;
+  }
+  body .sk-collective-hero .display-xl,
+  body .sk-collective-hero .sk-section-display {
+    font-size: clamp(2.6rem, 11vw, 4rem);
+    line-height: 1.08;
+  }
+  .sk-collective-hero-sub {
+    font-size: 0.95rem;
+    padding: 0;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}

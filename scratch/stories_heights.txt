@@ -1,0 +1,912 @@
+
+--- Match 1 at index 304 ---
+isible only inside this section */
+  background-color: #0c0908;
+  padding: 0;
+  height: 56.25vw; /* Match the 16:9 aspect ratio of the painting exactly */
+  min-height: 56.25vw;
+  transform: none;
+  will-change: auto;
+}
+/* Use a ::before pseudo-element so the background image alw
+
+--- Match 2 at index 381 ---
+
+  height: 56.25vw; /* Match the 16:9 aspect ratio of the painting exactly */
+  min-height: 56.25vw;
+  transform: none;
+  will-change: auto;
+}
+/* Use a ::before pseudo-element so the background image always covers the
+   full section width â€” avoids the right-side gap caused by 
+
+--- Match 3 at index 833 ---
+tent: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  background-image: var(--sp-bg);
+  background-size: 100% 100%; /* Stretch to fit container dimensions exactly */
+  background-position: center top;
+  background-repeat: no-repeat;
+  z-i
+
+--- Match 4 at index 1484 ---
+/
+@media (max-width: 768px) {
+  body .sk-stories-preview-section.sk-sp-v4 {
+    min-height: 80vh;
+  }
+  body .sk-stories-preview-section.sk-sp-v4::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    background-attachment: s
+
+--- Match 5 at index 1642 ---
+  position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    background-attachment: scroll;
+    background-position: center 20%; /* Show top portion of scene — sky + figure visible */
+    background-size: cover;
+    background-image: var(--sp-
+
+--- Match 6 at index 2078 ---
+}
+@media (max-width: 480px) {
+  body .sk-stories-preview-section.sk-sp-v4 {
+    min-height: 70vh;
+  }
+  body .sk-stories-preview-section.sk-sp-v4::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    background-attachment: s
+
+--- Match 7 at index 2236 ---
+  position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    background-attachment: scroll;
+    background-position: 65% 15%; /* Slightly right-biased to keep woman figure in frame */
+  }
+  @supports (-webkit-touch-callout: none) {
+    body .s
+
+--- Match 8 at index 3790 ---
+ard fills 100% of the slider container width */
+    width: 100% !important;
+    height: 280px !important; /* Shorter card height */
+    transform: translateZ(0); /* Fix browser border-radius clipping bug */
+    isolation: isolate; /* Extra clipping safety */
+  }
+  .sk-sp-v4-card-
+
+--- Match 9 at index 3832 ---
+th */
+    width: 100% !important;
+    height: 280px !important; /* Shorter card height */
+    transform: translateZ(0); /* Fix browser border-radius clipping bug */
+    isolation: isolate; /* Extra clipping safety */
+  }
+  .sk-sp-v4-card-text {
+    padding: 1.2rem 1.1rem 1rem !im
+
+--- Match 10 at index 4123 ---
+ Adjusted padding to fit inside shorter card */
+    gap: 0.5rem !important;
+    min-height: auto !important;
+  }
+  .sk-sp-v4-card-photo {
+    height: calc(100% - 16px) !important;
+    margin: 8px !important; /* Restores the 8px margin (gap) all around the photo */
+    border-radi
+
+--- Match 11 at index 4185 ---
+m !important;
+    min-height: auto !important;
+  }
+  .sk-sp-v4-card-photo {
+    height: calc(100% - 16px) !important;
+    margin: 8px !important; /* Restores the 8px margin (gap) all around the photo */
+    border-radius: 12px !important; /* Rounded corners all around for the pho
+
+--- Match 12 at index 4434 ---
+ corners all around for the photo frame */
+  }
+  .sk-sp-v4-card-photo img {
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 12px !important; /* Rounded corners all around for the image */
+  }
+  /* Left slider arrow overrides */
+  .sk-sp-v4-slider
+
+--- Match 13 at index 4772 ---
+op: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 251, 243, 0.95) !important;
+    border: 1px solid rgba(212, 175, 106, 0.3) !important;
+    color: var(--terra) !important;
+    opacity: 
+
+--- Match 14 at index 6489 ---
+ position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.sk-sp-v4-top {
+  padding: calc(4vw + 40px) calc(5vw + 56px) 0;
+  flex-shrink: 0;
+}
+.sk-sp-v4-top-inner {
+  max-width: 700px;
+}
+.sk-sp-v4-eyebrow {
+  font-family: var(--font-ui);
+  fon
+
+--- Match 15 at index 6966 ---
+t-display);
+  font-size: clamp(4.5rem, 6vw, 6.5rem);
+  font-weight: 700;
+  line-height: .95;
+  letter-spacing: -.03em;
+  color: var(--rose-maroon); /* Changed to rose maroon */
+  margin-bottom: 1.4rem;
+  white-space: normal;   
+}
+.sk-sp-v4-heading em {
+  font-style: italic;
+  col
+
+--- Match 16 at index 7477 ---
+ /* Left-aligned to match design */
+}
+.sk-sp-v4-rule span {
+  flex: 0 0 80px;
+  height: 1px;
+  background: var(--terra);
+  opacity: 0.7;
+}
+.sk-sp-v4-sub {
+  font-family: var(--font-body, var(--font-display));
+  font-size:1.15rem;
+  font-weight: 300;
+  font-style: normal;
+  color:
+
+--- Match 17 at index 7739 ---
+: normal;
+  color: var(--ink); /* Solid ink color for high visibility */
+  line-height: 1.7;
+  max-width: 440px;
+  margin: 0 0 1.8rem;
+}
+.sk-sp-v4-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-ui);
+  font-size: var(--label-size-floo
+
+--- Match 18 at index 9656 ---
+em 1.25rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 260px;
+}
+.sk-sp-v4-qicon {
+  color: var(--gold);
+  flex-shrink: 0;
+  line-height: 1;
+}
+.sk-sp-v4-qtext {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-style: italic;
+  fo
+
+--- Match 19 at index 9742 ---
+ight: 260px;
+}
+.sk-sp-v4-qicon {
+  color: var(--gold);
+  flex-shrink: 0;
+  line-height: 1;
+}
+.sk-sp-v4-qtext {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-style: italic;
+  font-weight: 400; /* Bolder weight to darken the text styling */
+  color: #0c0805; /* De
+
+--- Match 20 at index 9989 ---
+tyling */
+  color: #0c0805; /* Deep dark ink to replace lighter color */
+  line-height: 1.65;
+  margin: 0;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.sk-sp-v4-readmore {
+  font-family: var(--font-ui);
+  font-
+
+--- Match 21 at index 10401 ---
+text-transform: none;
+  flex-shrink: 0;
+}
+.sk-sp-v4-qdivider {
+  width: 32px;
+  height: 1px;
+  background: var(--terra);
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+.sk-sp-v4-author {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.sk-sp-v4-avatar {
+  width: 34px;
+  height: 34p
+
+--- Match 22 at index 10590 ---
+ex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.sk-sp-v4-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--terra);
+  color: #fff;
+  font-family: var(--font-ui);
+  font-size: var(--label-size-floor);
+  font-weight: 600;
+  display: flex;
+  align-items: 
+
+--- Match 23 at index 11453 ---
+12px;
+  margin: 10px 10px 10px 0;
+}
+.sk-sp-v4-card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s var(--ease);
+}
+.sk-sp-v4-card:hover .sk-sp-v4-card-photo img { transform: scale(1.04); }
+.sk-sp-v4-photo-placeholder {
+
+--- Match 24 at index 11671 ---
+ img { transform: scale(1.04); }
+.sk-sp-v4-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, var(--parchment) 0%, #e8d5bb 100%);
+}
+.sk-sp-v4-photo-placeh
+
+--- Match 25 at index 11687 ---
+: scale(1.04); }
+.sk-sp-v4-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, var(--parchment) 0%, #e8d5bb 100%);
+}
+.sk-sp-v4-photo-placeholder span {
+  f
+
+--- Match 26 at index 12117 ---
+ute;
+  top: calc(50% - 1.5rem);
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.95);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  b
+
+--- Match 27 at index 12823 ---
+center;
+  gap: 0.55rem;
+  margin-top: 1.4rem;
+}
+.sk-sp-v4-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.35);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.25s, transform 0.25s;
+}
+.sk-sp-v4-dot.active {
+  ba
+
+--- Match 28 at index 13141 ---
+5);
+}
+
+/* â”€â”€ STORIES PAGE v3 â€” Full redesign â”€â”€ */
+.sk-stories-pg {
+  min-height: 100vh;
+  background: var(--ivory);
+  padding-bottom: 0;
+}
+.sk-spg-hero {
+  background: var(--ivory-warm);
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+.sk-spg-hero__wrap {
+  d
+
+--- Match 29 at index 13425 ---
+ay: grid;
+  grid-template-columns: 56% 44%;
+  align-items: stretch;
+  gap: 0;
+  min-height: 480px;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.sk-spg-hero__left {
+  position: relative;
+  padding: 4.5rem 4rem 4.5rem calc(max(3rem, (100vw - var(--max-w)) / 2 + 3
+
+--- Match 30 at index 13905 ---
+ze: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  margin: 0 0 1.2rem;
+}
+.sk-spg-hero__title em {
+  font-style: italic;
+  color: var(--terra);
+  padding-right: 0.06em;
+}
+.sk-spg-hero__rule {
+  display: flex;
+ 
+
+--- Match 31 at index 14167 ---
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  height: 12px;
+  justify-content: center;
+}
+.sk-spg-hero__rule::before {
+  content: '';
+  display: block;
+  width: 44px;
+  height: 1px;
+  background: var(--gold);
+}
+.sk-spg-hero__rule::after {
+  conten
+
+--- Match 32 at index 14289 ---
+
+.sk-spg-hero__rule::before {
+  content: '';
+  display: block;
+  width: 44px;
+  height: 1px;
+  background: var(--gold);
+}
+.sk-spg-hero__rule::after {
+  content: '+';
+  color: var(--gold);
+  font-size: 0.8rem;
+  line-height: 1;
+}
+.sk-spg-hero__sub {
+  font-family: var(--font-ui);
+
+
+--- Match 33 at index 14425 ---
+rule::after {
+  content: '+';
+  color: var(--gold);
+  font-size: 0.8rem;
+  line-height: 1;
+}
+.sk-spg-hero__sub {
+  font-family: var(--font-ui);
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--ink-muted);
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 0 2rem;
+}
+.sk-s
+
+--- Match 34 at index 14565 ---
+i);
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--ink-muted);
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 0 2rem;
+}
+.sk-spg-hero__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+.sk-spg-badge {
+  display: inline-flex;
+  align-items: center;
+  gap
+
+--- Match 35 at index 15470 ---
+ {
+  position: relative;
+  overflow: hidden;
+  background: var(--ivory-warm);
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4.5rem calc(max(3rem, (100vw - var(--max-w)) / 2 + 3rem)) 4.5rem 2rem;
+}
+.sk-spg-hero__img {
+  position
+
+--- Match 36 at index 15699 ---
+rem)) 4.5rem 2rem;
+}
+.sk-spg-hero__img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: var(--shadow-lift);
+  display: block;
+  transition: transform 0.5s var(--ease);
+}
+.sk-spg-hero__right:hover .sk-spg-hero__img {
+
+
+--- Match 37 at index 16221 ---
+ 246, 0.95);
+  position: sticky;
+  top: 64px; /* offset by desktop fixed navbar height */
+  z-index: 100;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--border-light);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: top 0.4s var(--ease);
+
+--- Match 38 at index 17009 ---
+ 0.45rem 1.25rem;
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
+  line-height: 1.4;
+}
+.sk-spg-filter-btn:hover,
+.sk-spg-filter-btn:focus-visible {
+  border-color: var(--terra);
+  color: var(--terra);
+  background: var(--terra-soft);
+}
+.sk-spg-sort:focus-visible {
+  borde
+
+--- Match 39 at index 18369 ---
+w: 0 8px 40px rgba(26,22,18,0.12);
+}
+.sk-spg-card-img {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+  background: var(--parchment);
+  flex-shrink: 0;
+}
+.sk-spg-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  disp
+
+--- Match 40 at index 18528 ---
+: var(--parchment);
+  flex-shrink: 0;
+}
+.sk-spg-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s var(--ease);
+}
+.sk-spg-card:hover .sk-spg-card-img img,
+.sk-spg-card:focus-within .sk-spg-card-img img { transform: sc
+
+--- Match 41 at index 18789 ---
+img { transform: scale(1.04); }
+.sk-spg-card-img-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--parchment) 0%, var(--ivory) 100%);
+}
+.sk-spg-card-img-placeholder span {
+  
+
+--- Match 42 at index 19194 ---
+e-badge {
+  position: absolute;
+  bottom: -14px;
+  left: 14px;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  box-shadow: 0 2px 10px rgba(26,22,18,0.12);
+  z-index
+
+--- Match 43 at index 19854 ---
+display);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.3;
+  margin: 0;
+}
+.sk-spg-card-excerpt {
+  font-family: var(--font-display);
+  font-size: 0.84rem;
+  font-weight: 300;
+  color: var(--ink-muted);
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+
+
+--- Match 44 at index 20017 ---
+y);
+  font-size: 0.84rem;
+  font-weight: 300;
+  color: var(--ink-muted);
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.sk-spg-read-link {
+  display: inline-flex;
+  align-items: c
+
+--- Match 45 at index 21551 ---
+ 2.6rem);
+  font-weight: 400;
+  color: var(--ink);
+  margin: 0 0 0.8rem;
+  line-height: 1.25;
+}
+.sk-spg-cta__sub {
+  font-family: var(--font-ui);
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--ink-muted);
+  line-height: 1.7;
+  margin: 0 auto;
+  max-width: 580px;
+}
+.sk-s
+
+--- Match 46 at index 21693 ---
+i);
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--ink-muted);
+  line-height: 1.7;
+  margin: 0 auto;
+  max-width: 580px;
+}
+.sk-spg-cta__right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+}
+.sk-spg-cta__btn {
+  display
+
+--- Match 47 at index 23796 ---
+e-columns: repeat(2, 1fr); }
+  .sk-spg-hero__wrap { grid-template-columns: 1fr; min-height: auto; }
+  .sk-spg-hero__left { padding: 3.5rem 1.5rem 2.5rem 1.5rem; }
+  .sk-spg-hero__right { min-height: 340px; border-radius: 0; padding: 1.5rem 1.5rem 3.5rem 1.5rem; }
+  .sk-spg-hero__
+
+--- Match 48 at index 23903 ---
+pg-hero__left { padding: 3.5rem 1.5rem 2.5rem 1.5rem; }
+  .sk-spg-hero__right { min-height: 340px; border-radius: 0; padding: 1.5rem 1.5rem 3.5rem 1.5rem; }
+  .sk-spg-hero__sub { max-width: 100%; }
+  .sk-spg-hero__title { font-size: clamp(2.2rem, 8vw, 3rem); }
+  .sk-spg-cta { pad
+
+--- Match 49 at index 25688 ---
+{
+    white-space: normal;
+    font-size: clamp(2.5rem, 12vw, 3.8rem);
+    line-height: 1.1;
+  }
+  .sk-sp-v4-card {
+    flex: 0 0 100%;
+    grid-template-columns: 1fr;
+  }
+  .sk-sp-v4-card-photo {
+    margin: 10px 10px 0 10px;
+    height: 200px;
+    order: -1; /* Place image on t
+
+--- Match 50 at index 25839 ---
+te-columns: 1fr;
+  }
+  .sk-sp-v4-card-photo {
+    margin: 10px 10px 0 10px;
+    height: 200px;
+    order: -1; /* Place image on top of text */
+  }
+  .sk-sp-v4-photo-placeholder {
+    min-height: 200px;
+  }
+  .sk-sp-v4-card-text {
+    min-height: auto;
+    padding: 1.4rem 1.2rem;
+
+
+--- Match 51 at index 25942 ---
+r: -1; /* Place image on top of text */
+  }
+  .sk-sp-v4-photo-placeholder {
+    min-height: 200px;
+  }
+  .sk-sp-v4-card-text {
+    min-height: auto;
+    padding: 1.4rem 1.2rem;
+    gap: 0.6rem;
+  }
+  .sk-sp-v4-qtext {
+    -webkit-line-clamp: unset;
+    display: block;
+    overflo
+
+--- Match 52 at index 25993 ---
+p-v4-photo-placeholder {
+    min-height: 200px;
+  }
+  .sk-sp-v4-card-text {
+    min-height: auto;
+    padding: 1.4rem 1.2rem;
+    gap: 0.6rem;
+  }
+  .sk-sp-v4-qtext {
+    -webkit-line-clamp: unset;
+    display: block;
+    overflow: visible;
+  }
+  .sk-stories-preview-section.sk-sp
+
+--- Match 53 at index 26221 ---
+ow: visible;
+  }
+  .sk-stories-preview-section.sk-sp-v4[style*="--sp-bg"] {
+    min-height: auto;
+  }
+  .sk-sp-v4-layout {
+    min-height: auto;
+  }
+}
+
+/* â”€â”€ Search & Dropdown Sort Styles â”€â”€ */
+.sk-spg-filter-right {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+
+--- Match 54 at index 26268 ---
+sk-sp-v4[style*="--sp-bg"] {
+    min-height: auto;
+  }
+  .sk-sp-v4-layout {
+    min-height: auto;
+  }
+}
+
+/* â”€â”€ Search & Dropdown Sort Styles â”€â”€ */
+.sk-spg-filter-right {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+.sk-spg-search-wrap {
+  position: relative;
+
+
+--- Match 55 at index 26551 ---
+isplay: flex;
+  align-items: center;
+}
+.sk-spg-search-input {
+  width: 180px;
+  height: 34px;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--
+
+--- Match 56 at index 27990 ---
+d: transparent;
+  transition: border-color 0.3s, color 0.3s, background 0.3s;
+  height: 34px;
+}
+.sk-spg-sort:hover,
+.sk-spg-sort:focus-visible {
+  border-color: var(--terra);
+  color: var(--terra);
+  background: #fff;
+}
+.sk-spg-sort-dropdown {
+  position: absolute;
+  top: calc(10
+
+--- Match 57 at index 30026 ---
+ex !important;
+  flex-direction: column !important;
+  gap: 0.8rem !important;
+  min-height: 260px !important;
+  text-align: left !important;
+}
+.sk-sp-v4-viewmore-star {
+  color: var(--terra);
+  flex-shrink: 0;
+  line-height: 1;
+}
+.sk-sp-v4-viewmore-title {
+  font-family: var(--fo
+
+--- Match 58 at index 30163 ---
+nt;
+}
+.sk-sp-v4-viewmore-star {
+  color: var(--terra);
+  flex-shrink: 0;
+  line-height: 1;
+}
+.sk-sp-v4-viewmore-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+  margin: 0;
+}
+.sk-sp-v4-viewmore-desc {
+
+
+--- Match 59 at index 30309 ---
+display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+  margin: 0;
+}
+.sk-sp-v4-viewmore-desc {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--ink-muted);
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+--- Match 60 at index 30471 ---
+dy);
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--ink-muted);
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+.sk-sp-v4-viewmore-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+
+--- Match 61 at index 31076 ---
+ 10px 0;
+  position: relative;
+}
+.sk-sp-v4-viewmore-gradient {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #e8d5bb 0%, var(--terra-soft) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--terra);
+  transition: transfo

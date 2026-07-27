@@ -1,0 +1,241 @@
+
+Match 1 at line 113:
+orm: none;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .sk-sp-v4-card {
+    flex: 0 0 100% !important; /* 1 card fills 100% of the slider container width */
+    width: 100% !important;
+    height: 280px !important; /* Shorter card height */
+    transform: 
+
+Match 2 at line 120:
+dius clipping bug */
+    isolation: isolate; /* Extra clipping safety */
+  }
+  .sk-sp-v4-card-text {
+    padding: 1.2rem 1.1rem 1rem !important; /* Adjusted padding to fit inside shorter card */
+    gap: 0.5rem !important;
+    min-height: auto !important;
+  }
+  .sk-sp-v4-card-pho
+
+Match 3 at line 125:
+ter card */
+    gap: 0.5rem !important;
+    min-height: auto !important;
+  }
+  .sk-sp-v4-card-photo {
+    height: calc(100% - 16px) !important;
+    margin: 8px !important; /* Restores the 8px margin (gap) all around the photo */
+    border-radius: 12px !important; /* Rounded corn
+
+Match 4 at line 130:
+s: 12px !important; /* Rounded corners all around for the photo frame */
+  }
+  .sk-sp-v4-card-photo img {
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 12px !important; /* Rounded corners all around for the image */
+  }
+  /* Left slider arrow o
+
+Match 5 at line 312:
+1.4rem;
+  transition: transform 0.45s var(--ease);
+  will-change: transform;
+}
+.sk-sp-v4-card {
+  flex: 0 0 calc((100% - 2.8rem) / 3);
+  min-width: 0;
+  background: rgba(255, 251, 243, 0.25); /* Increased translucency (opacity set to 0.25) */
+  backdrop-filter: blur(12px);
+  -web
+
+Match 6 at line 328:
+s var(--ease);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+.sk-sp-v4-card:focus-visible {
+  outline: 2px solid var(--terra);
+  outline-offset: 3px;
+  box-shadow: none;
+}
+.sk-sp-v4-card-text {
+  padding: 1.8rem 1.25rem 1.6rem;
+  display: flex;
+  flex-direction:
+
+Match 7 at line 333:
+ outline: 2px solid var(--terra);
+  outline-offset: 3px;
+  box-shadow: none;
+}
+.sk-sp-v4-card-text {
+  padding: 1.8rem 1.25rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 260px;
+}
+.sk-sp-v4-qicon {
+  color: var(--gold);
+  flex-shrink: 0;
+  lin
+
+Match 8 at line 413:
+ letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--terra);
+}
+.sk-sp-v4-card-photo {
+  overflow: hidden;
+  background: var(--parchment);
+  border-radius: 12px;
+  margin: 10px 10px 10px 0;
+}
+.sk-sp-v4-card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: c
+
+Match 9 at line 419:
+ground: var(--parchment);
+  border-radius: 12px;
+  margin: 10px 10px 10px 0;
+}
+.sk-sp-v4-card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s var(--ease);
+}
+.sk-sp-v4-card:hover .sk-sp-v4-card-photo img { transform: s
+
+Match 10 at line 426:
+ject-fit: cover;
+  display: block;
+  transition: transform 0.5s var(--ease);
+}
+.sk-sp-v4-card:hover .sk-sp-v4-card-photo img { transform: scale(1.04); }
+.sk-sp-v4-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  jus
+
+Match 11 at line 426:
+splay: block;
+  transition: transform 0.5s var(--ease);
+}
+.sk-sp-v4-card:hover .sk-sp-v4-card-photo img { transform: scale(1.04); }
+.sk-sp-v4-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+Match 12 at line 998:
+: 3rem 1.5rem 1rem;
+  }
+  .sk-sp-v4-bottom {
+    padding: 0 1.5rem 2rem;
+  }
+  .sk-sp-v4-card {
+    flex: 0 0 calc((100% - 1.4rem) / 2);
+    height: auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .sk-sp-v4-arrow {
+    display: none !important;
+  }
+  .sk-sp-v4-top {
+    tex
+
+Match 13 at line 1034:
+ormal;
+    font-size: clamp(2.5rem, 12vw, 3.8rem);
+    line-height: 1.1;
+  }
+  .sk-sp-v4-card {
+    flex: 0 0 100%;
+    grid-template-columns: 1fr;
+    height: auto !important;
+    margin-bottom: 1.5rem;
+  }
+  .sk-sp-v4-card-photo {
+    margin: 10px 10px 0 10px;
+    height: 200px
+
+Match 14 at line 1040:
+te-columns: 1fr;
+    height: auto !important;
+    margin-bottom: 1.5rem;
+  }
+  .sk-sp-v4-card-photo {
+    margin: 10px 10px 0 10px;
+    height: 200px;
+    order: -1; /* Place image on top of text */
+  }
+  .sk-sp-v4-photo-placeholder {
+    min-height: 200px;
+  }
+  .sk-sp-v4-card-t
+
+Match 15 at line 1048:
+op of text */
+  }
+  .sk-sp-v4-photo-placeholder {
+    min-height: 200px;
+  }
+  .sk-sp-v4-card-text {
+    min-height: auto;
+    padding: 1.4rem 1.2rem;
+    gap: 0.6rem;
+  }
+  .sk-sp-v4-qtext {
+    -webkit-line-clamp: unset;
+    display: block;
+    overflow: visible;
+  }
+  .sk-stor
+
+Match 16 at line 1187:
+r: #fff;
+}
+
+/* â”€â”€ Homepage Next Slide: Redesigned View More Card â”€â”€ */
+.sk-sp-v4-card.sk-sp-v4-viewmore-card {
+  display: grid !important;
+  grid-template-columns: 1fr 38%;
+  background: rgba(255,251,243,0.97) !important;
+  border-radius: 18px !important;
+  box-shadow: no
+
+Match 17 at line 1198:
+ase), box-shadow 0.3s var(--ease), border-color 0.3s var(--ease) !important;
+}
+.sk-sp-v4-card.sk-sp-v4-viewmore-card:hover,
+.sk-sp-v4-card.sk-sp-v4-viewmore-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--terra) !important;
+  box-shadow: 0 8px 32px rgba(
+
+Match 18 at line 1199:
+or 0.3s var(--ease) !important;
+}
+.sk-sp-v4-card.sk-sp-v4-viewmore-card:hover,
+.sk-sp-v4-card.sk-sp-v4-viewmore-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--terra) !important;
+  box-shadow: 0 8px 32px rgba(184, 98, 63, 0.12) !important;
+  outline: non

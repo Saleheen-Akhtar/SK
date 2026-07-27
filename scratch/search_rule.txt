@@ -1,0 +1,27 @@
+
+Match 1 at line 40:
+isolated, body with larger star */
+.about-v16 .av16-star-rule,
+body .about-v16 .sk-sp-v4-rule{ 
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin: 0 0 1rem -1.5rem; 
+    color: var(--terra);
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+
+Match 2 at line 57:
+e star stay the right size */
+.about-v16 .av16-star-rule span,
+body .about-v16 .sk-sp-v4-rule span{
+    flex: 0 0 100px;
+    height: 1px;
+    background: var(--terra);
+    opacity: 0.6;
+}
+ 
+
+body /* The collective-wrap sits at the bottom — auto margin on top pushes it down */
+.ab

@@ -1,0 +1,65 @@
+Line 16: /* ── stories page URL ── */
+Line 17: $stories_page_id = sk_get_page_id_by_path( 'stories' );
+Line 18: $stories_url  = $stories_page_id ? get_permalink( $stories_page_id ) : home_url( '/stories/' );
+Line 19: 
+Line 20: /* ── Query sk_story posts ── */
+Line 21: $stories = get_transient( 'sk_stories_preview_data_v4' );
+Line 22: if ( false === $stories ) {
+Line 23: // 1. Query featured stories first
+Line 24: $featured_query = new WP_Query( [
+Line 25: 'post_type'           => 'sk_story',
+Line 26: 'post_status'         => 'publish',
+Line 27: 'posts_per_page'      => 3,
+Line 28: 'meta_key'            => 'story_featured',
+Line 29: 'meta_value'          => '1',
+Line 30: 'orderby'             => 'menu_order',
+Line 31: 'order'               => 'ASC',
+Line 32: 'no_found_rows'       => true,
+Line 33: 'ignore_sticky_posts' => true,
+Line 34: ] );
+Line 35: 
+Line 36: $story_posts = [];
+Line 37: $exclude_ids = [];
+Line 38: 
+Line 39: if ( $featured_query->have_posts() ) {
+Line 40: while ( $featured_query->have_posts() ) {
+Line 41: $featured_query->the_post();
+Line 42: $pid = get_the_ID();
+Line 43: $story_posts[] = $pid;
+Line 44: $exclude_ids[] = $pid;
+Line 45: }
+Line 46: wp_reset_postdata();
+Line 47: }
+Line 48: 
+Line 49: // 2. If less than 3, fill with regular stories
+Line 50: $needed = 3 - count( $story_posts );
+Line 51: if ( $needed > 0 ) {
+Line 52: $args = [
+Line 53: 'post_type'           => 'sk_story',
+Line 54: 'post_status'         => 'publish',
+Line 55: 'posts_per_page'      => $needed,
+Line 56: 'orderby'             => 'menu_order',
+Line 57: 'order'               => 'ASC',
+Line 58: 'no_found_rows'       => true,
+Line 59: 'ignore_sticky_posts' => true,
+Line 60: ];
+Line 61: if ( ! empty( $exclude_ids ) ) {
+Line 62: $args['post__not_in'] = $exclude_ids;
+Line 63: }
+Line 64: $regular_query = new WP_Query( $args );
+Line 65: if ( $regular_query->have_posts() ) {
+Line 66: while ( $regular_query->have_posts() ) {
+Line 67: $regular_query->the_post();
+Line 68: $story_posts[] = get_the_ID();
+Line 69: }
+Line 70: wp_reset_postdata();
+Line 71: }
+Line 72: }
+Line 73: 
+Line 74: // 3. Populate stories data array
+Line 75: $stories = [];
+Line 76: foreach ( $story_posts as $pid ) {
+Line 77: $cover_id  = (int) get_post_meta( $pid, 'story_cover_image_id', true );
+Line 78: $cover_url = $cover_id
+Line 79: ? wp_get_attachment_image_url( $cover_id, 'medium_large' )
+Line 80: : get_post_meta( $pid, 'story_cover_image_url', true );

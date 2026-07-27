@@ -1,0 +1,35 @@
+
+--- Match 1 at index 3127 ---
+r */
+.about-v16 .av16-star-rule,
+body .about-v16 .sk-sp-v4-rule{ 
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin: 0 0 1rem -1.5rem; 
+    color: var(--terra);
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    align-self: center;
+
+    /* INCREASE THIS VALUE to make the star larger */
+    font-size: 1.6re
+
+--- Match 2 at index 3556 ---
+.about-v16 .av16-star-rule span,
+body .about-v16 .sk-sp-v4-rule span{
+    flex: 0 0 100px;
+    height: 1px;
+    background: var(--terra);
+    opacity: 0.6;
+}
+ 
+
+body /* The collective-wrap sits at the bottom — auto margin on top pushes it down */
+.about-collective-wrap{
+  margin-top: auto;
+  padding-top: 2.5rem;
+}
+
+/* Hidden SEO h3 — visible to cra

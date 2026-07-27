@@ -1,0 +1,23 @@
+<div class="strip strip--circular strip--no-overlay<?php echo $philosophy_bg ? ' has-bg-image' : ''; ?>
+<div class="philosophy-bg-video" aria-hidden="true">
+<div class="sk-philosophy-overlay-wrap sk-philosophy-overlay-wrap--no-overlay">
+<div class="wrap">
+<div class="sk-astrology-bottom reveal">
+<div class="sk-astrology-left-col">
+<div class="sk-philosophy-title-wrap">
+<div class="sk-astrology-right-col">
+<button class="sk-sp-v4-arrow sk-astrology-arrow sk-astrology-prev" aria-label="Previous pillars">
+<div class="sk-astrology-track-wrap">
+<div class="sk-astrology-track" id="astrology-track">
+<div class="sk-sp-v4-card sk-astrology-card">
+<div class="sk-sp-v4-card-photo">
+<img class="sk-sp-v4-card-photo-fg" src="<?php echo esc_url( $p['src'] ); ?>
+<div class="sk-sp-v4-photo-placeholder" aria-hidden="true">
+<div class="sk-sp-v4-card-text">
+<div class="sk-sp-v4-qicon" aria-hidden="true">
+<p class="sk-sp-v4-qtext">
+<div class="sk-sp-v4-author">
+<div class="sk-sp-v4-ainfo">
+<span class="sk-sp-v4-aname">
+<button class="sk-sp-v4-arrow sk-astrology-arrow sk-astrology-next" aria-label="Next pillars">
+<div id="philosophy-live-region" class="sr-only" aria-live="polite" aria-atomic="true">

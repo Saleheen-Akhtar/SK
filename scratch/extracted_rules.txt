@@ -1,0 +1,550 @@
+
+--- Match 1 at index 3082 ---
+ Rule - Safely isolated, body with larger star */
+.about-v16 .av16-star-rule,
+body .about-v16 .sk-sp-v4-rule{ 
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin: 0 0 1rem -1.5rem; 
+    color: var(--terra);
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    align-self: center;
+
+    /* INCREASE THIS VALUE to make the star larger */
+    font-size: 1.6rem; 
+}
+
+body /* Ensure the lines on the side of the star stay the right size */
+.about-v16 .av16-star-rule span,
+body .about-v16 .sk-sp-v4-rule span{
+    fl
+
+--- Match 2 at index 3115 ---
+h larger star */
+.about-v16 .av16-star-rule,
+body .about-v16 .sk-sp-v4-rule{ 
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin: 0 0 1rem -1.5rem; 
+    color: var(--terra);
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    align-self: center;
+
+    /* INCREASE THIS VALUE to make the star larger */
+    font-size: 1.6rem; 
+}
+
+body /* Ensure the lines on the side of the star stay the right size */
+.about-v16 .av16-star-rule span,
+body .about-v16 .sk-sp-v4-rule span{
+    flex: 0 0 100px;
+    height: 1px;
+ 
+
+--- Match 3 at index 3506 ---
+es on the side of the star stay the right size */
+.about-v16 .av16-star-rule span,
+body .about-v16 .sk-sp-v4-rule span{
+    flex: 0 0 100px;
+    height: 1px;
+    background: var(--terra);
+    opacity: 0.6;
+}
+ 
+
+body /* The collective-wrap sits at the bottom — auto margin on top pushes it down */
+.about-collective-wrap{
+  margin-top: auto;
+  padding-top: 2.5rem;
+}
+
+/* Hidden SEO h3 — visible to crawlers, hidden visually */
+.about-seo-h3 {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: n
+
+--- Match 4 at index 3544 ---
+ght size */
+.about-v16 .av16-star-rule span,
+body .about-v16 .sk-sp-v4-rule span{
+    flex: 0 0 100px;
+    height: 1px;
+    background: var(--terra);
+    opacity: 0.6;
+}
+ 
+
+body /* The collective-wrap sits at the bottom — auto margin on top pushes it down */
+.about-collective-wrap{
+  margin-top: auto;
+  padding-top: 2.5rem;
+}
+
+/* Hidden SEO h3 — visible to crawlers, hidden visually */
+.about-seo-h3 {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.about-expressi
+
+--- Match 5 at index 17898 ---
+ ── Responsive ── */
+@media (max-width: 860px){
+  .about-v16-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    min-height: auto;
+    align-items: start;
+  }
+  .av16-left {
+    position: static;
+    justify-content: flex-start;
+    align-self: auto;
+  }
+  .av16-right { align-self: auto; }
+  .av16-sacred, .av16-kompass { font-size: clamp(2.8rem, 14vw, 5rem); }
+  .av16-tagline-inner { font-size: 0.85rem; }
+}
+
+body /* ═══════════════════════════════════════════════════════════════
+
+
+/* ══════════════════════════════════════════════════════
+
+--- Match 6 at index 18912 ---
+── ABOUT SECTION — Lotus pattern background ── */
+.about-v16 {
+  position: relative;
+  background-size: cover; /* Cover layout for background image */
+  background-position: center; /* Center-focused background image */
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  
+  /* Increased padding to expand the overall height of the section */
+  padding-top: clamp(5rem, 7vw, 6.5rem);
+  padding-bottom: clamp(7.5rem, 11vw, 9.5rem);
+  
+  transform: none;
+  will-change: auto;
+  backface-visibility: visible;
+}
+
+@media (min-width: 901px) 
+
+--- Match 7 at index 19416 ---
+bility: visible;
+}
+
+@media (min-width: 901px) {
+  .about-v16 {
+    background-position: center 64px;
+  }
+  body.admin-bar .about-v16 {
+    background-position: center 96px;
+  }
+}
+/* iOS fix: replace fixed bg with a pseudo-element that scrolls normally */
+@supports (-webkit-touch-callout: none) {
+  .about-v16 {
+    background-attachment: scroll;
+    background-size: cover;
+  }
+}
+
+/* Floating overlay box styled like Kerala Pujas container with 85% transparency (0.15 opacity) */
+.about-v16::before {
+  content: '';
+  position: absolute;
+  top: 2rem
+
+--- Match 8 at index 19488 ---
+round-position: center 64px;
+  }
+  body.admin-bar .about-v16 {
+    background-position: center 96px;
+  }
+}
+/* iOS fix: replace fixed bg with a pseudo-element that scrolls normally */
+@supports (-webkit-touch-callout: none) {
+  .about-v16 {
+    background-attachment: scroll;
+    background-size: cover;
+  }
+}
+
+/* Floating overlay box styled like Kerala Pujas container with 85% transparency (0.15 opacity) */
+.about-v16::before {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  bottom: 2rem;
+  left: 1.5vw;
+  right: 1.5vw;
+  background: rgba(253,
+
+--- Match 9 at index 19665 ---
+ly */
+@supports (-webkit-touch-callout: none) {
+  .about-v16 {
+    background-attachment: scroll;
+    background-size: cover;
+  }
+}
+
+/* Floating overlay box styled like Kerala Pujas container with 85% transparency (0.15 opacity) */
+.about-v16::before {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  bottom: 2rem;
+  left: 1.5vw;
+  right: 1.5vw;
+  background: rgba(253, 248, 240, 0.04); /* 96% transparent ivory wash so background image is fully clear */
+  border: 1px solid rgba(180, 130, 60, 0.22); /* Gold border frame */
+  border-radius: 24px
+
+--- Match 10 at index 19847 ---
+container with 85% transparency (0.15 opacity) */
+.about-v16::before {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  bottom: 2rem;
+  left: 1.5vw;
+  right: 1.5vw;
+  background: rgba(253, 248, 240, 0.04); /* 96% transparent ivory wash so background image is fully clear */
+  border: 1px solid rgba(180, 130, 60, 0.22); /* Gold border frame */
+  border-radius: 24px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Bottom gradient fade removed per design update */
+.about-v16::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  rig
+
+--- Match 11 at index 20261 ---
+Bottom gradient fade removed per design update */
+.about-v16::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  background: transparent;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Lift all direct children above the overlay */
+.about-v16 > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+body /* ═══════════════════════════════════════════════════════════════
+   MICRO-ANIMATIONS v24 — Desktop hover interactions
+   Buttons · Cards · Links · Images
+   ═══════════════════════════════════════════════════════
+
+--- Match 12 at index 20484 ---
+
+/* Lift all direct children above the overlay */
+.about-v16 > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+body /* ═══════════════════════════════════════════════════════════════
+   MICRO-ANIMATIONS v24 — Desktop hover interactions
+   Buttons · Cards · Links · Images
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (hover: hover) and (pointer: fine){
+
+  /* ── Buttons: glow + scale ── */
+  .btn {
+    transition: background 0.4s ease, color 0.4s ease, transform 0.4s ease,
+                box-shadow 0.4s ease, border-
+
+--- Match 13 at index 21898 ---
+-body a,
+  .founders-editorial-col a:not(.btn),
+  .about-v16 a:not(.btn),
+  p a:not(.btn) {
+    position: relative;
+    text-decoration: none;
+    background-image: linear-gradient(var(--terra), var(--terra));
+    background-size: 0% 1px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: background-size 0.35s ease, color 0.25s ease;
+    padding-bottom: 1px;
+  }
+  .sk-post-body a:hover,
+  .founders-editorial-col a:not(.btn):hover,
+  .about-v16 a:not(.btn):hover,
+  p a:not(.btn):hover {
+    background-size: 1
+
+--- Match 14 at index 22322 ---
+r,
+  .founders-editorial-col a:not(.btn):hover,
+  .about-v16 a:not(.btn):hover,
+  p a:not(.btn):hover {
+    background-size: 100% 1px;
+    color: var(--terra);
+  }
+
+  /* ── Images: subtle zoom on hover ── */
+  .offering-img,
+  .sk-post-card-img,
+  .sk-client-story-img,
+  .about-v16-img-wrap,
+  .hero-bg-image {
+    overflow: hidden;
+  }
+  .offering-img img,
+  .sk-post-card-img img,
+  .sk-client-story-img img,
+  .about-v16-img-wrap img {
+    transition: transform 0.8s ease;
+  }
+  .offering-card:hover .offering-img img,
+  .sk-post-card:hover .sk-p
+
+--- Match 15 at index 22544 ---
+g,
+  .sk-post-card-img,
+  .sk-client-story-img,
+  .about-v16-img-wrap,
+  .hero-bg-image {
+    overflow: hidden;
+  }
+  .offering-img img,
+  .sk-post-card-img img,
+  .sk-client-story-img img,
+  .about-v16-img-wrap img {
+    transition: transform 0.8s ease;
+  }
+  .offering-card:hover .offering-img img,
+  .sk-post-card:hover .sk-post-card-img img,
+  .sk-client-story:hover .sk-client-story-img img,
+  .about-v16-img-wrap:hover img {
+    transform: scale(1.03);
+  }
+
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   HERO SACRED 
+
+--- Match 16 at index 22686 ---
+-post-card-img img,
+  .sk-client-story-img img,
+  .about-v16-img-wrap img {
+    transition: transform 0.8s ease;
+  }
+  .offering-card:hover .offering-img img,
+  .sk-post-card:hover .sk-post-card-img img,
+  .sk-client-story:hover .sk-client-story-img img,
+  .about-v16-img-wrap:hover img {
+    transform: scale(1.03);
+  }
+
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   HERO SACRED DIVIDER — cloud mist edge + lotus silhouette v24
+   ═══════════════════════════════════════════════════════════════ */
+
+.sk-hero-divider {
+  p
+
+--- Match 17 at index 22893 ---
+sk-client-story:hover .sk-client-story-img img,
+  .about-v16-img-wrap:hover img {
+    transform: scale(1.03);
+  }
+
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   HERO SACRED DIVIDER — cloud mist edge + lotus silhouette v24
+   ═══════════════════════════════════════════════════════════════ */
+
+.sk-hero-divider {
+  position: relative;
+  z-index: 10;
+  margin-top: -2px; /* prevent gap between hero and divider */
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* ── Mist SVG — fills width, fixed height ── */
+.sk-mist-edge
+
+--- Match 18 at index 28681 ---
+ av16 inner grid — true 50/50 equal columns ── */
+.about-v16-inner{
+  display: grid;
+  grid-template-columns: minmax(320px, 520px) 1fr;
+  gap: clamp(3rem, 6vw, 7rem);
+  align-items: stretch;
+  min-height: 480px;
+}
+body /* Both columns fill their cell, body static — bg scrolls via background-attachment:fixed */
+.av16-left,
+body .av16-right{
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  position: static;
+  top: auto;
+  align-self: auto;
+}
+body /* Responsive: stack on mobile */
+@media (max-width: 900px){
+  .about-v16-inner {
+    grid-templat
+
+--- Match 19 at index 29146 ---
+: stack on mobile */
+@media (max-width: 900px){
+  .about-v16-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+body /* ── FIX: Remove ALL row separator borders in about section ── */
+.av16-row:first-child{
+  border-top: none;
+}
+
+body /* ── Consolidated About Tagline & Alignment Overrides ── */
+.av16-left{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  position: static;
+  top: auto;
+  gap: 0;
+}
+body .av16-tagline{
+  padding-top: 0;
+  margin-top: 1.6rem;       /* just below KOMPASS */
+  a
+
+--- Match 20 at index 30986 ---
+VERRIDES ── */
+@media (max-width: 900px) {
+  body .about-v16-inner,
+  .about-v16-inner {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    min-height: auto !important;
+  }
+  body .av16-left,
+  .av16-left {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  body .av16-right,
+  .av16-right {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0;
+  }
+  .av16-brand {
+    align-items: center;
+  }
+  .av16-sacred,
+  .av16-kompass {
+    font-size: clamp(2.8rem, 14vw, 5rem
+
+--- Match 21 at index 31006 ---
+a (max-width: 900px) {
+  body .about-v16-inner,
+  .about-v16-inner {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    min-height: auto !important;
+  }
+  body .av16-left,
+  .av16-left {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  body .av16-right,
+  .av16-right {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0;
+  }
+  .av16-brand {
+    align-items: center;
+  }
+  .av16-sacred,
+  .av16-kompass {
+    font-size: clamp(2.8rem, 14vw, 5rem);
+  }
+  .av16-tagli
+
+--- Match 22 at index 31726 ---
+rtant;
+    max-width: 100% !important;
+  }
+  body .about-v16 {
+    padding-top: clamp(4rem, 8vw, 6rem);
+    padding-bottom: clamp(4rem, 8vw, 6rem);
+  }
+  .av16-org-desc {
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
+  }
+  .av16-heading {
+    font-size: clamp(1.3rem, 5vw, 2rem);
+  }
+  .av16-bridge {
+    font-size: clamp(0.95rem, 3.5vw, 1.3rem);
+  }
+  .av16-body {
+    font-size: clamp(0.9rem, 3.2vw, 1.2rem);
+  }
+  .av16-welcome {
+    font-size: clamp(0.9rem, 3.2vw, 1.2rem);
+  }
+}
+
+
+
+

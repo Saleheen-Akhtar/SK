@@ -1,0 +1,284 @@
+
+--- Match 1 at index 5206 ---
+over photo at the top */
+body .sk-astrology-card .sk-sp-v4-card-photo {
+  order: 2; /* Move photo to the right */
+  width: 100%;
+  height: 100% !important; /* Stretches to full card height */
+  margin: 0; /* Reset layout margin */
+  border-radius: 0; /* Reset border radius to inherit card corners */
+  position: relative;
+  overflow: hidden;
+  z-ind
+
+--- Match 2 at index 5796 ---
+background styling */
+}
+
+body .sk-astrology-card .sk-sp-v4-card-photo .sk-sp-v4-card-photo-fg {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the container to prevent any background layer/letterboxing */
+  object-position: center top; /* Center top focused alignment */
+  transition: transform 0.6s 
+
+--- Match 3 at index 5817 ---
+
+}
+
+body .sk-astrology-card .sk-sp-v4-card-photo .sk-sp-v4-card-photo-fg {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the container to prevent any background layer/letterboxing */
+  object-position: center top; /* Center top focused alignment */
+  transition: transform 0.6s var(--ease);
+}
+
+/* Te
+
+--- Match 4 at index 6172 ---
+ntainer at the bottom */
+body .sk-astrology-card .sk-sp-v4-card-text {
+  order: 1; /* Move text to the left */
+  width: 100%;
+  padding: 1.4rem 1.2rem; /* Adjusted padding to accommodate narrower text area */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  z-index: 2;
+  flex-grow: 1;
+  min-he
+
+--- Match 5 at index 6573 ---
+mpass star icon style */
+body .sk-astrology-card .sk-sp-v4-qicon {
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+  display: flex;
+}
+
+/* Light text readable against dark background */
+body .sk-astrology-card .sk-sp-v4-qtext {
+  color: #faf4e8;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Compressed description to 2 lines */
+  -webkit-box-ori
+
+--- Match 6 at index 6732 ---
+ainst dark background */
+body .sk-astrology-card .sk-sp-v4-qtext {
+  color: #faf4e8;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Compressed description to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.55;
+  max-height: 3.1em; /* Force strict cutoff */
+  margin-bottom: 0.6rem; /* Compressed margin */
+}
+
+body
+
+--- Match 7 at index 7053 ---
+ Compressed margin */
+}
+
+body .sk-astrology-card .sk-sp-v4-aname {
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.05rem;
+}
+
+body .sk-astrology-card .sk-sp-v4-acat {
+  color: var(--gold);
+  font-family: var(--font-ui);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-
+
+--- Match 8 at index 7223 ---
+  font-size: 1.05rem;
+}
+
+body .sk-astrology-card .sk-sp-v4-acat {
+  color: var(--gold);
+  font-family: var(--font-ui);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.62rem;
+}
+
+body .sk-astrology-card .sk-sp-v4-avatar {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  f
+
+--- Match 9 at index 7396 ---
+  font-size: 0.62rem;
+}
+
+body .sk-astrology-card .sk-sp-v4-avatar {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+--- Match 10 at index 7742 ---
+er;
+  flex-shrink: 0;
+}
+
+body .sk-astrology-card .sk-sp-v4-qdivider {
+  background: rgba(255, 255, 255, 0.22);
+  width: 32px;
+  height: 1px;
+  margin: 0.8rem 0; /* Compressed divider margin */
+  flex-shrink: 0;
+}
+
+body .sk-astrology-card .sk-sp-v4-readmore {
+  color: var(--gold);
+  opacity: 0.85;
+  display: inline-block;
+  margin-top: auto; /* Push
+
+--- Match 11 at index 7931 ---
+ */
+  flex-shrink: 0;
+}
+
+body .sk-astrology-card .sk-sp-v4-readmore {
+  color: var(--gold);
+  opacity: 0.85;
+  display: inline-block;
+  margin-top: auto; /* Push Read More to bottom of description area */
+  font-style: normal;
+  text-decoration: none;
+  transition: color 0.25s;
+  font-weight: 600;
+  font-family: var(--font-ui);
+}
+body .sk-astrology
+
+--- Match 12 at index 8238 ---
+amily: var(--font-ui);
+}
+body .sk-astrology-card .sk-sp-v4-readmore:hover {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  text-decoration: underline !important;
+}
+
+/* Title image styling above cards */
+.sk-philosophy-title-wrap {
+  text-align: left;
+  margin-left: -35px; /* Pulls the image to the left to align the visible text with the ca
+
+--- Match 13 at index 10952 ---
+ 400px !important;
+  }
+  body .sk-astrology-card .sk-sp-v4-card-photo {
+    height: 100% !important;
+  }
+  .sk-astrology-right-col .sk-astrology-arrow {
+    bottom: calc(200px + 1.5rem - 22px);
+  }
+  .sk-astrology-right-col .sk-astrology-prev {
+    left: 10px;
+  }
+  .sk-astrology-right-col .sk-astrology-next {
+    right: 10px;
+  }
+}
+
+/* ── 768px: s
+
+--- Match 14 at index 12000 ---
+text vertically */
+  }
+  body .sk-astrology-card .sk-sp-v4-card-photo {
+    order: 1 !important;
+    height: 180px !important;
+    border-left: none !important;
+    border-bottom: 1px solid rgba(245, 205, 95, 0.15) !important;
+  }
+  body .sk-astrology-card .sk-sp-v4-card-photo img {
+    object-position: center top !important; /* Force top focus on 
+
+--- Match 15 at index 12208 ---
+ 0.15) !important;
+  }
+  body .sk-astrology-card .sk-sp-v4-card-photo img {
+    object-position: center top !important; /* Force top focus on mobile */
+  }
+  body .sk-astrology-card .sk-sp-v4-card-text {
+    order: 2 !important;
+    padding: 1.1rem 1.4rem 1.2rem !important;
+  }
+  .sk-astrology-right-col .sk-astrology-arrow {
+    bottom: calc(225px 
+
+--- Match 16 at index 12341 ---
+focus on mobile */
+  }
+  body .sk-astrology-card .sk-sp-v4-card-text {
+    order: 2 !important;
+    padding: 1.1rem 1.4rem 1.2rem !important;
+  }
+  .sk-astrology-right-col .sk-astrology-arrow {
+    bottom: calc(225px + 1.5rem - 22px); /* Centered vertically on the 450px card */
+  }
+  .sk-astrology-right-col .sk-astrology-prev { left: 10px; }
+  .sk-
+
+--- Match 17 at index 13382 ---
+ayout on mobile */
+  }
+  body .sk-astrology-card .sk-sp-v4-card-photo {
+    order: 1 !important; /* Photo on top */
+    height: 170px !important; /* Fixed photo height on mobile */
+    border-left: none !important;
+    border-bottom: 1px solid rgba(245, 205, 95, 0.15) !important;
+  }
+  body .sk-astrology-card .sk-sp-v4-card-photo img {
+    object-p
+
+--- Match 18 at index 13644 ---
+ 0.15) !important;
+  }
+  body .sk-astrology-card .sk-sp-v4-card-photo img {
+    object-position: center top !important; /* Force top focus on mobile */
+  }
+  body .sk-astrology-card .sk-sp-v4-card-text {
+    order: 2 !important; /* Text on bottom */
+    padding: 1.1rem 1.4rem 1.2rem !important; /* Muted mobile padding */
+  }
+  .sk-astrology-right-c
+
+--- Match 19 at index 13777 ---
+focus on mobile */
+  }
+  body .sk-astrology-card .sk-sp-v4-card-text {
+    order: 2 !important; /* Text on bottom */
+    padding: 1.1rem 1.4rem 1.2rem !important; /* Muted mobile padding */
+  }
+  .sk-astrology-right-col .sk-astrology-arrow {
+    bottom: calc(225px + 1.5rem - 22px); /* Centered vertically on the 450px card */
+  }
+  .sk-astrology-rig

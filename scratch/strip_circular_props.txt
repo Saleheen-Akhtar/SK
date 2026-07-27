@@ -1,0 +1,24 @@
+body .strip--circular{
+  /* background shorthand was overriding background-image — merged into one declaration */
+  background-color: #0c0908;
+  
+  background-size: cover;
+  background-position: center -100px; /* Shifted background image up to prevent text overlap */
+  background-repeat: no-repeat;
+  background-attachment: fixed !important;
+    
+    /* CRITICAL: Remove transforms that break background-attachment */
+    transform: none;
+    will-change: auto;
+    backface-visibility: visible;
+  padding:0;
+  border:none;
+  overflow:hidden;
+  position:relative;
+}
+/* iOS Safari: fixed backgrounds don't work — switch to scroll and center properly */
+@supports (-webkit-touch-callout: none) {
+  body .strip--circular {
+    background-attachment: scroll !important;
+    background-size: cover;
+    b

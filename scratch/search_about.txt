@@ -1,0 +1,597 @@
+
+--- Match 1 at index 8523 ---
+ 0;
+  max-width: 42ch;
+}
+
+body /* ── LEFT — static, body section scrolls over fixed bg image ── */
+.av16-left{
+  position: static;
+  top: auto;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: start;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+/* ── SACRED KOMPASS brand — image fill via background-clip:text ── */
+/* Base styles shared by all logo
+
+--- Match 2 at index 13666 ---
+-spacing: 0.26em;
+}
+
+
+body /* ── RIGHT — expanded to stretch so bottom line fits on one line ── */
+.av16-right{
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-top: 0;
+  align-self: stretch;
+  min-width: 0;
+  max-width: 100%;
+  margin-left: 0;
+  padding-right: 0;
+  padding-left: 2rem;
+}
+
+body /* Each row shares a thin top border as separator */
+.av16-row{
+border-top: none;
+  padding
+
+--- Match 3 at index 14166 ---
+order-top: none; padding-bottom: 0; }
+.av16-row--eyebrow .eyebrow::before { display: none; }
+
+body .av16-org-desc,
+body .av16-heading,
+body .av16-bridge,
+body .av16-body,
+body .av16-welcome{
+  max-width: 100%;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* ④ Org descriptor — top row */
+.av16-org-desc {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.2vw, 1.9rem);
+  font-
+
+--- Match 4 at index 14243 ---
+isplay: none; }
+
+body .av16-org-desc,
+body .av16-heading,
+body .av16-bridge,
+body .av16-body,
+body .av16-welcome{
+  max-width: 100%;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* ④ Org descriptor — top row */
+.av16-org-desc {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.2vw, 1.9rem);
+  font-weight: 400;
+  font-style: italic;
+  color: #000000; /* Black color for the d
+
+--- Match 5 at index 14364 ---
+idth: 100%;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* ④ Org descriptor — top row */
+.av16-org-desc {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.2vw, 1.9rem);
+  font-weight: 400;
+  font-style: italic;
+  color: #000000; /* Black color for the descriptor text */
+  margin: 0;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  white-space: normal;
+  overflow: visible
+
+--- Match 6 at index 15479 ---
+ color: var(--ink-muted);
+  margin: 0.8rem 0 0;
+  max-width: 56ch;
+}
+
+/* ⑥ Welcome — bottom row */
+.av16-welcome {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.5vw, 1.55rem);
+  font-weight: 400;
+  font-style: italic;
+  color: #000000;
+  margin: 0;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+/* ── About content card — mirrors 
+
+--- Match 7 at index 15805 ---
+k: normal;
+  overflow-wrap: normal;
+}
+
+/* ── About content card — mirrors stories card style ── */
+.av16-content-card {
+  background: rgba(255, 251, 243, 0.05); /* Very light warm wash (95% transparent) */
+  backdrop-filter: blur(3px); /* Lowered blur so background image is clearly seen through it */
+  -webkit-backdrop-filter: blur(3px);
+  border-radius: 18px; /* Restored elegant rounded corners *
+
+--- Match 8 at index 16267 ---
+as a horizontal rectangle */
+  margin-left: auto; /* Aligns card to the right side of the stretched av16-right container */
+  padding: 1.5rem 1.8rem; /* Reduced padding to make the overall card look smaller and tighter */
+  box-shadow: -6px 0px 20px rgba(0, 0, 0, 0.55),
+			  -2px 0px 6px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(180, 130, 60, 0.22); /* Clean gold/bronze border */
+  position: r
+
+--- Match 9 at index 16708 ---
+
+
+/* Enforce sentence case: convert all text to lowercase, and capitalize only the first letter */
+.av16-content-card h2,
+.av16-content-card p,
+.av16-content-card li {
+  text-transform: lowercase;
+}
+.av16-content-card h2::first-letter,
+.av16-content-card p::first-letter,
+.av16-content-card li::first-letter {
+  text-transform: uppercase;
+}
+
+/* ── Bullet points styles inside About card ── */
+.av16-b
+
+--- Match 10 at index 16731 ---
+ase: convert all text to lowercase, and capitalize only the first letter */
+.av16-content-card h2,
+.av16-content-card p,
+.av16-content-card li {
+  text-transform: lowercase;
+}
+.av16-content-card h2::first-letter,
+.av16-content-card p::first-letter,
+.av16-content-card li::first-letter {
+  text-transform: uppercase;
+}
+
+/* ── Bullet points styles inside About card ── */
+.av16-bullet-list {
+  margin: 
+
+--- Match 11 at index 16753 ---
+to lowercase, and capitalize only the first letter */
+.av16-content-card h2,
+.av16-content-card p,
+.av16-content-card li {
+  text-transform: lowercase;
+}
+.av16-content-card h2::first-letter,
+.av16-content-card p::first-letter,
+.av16-content-card li::first-letter {
+  text-transform: uppercase;
+}
+
+/* ── Bullet points styles inside About card ── */
+.av16-bullet-list {
+  margin: 0;
+  padding-left: 1.5
+
+--- Match 12 at index 16808 ---
+av16-content-card h2,
+.av16-content-card p,
+.av16-content-card li {
+  text-transform: lowercase;
+}
+.av16-content-card h2::first-letter,
+.av16-content-card p::first-letter,
+.av16-content-card li::first-letter {
+  text-transform: uppercase;
+}
+
+/* ── Bullet points styles inside About card ── */
+.av16-bullet-list {
+  margin: 0;
+  padding-left: 1.5rem;
+  list-style-type: none;
+  display: flex;
+  flex-d
+
+--- Match 13 at index 16845 ---
+ard p,
+.av16-content-card li {
+  text-transform: lowercase;
+}
+.av16-content-card h2::first-letter,
+.av16-content-card p::first-letter,
+.av16-content-card li::first-letter {
+  text-transform: uppercase;
+}
+
+/* ── Bullet points styles inside About card ── */
+.av16-bullet-list {
+  margin: 0;
+  padding-left: 1.5rem;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.a
+
+--- Match 14 at index 16881 ---
+t-transform: lowercase;
+}
+.av16-content-card h2::first-letter,
+.av16-content-card p::first-letter,
+.av16-content-card li::first-letter {
+  text-transform: uppercase;
+}
+
+/* ── Bullet points styles inside About card ── */
+.av16-bullet-list {
+  margin: 0;
+  padding-left: 1.5rem;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.av16-bullet-list li {
+  position: rel
+
+--- Match 15 at index 18421 ---
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    min-height: auto;
+    align-items: start;
+  }
+  .av16-left {
+    position: static;
+    justify-content: flex-start;
+    align-self: auto;
+  }
+  .av16-right { align-self: auto; }
+  .av16-sacred, .av16-kompass { font-size: clamp(2.8rem, 14vw, 5rem); }
+  .av16-tagline-inner { font-size: 0.85rem; }
+}
+
+body /* ══════════════════════════════════════════
+
+--- Match 16 at index 18517 ---
+
+  .av16-left {
+    position: static;
+    justify-content: flex-start;
+    align-self: auto;
+  }
+  .av16-right { align-self: auto; }
+  .av16-sacred, .av16-kompass { font-size: clamp(2.8rem, 14vw, 5rem); }
+  .av16-tagline-inner { font-size: 0.85rem; }
+}
+
+body /* ═══════════════════════════════════════════════════════════════
+
+
+/* ═══════════════════════════════════════════════════════════════
+   SA
+
+--- Match 17 at index 20602 ---
+n on normal screens (1441px-1920px) */
+@media (min-width: 1441px) and (max-width: 1920px) {
+  body .av16-left {
+    transform: translate(2.5rem, 3.5rem);
+  }
+}
+
+/* 4. Keep the welcome line in a single line on larger screens */
+@media (min-width: 1441px) {
+  .av16-welcome {
+    white-space: nowrap;
+  }
+}
+
+/* iOS fix: replace fixed bg with a pseudo-element that scrolls normally */
+@supports (-webkit
+
+--- Match 18 at index 20761 ---
+
+
+/* 4. Keep the welcome line in a single line on larger screens */
+@media (min-width: 1441px) {
+  .av16-welcome {
+    white-space: nowrap;
+  }
+}
+
+/* iOS fix: replace fixed bg with a pseudo-element that scrolls normally */
+@supports (-webkit-touch-callout: none) {
+  .about-v16 {
+    background-attachment: scroll;
+    background-size: cover;
+  }
+}
+
+/* Floating overlay box styled like Kerala Pujas c
+
+--- Match 19 at index 30207 ---
+
+body /* Both columns fill their cell, body static — bg scrolls via background-attachment:fixed */
+.av16-left,
+body .av16-right{
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  position: static;
+  top: auto;
+  align-self: auto;
+}
+body /* Responsive: stack on mobile */
+@media (max-width: 900px){
+  .about-v16-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+body /* ── FIX: Remove AL
+
+--- Match 20 at index 30224 ---
+umns fill their cell, body static — bg scrolls via background-attachment:fixed */
+.av16-left,
+body .av16-right{
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  position: static;
+  top: auto;
+  align-self: auto;
+}
+body /* Responsive: stack on mobile */
+@media (max-width: 900px){
+  .about-v16-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+body /* ── FIX: Remove ALL row separator b
+
+--- Match 21 at index 30667 ---
+st-child{
+  border-top: none;
+}
+
+body /* ── Consolidated About Tagline & Alignment Overrides ── */
+.av16-left{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  position: static;
+  top: auto;
+  gap: 0;
+}
+body .av16-tagline{
+  padding-top: 0;
+  margin-top: 1.6rem;       /* just below KOMPASS */
+  align-self: auto;
+}
+body .av16-right{
+  display: flex;
+  fl
+
+--- Match 22 at index 30934 ---
+
+  padding-top: 0;
+  margin-top: 1.6rem;       /* just below KOMPASS */
+  align-self: auto;
+}
+body .av16-right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: stretch;
+  position: static;
+}
+@media (max-width: 900px) {
+  .av16-left  { justify-content: flex-start; align-items: center; }
+  .av16-brand { align-items: center; }
+  .av16-tagline { margin-top: 1
+
+--- Match 23 at index 31099 ---
+content: space-between;
+  align-self: stretch;
+  position: static;
+}
+@media (max-width: 900px) {
+  .av16-left  { justify-content: flex-start; align-items: center; }
+  .av16-brand { align-items: center; }
+  .av16-tagline { margin-top: 1.2rem; text-align: center; align-self: auto; }
+  .av16-right { justify-content: flex-start; align-self: auto; }
+  .av16-sacred, .av16-kompass { font-size: clamp(2.8r
+
+--- Match 24 at index 31284 ---
+n-items: center; }
+  .av16-tagline { margin-top: 1.2rem; text-align: center; align-self: auto; }
+  .av16-right { justify-content: flex-start; align-self: auto; }
+  .av16-sacred, .av16-kompass { font-size: clamp(2.8rem, 14vw, 5rem); }
+}
+
+
+
+@keyframes sk-wave-letter {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-5px); }
+}
+body .av16-tagline-inner{
+  animation: none !
+
+--- Match 25 at index 32402 ---
+ate-columns: 1fr !important;
+    gap: 2rem !important;
+    min-height: auto !important;
+  }
+  body .av16-left,
+  .av16-left {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  body .av16-right,
+  .av16-right {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0;
+  }
+  .av16-brand {
+    align-items: center;
+  }
+  .av16-sacred,
+  .av16-ko
+
+--- Match 26 at index 32416 ---
+fr !important;
+    gap: 2rem !important;
+    min-height: auto !important;
+  }
+  body .av16-left,
+  .av16-left {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  body .av16-right,
+  .av16-right {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0;
+  }
+  .av16-brand {
+    align-items: center;
+  }
+  .av16-sacred,
+  .av16-kompass {
+    fo
+
+--- Match 27 at index 32518 ---
+16-left {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  body .av16-right,
+  .av16-right {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0;
+  }
+  .av16-brand {
+    align-items: center;
+  }
+  .av16-sacred,
+  .av16-kompass {
+    font-size: clamp(2.8rem, 14vw, 5rem);
+  }
+  .av16-tagline {
+    margin-top: 1.2rem;
+    text-align: cent
+
+--- Match 28 at index 32533 ---
+ustify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  body .av16-right,
+  .av16-right {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0;
+  }
+  .av16-brand {
+    align-items: center;
+  }
+  .av16-sacred,
+  .av16-kompass {
+    font-size: clamp(2.8rem, 14vw, 5rem);
+  }
+  .av16-tagline {
+    margin-top: 1.2rem;
+    text-align: center;
+  }
+  .av16
+
+--- Match 29 at index 32829 ---
+p(2.8rem, 14vw, 5rem);
+  }
+  .av16-tagline {
+    margin-top: 1.2rem;
+    text-align: center;
+  }
+  .av16-content-card {
+    padding: 1.5rem 1.2rem;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 100% !important;
+  }
+  body .about-v16 {
+    padding-top: clamp(4rem, 8vw, 6rem);
+    padding-bottom: clamp(4rem, 8vw, 6rem);
+    background-attachment: scroll !importa
+
+--- Match 30 at index 33191 ---
+background-attachment: scroll !important;
+    background-position: center center !important;
+  }
+  .av16-org-desc {
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
+  }
+  .av16-heading {
+    font-size: clamp(1.3rem, 5vw, 2rem);
+  }
+  .av16-bridge {
+    font-size: clamp(0.95rem, 3.5vw, 1.3rem);
+  }
+  .av16-body {
+    font-size: clamp(0.9rem, 3.2vw, 1.2rem);
+  }
+  .av16-welcome {
+    font-size: clamp(0.9r
+
+--- Match 31 at index 33451 ---
+amp(0.95rem, 3.5vw, 1.3rem);
+  }
+  .av16-body {
+    font-size: clamp(0.9rem, 3.2vw, 1.2rem);
+  }
+  .av16-welcome {
+    font-size: clamp(0.9rem, 3.2vw, 1.2rem);
+  }
+}
+
+
+
+

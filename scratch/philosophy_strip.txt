@@ -1,0 +1,191 @@
+
+--- Match 1 at index 17 ---
+/* ── PHILOSOPHY STRIP ────────────────────────────────────── */
+/* ── CIRCULAR TESTIMONIALS (Philosophy Strip) ─────────────── */
+/* Strip now sits after About section — blends from ivory into ivory-warm */
+/* Philosophy strip section header — number-led interstitial, no eyebrow */
+/* Legacy philosophy header/intro
+
+--- Match 2 at index 105 ---
+────── */
+/* ── CIRCULAR TESTIMONIALS (Philosophy Strip) ─────────────── */
+/* Strip now sits after About section — blends from ivory into ivory-warm */
+/* Philosophy strip section header — number-led interstitial, no eyebrow */
+/* Legacy philosophy header/intro classes removed */
+
+/* Volumetric background video for Philosophy Section */
+.philosoph
+
+--- Match 3 at index 134 ---
+IMONIALS (Philosophy Strip) ─────────────── */
+/* Strip now sits after About section — blends from ivory into ivory-warm */
+/* Philosophy strip section header — number-led interstitial, no eyebrow */
+/* Legacy philosophy header/intro classes removed */
+
+/* Volumetric background video for Philosophy Section */
+.philosophy-bg-video {
+  position: abso
+
+--- Match 4 at index 222 ---
+lends from ivory into ivory-warm */
+/* Philosophy strip section header — number-led interstitial, no eyebrow */
+/* Legacy philosophy header/intro classes removed */
+
+/* Volumetric background video for Philosophy Section */
+.philosophy-bg-video {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+.philosoph
+
+--- Match 5 at index 843 ---
+xt-fill-color: var(--terra) !important;
+}
+
+
+body .strip--circular{
+  /* background shorthand was overriding background-image — merged into one declaration */
+  background-color: #0c0908;
+  
+  background-size: cover;
+  background-position: center -100px; /* Shifted background image up to prevent text overlap */
+  background-repeat: no-repeat;
+  back
+
+--- Match 6 at index 1540 ---
+@supports (-webkit-touch-callout: none) {
+  body .strip--circular {
+    background-attachment: scroll !important;
+    background-size: cover;
+    background-position: center center; /* center on iOS so it shows the focal point */
+  }
+}
+/* Mobile: keep fixed background attachment so content scrolls over it, fallback to scroll on iOS */
+@media (max-w
+
+--- Match 7 at index 1863 ---
+oll on iOS */
+@media (max-width: 768px) {
+  body .strip--circular {
+    background-attachment: fixed !important;
+    background-size: cover;
+    background-position: center center;
+  }
+  @supports (-webkit-touch-callout: none) {
+    body .strip--circular {
+      background-attachment: scroll !important;
+    }
+  }
+}
+
+.strip--circular::after {
+  cont
+
+--- Match 8 at index 2052 ---
+upports (-webkit-touch-callout: none) {
+    body .strip--circular {
+      background-attachment: scroll !important;
+    }
+  }
+}
+
+.strip--circular::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(253, 248, 240, 0.65);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Remove overlay for Vedic Astrology section only */
+body .stri
+
+--- Match 9 at index 2132 ---
+ound-attachment: scroll !important;
+    }
+  }
+}
+
+.strip--circular::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(253, 248, 240, 0.65);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Remove overlay for Vedic Astrology section only */
+body .strip--circular.strip--no-overlay::after {
+  display: none !important;
+}
+
+/* Hide pa
+
+--- Match 10 at index 2348 ---
+overlay for Vedic Astrology section only */
+body .strip--circular.strip--no-overlay::after {
+  display: none !important;
+}
+
+/* Hide parent overlay when we have a background image */
+body .strip--circular.has-bg-image::after {
+  display: none;
+}
+
+/* ── PHILOSOPHY OVERLAY WRAP ── */
+.sk-philosophy-overlay-wrap {
+  position: relative;
+  z-index: 1;
+  
+
+--- Match 11 at index 2364 ---
+c Astrology section only */
+body .strip--circular.strip--no-overlay::after {
+  display: none !important;
+}
+
+/* Hide parent overlay when we have a background image */
+body .strip--circular.has-bg-image::after {
+  display: none;
+}
+
+/* ── PHILOSOPHY OVERLAY WRAP ── */
+.sk-philosophy-overlay-wrap {
+  position: relative;
+  z-index: 1;
+  background: rgba
+
+--- Match 12 at index 2486 ---
+ overlay when we have a background image */
+body .strip--circular.has-bg-image::after {
+  display: none;
+}
+
+/* ── PHILOSOPHY OVERLAY WRAP ── */
+.sk-philosophy-overlay-wrap {
+  position: relative;
+  z-index: 1;
+  background: rgba(253, 248, 240, 0.65); /* Light ivory overlay wash */
+  padding: clamp(3rem, 5vw, 4rem) 0;
+  border-top: 1px solid var(--b
+
+--- Match 13 at index 14375 ---
+ap and children sit above the ::after overlay */
+.strip--circular .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Legacy circular testimonials slider styles completely removed to avoid conflicts */
+
+/* ── KERALA TANTRIC PUJAS SECTION ── */
+.sk-pujas-section {
+  position: relative;
+  z-index: 2;
+  background: rgba(253, 248, 240, 0.65); /* Light i

@@ -1,0 +1,60 @@
+Line 121: set_transient( 'sk_stories_preview_data_v4', $stories, 12 * HOUR_IN_SECONDS );
+Line 122: }
+Line 123: 
+Line 124: if ( empty( $stories ) ) { return; }
+Line 125: 
+Line 126: $all_cards = [];
+Line 127: foreach ( $stories as $s ) {
+Line 128: $all_cards[] = $s;
+Line 129: }
+Line 130: $all_cards[] = 'view_more';
+Line 131: $pairs = array_chunk( $all_cards, 2 );
+Line 132: $slider_total = count( $all_cards );
+Line 133: 
+Line 134: $bg_attr = $sp_bg_image ? ' style="--sp-bg: url(\'' . esc_url( $sp_bg_image ) . '\');"' : '';
+Line 135: ?>
+Line 136: 
+Line 137: <section
+Line 138: class="sk-stories-preview-section sk-sp-v4"
+Line 139: id="stories-preview"
+Line 140: aria-labelledby="sp-heading"
+Line 141: <?php echo $bg_attr; ?>
+Line 142: >
+Line 143: 
+Line 144: 
+Line 145: <div class="sk-sp-v4-layout">
+Line 146: 
+Line 147: <!-- ── TOP: heading block ── -->
+Line 148: <div class="sk-sp-v4-top reveal">
+Line 149: <div class="sk-sp-v4-top-inner">
+Line 150: <?php if ($sp_eyebrow) : ?>
+Line 151: <p class="sk-sp-v4-eyebrow"><?php echo esc_html($sp_eyebrow); ?></p>
+Line 152: <?php endif; ?>
+Line 153: <?php if ($sp_heading) : ?>
+Line 154: <h2 class="sk-sp-v4-heading" id="sp-heading">
+Line 155: <?php echo wp_kses( $sp_heading, [
+Line 156: 'em'     => [],
+Line 157: 'strong' => [],
+Line 158: 'span'   => [],
+Line 159: 'br'     => [],
+Line 160: ] ); ?>
+Line 161: </h2>
+Line 162: <?php endif; ?>
+Line 163: 
+Line 164: <!-- Compass star divider removed -->
+Line 165: 
+Line 166: <?php if ($sp_sub) : ?>
+Line 167: <p class="sk-sp-v4-sub"><?php echo esc_html($sp_sub); ?></p>
+Line 168: <?php endif; ?>
+Line 169: </div>
+Line 170: </div>
+Line 171: 
+Line 172: <!-- ── BOTTOM: slider ── -->
+Line 173: <div class="sk-sp-v4-bottom">
+Line 174: 
+Line 175: <div class="sk-sp-v4-cols-wrap">
+Line 176: 
+Line 177: <!-- LEFT SLIDER CONTAINER -->
+Line 178: <div class="sk-sp-v4-slider-container sk-sp-v4-slider-left" data-start-index="0">
+Line 179: <!-- Arrow prev -->
+Line 180: <button class="sk-sp-v4-arrow sk-sp-v4-prev" aria-label="Previous story">

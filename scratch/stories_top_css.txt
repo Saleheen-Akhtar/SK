@@ -1,0 +1,97 @@
+
+--- Match 1 at index 6542 ---
+lex;
+  flex-direction: column;
+  height: 100%;
+}
+.sk-sp-v4-top {
+  padding: calc(4vw + 80px) calc(5vw + 56px) 0;
+  flex-shrink: 0;
+}
+.sk-sp-v4-top-inner {
+  max-width: 700px;
+}
+.sk-sp-v4-eyebrow {
+  font-family: var(--font-ui);
+  font-size: var(--label-size-floor);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: 
+
+--- Match 2 at index 6626 ---
+ + 80px) calc(5vw + 56px) 0;
+  flex-shrink: 0;
+}
+.sk-sp-v4-top-inner {
+  max-width: 700px;
+}
+.sk-sp-v4-eyebrow {
+  font-family: var(--font-ui);
+  font-size: var(--label-size-floor);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin: 0 0 1rem;
+}
+.sk-sp-v4-heading {
+  font-family: var(--font-di
+
+--- Match 3 at index 24923 ---
+ERRIDES â”€â”€ */
+@media (max-width: 1120px) {
+  .sk-sp-v4-top {
+    padding: 3rem 1.5rem 1rem;
+  }
+  .sk-sp-v4-bottom {
+    padding: 0 1.5rem 2rem;
+  }
+  .sk-sp-v4-card {
+    flex: 0 0 calc((100% - 1.4rem) / 2);
+  }
+}
+
+@media (max-width: 768px) {
+  .sk-sp-v4-arrow {
+    display: none !important;
+  }
+  .sk-sp-v4-top {
+    text-align: center;
+    pa
+
+--- Match 4 at index 25178 ---
+p-v4-arrow {
+    display: none !important;
+  }
+  .sk-sp-v4-top {
+    text-align: center;
+    padding: 2.5rem 1.2rem 1rem; /* Tighter side padding on mobile */
+  }
+  .sk-sp-v4-top-inner {
+    margin: 0 auto;
+  }
+  .sk-sp-v4-rule {
+    justify-content: center;
+  }
+  .sk-sp-v4-heading {
+    font-size: clamp(2.8rem, 10vw, 4rem); /* Responsive heading s
+
+--- Match 5 at index 25294 ---
+1rem; /* Tighter side padding on mobile */
+  }
+  .sk-sp-v4-top-inner {
+    margin: 0 auto;
+  }
+  .sk-sp-v4-rule {
+    justify-content: center;
+  }
+  .sk-sp-v4-heading {
+    font-size: clamp(2.8rem, 10vw, 4rem); /* Responsive heading size for mobile */
+    letter-spacing: -0.02em;
+  }
+  .sk-sp-v4-sub {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+}

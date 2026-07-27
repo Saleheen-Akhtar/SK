@@ -1,0 +1,60 @@
+
+--- Match 1 ---
+color:var(--ink)}
+.about-pull .attr{font-family:var(--font-ui);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--terra)}
+.tradition-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2.5rem}
+.trad-tag{font-family:var(--font-ui);font-size:.62rem;font-weight:300;letter-spaci
+
+--- Match 2 ---
+:2.5rem}
+.trad-tag{font-family:var(--font-ui);font-size:.62rem;font-weight:300;letter-spacing:.14em;text-transform:uppercase;padding:.4rem 1.1rem;border:1px solid var(--border);color:var(--ink-muted);border-radius:var(--r-pill);transition:all .3s var(--ease);background:var(--ivory)}
+.trad-tag:hover{
+
+--- Match 3 ---
+y:block;width:100%;font-family:var(--font-ui);font-size:.62rem;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:.6rem;opacity:.7}
+.about-right-large{font-family:var(--font-display);font-size:clamp(5rem,7vw,8.5rem);font-style:italic;font-weight:300;li
+
+--- Match 4 ---
+: clamp(2.5rem, 5.5vw, 4.8rem);
+  font-weight: 800;
+  letter-spacing: -.03em;
+  line-height: 1.0;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  /* Remove any default <p> margin */
+  display: block;
+  background-image: var(--hero-img,
+    linear-gradient(135deg, var(--gold) 0%, var(--blus
+
+--- Match 5 ---
+ont-style: italic;
+  font-weight: 400;
+  letter-spacing: .27em; /* fallback — overridden by JS */
+  text-transform: uppercase;
+  /* Override clipped gradient with solid terra color */
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: var(--ter
+
+--- Match 6 ---
+0%; }
+}
+
+
+
+
+.av16-sacred,
+.av16-kompass {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  display: block;
+  margin: 0; padding: 0;
+  font-size: clamp(3.8rem, 8vw, 6.5rem);
+}
+.av16-sacred  { letter-spacing: 0.095em; }
+.av16-kompass { letter-spacing: -0.03em; }
+
+

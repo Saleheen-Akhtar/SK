@@ -1,0 +1,76 @@
+
+Match 1 at line 627:
+lor: var(--terra);
+}
+
+body /* ── Responsive ── */
+@media (max-width: 860px){
+  .about-v16-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    min-height: auto;
+    align-items: start;
+  }
+  .av16-left {
+    position: static;
+    justify-content: flex-start;
+    align-self:
+
+Match 2 at line 1063:
+dy /* ── FIX 2 (v7 addendum): av16 inner grid — true 50/50 equal columns ── */
+.about-v16-inner{
+  display: grid;
+  grid-template-columns: minmax(320px, 520px) 1fr;
+  gap: clamp(3rem, 6vw, 7rem);
+  align-items: stretch;
+  min-height: 480px;
+}
+body /* Both columns fill their cell,
+
+Match 3 at line 1082:
+f: auto;
+}
+body /* Responsive: stack on mobile */
+@media (max-width: 900px){
+  .about-v16-inner {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+body /* ── FIX: Remove ALL row separator borders in about section ── */
+.av16-row:first-child{
+  border-top: none;
+}
+
+body /* ──
+
+Match 4 at line 1155:
+}
+
+
+/* ── MOBILE RESPONSIVE OVERRIDES ── */
+@media (max-width: 900px) {
+  body .about-v16-inner,
+  .about-v16-inner {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    min-height: auto !important;
+  }
+  body .av16-left,
+  .av16-left {
+    justify-content: c
+
+Match 5 at line 1156:
+PONSIVE OVERRIDES ── */
+@media (max-width: 900px) {
+  body .about-v16-inner,
+  .about-v16-inner {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    min-height: auto !important;
+  }
+  body .av16-left,
+  .av16-left {
+    justify-content: center;
+    align-ite

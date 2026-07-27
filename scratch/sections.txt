@@ -1,0 +1,13 @@
+Line 5: * Single scrollable page. Each section is a separate WP Page
+Line 16: *   (the Home page has no post_content). The theme sections below
+Line 19: *   is set. The theme sections are hidden; Elementor's output comes
+Line 33: // Show coded theme sections only when Elementor has NOT taken over.
+Line 39: echo '<main id="main-content" role="main">' . "\n";
+Line 41: // ── Dynamic section render — controlled via Appearance > Homepage Sections ──
+Line 42: // Order, visibility, and custom sections are all managed from the admin panel.
+Line 43: // The helper sk_get_section_render_order() returns the saved key order.
+Line 45: $builtin     = sk_builtin_sections();   // key → [ label, template ]
+Line 46: $custom_raw  = get_option( 'sk_custom_sections', '[]' );
+Line 51: $render_order = sk_get_section_render_order();
+Line 55: // Custom HTML section
+Line 62: // Built-in section

@@ -1,0 +1,89 @@
+
+Match 1 at line 234:
+e {
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.05rem;
+}
+
+body .sk-astrology-card .sk-sp-v4-acat {
+  color: var(--gold);
+  font-family: var(--font-ui);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+
+Match 2 at line 241:
+gy-card .sk-sp-v4-acat {
+  color: var(--gold);
+  font-family: var(--font-ui);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.62rem;
+}
+
+body .sk-astrology-card .sk-sp-v4-avatar {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255,
+
+Match 3 at line 519:
+: clamp(1rem, 1.25vw, 1.25rem);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  margin-top: -0.35rem; /* Slightly higher */
+  display: inline-block;
+  text-align: left;
+  margin-left: clamp(-4.2rem, -5.5vw, -3rem);
+  transitio
+
+Match 4 at line 603:
+ 5.9rem); /* Matches 'Tantric Pujas' smaller line size */
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.95;
+  white-space: nowrap;
+}
+
+.sk-pujas-em-tradition {
+  font-size: clamp(3.6rem, 5.8vw, 5.1rem); /* Sized down so its 9 letters match the visual width of '
+
+Match 5 at line 611:
+letters match the visual width of 'Kerala' (6 letters) */
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.95;
+  margin-top: 0.4rem; /* Gap between the two lines */
+  display: inline-flex;
+  align-items: center;
+  transition: margin-left 0.3s ease;
+}
+
+.sk-pujas-e
+
+Match 6 at line 664:
+0; /* no spacing trickery — the size and weight now match the line below */
+    text-transform: uppercase;
+    line-height: 0.95;
+  }
+
+  .sk-pujas-title-tantric {
+    font-size: clamp(2.6rem, 4vw, 3.8rem);
+    font-weight: 700; /* inherits the display-h2 design system weight (sam
+
+Match 7 at line 672:
+ion') */
+    letter-spacing: -0.025em; /* standard/tight display spacing */
+    text-transform: uppercase;
+    line-height: 0.95;
+    white-space: nowrap;
+  }
+
+/* Divider styled specifically for left-alignment */
+.sk-pujas-divider-left {
+  display: flex;
+  align-items: center;
+  

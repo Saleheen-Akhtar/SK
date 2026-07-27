@@ -1,0 +1,3189 @@
+
+Match 1 at line 13:
+ cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 0;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  overflow: hidden;
+}
+/* No overlay */
+.cta-section::before { display: none; }
+.cta-sect
+
+Match 2 at line 23:
+n::before { display: none; }
+.cta-section > * { position: relative; z-index: 1; width: 100%; }
+/* .wrap inside cta uses standard max-width:1360px — same as other sections */
+.cta-section .wrap {
+  display: flex;
+  align-items: center;
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+
+
+Match 3 at line 24:
+ion: relative; z-index: 1; width: 100%; }
+/* .wrap inside cta uses standard max-width:1360px — same as other sections */
+.cta-section .wrap {
+  display: flex;
+  align-items: center;
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+  width: 100%;
+  min-height: 0;
+}
+
+/* Layout — 40/52 
+
+Match 4 at line 28:
+ther sections */
+.cta-section .wrap {
+  display: flex;
+  align-items: center;
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+  width: 100%;
+  min-height: 0;
+}
+
+/* Layout — 40/52 split with form capped at 520px for a professional narrower look */
+.cta-layout {
+  display: grid;
+  gri
+
+Match 5 at line 29:
+-section .wrap {
+  display: flex;
+  align-items: center;
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+  width: 100%;
+  min-height: 0;
+}
+
+/* Layout — 40/52 split with form capped at 520px for a professional narrower look */
+.cta-layout {
+  display: grid;
+  grid-template-columns: 1
+
+Match 6 at line 30:
+ay: flex;
+  align-items: center;
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+  width: 100%;
+  min-height: 0;
+}
+
+/* Layout — 40/52 split with form capped at 520px for a professional narrower look */
+.cta-layout {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 520px);
+  g
+
+Match 7 at line 40:
+: 1fr minmax(0, 520px);
+  gap: clamp(3rem, 5vw, 6rem);
+  align-items: center;
+  width: 100%;
+  min-height: 0;
+}
+.cta-text-col {
+  position: static;
+  /* Nudge text upward — less top padding than before */
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: clamp(1rem, 3vw, 3re
+
+Match 8 at line 45:
+ght: 0;
+}
+.cta-text-col {
+  position: static;
+  /* Nudge text upward — less top padding than before */
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: clamp(1rem, 3vw, 3rem); /* extra left indent matching reference */
+}
+/* Form col: top offset = space for celestial arch ar
+
+Match 9 at line 46:
+
+  position: static;
+  /* Nudge text upward — less top padding than before */
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: clamp(1rem, 3vw, 3rem); /* extra left indent matching reference */
+}
+/* Form col: top offset = space for celestial arch art at top of bg image */
+.
+
+Match 10 at line 47:
+c;
+  /* Nudge text upward — less top padding than before */
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: clamp(1rem, 3vw, 3rem); /* extra left indent matching reference */
+}
+/* Form col: top offset = space for celestial arch art at top of bg image */
+.cta-form-col {
+  p
+
+Match 11 at line 48:
+ward — less top padding than before */
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: clamp(1rem, 3vw, 3rem); /* extra left indent matching reference */
+}
+/* Form col: top offset = space for celestial arch art at top of bg image */
+.cta-form-col {
+  padding-top: clamp(3.5
+
+Match 12 at line 52:
+p offset = space for celestial arch art at top of bg image */
+.cta-form-col {
+  padding-top: clamp(3.5rem, 6vw, 5.5rem);
+  padding-bottom: 0;
+}
+
+/* Eyebrow — terra, no line prefix */
+.cta-eyebrow-row { margin-bottom: .5rem; }
+.cta-eyebrow-label {
+  font-family: var(--font-ui);
+  
+
+Match 13 at line 53:
+top of bg image */
+.cta-form-col {
+  padding-top: clamp(3.5rem, 6vw, 5.5rem);
+  padding-bottom: 0;
+}
+
+/* Eyebrow — terra, no line prefix */
+.cta-eyebrow-row { margin-bottom: .5rem; }
+.cta-eyebrow-label {
+  font-family: var(--font-ui);
+  font-size: var(--label-size-floor);
+  font-
+
+Match 14 at line 57:
+ padding-bottom: 0;
+}
+
+/* Eyebrow — terra, no line prefix */
+.cta-eyebrow-row { margin-bottom: .5rem; }
+.cta-eyebrow-label {
+  font-family: var(--font-ui);
+  font-size: var(--label-size-floor);
+  font-weight: 600;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(
+
+Match 15 at line 77:
+ight: 700;
+  color: var(--ink);
+  line-height: .95;
+  letter-spacing: -.03em;
+  margin-bottom: 0;
+}
+.cta-h2 em {
+  font-style: italic;
+  color: var(--terra);
+  font-weight: 700;
+  padding-right: 0.06em;
+}
+
+/* Decorative divider — hand-drawn brush stroke + small 4-point star */
+.c
+
+Match 16 at line 83:
+.cta-h2 em {
+  font-style: italic;
+  color: var(--terra);
+  font-weight: 700;
+  padding-right: 0.06em;
+}
+
+/* Decorative divider — hand-drawn brush stroke + small 4-point star */
+.cta-divider {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin: 1rem 0 1.2rem;
+}
+.cta-d
+
+Match 17 at line 91:
+ star */
+.cta-divider {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin: 1rem 0 1.2rem;
+}
+.cta-divider__brush {
+  display: block;
+  width: 80px;
+  height: 8px;
+}
+
+/* Sub-copy — matches Image 2: ~1rem, light weight, ink-muted, 2 lines */
+.cta-sub {
+  font-family: va
+
+Match 18 at line 95:
+ap: .6rem;
+  margin: 1rem 0 1.2rem;
+}
+.cta-divider__brush {
+  display: block;
+  width: 80px;
+  height: 8px;
+}
+
+/* Sub-copy — matches Image 2: ~1rem, light weight, ink-muted, 2 lines */
+.cta-sub {
+  font-family: var(--font-ui);
+  font-size: var(--body-size-floor);
+  font-weight: 3
+
+Match 19 at line 106:
+size-floor);
+  font-weight: 300;
+  color: var(--ink-mid);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 38ch;
+}
+
+/* Contact info links — icon circles + text */
+.sk-contact-info-links {
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+  margin-top: 0;
+  margin-b
+
+Match 20 at line 107:
+ 300;
+  color: var(--ink-mid);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 38ch;
+}
+
+/* Contact info links — icon circles + text */
+.sk-contact-info-links {
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.sk-info-link {
+
+Match 21 at line 115:
+ontact-info-links {
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.sk-info-link {
+  font-family: var(--font-ui);
+  font-size: var(--label-size-floor);
+  font-weight: 400;
+  letter-spacing: .02em;
+  color: var(--ink-mid);
+  text-d
+
+Match 22 at line 116:
+ {
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.sk-info-link {
+  font-family: var(--font-ui);
+  font-size: var(--label-size-floor);
+  font-weight: 400;
+  letter-spacing: .02em;
+  color: var(--ink-mid);
+  text-decoration: none;
+
+
+Match 23 at line 137:
+nfo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(184,98,63,.35);
+  color: var(--terra);
+  flex-shrink: 0;
+  transition: background .25s, border-color .25s;
+}
+.sk-info-link--
+
+Match 24 at line 156:
+{font-style:italic;color:var(--blush)}
+/* Map block in CTA */
+.cta-map-block{
+  padding-top:2.5rem;
+  border-top:1px solid rgba(255,255,255,.06);
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+}
+.cta-map-frame{
+  position:relative;
+  width:100%;
+  height:240px;
+  border-rad
+
+Match 25 at line 164:
+;
+  flex-direction:column;
+  gap:1rem;
+}
+.cta-map-frame{
+  position:relative;
+  width:100%;
+  height:240px;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid rgba(212,175,106,.18);
+  box-shadow:0 4px 24px rgba(0,0,0,.35),inset 0 0 0 1px rgba(255,255,255,.04);
+}
+.cta-map
+
+Match 26 at line 174:
+ba(255,255,255,.04);
+}
+.cta-map-frame iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  filter:sepia(20%) saturate(80%) brightness(.88) contrast(1.05);
+  transition:filter .35s;
+}
+.cta-map-frame:hover iframe{
+  filter:sepia(8%) saturate(95%) brightness(.95) c
+
+Match 27 at line 199:
+lex;
+  align-items:center;
+}
+.cta-map-divider{
+  color:rgba(255,255,255,.14);
+  margin:0 .1rem;
+}
+
+/* ── Contact Globe ── */
+.sk-contact-globe-wrap {
+  margin-top: 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  /* Sub
+
+Match 28 at line 204:
+.14);
+  margin:0 .1rem;
+}
+
+/* ── Contact Globe ── */
+.sk-contact-globe-wrap {
+  margin-top: 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  /* Subtle gold border matching dark section palette */
+  border: 1px solid rgb
+
+Match 29 at line 205:
+;
+}
+
+/* ── Contact Globe ── */
+.sk-contact-globe-wrap {
+  margin-top: 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  /* Subtle gold border matching dark section palette */
+  border: 1px solid rgba(212,175,106,0.12);
+ 
+
+Match 30 at line 206:
+Globe ── */
+.sk-contact-globe-wrap {
+  margin-top: 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  /* Subtle gold border matching dark section palette */
+  border: 1px solid rgba(212,175,106,0.12);
+  box-shadow: 0 8px 
+
+Match 31 at line 218:
+),
+              #0d0b09;
+}
+.sk-contact-globe-wrap canvas {
+  display: block;
+  width: 100%;
+  cursor: grab;
+}
+.sk-contact-globe-wrap canvas:active {
+  cursor: grabbing;
+}
+/* Mobile: full width */
+@media (max-width: 900px) {
+  .sk-contact-globe-wrap {
+    max-width: 100%;
+  }
+}
+
+
+
+Match 32 at line 224:
+
+}
+.sk-contact-globe-wrap canvas:active {
+  cursor: grabbing;
+}
+/* Mobile: full width */
+@media (max-width: 900px) {
+  .sk-contact-globe-wrap {
+    max-width: 100%;
+  }
+}
+
+/* ── CONTACT FORM ─────────────────────────────────────────── */
+.sk-contact-fallback-form{background:rgba(
+
+Match 33 at line 225:
+ntact-globe-wrap canvas:active {
+  cursor: grabbing;
+}
+/* Mobile: full width */
+@media (max-width: 900px) {
+  .sk-contact-globe-wrap {
+    max-width: 100%;
+  }
+}
+
+/* ── CONTACT FORM ─────────────────────────────────────────── */
+.sk-contact-fallback-form{background:rgba(255,255,2
+
+Match 34 at line 225:
+wrap canvas:active {
+  cursor: grabbing;
+}
+/* Mobile: full width */
+@media (max-width: 900px) {
+  .sk-contact-globe-wrap {
+    max-width: 100%;
+  }
+}
+
+/* ── CONTACT FORM ─────────────────────────────────────────── */
+.sk-contact-fallback-form{background:rgba(255,255,255,.05);bord
+
+Match 35 at line 227:
+e: full width */
+@media (max-width: 900px) {
+  .sk-contact-globe-wrap {
+    max-width: 100%;
+  }
+}
+
+/* ── CONTACT FORM ─────────────────────────────────────────── */
+.sk-contact-fallback-form{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16p
+
+Match 36 at line 232:
+:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:2.8rem 2.4rem}
+.sk-form-title{font-family:var(--font-ui);font-size:var(--label-size-floor);letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:2rem;display:
+
+Match 37 at line 233:
+loor);letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:2rem;display:block}
+.sk-form-row{margin-bottom:1.2rem}
+.sk-form-row-double{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.2rem}
+.sk-contact-fallback-form label{displ
+
+Match 38 at line 234:
+case;color:rgba(255,255,255,.35);margin-bottom:2rem;display:block}
+.sk-form-row{margin-bottom:1.2rem}
+.sk-form-row-double{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.2rem}
+.sk-contact-fallback-form label{display:block;font-family:var(--font-ui);font-size:v
+
+Match 39 at line 235:
+1.2rem}
+.sk-form-row-double{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.2rem}
+.sk-contact-fallback-form label{display:block;font-family:var(--font-ui);font-size:var(--label-size-floor);font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgb
+
+Match 40 at line 236:
+t:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:.5rem}
+.sk-contact-fallback-form input,
+.sk-contact-fallback-form textarea,
+.sk-contact-fallback-form select{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255
+
+Match 41 at line 239:
+orm input,
+.sk-contact-fallback-form textarea,
+.sk-contact-fallback-form select{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:rgba(255,255,255,.82);font-family:var(--font-display);font-size:1rem;font-weight:300;padding:
+
+Match 42 at line 239:
+255,255,255,.82);font-family:var(--font-display);font-size:1rem;font-weight:300;padding:.85rem 1.1rem;outline:none;transition:border-color .3s,background .3s,box-shadow .3s;-webkit-appearance:none}
+.sk-contact-fallback-form input::placeholder,
+.sk-contact-fallback-form textarea::
+
+Match 43 at line 248:
+ize-floor);pointer-events:none}
+body .sk-form-select-wrap select{cursor:pointer;padding-right:2.5rem;color:rgba(255,255,255,.82);background-color:rgba(255,255,255,.06)}
+body .sk-form-select-wrap select option{background-color:var(--ink-mid);color:rgba(255,255,255,.85)}
+.sk-form-s
+
+Match 44 at line 250:
+on{background-color:var(--ink-mid);color:rgba(255,255,255,.85)}
+.sk-form-submit{margin-top:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.sk-form-note{font-family:var(--font-display);font-size:.9rem;font-style:italic;color:rgba(255,25
+
+Match 45 at line 258:
+font-size:var(--label-size-floor);
+  letter-spacing:.04em;
+  line-height:1.6;
+  padding:0;
+  margin-top:.5rem;
+  width:100%;
+  min-height:0;
+  transition:opacity .3s;
+}
+.sk-form-feedback:empty{display:none}
+.sk-form-feedback--success{
+  color:#7dba8b;
+  padding:.75rem 1rem;
+  bac
+
+Match 46 at line 259:
+(--label-size-floor);
+  letter-spacing:.04em;
+  line-height:1.6;
+  padding:0;
+  margin-top:.5rem;
+  width:100%;
+  min-height:0;
+  transition:opacity .3s;
+}
+.sk-form-feedback:empty{display:none}
+.sk-form-feedback--success{
+  color:#7dba8b;
+  padding:.75rem 1rem;
+  background:rgba(
+
+Match 47 at line 260:
+;
+  letter-spacing:.04em;
+  line-height:1.6;
+  padding:0;
+  margin-top:.5rem;
+  width:100%;
+  min-height:0;
+  transition:opacity .3s;
+}
+.sk-form-feedback:empty{display:none}
+.sk-form-feedback--success{
+  color:#7dba8b;
+  padding:.75rem 1rem;
+  background:rgba(125,186,139,.08);
+  
+
+Match 48 at line 267:
+orm-feedback:empty{display:none}
+.sk-form-feedback--success{
+  color:#7dba8b;
+  padding:.75rem 1rem;
+  background:rgba(125,186,139,.08);
+  border:1px solid rgba(125,186,139,.2);
+  border-radius:10px;
+}
+.sk-form-feedback--error{
+  color:var(--blush);
+  padding:.75rem 1rem;
+  backg
+
+Match 49 at line 274:
+,.2);
+  border-radius:10px;
+}
+.sk-form-feedback--error{
+  color:var(--blush);
+  padding:.75rem 1rem;
+  background:rgba(228,189,160,.07);
+  border:1px solid rgba(228,189,160,.18);
+  border-radius:10px;
+}
+.sk-contact-fallback-form .btn,.sk-contact-fallback-form .btn-primary{font-fa
+
+Match 50 at line 279:
+;font-size:var(--label-size-floor);letter-spacing:.2em;text-transform:uppercase;padding:.95rem 2.6rem;border-radius:var(--r-btn);background:var(--terra);color:#fff;border:none;cursor:pointer;transition:background .3s,transform .3s,box-shadow .3s;box-shadow:0 4px 20px rgba(184,98,
+
+Match 51 at line 286:
+(--font-ui);font-size:var(--label-size-floor);letter-spacing:.1em;color:#e07070;margin-top:.35rem;display:block}
+body .sk-contact-fallback-form input.sk-valid,
+body .sk-contact-fallback-form textarea.sk-valid,
+body .sk-contact-fallback-form select.sk-valid{border-color:rgba(122,1
+
+Match 52 at line 295:
+invisible height below section */
+
+/* ── Stacking cards mobile responsive ── */
+@media(max-width:768px){
+  .founders-asymgrid{min-height:unset}
+}
+@media(max-width:480px){}
+
+
+/* ═══════════════════════════════════════════════════════════
+   MICROINTERACTIONS v10 — Dan Saffer's 4-p
+
+Match 53 at line 295:
+eight below section */
+
+/* ── Stacking cards mobile responsive ── */
+@media(max-width:768px){
+  .founders-asymgrid{min-height:unset}
+}
+@media(max-width:480px){}
+
+
+/* ═══════════════════════════════════════════════════════════
+   MICROINTERACTIONS v10 — Dan Saffer's 4-part framewo
+
+Match 54 at line 298:
+ponsive ── */
+@media(max-width:768px){
+  .founders-asymgrid{min-height:unset}
+}
+@media(max-width:480px){}
+
+
+/* ═══════════════════════════════════════════════════════════
+   MICROINTERACTIONS v10 — Dan Saffer's 4-part framework
+   Trigger → Rules → Feedback → Loops
+   ═══════════
+
+Match 55 at line 298:
+*/
+@media(max-width:768px){
+  .founders-asymgrid{min-height:unset}
+}
+@media(max-width:480px){}
+
+
+/* ═══════════════════════════════════════════════════════════
+   MICROINTERACTIONS v10 — Dan Saffer's 4-part framework
+   Trigger → Rules → Feedback → Loops
+   ══════════════════════
+
+Match 56 at line 320:
+tric 2-column Framer Motion-inspired redesign ─── */
+.sk-newsletter-section {
+  padding: 7rem 0 8rem;
+  text-align: left;
+}
+
+.sk-newsletter-card {
+  position: relative;
+  background: linear-gradient(135deg, #120f0c 0%, #080605 100%);
+  border: 1px solid rgba(196, 144, 42, 0.12);
+
+
+Match 57 at line 330:
+dow: 0 32px 80px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  padding: 5.5rem 5rem;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.6s var(--ease), border-color 0.6s var(--ease), box-shadow 0.6s var(--ease);
+}
+
+.sk-newsletter-card:hover {
+  b
+
+Match 58 at line 370:
+ 160, 0.45), transparent) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  background-size: 200% auto;
+  animation: border-beam-slide 6s linear infinite;
+}
+
+@keyframes border-
+
+Match 59 at line 403:
+ pointer-events: none;
+}
+
+.sk-aurora-blob--1 {
+  top: -150px;
+  left: -100px;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(196, 144, 42, 0.12) 0%, transparent 70%);
+  animation: aurora-float-1 14s infinite ease-in-out;
+}
+
+.sk-aurora-blob--2 {
+  bott
+
+Match 60 at line 412:
+inite ease-in-out;
+}
+
+.sk-aurora-blob--2 {
+  bottom: -150px;
+  right: -100px;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(184, 98, 63, 0.08) 0%, transparent 70%);
+  animation: aurora-float-2 16s infinite ease-in-out;
+}
+
+@keyframes aurora-float-1 {
+
+
+Match 61 at line 446:
+-direction: column;
+  align-items: flex-start;
+}
+
+.sk-newsletter-badge-wrap {
+  margin-bottom: 1.4rem;
+}
+
+.sk-newsletter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: rgba(196, 144, 42, 0.06);
+  border: 1px solid rgba(196, 144, 42, 0.16);
+  
+
+Match 62 at line 456:
+6);
+  border: 1px solid rgba(196, 144, 42, 0.16);
+  color: var(--gold-light);
+  padding: 0.35rem 0.95rem;
+  border-radius: 100px;
+  font-family: var(--font-ui);
+  font-size: var(--label-size-floor);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.sk-
+
+Match 63 at line 466:
+ text-transform: uppercase;
+  font-weight: 500;
+}
+
+.sk-newsletter-badge-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--terra);
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse-badge-dot 2.5s infinite ease-in-out;
+}
+
+@keyframes pulse-badge-dot {
+  0%, 100%
+
+Match 64 at line 486:
+t-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0 0 1.5rem;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.sk-newsletter-heading em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--gold-light);
+}
+
+.sk-newsletter-body {
+  font-fam
+
+Match 65 at line 502:
+;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0;
+  max-width: 44ch;
+}
+
+/* Glassmorphic Form Column Container */
+.sk-newsletter-col--form {
+  width: 100%;
+}
+
+.sk-newsletter-form-container {
+  background: rgba(26, 22, 18, 0.3);
+  border: 1p
+
+Match 66 at line 503:
+300;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0;
+  max-width: 44ch;
+}
+
+/* Glassmorphic Form Column Container */
+.sk-newsletter-col--form {
+  width: 100%;
+}
+
+.sk-newsletter-form-container {
+  background: rgba(26, 22, 18, 0.3);
+  border: 1px solid rgba(255,
+
+Match 67 at line 508:
+ 44ch;
+}
+
+/* Glassmorphic Form Column Container */
+.sk-newsletter-col--form {
+  width: 100%;
+}
+
+.sk-newsletter-form-container {
+  background: rgba(26, 22, 18, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px)
+
+Match 68 at line 517:
+16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--r-card);
+  padding: 3rem 2.6rem 2.8rem;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
+  position: relative;
+  z-index: 2;
+}
+
+.sk-newsletter-form-wrap {
+  width: 100%;
+  margin-bottom: 1.4rem;
+}
+
+.sk-newsletter-
+
+Match 69 at line 524:
+, 0, 0.35);
+  position: relative;
+  z-index: 2;
+}
+
+.sk-newsletter-form-wrap {
+  width: 100%;
+  margin-bottom: 1.4rem;
+}
+
+.sk-newsletter-disclaimer {
+  font-family: var(--font-ui);
+  font-size: var(--label-size-floor);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color
+
+Match 70 at line 525:
+osition: relative;
+  z-index: 2;
+}
+
+.sk-newsletter-form-wrap {
+  width: 100%;
+  margin-bottom: 1.4rem;
+}
+
+.sk-newsletter-disclaimer {
+  font-family: var(--font-ui);
+  font-size: var(--label-size-floor);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255
+
+Match 71 at line 535:
+ansform: uppercase;
+  color: rgba(255, 255, 255, 0.32);
+  text-align: center;
+  margin: 0;
+}
+
+/* Forminator Newsletter Overrides - Ethereal Stacked Column Layout */
+html body .sk-newsletter-form-wrap .forminator-edit-module {
+  display: none;
+}
+
+html body .sk-newsletter-form-wrap
+
+Match 72 at line 538:
+e;
+  color: rgba(255, 255, 255, 0.32);
+  text-align: center;
+  margin: 0;
+}
+
+/* Forminator Newsletter Overrides - Ethereal Stacked Column Layout */
+html body .sk-newsletter-form-wrap .forminator-edit-module {
+  display: none;
+}
+
+html body .sk-newsletter-form-wrap .forminator-resp
+
+Match 73 at line 539:
+errides - Ethereal Stacked Column Layout */
+html body .sk-newsletter-form-wrap .forminator-edit-module {
+  display: none;
+}
+
+html body .sk-newsletter-form-wrap .forminator-response-message.forminator-error {
+  display: none;
+}
+
+/* Stack inputs vertically */
+body .sk-newsletter-fo
+
+Match 74 at line 543:
+orminator-edit-module {
+  display: none;
+}
+
+html body .sk-newsletter-form-wrap .forminator-response-message.forminator-error {
+  display: none;
+}
+
+/* Stack inputs vertically */
+body .sk-newsletter-form-wrap .forminator-custom-form {
+  display: flex;
+  flex-direction: column;
+  ga
+
+Match 75 at line 543:
+splay: none;
+}
+
+html body .sk-newsletter-form-wrap .forminator-response-message.forminator-error {
+  display: none;
+}
+
+/* Stack inputs vertically */
+body .sk-newsletter-form-wrap .forminator-custom-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  align-items: st
+
+Match 76 at line 548:
+ display: none;
+}
+
+/* Stack inputs vertically */
+body .sk-newsletter-form-wrap .forminator-custom-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+body .sk-newsletter-form-wrap .forminator-ro
+
+Match 77 at line 554:
+column;
+  gap: 1.1rem;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+body .sk-newsletter-form-wrap .forminator-row {
+  width: 100%;
+  flex: 1 1 auto;
+  margin-bottom: 0;
+  padding: 0;
+  position: relative; 
+}
+
+body .sk-newsletter-form-wrap .forminator-r
+
+Match 78 at line 557:
+  justify-content: flex-start;
+  width: 100%;
+}
+
+body .sk-newsletter-form-wrap .forminator-row {
+  width: 100%;
+  flex: 1 1 auto;
+  margin-bottom: 0;
+  padding: 0;
+  position: relative; 
+}
+
+body .sk-newsletter-form-wrap .forminator-row-last {
+  width: 100%;
+  flex: 0 0 auto;
+  ma
+
+Match 79 at line 558:
+flex-start;
+  width: 100%;
+}
+
+body .sk-newsletter-form-wrap .forminator-row {
+  width: 100%;
+  flex: 1 1 auto;
+  margin-bottom: 0;
+  padding: 0;
+  position: relative; 
+}
+
+body .sk-newsletter-form-wrap .forminator-row-last {
+  width: 100%;
+  flex: 0 0 auto;
+  margin-bottom: 0;
+}
+
+
+
+Match 80 at line 560:
+y .sk-newsletter-form-wrap .forminator-row {
+  width: 100%;
+  flex: 1 1 auto;
+  margin-bottom: 0;
+  padding: 0;
+  position: relative; 
+}
+
+body .sk-newsletter-form-wrap .forminator-row-last {
+  width: 100%;
+  flex: 0 0 auto;
+  margin-bottom: 0;
+}
+
+body .sk-newsletter-form-wrap .fo
+
+Match 81 at line 561:
+m-wrap .forminator-row {
+  width: 100%;
+  flex: 1 1 auto;
+  margin-bottom: 0;
+  padding: 0;
+  position: relative; 
+}
+
+body .sk-newsletter-form-wrap .forminator-row-last {
+  width: 100%;
+  flex: 0 0 auto;
+  margin-bottom: 0;
+}
+
+body .sk-newsletter-form-wrap .forminator-label {
+  d
+
+Match 82 at line 565:
+ttom: 0;
+  padding: 0;
+  position: relative; 
+}
+
+body .sk-newsletter-form-wrap .forminator-row-last {
+  width: 100%;
+  flex: 0 0 auto;
+  margin-bottom: 0;
+}
+
+body .sk-newsletter-form-wrap .forminator-label {
+  display: none;
+}
+
+/* Translucent Glass Inputs */
+body .sk-newsletter-f
+
+Match 83 at line 566:
+ position: relative; 
+}
+
+body .sk-newsletter-form-wrap .forminator-row-last {
+  width: 100%;
+  flex: 0 0 auto;
+  margin-bottom: 0;
+}
+
+body .sk-newsletter-form-wrap .forminator-label {
+  display: none;
+}
+
+/* Translucent Glass Inputs */
+body .sk-newsletter-form-wrap .forminator-cus
+
+Match 84 at line 568:
+-newsletter-form-wrap .forminator-row-last {
+  width: 100%;
+  flex: 0 0 auto;
+  margin-bottom: 0;
+}
+
+body .sk-newsletter-form-wrap .forminator-label {
+  display: none;
+}
+
+/* Translucent Glass Inputs */
+body .sk-newsletter-form-wrap .forminator-custom-form input[type="email"],
+bod
+
+Match 85 at line 571:
+: 100%;
+  flex: 0 0 auto;
+  margin-bottom: 0;
+}
+
+body .sk-newsletter-form-wrap .forminator-label {
+  display: none;
+}
+
+/* Translucent Glass Inputs */
+body .sk-newsletter-form-wrap .forminator-custom-form input[type="email"],
+body .sk-newsletter-form-wrap .forminator-input {
+  wid
+
+Match 86 at line 576:
+display: none;
+}
+
+/* Translucent Glass Inputs */
+body .sk-newsletter-form-wrap .forminator-custom-form input[type="email"],
+body .sk-newsletter-form-wrap .forminator-input {
+  width: 100%;
+  padding: 1.1rem 1.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: v
+
+Match 87 at line 577:
+rap .forminator-custom-form input[type="email"],
+body .sk-newsletter-form-wrap .forminator-input {
+  width: 100%;
+  padding: 1.1rem 1.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--r-btn);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  fon
+
+Match 88 at line 578:
+m-form input[type="email"],
+body .sk-newsletter-form-wrap .forminator-input {
+  width: 100%;
+  padding: 1.1rem 1.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--r-btn);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 300;
+  colo
+
+Match 89 at line 579:
+pe="email"],
+body .sk-newsletter-form-wrap .forminator-input {
+  width: 100%;
+  padding: 1.1rem 1.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--r-btn);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #fff;
+  back
+
+Match 90 at line 594:
+.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+body .sk-newsletter-form-wrap .forminator-custom-form input[type="email"]::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+  font-style: italic;
+}
+
+body .sk-newsletter-form-wrap .forminator-custom-form input[type="email"]:focus {
+
+
+Match 91 at line 599:
+ba(255, 255, 255, 0.3);
+  font-style: italic;
+}
+
+body .sk-newsletter-form-wrap .forminator-custom-form input[type="email"]:focus {
+  border-color: var(--gold);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 0 4px rgba(196, 144, 42, 0.15), inset 0 2px 4px rgba(0, 0, 0,
+
+Match 92 at line 606:
+rgba(0, 0, 0, 0.15);
+}
+
+/* Error text styling */
+body .sk-newsletter-form-wrap .forminator-field .forminator-error-message {
+  font-family: var(--font-ui);
+  font-size: var(--label-size-floor);
+  color: #ef9a9a;
+  background: transparent;
+  padding: 0.4rem 0 0 0.1rem;
+  margin: 0
+
+Match 93 at line 606:
+);
+}
+
+/* Error text styling */
+body .sk-newsletter-form-wrap .forminator-field .forminator-error-message {
+  font-family: var(--font-ui);
+  font-size: var(--label-size-floor);
+  color: #ef9a9a;
+  background: transparent;
+  padding: 0.4rem 0 0 0.1rem;
+  margin: 0;
+  position: abso
+
+Match 94 at line 611:
+t-size: var(--label-size-floor);
+  color: #ef9a9a;
+  background: transparent;
+  padding: 0.4rem 0 0 0.1rem;
+  margin: 0;
+  position: absolute; 
+  bottom: -20px; 
+  left: 0;
+  list-style: none;
+  text-align: left;
+}
+
+body .sk-newsletter-form-wrap .forminator-field .forminator-erro
+
+Match 95 at line 612:
+);
+  color: #ef9a9a;
+  background: transparent;
+  padding: 0.4rem 0 0 0.1rem;
+  margin: 0;
+  position: absolute; 
+  bottom: -20px; 
+  left: 0;
+  list-style: none;
+  text-align: left;
+}
+
+body .sk-newsletter-form-wrap .forminator-field .forminator-error-message::before {
+  display:
+
+Match 96 at line 620:
+t: 0;
+  list-style: none;
+  text-align: left;
+}
+
+body .sk-newsletter-form-wrap .forminator-field .forminator-error-message::before {
+  display: none;
+}
+
+body .sk-newsletter-form-wrap .forminator-has_error input {
+  border-color: #ef9a9a !important;
+  background: rgba(239, 154, 15
+
+Match 97 at line 620:
+: none;
+  text-align: left;
+}
+
+body .sk-newsletter-form-wrap .forminator-field .forminator-error-message::before {
+  display: none;
+}
+
+body .sk-newsletter-form-wrap .forminator-has_error input {
+  border-color: #ef9a9a !important;
+  background: rgba(239, 154, 154, 0.05) !importan
+
+Match 98 at line 624:
+ator-error-message::before {
+  display: none;
+}
+
+body .sk-newsletter-form-wrap .forminator-has_error input {
+  border-color: #ef9a9a !important;
+  background: rgba(239, 154, 154, 0.05) !important;
+}
+
+/* Premium Gold Action Button - Full Width Stacked */
+body .sk-newsletter-form-w
+
+Match 99 at line 629:
+: rgba(239, 154, 154, 0.05) !important;
+}
+
+/* Premium Gold Action Button - Full Width Stacked */
+body .sk-newsletter-form-wrap .forminator-custom-form button.forminator-button {
+  width: 100%;
+  background: var(--gold);
+  color: var(--ink);
+  border: none;
+  border-radius: var(--
+
+Match 100 at line 630:
+emium Gold Action Button - Full Width Stacked */
+body .sk-newsletter-form-wrap .forminator-custom-form button.forminator-button {
+  width: 100%;
+  background: var(--gold);
+  color: var(--ink);
+  border: none;
+  border-radius: var(--r-btn);
+  font-family: var(--font-ui);
+  font-si
+
+Match 101 at line 630:
+l Width Stacked */
+body .sk-newsletter-form-wrap .forminator-custom-form button.forminator-button {
+  width: 100%;
+  background: var(--gold);
+  color: var(--ink);
+  border: none;
+  border-radius: var(--r-btn);
+  font-family: var(--font-ui);
+  font-size: var(--label-size-floor);
+ 
+
+Match 102 at line 631:
+y .sk-newsletter-form-wrap .forminator-custom-form button.forminator-button {
+  width: 100%;
+  background: var(--gold);
+  color: var(--ink);
+  border: none;
+  border-radius: var(--r-btn);
+  font-family: var(--font-ui);
+  font-size: var(--label-size-floor);
+  font-weight: 600;
+  l
+
+Match 103 at line 641:
+);
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 0 2rem;
+  height: 54px; 
+  cursor: pointer;
+  margin-top: 0.2rem;
+  box-shadow: 0 4px 16px rgba(196, 144, 42, 0.2);
+  transition: background 0.4s var(--ease), color 0.4s var(--ease), transfor
+
+Match 104 at line 644:
+-transform: uppercase;
+  padding: 0 2rem;
+  height: 54px; 
+  cursor: pointer;
+  margin-top: 0.2rem;
+  box-shadow: 0 4px 16px rgba(196, 144, 42, 0.2);
+  transition: background 0.4s var(--ease), color 0.4s var(--ease), transform 0.4s var(--ease-spring), box-shadow 0.4s var(--ease);
+
+Match 105 at line 652:
+ign-items: center;
+  justify-content: center;
+}
+
+body .sk-newsletter-form-wrap .forminator-custom-form button.forminator-button:hover,
+body .sk-newsletter-form-wrap .forminator-custom-form button.forminator-button:focus-visible {
+  background: #fff;
+  color: var(--ink);
+  transfo
+
+Match 106 at line 652:
+ontent: center;
+}
+
+body .sk-newsletter-form-wrap .forminator-custom-form button.forminator-button:hover,
+body .sk-newsletter-form-wrap .forminator-custom-form button.forminator-button:focus-visible {
+  background: #fff;
+  color: var(--ink);
+  transform: translateY(-2px);
+  box-sh
+
+Match 107 at line 653:
+ator-custom-form button.forminator-button:hover,
+body .sk-newsletter-form-wrap .forminator-custom-form button.forminator-button:focus-visible {
+  background: #fff;
+  color: var(--ink);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(196, 144, 42, 0.4);
+}
+
+body .sk-n
+
+Match 108 at line 653:
+ator-button:hover,
+body .sk-newsletter-form-wrap .forminator-custom-form button.forminator-button:focus-visible {
+  background: #fff;
+  color: var(--ink);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(196, 144, 42, 0.4);
+}
+
+body .sk-newsletter-form-wrap .forminato
+
+Match 109 at line 660:
+-shadow: 0 10px 28px rgba(196, 144, 42, 0.4);
+}
+
+body .sk-newsletter-form-wrap .forminator-custom-form button.forminator-button:active {
+  transform: translateY(-1px);
+}
+
+/* Responsive Adaptive Styling */
+@media (max-width: 960px) {
+  .sk-newsletter-grid {
+    grid-template-colum
+
+Match 110 at line 660:
+ 144, 42, 0.4);
+}
+
+body .sk-newsletter-form-wrap .forminator-custom-form button.forminator-button:active {
+  transform: translateY(-1px);
+}
+
+/* Responsive Adaptive Styling */
+@media (max-width: 960px) {
+  .sk-newsletter-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+
+Match 111 at line 665:
+on:active {
+  transform: translateY(-1px);
+}
+
+/* Responsive Adaptive Styling */
+@media (max-width: 960px) {
+  .sk-newsletter-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  .sk-newsletter-card {
+    padding: 4.5rem 3.5rem;
+  }
+  .sk-newsletter-heading {
+    font-siz
+
+Match 112 at line 665:
+  transform: translateY(-1px);
+}
+
+/* Responsive Adaptive Styling */
+@media (max-width: 960px) {
+  .sk-newsletter-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  .sk-newsletter-card {
+    padding: 4.5rem 3.5rem;
+  }
+  .sk-newsletter-heading {
+    font-size: clamp(2re
+
+Match 113 at line 671:
+   grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  .sk-newsletter-card {
+    padding: 4.5rem 3.5rem;
+  }
+  .sk-newsletter-heading {
+    font-size: clamp(2rem, 6vw, 2.8rem);
+  }
+  .sk-newsletter-body {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .sk-newsletter-sec
+
+Match 114 at line 677:
+ {
+    font-size: clamp(2rem, 6vw, 2.8rem);
+  }
+  .sk-newsletter-body {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .sk-newsletter-section {
+    padding: 4.5rem 0 5.5rem;
+  }
+  .sk-newsletter-card {
+    padding: 4rem 1.8rem 3.5rem;
+  }
+  .sk-newsletter-form-containe
+
+Match 115 at line 681:
+amp(2rem, 6vw, 2.8rem);
+  }
+  .sk-newsletter-body {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .sk-newsletter-section {
+    padding: 4.5rem 0 5.5rem;
+  }
+  .sk-newsletter-card {
+    padding: 4rem 1.8rem 3.5rem;
+  }
+  .sk-newsletter-form-container {
+    padding: 2.2
+
+Match 116 at line 681:
+w, 2.8rem);
+  }
+  .sk-newsletter-body {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .sk-newsletter-section {
+    padding: 4.5rem 0 5.5rem;
+  }
+  .sk-newsletter-card {
+    padding: 4rem 1.8rem 3.5rem;
+  }
+  .sk-newsletter-form-container {
+    padding: 2.2rem 1.6rem 2
+
+Match 117 at line 683:
+-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .sk-newsletter-section {
+    padding: 4.5rem 0 5.5rem;
+  }
+  .sk-newsletter-card {
+    padding: 4rem 1.8rem 3.5rem;
+  }
+  .sk-newsletter-form-container {
+    padding: 2.2rem 1.6rem 2.2rem;
+  }
+  body .sk-newsletter-form-wrap .for
+
+Match 118 at line 686:
+sletter-section {
+    padding: 4.5rem 0 5.5rem;
+  }
+  .sk-newsletter-card {
+    padding: 4rem 1.8rem 3.5rem;
+  }
+  .sk-newsletter-form-container {
+    padding: 2.2rem 1.6rem 2.2rem;
+  }
+  body .sk-newsletter-form-wrap .forminator-field .forminator-error-message {
+    position: re
+
+Match 119 at line 689:
+rd {
+    padding: 4rem 1.8rem 3.5rem;
+  }
+  .sk-newsletter-form-container {
+    padding: 2.2rem 1.6rem 2.2rem;
+  }
+  body .sk-newsletter-form-wrap .forminator-field .forminator-error-message {
+    position: relative; 
+    bottom: auto;
+    padding-bottom: 0.2rem;
+  }
+}
+
+
+
+/* ════
+
+Match 120 at line 691:
+ainer {
+    padding: 2.2rem 1.6rem 2.2rem;
+  }
+  body .sk-newsletter-form-wrap .forminator-field .forminator-error-message {
+    position: relative; 
+    bottom: auto;
+    padding-bottom: 0.2rem;
+  }
+}
+
+
+
+/* ═══════════════════════════════════════════════════════════
+   SACRED KO
+
+Match 121 at line 691:
+g: 2.2rem 1.6rem 2.2rem;
+  }
+  body .sk-newsletter-form-wrap .forminator-field .forminator-error-message {
+    position: relative; 
+    bottom: auto;
+    padding-bottom: 0.2rem;
+  }
+}
+
+
+
+/* ═══════════════════════════════════════════════════════════
+   SACRED KOMPASS: CONTACT FOR
+
+Match 122 at line 694:
+ield .forminator-error-message {
+    position: relative; 
+    bottom: auto;
+    padding-bottom: 0.2rem;
+  }
+}
+
+
+
+/* ═══════════════════════════════════════════════════════════
+   SACRED KOMPASS: CONTACT FORM — CARDLESS, OVER BG PHOTO
+   v3: No card box. Fields float directly over
+
+Match 123 at line 708:
+
+/*
+ * .sk-contact-card exists in markup only as a pass-through wrapper
+ * when Forminator is active. Strip all visual box styles from it.
+ * The cta-form-col div itself provides the column; no card needed.
+ */
+body .sk-contact-card {
+    background: none;
+    backdrop-filter: no
+
+Match 124 at line 715:
+ground: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    padding: 0;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+}
+
+/* Row & Column Layout — shared by Forminator and fallback form */
+body .sk-contact-card .forminator-custom-form,
+body .cta
+
+Match 125 at line 721:
+;
+    border: none;
+    box-shadow: none;
+}
+
+/* Row & Column Layout — shared by Forminator and fallback form */
+body .sk-contact-card .forminator-custom-form,
+body .cta-form-col .sk-contact-fallback-form {
+    display: block;
+}
+
+body .sk-contact-card .forminator-row,
+body .cta-fo
+
+Match 126 at line 722:
+olumn Layout — shared by Forminator and fallback form */
+body .sk-contact-card .forminator-custom-form,
+body .cta-form-col .sk-contact-fallback-form {
+    display: block;
+}
+
+body .sk-contact-card .forminator-row,
+body .cta-form-col .forminator-row {
+    display: flex;
+    flex-wr
+
+Match 127 at line 727:
+m-col .sk-contact-fallback-form {
+    display: block;
+}
+
+body .sk-contact-card .forminator-row,
+body .cta-form-col .forminator-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-bottom: 0.55rem;
+}
+body .sk-contact-card .forminator-row-last,
+body .cta-form-
+
+Match 128 at line 728:
+  display: block;
+}
+
+body .sk-contact-card .forminator-row,
+body .cta-form-col .forminator-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-bottom: 0.55rem;
+}
+body .sk-contact-card .forminator-row-last,
+body .cta-form-col .forminator-row-last {
+    margi
+
+Match 129 at line 732:
+.forminator-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-bottom: 0.55rem;
+}
+body .sk-contact-card .forminator-row-last,
+body .cta-form-col .forminator-row-last {
+    margin-bottom: 0;
+}
+body .sk-contact-card .forminator-col-6,
+body .cta-form-col .for
+
+Match 130 at line 734:
+p: wrap;
+    gap: 0.55rem;
+    margin-bottom: 0.55rem;
+}
+body .sk-contact-card .forminator-row-last,
+body .cta-form-col .forminator-row-last {
+    margin-bottom: 0;
+}
+body .sk-contact-card .forminator-col-6,
+body .cta-form-col .forminator-col-6 {
+    flex: 1 1 calc(50% - 0.375rem
+
+Match 131 at line 735:
+tom: 0.55rem;
+}
+body .sk-contact-card .forminator-row-last,
+body .cta-form-col .forminator-row-last {
+    margin-bottom: 0;
+}
+body .sk-contact-card .forminator-col-6,
+body .cta-form-col .forminator-col-6 {
+    flex: 1 1 calc(50% - 0.375rem);
+    min-width: 0;
+}
+body .sk-contact-c
+
+Match 132 at line 736:
+ontact-card .forminator-row-last,
+body .cta-form-col .forminator-row-last {
+    margin-bottom: 0;
+}
+body .sk-contact-card .forminator-col-6,
+body .cta-form-col .forminator-col-6 {
+    flex: 1 1 calc(50% - 0.375rem);
+    min-width: 0;
+}
+body .sk-contact-card .forminator-col-12,
+bo
+
+Match 133 at line 738:
+-form-col .forminator-row-last {
+    margin-bottom: 0;
+}
+body .sk-contact-card .forminator-col-6,
+body .cta-form-col .forminator-col-6 {
+    flex: 1 1 calc(50% - 0.375rem);
+    min-width: 0;
+}
+body .sk-contact-card .forminator-col-12,
+body .cta-form-col .forminator-col-12 {
+    f
+
+Match 134 at line 739:
+argin-bottom: 0;
+}
+body .sk-contact-card .forminator-col-6,
+body .cta-form-col .forminator-col-6 {
+    flex: 1 1 calc(50% - 0.375rem);
+    min-width: 0;
+}
+body .sk-contact-card .forminator-col-12,
+body .cta-form-col .forminator-col-12 {
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+/* 
+
+Match 135 at line 741:
+y .cta-form-col .forminator-col-6 {
+    flex: 1 1 calc(50% - 0.375rem);
+    min-width: 0;
+}
+body .sk-contact-card .forminator-col-12,
+body .cta-form-col .forminator-col-12 {
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+/* Labels */
+body .sk-contact-card .forminator-label,
+body .cta-fo
+
+Match 136 at line 743:
+
+    flex: 1 1 calc(50% - 0.375rem);
+    min-width: 0;
+}
+body .sk-contact-card .forminator-col-12,
+body .cta-form-col .forminator-col-12 {
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+/* Labels */
+body .sk-contact-card .forminator-label,
+body .cta-form-col .forminator-label {
+    font
+
+Match 137 at line 744:
+  min-width: 0;
+}
+body .sk-contact-card .forminator-col-12,
+body .cta-form-col .forminator-col-12 {
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+/* Labels */
+body .sk-contact-card .forminator-label,
+body .cta-form-col .forminator-label {
+    font-family: var(--font-ui);
+    font-size:
+
+Match 138 at line 746:
+minator-col-12,
+body .cta-form-col .forminator-col-12 {
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+/* Labels */
+body .sk-contact-card .forminator-label,
+body .cta-form-col .forminator-label {
+    font-family: var(--font-ui);
+    font-size: var(--label-size-floor);
+    letter-spacing
+
+Match 139 at line 750:
+2 {
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+/* Labels */
+body .sk-contact-card .forminator-label,
+body .cta-form-col .forminator-label {
+    font-family: var(--font-ui);
+    font-size: var(--label-size-floor);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: 
+
+Match 140 at line 751:
+%;
+}
+
+/* Labels */
+body .sk-contact-card .forminator-label,
+body .cta-form-col .forminator-label {
+    font-family: var(--font-ui);
+    font-size: var(--label-size-floor);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-muted, #78695a);
+    margin-
+
+Match 141 at line 757:
+.14em;
+    text-transform: uppercase;
+    color: var(--ink-muted, #78695a);
+    margin-bottom: 0.25rem;
+    display: block;
+    font-weight: 500;
+}
+
+/* Inputs — transparent bg so background photo shows through (Image 1 style)
+   Only the border defines the field boundary; placeho
+
+Match 142 at line 770:
+ta-form-col input,
+body .cta-form-col textarea,
+body .cta-form-col select {
+    width: 100%;
+    padding: 0.65rem 1.15rem;
+    background: rgba(253,248,240,.18); /* near-transparent */
+    border: 1px solid rgba(26,22,18,.22);
+    border-radius: 50px;
+    font-family: var(--font-
+
+Match 143 at line 771:
+,
+body .cta-form-col textarea,
+body .cta-form-col select {
+    width: 100%;
+    padding: 0.65rem 1.15rem;
+    background: rgba(253,248,240,.18); /* near-transparent */
+    border: 1px solid rgba(26,22,18,.22);
+    border-radius: 50px;
+    font-family: var(--font-display);
+    fon
+
+Match 144 at line 810:
+ground-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23b8623f' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E")
+
+Match 145 at line 814:
+position: right 1.2rem center;
+    background-color: rgba(253,248,240,.18);
+    padding-right: 2.8rem;
+    cursor: pointer;
+    color: rgba(26,22,18,.6);
+}
+
+/* Textarea — rounded rectangle (pill doesn't work for multiline) */
+body .sk-contact-card textarea,
+body .cta-form-col tex
+
+Match 146 at line 830:
+90px;
+    overflow: auto;
+    resize: none;
+    border-radius: 18px;
+}
+
+/* Hide Forminator character counter */
+body .sk-contact-card .forminator-description,
+body .cta-form-col .forminator-description {
+    display: none;
+}
+
+/* Submit button — full-width pill, terra */
+body .sk-
+
+Match 147 at line 831:
+radius: 18px;
+}
+
+/* Hide Forminator character counter */
+body .sk-contact-card .forminator-description,
+body .cta-form-col .forminator-description {
+    display: none;
+}
+
+/* Submit button — full-width pill, terra */
+body .sk-contact-card .forminator-button-submit,
+body .cta-form-
+
+Match 148 at line 832:
+r counter */
+body .sk-contact-card .forminator-description,
+body .cta-form-col .forminator-description {
+    display: none;
+}
+
+/* Submit button — full-width pill, terra */
+body .sk-contact-card .forminator-button-submit,
+body .cta-form-col .forminator-button-submit,
+body .cta-for
+
+Match 149 at line 836:
+orm-col .forminator-description {
+    display: none;
+}
+
+/* Submit button — full-width pill, terra */
+body .sk-contact-card .forminator-button-submit,
+body .cta-form-col .forminator-button-submit,
+body .cta-form-col .sk-form-submit .forminator-button-submit {
+    width: 100%;
+    
+
+Match 150 at line 837:
+y: none;
+}
+
+/* Submit button — full-width pill, terra */
+body .sk-contact-card .forminator-button-submit,
+body .cta-form-col .forminator-button-submit,
+body .cta-form-col .sk-form-submit .forminator-button-submit {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: var(--te
+
+Match 151 at line 838:
+, terra */
+body .sk-contact-card .forminator-button-submit,
+body .cta-form-col .forminator-button-submit,
+body .cta-form-col .sk-form-submit .forminator-button-submit {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: var(--terra);
+    color: #fff;
+    font-family: var(--
+
+Match 152 at line 839:
+dy .cta-form-col .forminator-button-submit,
+body .cta-form-col .sk-form-submit .forminator-button-submit {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: var(--terra);
+    color: #fff;
+    font-family: var(--font-ui);
+    font-size: var(--label-size-floor);
+    font-wei
+
+Match 153 at line 840:
+tton-submit,
+body .cta-form-col .sk-form-submit .forminator-button-submit {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: var(--terra);
+    color: #fff;
+    font-family: var(--font-ui);
+    font-size: var(--label-size-floor);
+    font-weight: 600;
+    letter-spacing: 0
+
+Match 154 at line 841:
+ .cta-form-col .sk-form-submit .forminator-button-submit {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: var(--terra);
+    color: #fff;
+    font-family: var(--font-ui);
+    font-size: var(--label-size-floor);
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-t
+
+Match 155 at line 854:
+: background 0.3s var(--ease), transform 0.3s var(--ease), box-shadow 0.3s;
+    margin-top: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    position: relative;
+}
+
+body .sk-contact-card .forminator-button-submit::after,
+body .c
+
+Match 156 at line 862:
+ent: center;
+    gap: 0.6rem;
+    position: relative;
+}
+
+body .sk-contact-card .forminator-button-submit::after,
+body .cta-form-col .forminator-button-submit::after {
+    content: '→';
+    transition: transform 0.3s var(--ease);
+    display: inline-block;
+}
+
+body .sk-contact-card
+
+Match 157 at line 863:
+
+}
+
+body .sk-contact-card .forminator-button-submit::after,
+body .cta-form-col .forminator-button-submit::after {
+    content: '→';
+    transition: transform 0.3s var(--ease);
+    display: inline-block;
+}
+
+body .sk-contact-card .forminator-button-submit:hover,
+body .cta-form-col 
+
+Match 158 at line 869:
+ransform 0.3s var(--ease);
+    display: inline-block;
+}
+
+body .sk-contact-card .forminator-button-submit:hover,
+body .cta-form-col .forminator-button-submit:hover {
+    background: var(--terra-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(184,98,63,.42);
+
+Match 159 at line 870:
+;
+}
+
+body .sk-contact-card .forminator-button-submit:hover,
+body .cta-form-col .forminator-button-submit:hover {
+    background: var(--terra-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(184,98,63,.42);
+}
+
+body .sk-contact-card .forminator-button-submit:
+
+Match 160 at line 876:
+2px);
+    box-shadow: 0 8px 32px rgba(184,98,63,.42);
+}
+
+body .sk-contact-card .forminator-button-submit:hover::after,
+body .cta-form-col .forminator-button-submit:hover::after {
+    transform: translateX(4px);
+}
+
+body .sk-contact-card .forminator-button-submit:active,
+body .cta-
+
+Match 161 at line 877:
+dy .sk-contact-card .forminator-button-submit:hover::after,
+body .cta-form-col .forminator-button-submit:hover::after {
+    transform: translateX(4px);
+}
+
+body .sk-contact-card .forminator-button-submit:active,
+body .cta-form-col .forminator-button-submit:active {
+    transform: 
+
+Match 162 at line 881:
+submit:hover::after {
+    transform: translateX(4px);
+}
+
+body .sk-contact-card .forminator-button-submit:active,
+body .cta-form-col .forminator-button-submit:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(184,98,63,.2);
+}
+
+/* Error states */
+body .sk-conta
+
+Match 163 at line 882:
+
+}
+
+body .sk-contact-card .forminator-button-submit:active,
+body .cta-form-col .forminator-button-submit:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(184,98,63,.2);
+}
+
+/* Error states */
+body .sk-contact-card .forminator-has_error input,
+body .sk-contact
+
+Match 164 at line 888:
+ow: 0 2px 10px rgba(184,98,63,.2);
+}
+
+/* Error states */
+body .sk-contact-card .forminator-has_error input,
+body .sk-contact-card .forminator-has_error textarea,
+body .sk-contact-card .forminator-has_error select,
+body .cta-form-col .forminator-has_error input,
+body .cta-form-col
+
+Match 165 at line 889:
+es */
+body .sk-contact-card .forminator-has_error input,
+body .sk-contact-card .forminator-has_error textarea,
+body .sk-contact-card .forminator-has_error select,
+body .cta-form-col .forminator-has_error input,
+body .cta-form-col .forminator-has_error textarea,
+body .cta-form-col
+
+Match 166 at line 890:
+t,
+body .sk-contact-card .forminator-has_error textarea,
+body .sk-contact-card .forminator-has_error select,
+body .cta-form-col .forminator-has_error input,
+body .cta-form-col .forminator-has_error textarea,
+body .cta-form-col .forminator-has_error select {
+    border-color: rgba
+
+Match 167 at line 891:
+xtarea,
+body .sk-contact-card .forminator-has_error select,
+body .cta-form-col .forminator-has_error input,
+body .cta-form-col .forminator-has_error textarea,
+body .cta-form-col .forminator-has_error select {
+    border-color: rgba(201,79,79,.55);
+    background: rgba(201,79,79,.
+
+Match 168 at line 892:
+ror select,
+body .cta-form-col .forminator-has_error input,
+body .cta-form-col .forminator-has_error textarea,
+body .cta-form-col .forminator-has_error select {
+    border-color: rgba(201,79,79,.55);
+    background: rgba(201,79,79,.04);
+}
+
+body .sk-contact-card .forminator-error-
+
+Match 169 at line 893:
+r input,
+body .cta-form-col .forminator-has_error textarea,
+body .cta-form-col .forminator-has_error select {
+    border-color: rgba(201,79,79,.55);
+    background: rgba(201,79,79,.04);
+}
+
+body .sk-contact-card .forminator-error-message,
+body .sk-contact-card .forminator-field--e
+
+Match 170 at line 898:
+(201,79,79,.55);
+    background: rgba(201,79,79,.04);
+}
+
+body .sk-contact-card .forminator-error-message,
+body .sk-contact-card .forminator-field--error .forminator-error-message,
+body .cta-form-col .forminator-error-message,
+body .cta-form-col .forminator-field--error .forminato
+
+Match 171 at line 899:
+04);
+}
+
+body .sk-contact-card .forminator-error-message,
+body .sk-contact-card .forminator-field--error .forminator-error-message,
+body .cta-form-col .forminator-error-message,
+body .cta-form-col .forminator-field--error .forminator-error-message {
+    display: flex;
+    align-it
+
+Match 172 at line 899:
+card .forminator-error-message,
+body .sk-contact-card .forminator-field--error .forminator-error-message,
+body .cta-form-col .forminator-error-message,
+body .cta-form-col .forminator-field--error .forminator-error-message {
+    display: flex;
+    align-items: center;
+    gap: 0.2
+
+Match 173 at line 900:
+ct-card .forminator-field--error .forminator-error-message,
+body .cta-form-col .forminator-error-message,
+body .cta-form-col .forminator-field--error .forminator-error-message {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-family: var(--font-ui);
+    fon
+
+Match 174 at line 901:
+rror-message,
+body .cta-form-col .forminator-error-message,
+body .cta-form-col .forminator-field--error .forminator-error-message {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-family: var(--font-ui);
+    font-size: var(--label-size-floor);
+    font-weig
+
+Match 175 at line 901:
+orm-col .forminator-error-message,
+body .cta-form-col .forminator-field--error .forminator-error-message {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-family: var(--font-ui);
+    font-size: var(--label-size-floor);
+    font-weight: 500;
+    font-style: 
+
+Match 176 at line 910:
+e-floor);
+    font-weight: 500;
+    font-style: normal;
+    color: #b85c3a;
+    margin-top: 0.3rem;
+    letter-spacing: 0.01em;
+    list-style: none;
+}
+
+body .sk-contact-card .forminator-error-message::before,
+body .cta-form-col .forminator-error-message::before {
+    content: "⚠
+
+Match 177 at line 915:
+em;
+    letter-spacing: 0.01em;
+    list-style: none;
+}
+
+body .sk-contact-card .forminator-error-message::before,
+body .cta-form-col .forminator-error-message::before {
+    content: "⚠";
+    font-size: var(--micro-size-floor);
+    opacity: 0.8;
+    flex-shrink: 0;
+}
+
+/* Mobile — 
+
+Match 178 at line 916:
+}
+
+body .sk-contact-card .forminator-error-message::before,
+body .cta-form-col .forminator-error-message::before {
+    content: "⚠";
+    font-size: var(--micro-size-floor);
+    opacity: 0.8;
+    flex-shrink: 0;
+}
+
+/* Mobile — stack name fields */
+@media (max-width: 650px) {
+    b
+
+Match 179 at line 924:
+oor);
+    opacity: 0.8;
+    flex-shrink: 0;
+}
+
+/* Mobile — stack name fields */
+@media (max-width: 650px) {
+    body .sk-contact-card .forminator-col-6,
+    body .cta-form-col .forminator-col-6 {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+}
+
+
+/* ══════════════════════════
+
+Match 180 at line 924:
+acity: 0.8;
+    flex-shrink: 0;
+}
+
+/* Mobile — stack name fields */
+@media (max-width: 650px) {
+    body .sk-contact-card .forminator-col-6,
+    body .cta-form-col .forminator-col-6 {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+}
+
+
+/* ══════════════════════════════════════
+
+Match 181 at line 925:
+e — stack name fields */
+@media (max-width: 650px) {
+    body .sk-contact-card .forminator-col-6,
+    body .cta-form-col .forminator-col-6 {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   JOURNAL PREVIEW — E
+
+Match 182 at line 926:
+: 650px) {
+    body .sk-contact-card .forminator-col-6,
+    body .cta-form-col .forminator-col-6 {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   JOURNAL PREVIEW — Editorial Magazine Layout v3
+   ═══════════
+
+Match 183 at line 928:
+l-6,
+    body .cta-form-col .forminator-col-6 {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+}
+
+
+/* ══════════════════════════════════════════════════════════
+   JOURNAL PREVIEW — Editorial Magazine Layout v3
+   ══════════════════════════════════════════════════════════ */
+
+
+Match 184 at line 940:
+     ivory-warm bg signals a gentle section change from the dark CTA above */
+  padding: 4rem 0 5rem;
+  background: var(--ivory-warm);
+  border-top: 1px solid var(--border-light);
+}
+
+/* Masthead title — now uses global .display-h2; this rule kept for layout context */
+.sk-jp-mast
+
+Match 185 at line 951:
+ex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2.8rem;
+  flex-wrap: wrap;
+}
+.sk-jp-masthead h2 {
+  margin-top: 0.6rem;
+  margin-bottom: 0;
+}
+/* Read-time badge on featured card overlay */
+.sk-jp-feat-readtime {
+  font-family: var(--
+
+Match 186 at line 955:
+p: 1.5rem;
+  margin-bottom: 2.8rem;
+  flex-wrap: wrap;
+}
+.sk-jp-masthead h2 {
+  margin-top: 0.6rem;
+  margin-bottom: 0;
+}
+/* Read-time badge on featured card overlay */
+.sk-jp-feat-readtime {
+  font-family: var(--font-ui);
+  font-size: var(--label-size-floor);
+  font-weight: 400;
+
+Match 187 at line 956:
+ttom: 2.8rem;
+  flex-wrap: wrap;
+}
+.sk-jp-masthead h2 {
+  margin-top: 0.6rem;
+  margin-bottom: 0;
+}
+/* Read-time badge on featured card overlay */
+.sk-jp-feat-readtime {
+  font-family: var(--font-ui);
+  font-size: var(--label-size-floor);
+  font-weight: 400;
+  letter-spacing: 0.1
+
+Match 188 at line 969:
+18,0.35);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 0.2rem 0.6rem;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+.sk-jp-see-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-ui);
+  font-size: var(
+
+Match 189 at line 985:
+ppercase;
+  color: #fff;
+  background: var(--terra);
+  text-decoration: none;
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--r-btn);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s, gap 0.2s;
+  white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(184,98,63,0.28);
+
+
+Match 190 at line 1007:
+/
+body #sk-hp {
+  display: none;
+}
+
+/* ── Mobile: CTA single column stack ── */
+@media (max-width: 768px) {
+  .cta-layout {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+  .cta-section {
+    min-height: auto;
+    height: auto;
+    padding: 0;
+    backgroun
+
+Match 191 at line 1007:
+p {
+  display: none;
+}
+
+/* ── Mobile: CTA single column stack ── */
+@media (max-width: 768px) {
+  .cta-layout {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+  .cta-section {
+    min-height: auto;
+    height: auto;
+    padding: 0;
+    background-attachment
+
+Match 192 at line 1015:
+ 0 !important;
+  }
+  .cta-section {
+    min-height: auto;
+    height: auto;
+    padding: 0;
+    background-attachment: scroll;
+  }
+  .cta-section .wrap {
+    padding-top: 2.5rem;
+    padding-bottom: 0;
+    align-items: flex-start;
+  }
+  .cta-text-col {
+    padding-top: 0;
+    pad
+
+Match 193 at line 1019:
+  padding: 0;
+    background-attachment: scroll;
+  }
+  .cta-section .wrap {
+    padding-top: 2.5rem;
+    padding-bottom: 0;
+    align-items: flex-start;
+  }
+  .cta-text-col {
+    padding-top: 0;
+    padding-left: 0;
+    padding-bottom: 2rem;
+  }
+  .cta-form-col {
+    padding-top:
+
+Match 194 at line 1020:
+und-attachment: scroll;
+  }
+  .cta-section .wrap {
+    padding-top: 2.5rem;
+    padding-bottom: 0;
+    align-items: flex-start;
+  }
+  .cta-text-col {
+    padding-top: 0;
+    padding-left: 0;
+    padding-bottom: 2rem;
+  }
+  .cta-form-col {
+    padding-top: 0;
+    background: trans
+
+Match 195 at line 1024:
+;
+    padding-bottom: 0;
+    align-items: flex-start;
+  }
+  .cta-text-col {
+    padding-top: 0;
+    padding-left: 0;
+    padding-bottom: 2rem;
+  }
+  .cta-form-col {
+    padding-top: 0;
+    background: transparent;
+    padding: 2rem 0 2.5rem;
+    border-radius: 0;
+    width: 100%;
+
+Match 196 at line 1025:
+: 0;
+    align-items: flex-start;
+  }
+  .cta-text-col {
+    padding-top: 0;
+    padding-left: 0;
+    padding-bottom: 2rem;
+  }
+  .cta-form-col {
+    padding-top: 0;
+    background: transparent;
+    padding: 2rem 0 2.5rem;
+    border-radius: 0;
+    width: 100%;
+    max-width: 100%
+
+Match 197 at line 1026:
+ flex-start;
+  }
+  .cta-text-col {
+    padding-top: 0;
+    padding-left: 0;
+    padding-bottom: 2rem;
+  }
+  .cta-form-col {
+    padding-top: 0;
+    background: transparent;
+    padding: 2rem 0 2.5rem;
+    border-radius: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: bor
+
+Match 198 at line 1029:
+op: 0;
+    padding-left: 0;
+    padding-bottom: 2rem;
+  }
+  .cta-form-col {
+    padding-top: 0;
+    background: transparent;
+    padding: 2rem 0 2.5rem;
+    border-radius: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .cta-h2 {
+    font-size: clamp(2r
+
+Match 199 at line 1031:
+rem;
+  }
+  .cta-form-col {
+    padding-top: 0;
+    background: transparent;
+    padding: 2rem 0 2.5rem;
+    border-radius: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .cta-h2 {
+    font-size: clamp(2rem, 8vw, 3.2rem);
+  }
+  body .sk-contact-card .fo
+
+Match 200 at line 1033:
+ background: transparent;
+    padding: 2rem 0 2.5rem;
+    border-radius: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .cta-h2 {
+    font-size: clamp(2rem, 8vw, 3.2rem);
+  }
+  body .sk-contact-card .forminator-col-6,
+  body .cta-form-col .forminator-c
+
+Match 201 at line 1034:
+ent;
+    padding: 2rem 0 2.5rem;
+    border-radius: 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .cta-h2 {
+    font-size: clamp(2rem, 8vw, 3.2rem);
+  }
+  body .sk-contact-card .forminator-col-6,
+  body .cta-form-col .forminator-col-6 {
+    flex: 0 0 
+
+Match 202 at line 1040:
+.cta-h2 {
+    font-size: clamp(2rem, 8vw, 3.2rem);
+  }
+  body .sk-contact-card .forminator-col-6,
+  body .cta-form-col .forminator-col-6 {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+  body .sk-contact-card .forminator-row,
+  body .cta-form-col .forminator-row {
+    flex-direction: 
+
+Match 203 at line 1041:
+, 3.2rem);
+  }
+  body .sk-contact-card .forminator-col-6,
+  body .cta-form-col .forminator-col-6 {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+  body .sk-contact-card .forminator-row,
+  body .cta-form-col .forminator-row {
+    flex-direction: column;
+  }
+  body .forminator-button.fo
+
+Match 204 at line 1043:
+minator-col-6,
+  body .cta-form-col .forminator-col-6 {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+  body .sk-contact-card .forminator-row,
+  body .cta-form-col .forminator-row {
+    flex-direction: column;
+  }
+  body .forminator-button.forminator-button-submit {
+    width: 100% !i
+
+Match 205 at line 1045:
+nator-col-6 {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+  body .sk-contact-card .forminator-row,
+  body .cta-form-col .forminator-row {
+    flex-direction: column;
+  }
+  body .forminator-button.forminator-button-submit {
+    width: 100% !important;
+    max-width: 100% !important;
+
+
+Match 206 at line 1046:
+width: 100%;
+  }
+  body .sk-contact-card .forminator-row,
+  body .cta-form-col .forminator-row {
+    flex-direction: column;
+  }
+  body .forminator-button.forminator-button-submit {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+  .sk-
+
+Match 207 at line 1049:
+
+  body .cta-form-col .forminator-row {
+    flex-direction: column;
+  }
+  body .forminator-button.forminator-button-submit {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+  .sk-contact-fallback-form {
+    background: transparent;
+    
+
+Match 208 at line 1049:
+col .forminator-row {
+    flex-direction: column;
+  }
+  body .forminator-button.forminator-button-submit {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+  .sk-contact-fallback-form {
+    background: transparent;
+    border: none;
+    
+
+Match 209 at line 1050:
+direction: column;
+  }
+  body .forminator-button.forminator-button-submit {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+  .sk-contact-fallback-form {
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+  .sk-contact-f
+
+Match 210 at line 1051:
+orminator-button.forminator-button-submit {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+  .sk-contact-fallback-form {
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+  .sk-contact-fallback-form input,
+  .sk-contac
+
+Match 211 at line 1057:
+ .sk-contact-fallback-form {
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+  .sk-contact-fallback-form input,
+  .sk-contact-fallback-form textarea,
+  .sk-contact-fallback-form select {
+    background: rgba(255,255,255,0.85);
+    border: 1px solid rgba(212,175
+
+Match 212 at line 1067:
+85);
+    border: 1px solid rgba(212,175,106,0.35);
+    color: var(--ink);
+  }
+}
+@media (max-width: 480px) {
+  .cta-h2 {
+    font-size: clamp(1.8rem, 9vw, 2.6rem);
+  }
+}
+
+/* ── FORMINATOR SELECT2 SELECTION BOX OVERRIDES ── */
+body .cta-form-col .select2-container .select2-selectio
+
+Match 213 at line 1067:
+der: 1px solid rgba(212,175,106,0.35);
+    color: var(--ink);
+  }
+}
+@media (max-width: 480px) {
+  .cta-h2 {
+    font-size: clamp(1.8rem, 9vw, 2.6rem);
+  }
+}
+
+/* ── FORMINATOR SELECT2 SELECTION BOX OVERRIDES ── */
+body .cta-form-col .select2-container .select2-selection,
+body .cta
+
+Match 214 at line 1073:
+h: 480px) {
+  .cta-h2 {
+    font-size: clamp(1.8rem, 9vw, 2.6rem);
+  }
+}
+
+/* ── FORMINATOR SELECT2 SELECTION BOX OVERRIDES ── */
+body .cta-form-col .select2-container .select2-selection,
+body .cta-form-col select {
+  background: rgba(253, 248, 240, 0.18) !important;
+  border: 0.8
+
+Match 215 at line 1081:
+0px !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 1.25rem !important;
+  box-sizing: border-box !important;
+  transition: border-color 0.3s, background 0.3s, box-shadow 0.3s !important;
+}
+
+body .cta-form-col .select2-container .select2-sele
+
+Match 216 at line 1095:
+lection--multiple {
+  height: auto !important;
+  min-height: 40px !important;
+  padding: 4px 1.25rem !important;
+}
+
+/* Hover & Focus states */
+body .cta-form-col .select2-container .select2-selection:hover,
+body .cta-form-col .select2-container--default.select2-container--focus .
+
+Match 217 at line 1109:
+tant;
+}
+
+body .cta-form-col .select2-container .select2-selection__rendered {
+  padding: 0 !important;
+  margin: 0 !important;
+  color: var(--ink) !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.92rem !important;
+  line-height: 38px !important; /* Verticall
+
+Match 218 at line 1110:
+ol .select2-container .select2-selection__rendered {
+  padding: 0 !important;
+  margin: 0 !important;
+  color: var(--ink) !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.92rem !important;
+  line-height: 38px !important; /* Vertically center rendering inside
+
+Match 219 at line 1138:
+elect2-container .select2-selection__arrow b {
+  position: static !important;
+  margin: 0 !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+}
+
+/* Multiple choices / selected tags */
+body .cta-form-col .select2-container .select2-selection_
+
+Match 220 at line 1149:
+1px solid rgba(184, 98, 63, 0.2) !important;
+  border-radius: 4px !important;
+  padding: 1px 6px !important;
+  margin: 0 4px 0 0 !important;
+  font-size: var(--label-size-floor) !important;
+  color: var(--terra) !important;
+  line-height: 1.4 !important;
+}
+body .cta-form-col .sel
+
+Match 221 at line 1150:
+) !important;
+  border-radius: 4px !important;
+  padding: 1px 6px !important;
+  margin: 0 4px 0 0 !important;
+  font-size: var(--label-size-floor) !important;
+  color: var(--terra) !important;
+  line-height: 1.4 !important;
+}
+body .cta-form-col .select2-container .select2-selecti
+
+Match 222 at line 1157:
+tainer .select2-selection__choice__remove {
+  color: var(--terra) !important;
+  margin-right: 4px !important;
+}
+
+/* Dropdown list popup & Forminator wrapper */
+html body .select2-dropdown,
+body .select2-container .select2-dropdown,
+.select2-dropdown,
+body .forminator-select-dropd
+
+Match 223 at line 1160:
+-terra) !important;
+  margin-right: 4px !important;
+}
+
+/* Dropdown list popup & Forminator wrapper */
+html body .select2-dropdown,
+body .select2-container .select2-dropdown,
+.select2-dropdown,
+body .forminator-select-dropdown {
+  position: absolute !important;
+  background: var(-
+
+Match 224 at line 1164:
+2-dropdown,
+body .select2-container .select2-dropdown,
+.select2-dropdown,
+body .forminator-select-dropdown {
+  position: absolute !important;
+  background: var(--parchment) !important;
+  border: 1.2px solid rgba(184, 98, 63, 0.35) !important;
+  border-radius: 16px !important;
+  b
+
+Match 225 at line 1176:
+t;
+  box-sizing: border-box !important;
+}
+
+body .select2-results__option,
+body .forminator-select-dropdown .select2-results__option {
+  padding: 0.85rem 1.4rem !important;
+  font-family: var(--font-display) !important;
+  font-size: 0.95rem !important;
+  font-weight: 300 !importan
+
+Match 226 at line 1177:
+-results__option,
+body .forminator-select-dropdown .select2-results__option {
+  padding: 0.85rem 1.4rem !important;
+  font-family: var(--font-display) !important;
+  font-size: 0.95rem !important;
+  font-weight: 300 !important;
+  color: var(--ink) !important;
+  background-color: t
+
+Match 227 at line 1187:
+!important;
+}
+
+body .select2-results__option--highlighted[aria-selected],
+body .forminator-select-dropdown .select2-results__option--highlighted[aria-selected] {
+  background-color: var(--terra) !important;
+  color: #fff !important;
+}
+
+body .select2-results__option[aria-selected=
+
+Match 228 at line 1193:
+r: #fff !important;
+}
+
+body .select2-results__option[aria-selected=true],
+body .forminator-select-dropdown .select2-results__option[aria-selected=true] {
+  background-color: rgba(184, 98, 63, 0.12) !important;
+  color: var(--terra) !important;
+}
+
+body .cta-form-col .select2-conta
+
+Match 229 at line 1208:
+row {
+  transform: rotate(180deg) !important;
+}
+
+/* Search input field */
+body .forminator-select-dropdown .select2-search__field {
+  background: rgba(253, 248, 240, 0.4) !important;
+  border: 1px solid rgba(184, 98, 63, 0.22) !important;
+  border-radius: 20px !important;
+  paddi
+
+Match 230 at line 1212:
+x solid rgba(184, 98, 63, 0.22) !important;
+  border-radius: 20px !important;
+  padding: 0.5rem 1rem !important;
+  color: var(--ink) !important;
+  font-family: var(--font-display) !important;
+}
+
+/* Custom elegant thin terracotta themed scrollbar */
+body .forminator-select-dropdow
+
+Match 231 at line 1218:
+lay) !important;
+}
+
+/* Custom elegant thin terracotta themed scrollbar */
+body .forminator-select-dropdown .select2-results__options {
+  max-height: 220px !important;
+  overflow-y: auto !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(184, 98, 63, 0.4) rgba
+
+Match 232 at line 1221:
+ns {
+  max-height: 220px !important;
+  overflow-y: auto !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(184, 98, 63, 0.4) rgba(26, 22, 18, 0.03) !important;
+}
+body .forminator-select-dropdown .select2-results__options::-webkit-scrollbar {
+  width: 6px !imp
+
+Match 233 at line 1224:
+ollbar-color: rgba(184, 98, 63, 0.4) rgba(26, 22, 18, 0.03) !important;
+}
+body .forminator-select-dropdown .select2-results__options::-webkit-scrollbar {
+  width: 6px !important;
+  display: block !important;
+}
+body .forminator-select-dropdown .select2-results__options::-webkit-sc
+
+Match 234 at line 1225:
+dy .forminator-select-dropdown .select2-results__options::-webkit-scrollbar {
+  width: 6px !important;
+  display: block !important;
+}
+body .forminator-select-dropdown .select2-results__options::-webkit-scrollbar-track {
+  background: rgba(26, 22, 18, 0.03) !important;
+  border-ra
+
+Match 235 at line 1228:
+ebkit-scrollbar {
+  width: 6px !important;
+  display: block !important;
+}
+body .forminator-select-dropdown .select2-results__options::-webkit-scrollbar-track {
+  background: rgba(26, 22, 18, 0.03) !important;
+  border-radius: 10px !important;
+}
+body .forminator-select-dropdown .s
+
+Match 236 at line 1232:
+d: rgba(26, 22, 18, 0.03) !important;
+  border-radius: 10px !important;
+}
+body .forminator-select-dropdown .select2-results__options::-webkit-scrollbar-thumb {
+  background: rgba(184, 98, 63, 0.4) !important;
+  border-radius: 10px !important;
+  transition: background 0.3s ease !i
+
+Match 237 at line 1237:
+radius: 10px !important;
+  transition: background 0.3s ease !important;
+}
+body .forminator-select-dropdown .select2-results__options::-webkit-scrollbar-thumb:hover {
+  background: rgba(184, 98, 63, 0.7) !important;
+}
+
+
+

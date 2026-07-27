@@ -1,0 +1,73 @@
+
+Match 1 at line 514:
+metry */
+  
+  border: 1px solid var(--border-light);
+  border-radius: 24px;
+}
+
+.sk-pujas-eyebrow {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.25vw, 1.25rem);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  
+
+Match 2 at line 780:
+{
+    align-items: center;
+    text-align: center;
+    margin-top: 0;
+  }
+  
+  .sk-pujas-eyebrow {
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: clamp(0.85rem, 1.1vw, 1rem);
+  }
+  
+  .sk-pujas-left-col .sk-pujas-display-h2 {
+    text-align: cent
+
+Match 3 at line 927:
+w;
+    border-radius: 12px;
+  }
+
+  .sk-pujas-grid-v2 {
+    gap: 1.5rem;
+  }
+
+  .sk-pujas-eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+  }
+
+  .sk-pujas-left-col .sk-pujas-display-h2 {
+    font-size: clamp(2.2rem, 10vw, 2.8rem);
+    margin-bottom: 1rem;
+  }
+
+  .sk-p
+
+Match 4 at line 1072:
+nst light paper (for eyebrow only) */
+.sk-pujas-scroll-container.has-scroll-bg .sk-pujas-eyebrow {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  transform: translateX(clamp(-5.5rem, -7vw, -4rem)) !important; /* Shifted left so it starts befor
+
+Match 5 at line 1145:
+    background-size: 100% 100%;
+  }
+  .sk-pujas-scroll-container.has-scroll-bg .sk-pujas-eyebrow {
+    transform: none !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  /* Parity text sizing inside the scroll on mobile */
+  .sk-pujas-scroll-containe

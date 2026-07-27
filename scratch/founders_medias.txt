@@ -1,0 +1,248 @@
+
+--- Media Query 1 at index 12928 ---
+@media (max-width: 640px) {
+  .sk-team-list-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1.6rem 1.4rem;
+  }
+  .sk-team-list-header {
+    padding: 2rem 1.4rem 1.4rem;
+  }
+  .sk-team-list-footer {
+    padding: 1.2rem 1.4rem 2rem;
+  }
+}
+
+--- Media Query 2 at index 13196 ---
+@media (max-width: 400px) {
+  .sk-team-list-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+--- Media Query 3 at index 13909 ---
+@media (max-width: 860px) {
+  /* Section */
+  body .sk-collective-founders-section {
+    padding: 2rem 0 3rem;
+  }
+  body .sk-collective-section-eyebrow {
+    padding: 0 1.25rem;
+    margin-bottom: 1.2rem;
+  }
+
+  /* Grid: single column, no gaps */
+  body .sk-fts {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    min-height: unset;
+  }
+
+  /* Photo col: first, full width */
+  body .sk-fts-col--photo {
+    order: 1;
+    width: 100%;
+    position: relative;
+  }
+  body .sk-fts-photo-stage {
+    width: 100%;
+    min-height: 300px;
+    max-height: 420px;
+    aspect-ratio: 4 / 3;
+    border-radius: var(--r-card);
+    overflow: hidden;
+    position: relative;
+  }
+  body .sk-fts-photo-frame {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+  }
+  body .sk-fts-photo-frame.is-active {
+    opacity: 1;
+  }
+  body .sk-fts-photo-badge {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  /* Text col: second, full width with generous padding */
+  body .sk-fts-col--text {
+    order: 2;
+    width: 100%;
+    padding: 1.6rem 1.25rem 0;
+  }
+  body .sk-fts-text-stage {
+    position: relative;
+    min-height: 290px;
+    overflow: hidden;
+  }
+  body .sk-fts-country {
+    font-size: 0.65rem;
+    margin-bottom: 0.4rem;
+  }
+  body .sk-fts-name {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+    margin-bottom: 0.3rem;
+    line-height: 1.15;
+  }
+  body .sk-fts-role {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.9rem;
+  }
+  body .sk-fts-bio {
+    font-size: 0.93rem;
+    line-height: 1.7;
+    color: var(--ink-muted);
+    margin-bottom: 1rem;
+  }
+  body .sk-fts-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0;
+  }
+
+  /* Thumbnails: third, centred row */
+  body .sk-fts-col--meta {
+    order: 3;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem 1.25rem 0;
+    gap: 0.6rem;
+  }
+  body .sk-fts-thumbs {
+    display: flex;
+    flex-direction: row;
+    gap: 0.6rem;
+    align-items: center;
+  }
+  body .sk-fts-thumb {
+    width: 44px;
+    height: 56px;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  body .sk-fts-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  body .sk-fts-count-wrap,
+  body .sk-fts-nav {
+    display: none;
+  }
+  body .sk-fts-meta-top { display: none; }
+}
+
+--- Media Query 4 at index 16380 ---
+@media (max-width: 860px) {
+  body .sk-fts-swipe-hint {
+    display: flex;
+  }
+}
+
+--- Media Query 5 at index 16461 ---
+@media (min-width: 861px) {
+  body .sk-fts-swipe-hint { display: none; }
+}
+
+--- Media Query 6 at index 16559 ---
+@media (max-width: 860px) {
+  body .sk-collective-grid--team {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  body .sk-collective-card {
+    aspect-ratio: 3 / 4;
+  }
+  body .sk-collective-name--strip {
+    font-size: 0.8rem;
+  }
+  body .sk-collective-role--strip {
+    font-size: 0.5rem;
+  }
+}
+
+--- Media Query 7 at index 16870 ---
+@media (max-width: 400px) {
+  body .sk-collective-grid--team {
+    grid-template-columns: 1fr;
+  }
+  body .sk-collective-card {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+--- Media Query 8 at index 19389 ---
+@media (max-width: 900px) {
+  body .founders-section {
+    padding: 3.5rem 0 3rem;
+  }
+  body .founders-split-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  body .founders-editorial-col {
+    display: contents;
+  }
+  body .founders-mobile-title-wrap {
+    order: 1;
+    text-align: left;
+    margin-bottom: 1.2rem;
+  }
+  body .founders-arch-col {
+    order: 2;
+    margin-top: 0;
+  }
+  body .founders-mobile-info-wrap {
+    order: 3;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body .founders-arch-link {
+    max-width: 320px;
+    margin: 0 auto;
+    margin-top: 0;
+  }
+  body .founders-arch-frame {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+  }
+  body .founders-mobile-info-wrap .btn {
+    margin-top: 1rem;
+  }
+}
+
+--- Media Query 9 at index 20194 ---
+@media (max-width: 600px) {
+  body .founders-arch-link {
+    max-width: 260px;
+  }
+}
+
+--- Media Query 10 at index 20280 ---
+@media (max-width: 480px) {
+  body .founders-arch-link {
+    max-width: 220px;
+  }
+}
+
+--- Media Query 11 at index 20893 ---
+@media (max-width: 768px) {
+  body .founders-section {
+    background-size: 1400px !important; /* Lock background size to maintain large luxurious pattern on mobile */
+  }
+}

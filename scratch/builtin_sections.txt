@@ -1,0 +1,6 @@
+function sk_builtin_sections(): array {
+    $core = [
+        'hero'           => [ 'label' => 'Hero',                    'desc' => 'Full-screen opening poem / disruption statement.',          'template' => 'template-parts/home/hero' ],
+        'about'          => [ 'label' => 'About',                   'desc' => 'Who we are and why we exist.',                              'template' => 'template-parts/home/about' ],
+        'art'            => [ 'label' => 'Art for Peace',           'desc' => 'Curated digital art gallery focusing on healing, reflection, and art therapy.', 'template' => 'template-parts/home/art' ],
+        'philosophy'     => [ 'label' => 'Philosophy Strip',        'desc' => 'Deepens connection after the visitor is already interested.','template' => 'template-parts/home/ph

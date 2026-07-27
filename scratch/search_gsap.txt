@@ -1,0 +1,113 @@
+
+Match 1:
+g an unwanted grey dissolve effect
+       when scrolling from the hero into the About section. The overlay stays at
+       its CSS-defined opacity throughout the scroll. */
+  }
+
+  /* ── 6. SCROLL REVEALS — varied by section character ───────
+   *
+   * Motion vocabulary (v3):
+   *
+
+Match 2:
+px (general content)
+   *   .reveal-left       — slide from left (founders col, about pull quote)
+   *   .reveal-right      — slide from right
+   *   .reveal-scale      — scale from 0.94 (cards, imagery)
+   *   .section-enter     — large section entrance: translateY 60px
+   *   .
+
+Match 3:
+tType to prevent double-animation conflicts
+      if (el.matches('.display-h2, .av16-heading, .cta-h2, .sk-sp-v4-heading, .display-xl, .sk-spg-hero__title, .sk-spg-cta__heading, .sk-event-single-title, .sk-story-single__title, .sk-archive-heading, .sk-cover-title, .sk-jp-feat-tit
+
+Match 4:
+', end: 'bottom top', scrub: 2 },
+        });
+      });
+    });
+  }
+
+  /* ── 8. ABOUT ───────────────────────────────────────────── */
+  function initAboutTagline() {
+    if (prefersReduced) return;
+    const taglineInner = document.querySelector('.av16-tagline-inner');
+    if (!
+
+Match 5:
+ /* ── 8. ABOUT ───────────────────────────────────────────── */
+  function initAboutTagline() {
+    if (prefersReduced) return;
+    const taglineInner = document.querySelector('.av16-tagline-inner');
+    if (!taglineInner) return;
+    
+    gsap.fromTo(taglineInner, 
+      { opac
+
+Match 6:
+  if (prefersReduced) return;
+    const taglineInner = document.querySelector('.av16-tagline-inner');
+    if (!taglineInner) return;
+    
+    gsap.fromTo(taglineInner, 
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: 'po
+
+Match 7:
+       onComplete: function() {
+          const parent = taglineInner.closest('.av16-tagline');
+          if (parent) {
+            parent.classList.add('start-wave');
+          }
+        }
+      }
+    );
+  }
+
+  /* ── 9. TRAD TAGS ───────────────────────────────────────── */
+  fu
+
+Match 8:
+play-h2   — offerings, faq, founders, journal-preview, philosophy-strip
+     * .av16-heading  — about section h2
+     * .cta-h2        — CTA section h2
+     * .sk-sp-v4-heading — stories preview h2
+     * .display-xl    — legacy / journal blog headings
+     */
+    const headlines
+
+Match 9:
+rings, faq, founders, journal-preview, philosophy-strip
+     * .av16-heading  — about section h2
+     * .cta-h2        — CTA section h2
+     * .sk-sp-v4-heading — stories preview h2
+     * .display-xl    — legacy / journal blog headings
+     */
+    const headlines = gsap.utils.to
+
+Match 10:
+headings
+     */
+    const headlines = gsap.utils.toArray(
+      '.display-h2, .av16-heading, .cta-h2, .sk-sp-v4-heading, .display-xl, .sk-spg-hero__title, .sk-spg-cta__heading, .sk-event-single-title, .sk-story-single__title, .sk-archive-heading, .sk-cover-title, .sk-jp-feat-tit
+
+Match 11:
+sBar();
+    initNav();
+    initHeroParallax();
+    initScrollReveals();
+    initAboutTagline();
+    initSectionParallax();
+    initTradTags();
+    initFounders();
+    initFaq();
+    initCta();
+    initSplitText();
+    initCurtainReveal();
+    initJournalCards();
+    initPhilosoph

@@ -1,0 +1,163 @@
+
+Match 1 at line 39:
+on height on mobile/tablet viewports */
+@media (max-width: 768px) {
+  body .sk-stories-preview-section.sk-sp-v4,
+  body .sk-stories-preview-section.sk-sp-v4[style*="--sp-bg"],
+  body .sk-sp-
+
+Match 2 at line 58:
+  background-image: var(--sp-bg);
+  }
+}
+@media (max-width: 480px) {
+  body .sk-stories-preview-section.sk-sp-v4,
+  body .sk-stories-preview-section.sk-sp-v4[style*="--sp-bg"],
+  body .sk-sp-
+
+Match 3 at line 79:
+  background-image: none !important;
+}
+
+@media (min-width: 1025px) {
+  .sk-sp-v4-cols-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Equal columns for symmetrical cente
+
+Match 4 at line 174:
+w {
+    display: none !important;
+  }
+}
+@media (max-width: 1024px) {
+  .sk-sp-v4-slider-right {
+    display: none !important;
+  }
+  .sk-sp-v4-center-spacer {
+    display: none !important;
+  
+
+Match 5 at line 296:
+moon in proportion to screen width */
+}
+@media (max-width: 768px) {
+  .sk-sp-v4-bottom {
+    margin-top: 2rem;
+    padding: 0 calc(5vw + 56px) 2.8rem;
+  }
+}
+.sk-sp-v4-track-wrap {
+  overflow
+
+Match 6 at line 954:
+* â”€â”€ RESPONSIVE OVERRIDES â”€â”€ */
+@media (max-width: 1200px) {
+  .sk-spg-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 1024px) {
+  .sk-stories-grid { grid-templa
+
+Match 7 at line 957:
+d-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 1024px) {
+  .sk-stories-grid { grid-template-columns: repeat(2, 1fr); }
+  .sk-stories-preview-section { background-attachment: scro
+
+Match 8 at line 963:
+v4 { background-attachment: scroll; }
+}
+@media (max-width: 900px) {
+  .sk-spg-grid { grid-template-columns: repeat(2, 1fr); }
+  .sk-spg-hero__wrap { grid-template-columns: 1fr; min-height: a
+
+Match 9 at line 973:
+g-cta__right { align-items: center; }
+}
+@media (max-width: 768px) {
+  .sk-sp-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+}
+@media (max-width: 600px) {
+  .sk-stories-grid { gr
+
+Match 10 at line 979:
+te-columns: 1fr;
+    gap: 1.2rem;
+  }
+}
+@media (max-width: 600px) {
+  .sk-stories-grid { grid-template-columns: 1fr; }
+  .sk-story-hero { grid-template-columns: 1fr; }
+  .sk-story-hero__cont
+
+Match 11 at line 991:
+BILE RESPONSIVENESS OVERRIDES â”€â”€ */
+@media (max-width: 1120px) {
+  .sk-sp-v4-top {
+    padding: 3rem 1.5rem 1rem;
+  }
+  .sk-sp-v4-bottom {
+    padding: 0 1.5rem 2rem;
+  }
+  .sk-sp-v4-car
+
+Match 12 at line 1004:
+2);
+    height: auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .sk-sp-v4-arrow {
+    display: none !important;
+  }
+  .sk-sp-v4-top {
+    text-align: center;
+    padding: 2.5rem 1.2rem
+
+Match 13 at line 1028:
+size: 1rem;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .sk-sp-v4-heading {
+    white-space: normal;
+    font-size: clamp(2.5rem, 12vw, 3.8rem);
+    line-height: 1.1;
+  }
+  .sk
+
+Match 14 at line 1272:
+gradient {
+  transform: scale(1.04);
+}
+
+@media (max-width: 768px) {
+  .sk-sp-v4-prev,
+  .sk-sp-v4-next {
+    display: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .sk-spg-filter-inn
+
+Match 15 at line 1279:
+ {
+    display: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .sk-spg-filter-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+  }
+  .sk-spg-filter {
+  

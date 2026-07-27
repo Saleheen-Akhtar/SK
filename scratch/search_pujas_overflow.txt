@@ -1,0 +1,111 @@
+
+Match 1 at line 494:
+letely removed to avoid conflicts */
+
+/* ── KERALA TANTRIC PUJAS SECTION ── */
+.sk-pujas-section {
+  position: relative;
+  z-index: 2;
+  background: rgba(253, 248, 240, 0.65); /* Light ivory overlay wash */
+  isolation: isolate; /* Crucial: isolates mix-blend-mode to only erase t
+
+Match 2 at line 540:
+or: transparent;
+}
+
+
+
+/* ── KERALA TANTRIC PUJAS SECTION - REDESIGNED ── */
+.sk-pujas-grid-v2 {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); /* divided in half with locked columns to prevent content stretching the grid */
+  gap: clamp(3rem, 6vw, 5.5r
+
+Match 3 at line 759:
+* ── Responsive: Tablet (max-width: 900px) ── */
+@media (max-width: 900px) {
+  .sk-pujas-section {
+    padding-top: clamp(3rem, 5vw, 4rem);
+    padding-bottom: clamp(3rem, 5vw, 4rem);
+    margin-top: clamp(2rem, 4vw, 3rem);
+    margin-bottom: clamp(2rem, 4vw, 3rem);
+    margin-le
+
+Match 4 at line 769:
+argin-left: 1.5vw;
+    margin-right: 1.5vw;
+    border-radius: 20px;
+  }
+
+  .sk-pujas-grid-v2 {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .sk-pujas-left-col {
+    align-items: center;
+    text-align: center;
+    margin-top: 0;
+  }
+  
+  .sk-pujas-eyebrow {
+    marg
+
+Match 5 at line 849:
+ll tablet / large phone (max-width: 768px) ── */
+@media (max-width: 768px) {
+  .sk-pujas-section {
+    padding-top: clamp(2.5rem, 4.5vw, 3.5rem);
+    padding-bottom: clamp(2.5rem, 4.5vw, 3.5rem);
+    margin-top: clamp(1.5rem, 3vw, 2.5rem);
+    margin-bottom: clamp(1.5rem, 3vw, 2.
+
+Match 6 at line 859:
+argin-left: 1.5vw;
+    margin-right: 1.5vw;
+    border-radius: 16px;
+  }
+
+  .sk-pujas-grid-v2 {
+    gap: 2rem;
+  }
+
+  .sk-pujas-left-col .sk-pujas-display-h2 {
+    font-size: clamp(2.6rem, 8vw, 3.5rem);
+  }
+
+  .sk-pujas-left-col .sk-pujas-display-h2 em {
+    margin-top: clamp(1re
+
+Match 7 at line 913:
+/* ── Responsive: Phone (max-width: 480px) ── */
+@media (max-width: 480px) {
+  .sk-pujas-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    border-radius: 12px;
+  }
+
+  
+
+Match 8 at line 923:
+argin-left: 1.5vw;
+    margin-right: 1.5vw;
+    border-radius: 12px;
+  }
+
+  .sk-pujas-grid-v2 {
+    gap: 1.5rem;
+  }
+
+  .sk-pujas-eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+  }
+
+  .sk-pujas-left-col .sk-pujas-display-h2 {
+    font-size: clamp(2.2rem, 10vw, 2.8re

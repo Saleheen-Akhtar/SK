@@ -1,0 +1,277 @@
+/* ── PHILOSOPHY STRIP ────────────────────────────────────── */
+/* ── CIRCULAR TESTIMONIALS (Philosophy Strip) ─────────────── */
+/* Strip now sits after About section — blends from ivory into ivory-warm */
+/* Philosophy strip section header — number-led interstitial, no eyebrow */
+/* Legacy philosophy header/intro classes removed */
+
+/* Volumetric background video for Philosophy Section */
+.philosophy-bg-video {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+.philosophy-bg-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.sk-text-terra {
+  color: var(--terra) !important;
+  -webkit-text-fill-color: var(--terra) !important;
+}
+
+
+body .strip--circular{
+  /* background shorthand was overriding background-image — merged into one declaration */
+  background-color: #0c0908;
+  
+  background-size: cover;
+  background-position: center -100px; /* Shifted background image up to prevent text overlap */
+  background-repeat: no-repeat;
+  background-attachment: fixed !important;
+    
+    /* CRITICAL: Remove transforms that break background-attachment */
+    transform: none;
+    will-change: auto;
+    backface-visibility: visible;
+  padding:0;
+  border:none;
+  overflow:hidden;
+  position:relative;
+}
+/* iOS Safari: fixed backgrounds don't work — switch to scroll and center properly */
+@supports (-webkit-touch-callout: none) {
+  body .strip--circular {
+    background-attachment: scroll !important;
+    background-size: cover;
+    background-position: center center; /* center on iOS so it shows the focal point */
+  }
+}
+/* Mobile: keep fixed background attachment so content scrolls over it, fallback to scroll on iOS */
+@media (max-width: 768px) {
+  body .strip--circular {
+    background-attachment: fixed !important;
+    background-size: cover;
+    background-position: center center;
+  }
+  @supports (-webkit-touch-callout: none) {
+    body .strip--circular {
+      background-attachment: scroll !important;
+    }
+  }
+}
+
+.strip--circular::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(253, 248, 240, 0.65);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Remove overlay for Vedic Astrology section only */
+body .strip--circular.strip--no-overlay::after {
+  display: none !important;
+}
+
+/* Hide parent overlay when we have a background image */
+body .strip--circular.has-bg-image::after {
+  display: none;
+}
+
+/* ── PHILOSOPHY OVERLAY WRAP ── */
+.sk-philosophy-overlay-wrap {
+  position: relative;
+  z-index: 1;
+  background: rgba(253, 248, 240, 0.65); /* Light ivory overlay wash */
+  padding: clamp(4.5rem, 7vw, 6rem) 0;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.sk-philosophy-overlay-wrap.sk-philosophy-overlay-wrap--no-overlay {
+  background: transparent !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+
+/* ── ASTROLOGY CARDS LAYOUT ── */
+.sk-astrology-bottom {
+  position: relative;
+  padding: clamp(7rem, 10vw, 12rem) 0 4rem !important; /* Increased bottom padding */
+  margin-top: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  display: grid !important;
+  grid-template-columns: 1.1fr 1fr !important; /* Matches Kerala Pujas columns */
+  gap: clamp(2rem, 4vw, 4rem) !important;
+  align-items: center !important;
+}
+
+.sk-astrology-left-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.sk-astrology-right-col {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sk-astrology-track-wrap {
+  overflow: hidden;
+  border-radius: 0;
+  width: 100%;
+}
+
+.sk-astrology-track {
+  display: flex;
+  gap: 1.4rem;
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+body .sk-astrology-card {
+  flex: 0 0 340px !important; /* Keep card width compact and elegant, narrowing to prevent overlap on left title text */
+  max-width: 340px !important;
+  min-width: 0;
+  box-sizing: border-box;
+  cursor: default;
+  
+  /* Glassmorphic frosted glass styling */
+  background: rgba(25, 20, 15, 0.45) !important; /* Rich space glass theme wash */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(245, 205, 95, 0.15);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65);
+  border-radius: 20px !important;
+  height: 420px; /* Restored elegant vertical card height */
+  display: grid !important; /* Horizontal layout: text left, photo right */
+  grid-template-columns: 1fr 144px !important; /* Keep original photo width of 144px, narrowing the left side glass */
+  overflow: hidden;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+
+  /* Fixes browser rendering bug where backdrop-filter blurs leak outside rounded corners as a square */
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+
+body .sk-astrology-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.8);
+  border-color: rgba(245, 205, 95, 0.3);
+}
+
+/* Cover photo at the top */
+body .sk-astrology-card .sk-sp-v4-card-photo {
+  order: 2; /* Move photo to the right */
+  width: 100%;
+  height: 100% !important; /* Stretches to full card height */
+  margin: 0; /* Reset layout margin */
+  border-radius: 0; /* Reset border radius to inherit card corners */
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border-left: 1px solid rgba(245, 205, 95, 0.15) !important; /* Separator line on the left of photo */
+  border-bottom: none !important; /* Remove bottom border since it is side-by-side now */
+  background: transparent; /* Seamless background styling */
+}
+
+body .sk-astrology-card .sk-sp-v4-card-photo .sk-sp-v4-card-photo-fg {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the container to prevent any background layer/letterboxing */
+  object-position: center top; /* Center top focused alignment */
+  transition: transform 0.6s var(--ease);
+}
+
+/* Text container at the bottom */
+body .sk-astrology-card .sk-sp-v4-card-text {
+  order: 1; /* Move text to the left */
+  width: 100%;
+  padding: 1.4rem 1.2rem; /* Adjusted padding to accommodate narrower text area */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  z-index: 2;
+  flex-grow: 1;
+  min-height: auto; /* Override layout minimums */
+}
+
+/* Compass star icon style */
+body .sk-astrology-card .sk-sp-v4-qicon {
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+  display: flex;
+}
+
+/* Light text readable against dark background */
+body .sk-astrology-card .sk-sp-v4-qtext {
+  color: #faf4e8;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Compressed description to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.55;
+  max-height: 3.1em; /* Force strict cutoff */
+  margin-bottom: 0.6rem; /* Compressed margin */
+}
+
+body .sk-astrology-card .sk-sp-v4-aname {
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.05rem;
+}
+
+body .sk-astrology-card .sk-sp-v4-acat {
+  color: var(--gold);
+  font-family: var(--font-ui);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.62rem;
+}
+
+body .sk-astrology-card .sk-sp-v4-avatar {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+body .sk-astrology-card .sk-sp-v4-qdivider {
+  background: rgba(255, 255, 255, 0.22);
+  width: 32px;
+  height: 1px;
+  margin: 0.8rem 0; /* Compressed divider margin */
+  flex-shrink: 0;
+}
+
+body .sk-astrology-card .sk-sp-v4-readmore {
+  color: var(--gold);
+  opacity: 0.85;
+  display:

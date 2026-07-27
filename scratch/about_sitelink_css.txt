@@ -1,0 +1,62 @@
+
+--- Match 1 at index 17661 ---
+);
+}
+
+
+/* sacredkompass.org — decorative link */
+.av16-site-link {
+  color: var(--terra);
+  text-decoration: none;
+  font-weight: 500;
+  font-style: normal;
+  position: relative;
+  display: inline-block;
+  padding: 0.05em 0.4em 0.1em;
+  border: 1px solid rgba(184,98,63,0.35);
+  border-radius: 2em;
+  background: #ffffff;
+  letter-spacing: 0.01em;
+  transition: background 0.25s, border-color 0.25s, 
+
+--- Match 2 at index 18027 ---
+ground 0.25s, border-color 0.25s, color 0.25s;
+}
+.av16-site-link::before {
+  content: none; /* star removed */
+}
+.av16-site-link:hover {
+  background: rgba(184,98,63,0.12);
+  border-color: rgba(184,98,63,0.65);
+  color: var(--terra);
+}
+
+body /* ── Responsive ── */
+@media (max-width: 860px){
+  .about-v16-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    min-height: auto;
+    align-items: s
+
+--- Match 3 at index 18091 ---
+::before {
+  content: none; /* star removed */
+}
+.av16-site-link:hover {
+  background: rgba(184,98,63,0.12);
+  border-color: rgba(184,98,63,0.65);
+  color: var(--terra);
+}
+
+body /* ── Responsive ── */
+@media (max-width: 860px){
+  .about-v16-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    min-height: auto;
+    align-items: start;
+  }
+  .av16-left {
+    position: static;
+    justify-conte

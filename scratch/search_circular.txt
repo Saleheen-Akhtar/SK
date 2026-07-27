@@ -1,0 +1,276 @@
+
+Match 1 at line 1:
+/* ── PHILOSOPHY STRIP ────────────────────────────────────── */
+/* ── CIRCULAR TESTIMONIALS (Philosophy Strip) ─────────────── */
+/* Strip now sits after About section — blends from ivory into ivory-warm */
+/* Philos
+
+Match 2 at line 2:
+/* ── PHILOSOPHY STRIP ────────────────────────────────────── */
+/* ── CIRCULAR TESTIMONIALS (Philosophy Strip) ─────────────── */
+/* Strip now sits after About section — blends from ivory into ivory-warm */
+/* Philosophy strip section header — number-led interstitial, n
+
+Match 3 at line 2:
+──────────────────────────────────── */
+/* ── CIRCULAR TESTIMONIALS (Philosophy Strip) ─────────────── */
+/* Strip now sits after About section — blends from ivory into ivory-warm */
+/* Philosophy strip section header — number-led interstitial, no eyebrow */
+/* Legacy philosophy 
+
+Match 4 at line 3:
+─────── */
+/* ── CIRCULAR TESTIMONIALS (Philosophy Strip) ─────────────── */
+/* Strip now sits after About section — blends from ivory into ivory-warm */
+/* Philosophy strip section header — number-led interstitial, no eyebrow */
+/* Legacy philosophy header/intro classes removed 
+
+Match 5 at line 4:
+w sits after About section — blends from ivory into ivory-warm */
+/* Philosophy strip section header — number-led interstitial, no eyebrow */
+/* Legacy philosophy header/intro classes removed */
+
+/* Volumetric background video for Philosophy Section */
+.philosophy-bg-video {
+  po
+
+Match 6 at line 32:
+erra) !important;
+  -webkit-text-fill-color: var(--terra) !important;
+}
+
+
+body .strip--circular{
+  /* background shorthand was overriding background-image — merged into one declaration */
+  background-color: #0c0908;
+  
+  background-size: cover;
+  background-position: center -100
+
+Match 7 at line 32:
+important;
+  -webkit-text-fill-color: var(--terra) !important;
+}
+
+
+body .strip--circular{
+  /* background shorthand was overriding background-image — merged into one declaration */
+  background-color: #0c0908;
+  
+  background-size: cover;
+  background-position: center -100px; /* 
+
+Match 8 at line 52:
+scroll and center properly */
+@supports (-webkit-touch-callout: none) {
+  body .strip--circular {
+    background-attachment: scroll !important;
+    background-size: cover;
+    background-position: center center; /* center on iOS so it shows the focal point */
+  }
+}
+/* Mobile: scr
+
+Match 9 at line 52:
+and center properly */
+@supports (-webkit-touch-callout: none) {
+  body .strip--circular {
+    background-attachment: scroll !important;
+    background-size: cover;
+    background-position: center center; /* center on iOS so it shows the focal point */
+  }
+}
+/* Mobile: scroll bac
+
+Match 10 at line 60:
+s on all mobile browsers (iOS & Android) */
+@media (max-width: 768px) {
+  body .strip--circular {
+    background-attachment: scroll !important;
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
+.strip--circular::after {
+  content: "";
+  position: absolute
+
+Match 11 at line 60:
+l mobile browsers (iOS & Android) */
+@media (max-width: 768px) {
+  body .strip--circular {
+    background-attachment: scroll !important;
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
+.strip--circular::after {
+  content: "";
+  position: absolute;
+  ins
+
+Match 12 at line 67:
+nt;
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
+.strip--circular::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(253, 248, 240, 0.65);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Remove overlay for Vedic Astrology sectio
+
+Match 13 at line 67:
+ background-size: cover;
+    background-position: center center;
+  }
+}
+
+.strip--circular::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(253, 248, 240, 0.65);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Remove overlay for Vedic Astrology section only 
+
+Match 14 at line 77:
+e;
+  z-index: 0;
+}
+
+/* Remove overlay for Vedic Astrology section only */
+body .strip--circular.strip--no-overlay::after {
+  display: none !important;
+}
+
+/* Hide parent overlay when we have a background image */
+body .strip--circular.has-bg-image::after {
+  display: none;
+}
+
+/* ─
+
+Match 15 at line 77:
+index: 0;
+}
+
+/* Remove overlay for Vedic Astrology section only */
+body .strip--circular.strip--no-overlay::after {
+  display: none !important;
+}
+
+/* Hide parent overlay when we have a background image */
+body .strip--circular.has-bg-image::after {
+  display: none;
+}
+
+/* ── PHILO
+
+Match 16 at line 77:
+
+}
+
+/* Remove overlay for Vedic Astrology section only */
+body .strip--circular.strip--no-overlay::after {
+  display: none !important;
+}
+
+/* Hide parent overlay when we have a background image */
+body .strip--circular.has-bg-image::after {
+  display: none;
+}
+
+/* ── PHILOSOPHY OVE
+
+Match 17 at line 82:
+ !important;
+}
+
+/* Hide parent overlay when we have a background image */
+body .strip--circular.has-bg-image::after {
+  display: none;
+}
+
+/* ── PHILOSOPHY OVERLAY WRAP ── */
+.sk-philosophy-overlay-wrap {
+  position: relative;
+  z-index: 1;
+  background: rgba(253, 248, 240, 0.65);
+
+Match 18 at line 82:
+tant;
+}
+
+/* Hide parent overlay when we have a background image */
+body .strip--circular.has-bg-image::after {
+  display: none;
+}
+
+/* ── PHILOSOPHY OVERLAY WRAP ── */
+.sk-philosophy-overlay-wrap {
+  position: relative;
+  z-index: 1;
+  background: rgba(253, 248, 240, 0.65); /* Lig
+
+Match 19 at line 488:
+mobile */
+  }
+}
+
+/* Ensure .wrap and children sit above the ::after overlay */
+.strip--circular .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Legacy circular testimonials slider styles completely removed to avoid conflicts */
+
+/* ── KERALA TANTRIC PUJAS SECTION ── */
+.sk-puj
+
+Match 20 at line 488:
+*/
+  }
+}
+
+/* Ensure .wrap and children sit above the ::after overlay */
+.strip--circular .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Legacy circular testimonials slider styles completely removed to avoid conflicts */
+
+/* ── KERALA TANTRIC PUJAS SECTION ── */
+.sk-pujas-sect
+
+Match 21 at line 494:
+y */
+.strip--circular .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* Legacy circular testimonials slider styles completely removed to avoid conflicts */
+
+/* ── KERALA TANTRIC PUJAS SECTION ── */
+.sk-pujas-section {
+  position: relative;
+  z-index: 2;
+  background: rgba(253, 2
