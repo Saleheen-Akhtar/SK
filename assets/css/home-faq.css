@@ -8,7 +8,7 @@
   position: relative;
   background-color: #000000 !important; /* Black fallback prevents light ivory body bleed */
   background-size: cover !important;
-  background-position: center center !important;
+  background-position: center bottom !important;
   background-repeat: no-repeat !important;
   background-attachment: scroll !important;
   overflow: hidden;
@@ -688,7 +688,7 @@ figure.snip1157:focus .arrow.arrow-right {
     padding: 3rem 0 !important;
     overflow: hidden !important;
     background-size: cover !important;
-    background-position: center center !important;
+    background-position: center bottom !important;
     background-repeat: no-repeat !important;
     background-image: var(--faq-bg-mobile, var(--faq-bg)) !important;
   }
