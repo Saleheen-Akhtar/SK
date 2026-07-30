@@ -774,7 +774,12 @@
   function render() {
     cursorX += (mouseX - cursorX) * 0.15;
     cursorY += (mouseY - cursorY) * 0.15;
-    cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%)`;
+    // Maintain the rotation class if hovering, otherwise just translate
+    if (cursor.classList.contains('is-hovering')) {
+      cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%) rotate(45deg)`;
+    } else {
+      cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%) rotate(0deg)`;
+    }
     requestAnimationFrame(render);
   }
   requestAnimationFrame(render);
@@ -791,7 +796,7 @@
   });
 
   // Magnetic Effect
-  const magnetics = document.querySelectorAll('.btn, .sk-magnetic, .founder-card');
+  const magnetics = document.querySelectorAll('.btn, .sk-magnetic, .founder-card, .forminator-button-submit, .sk-contact-fallback-form button');
   magnetics.forEach(btn => {
     btn.addEventListener('mousemove', function(e) {
       const rect = this.getBoundingClientRect();

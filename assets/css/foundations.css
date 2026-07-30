@@ -360,21 +360,26 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
     position: fixed;
     top: 0;
     left: 0;
-    width: 12px;
-    height: 12px;
-    background-color: var(--terra);
-    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    /* Eight-pointed star representing the compass and Vedic astrology */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23B8623F'%3E%3Cpath d='M12 0l2.3 8.3L22.5 6l-5.4 6.7 5.4 6.7-8.2-2.3L12 24l-2.3-8.3L1.5 18l5.4-6.7-5.4-6.7 8.2 2.3z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border-radius: 0;
     pointer-events: none;
     z-index: 100000;
     transform: translate(-50%, -50%);
-    transition: width 0.3s var(--ease-spring), height 0.3s var(--ease-spring), background-color 0.3s var(--ease), opacity 0.3s var(--ease);
-    mix-blend-mode: exclusion;
+    transition: width 0.3s var(--ease-spring), height 0.3s var(--ease-spring), transform 0.3s var(--ease), opacity 0.3s var(--ease);
+    /* mix-blend-mode removed so the colored star is always clearly visible */
   }
 
   .sk-cursor.is-hovering {
-    width: 48px;
-    height: 48px;
-    background-color: #fff;
+    width: 44px;
+    height: 44px;
     opacity: 0.8;
+    transform: translate(-50%, -50%) rotate(45deg);
   }
 }
