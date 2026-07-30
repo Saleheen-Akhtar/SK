@@ -103,72 +103,6 @@
     }
   }
 
-  /* ── 2. HEADING WORD ASCENT (SplitType) ─────────────────── */
-  /* Word-by-word masked slide-up reveal on section headings   */
-  /* that are NOT already animated by initScrollReveals().     */
-  function initHeadingAscent() {
-    return; // Bypassed: handled character-by-character in gsap-animations.js
-    if (typeof SplitType === 'undefined') return;
-
-    /*
-     * Safe targets — headings that don't carry .reveal and aren't
-     * touched by any other GSAP init in gsap-animations.js:
-     *   .av16-heading  — About section H2 (no .reveal, no existing anim)
-     *   .sk-sp-v4-heading — Stories Preview H2 (no .reveal)
-     */
-    const targets = gsap.utils.toArray('.av16-heading, .sk-sp-v4-heading');
-    if (!targets.length) return;
-
-    const splits = [];
-
-    function doSplit() {
-      splits.forEach(s => { try { s.revert(); } catch (_) {} });
-      splits.length = 0;
-
-      targets.forEach(el => {
-        const split = new SplitType(el, { types: 'words' });
-        if (!split.words || !split.words.length) return;
-        splits.push(split);
-
-        /*
-         * Wrap each word in an overflow:hidden container so the word
-         * slides UP from behind the mask — the "emerging from beneath"
-         * effect used in luxury editorial typography.
-         */
-        split.words.forEach(w => {
-          const mask = document.createElement('span');
-          mask.className = 'sk-word-mask';
-          w.parentNode.insertBefore(mask, w);
-          mask.appendChild(w);
-        });
-
-        /* Start hidden — below the mask */
-        gsap.set(split.words, { y: '105%', opacity: 0 });
-
-        gsap.to(split.words, {
-          y: '0%',
-          opacity: 1,
-          duration: 1.05,
-          ease: 'power4.out',
-          stagger: { amount: 0.45 },
-          scrollTrigger: {
-            trigger: el,
-            start: 'top 88%',
-            toggleActions: 'play none none none',
-          },
-        });
-      });
-    }
-
-    doSplit();
-
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(doSplit, 220);
-    }, { passive: true });
-  }
-
   /* ── 3. CURTAIN GOLD LINE — sweep beneath section headings ─ */
   /* A gold-to-terra 72px gradient bar injected after each      */
   /* .display-h2 and section heading. Animates scaleX 0→1 on   */
@@ -263,7 +197,6 @@
     initPageOverlay();
     initCurtainLines();
     initSectionPulse();
-    initHeadingAscent();
 
     /* Refresh ScrollTrigger after fonts are ready so heading
        split positions are calculated with correct font metrics. */
