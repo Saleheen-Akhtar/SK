@@ -45,7 +45,31 @@
       document.body.prepend(overlay);
     }
 
+    // Create the parallax wrapper immediately on load so we don't break fixed elements by transforming body
+    let siteWrap = document.getElementById('sk-site-wrap');
+    if (!siteWrap) {
+      siteWrap = document.createElement('div');
+      siteWrap.id = 'sk-site-wrap';
+
+      // Move all children except the overlay, progress bar, and cursor into the wrapper
+      Array.from(document.body.childNodes).forEach(node => {
+          if (node.id === 'sk-page-overlay' ||
+              (node.classList && (node.classList.contains('sk-progress') || node.classList.contains('sk-cursor')))) {
+              return; // keep these at body level
+          }
+          siteWrap.appendChild(node);
+      });
+      document.body.appendChild(siteWrap);
+    }
+
     /* — ENTRY: page just loaded — fade the overlay OUT — */
+
+    // Animate the internal content parallaxing in, leaving the body tag untouched
+    gsap.fromTo(siteWrap,
+       { y: 50, scale: 0.98, opacity: 0 },
+       { y: 0, scale: 1, opacity: 1, duration: 1.2, ease: 'power4.out', delay: 0.1, clearProps: 'all' }
+    );
+
     gsap.fromTo(overlay,
       { opacity: 1 },
       {
@@ -90,14 +114,23 @@
         if (typeof window.skLenisPause === 'function') window.skLenisPause();
 
         overlay.style.pointerEvents = 'all';
-        gsap.fromTo(overlay,
+
+        // Parallax Fade Out Transition
+        const tl = gsap.timeline({
+          onComplete() { window.location.href = dest; }
+        });
+
+        tl.to(siteWrap, {
+          y: -50,
+          scale: 0.98,
+          opacity: 0,
+          duration: 0.6,
+          ease: 'power3.inOut'
+        }, 0)
+        .fromTo(overlay,
           { opacity: 0 },
-          {
-            opacity: 1,
-            duration: 0.5,
-            ease: 'power2.in',
-            onComplete() { window.location.href = dest; },
-          }
+          { opacity: 1, duration: 0.5, ease: 'power2.in' },
+          0.1
         );
       });
     }

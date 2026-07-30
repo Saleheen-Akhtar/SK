@@ -346,3 +346,35 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
     scrollbar-color: #d47a52 transparent !important; /* Light terra scroller handle, transparent track */
   }
 }
+
+/* ── PREMIUM CUSTOM CURSOR ────────────────────────────────── */
+@media (pointer: fine) {
+  body {
+    cursor: none !important;
+  }
+  a, button, input, select, textarea, .sk-magnetic {
+    cursor: none !important;
+  }
+
+  .sk-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    background-color: var(--terra);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 100000;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s var(--ease-spring), height 0.3s var(--ease-spring), background-color 0.3s var(--ease), opacity 0.3s var(--ease);
+    mix-blend-mode: exclusion;
+  }
+
+  .sk-cursor.is-hovering {
+    width: 48px;
+    height: 48px;
+    background-color: #fff;
+    opacity: 0.8;
+  }
+}

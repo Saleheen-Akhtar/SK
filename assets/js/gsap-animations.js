@@ -352,12 +352,37 @@
   /* ── 7. SECTION PARALLAX ────────────────────────────────── */
   function initSectionParallax() {
     if (prefersReduced) return;
+
+    // Existing helper classes
     [['parallax-slow', -20], ['parallax-med', -38], ['parallax-fast', -60]].forEach(([cls, y]) => {
       gsap.utils.toArray(`.${cls}`).forEach(el => {
         gsap.fromTo(el, { y: 0 }, {
           y, ease: 'none',
           scrollTrigger: { trigger: el.closest('section') || el.parentElement, start: 'top bottom', end: 'bottom top', scrub: 2 },
         });
+      });
+    });
+
+    // Auto-apply subtle parallax to major background images for that premium feel
+    gsap.utils.toArray('.hero-bg-image img, .cinematic-image-wrap img, .sk-cover-image, .founder-card img').forEach(img => {
+      // Ensure parent has overflow hidden to hide the parallax overhang
+      const parent = img.parentElement;
+      if(parent) {
+         parent.style.overflow = 'hidden';
+      }
+
+      // Scale image slightly so it has room to move without showing edges
+      gsap.set(img, { scale: 1.15, transformOrigin: 'center center' });
+
+      gsap.to(img, {
+        yPercent: 15,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: parent || img,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true
+        }
       });
     });
   }
@@ -538,15 +563,18 @@
         // If this heading was already revealed, preserve its visible state and do not re-animate
         if (el.classList.contains('sk-heading-revealed')) {
           gsap.set(el, { opacity: 1, y: 0, scale: 1 });
-          gsap.set(split.chars, { opacity: 1, y: 0, rotationX: 0 });
+          gsap.set(split.words, { opacity: 1, yPercent: 0, rotationZ: 0 });
           return;
         }
 
         // Ensure parent is hidden initially and cleared of double-reveal transform offsets
         gsap.set(el, { opacity: 0, y: 0, scale: 1 });
 
-        // Set initial state of characters
-        gsap.set(split.chars, { opacity: 0, y: 50, rotationX: -100, transformOrigin: '0% 50% -50' });
+        // Set initial state of words for a cleaner, premium slide-up effect
+        // We will animate words instead of chars for better performance and a more elegant look.
+        // To achieve a mask reveal, we add overflow hidden to the parent (or lines)
+        el.style.overflow = 'hidden';
+        gsap.set(split.words, { opacity: 0, yPercent: 120, rotationZ: 2 });
 
         const triggerConfig = inHero
           ? { trigger: el, start: 'top 100%', toggleActions: 'play none none none' }
@@ -565,11 +593,14 @@
         });
         if (pAnim.scrollTrigger) triggers.push(pAnim.scrollTrigger);
 
-        // Smooth character animation with tighter stagger (stagger: 0.015)
-        const cAnim = gsap.to(split.chars, {
-          y: 0, opacity: 1, rotationX: 0,
-          transformOrigin: '0% 50% -50',
-          ease: 'power4.out', duration: 1.4, stagger: 0.015,
+        // Animate the words sliding up
+        const cAnim = gsap.to(split.words, {
+          yPercent: 0,
+          opacity: 1,
+          rotationZ: 0,
+          ease: 'power4.out',
+          duration: 1.2,
+          stagger: 0.04,
           scrollTrigger: triggerConfig,
         });
         if (cAnim.scrollTrigger) triggers.push(cAnim.scrollTrigger);
