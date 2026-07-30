@@ -55,7 +55,7 @@
       duration: prefersReduced ? 0 : 1.3,            /* slightly longer — smoother, more refined feel */
       easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)), /* expo ease-out: fast start, feathers at end */
       smooth: !prefersReduced,
-      smoothTouch: true,
+      smoothTouch: !isTouch ? true : false,
       touchMultiplier: 1.5,     /* reduced from 1.8 — prevents over-scroll on touch */
       wheelMultiplier: 1.0,     /* normalised wheel speed */
       normalizeWheel: false,
