@@ -744,3 +744,72 @@
     observer.observe(document.body, { childList: true, subtree: true });
   }
 })();
+
+/* ══════════════════════════════════════════════════════════
+   PREMIUM CUSTOM CURSOR & MAGNETIC BUTTONS
+   ══════════════════════════════════════════════════════════ */
+(function () {
+  'use strict';
+
+  // Only init if device has a fine pointer (mouse)
+  if (!window.matchMedia('(pointer: fine)').matches) return;
+
+  const cursor = document.createElement('div');
+  cursor.className = 'sk-cursor';
+  document.body.appendChild(cursor);
+
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let cursorX = mouseX;
+  let cursorY = mouseY;
+  let isHovering = false;
+
+  // Track mouse movement
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  // Smooth cursor follow
+  function render() {
+    cursorX += (mouseX - cursorX) * 0.15;
+    cursorY += (mouseY - cursorY) * 0.15;
+    cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%)`;
+    requestAnimationFrame(render);
+  }
+  requestAnimationFrame(render);
+
+  // Hover states for links and buttons
+  const interactives = document.querySelectorAll('a, button, input, select, textarea, .sk-magnetic');
+  interactives.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.classList.add('is-hovering');
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.classList.remove('is-hovering');
+    });
+  });
+
+  // Magnetic Effect
+  const magnetics = document.querySelectorAll('.btn, .sk-magnetic, .founder-card');
+  magnetics.forEach(btn => {
+    btn.addEventListener('mousemove', function(e) {
+      const rect = this.getBoundingClientRect();
+      const h = rect.width / 2;
+
+      const x = e.clientX - rect.left - h;
+      const y = e.clientY - rect.top - (rect.height / 2);
+
+      this.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+    });
+
+    btn.addEventListener('mouseleave', function() {
+      this.style.transform = 'translate(0px, 0px)';
+      // Reset transition smoothly
+      this.style.transition = 'transform 0.4s var(--ease-spring)';
+      setTimeout(() => {
+        this.style.transition = '';
+      }, 400);
+    });
+  });
+})();
