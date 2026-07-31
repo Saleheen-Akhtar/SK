@@ -360,25 +360,23 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
     position: fixed;
     top: 0;
     left: 0;
-    width: 24px;
-    height: 24px;
-    /* Pure CSS Crescent Moon / Eclipse */
-    background-color: transparent;
-    border-radius: 50%;
-    box-shadow: inset -4px 0 0 0 var(--terra);
+    width: 32px;
+    height: 32px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='gold' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23E4BDA0'/%3E%3Cstop offset='50%25' stop-color='%23D4AF6A'/%3E%3Cstop offset='100%25' stop-color='%23C4902A'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='url(%23gold)' d='M50 0 L55 38 L95 20 L62 45 L100 50 L62 55 L95 80 L55 62 L50 100 L45 62 L5 80 L38 55 L0 50 L38 45 L5 20 L45 38 Z'/%3E%3Ccircle cx='50' cy='50' r='5' fill='%23FFF'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     pointer-events: none;
     z-index: 100000;
     /* CSS handles the origin offset and rotation, JS handles top/left */
     transform: translate(-50%, -50%) rotate(0deg);
-    transition: width 0.4s var(--ease-spring), height 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-spring), transform 0.4s var(--ease-spring), opacity 0.4s ease;
+    transition: width 0.4s var(--ease-spring), height 0.4s var(--ease-spring), transform 0.4s var(--ease-spring), opacity 0.4s ease;
   }
 
   .sk-cursor.is-hovering {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     opacity: 0.9;
-    /* Morph into a full eclipse circle with a soft inner glow */
-    box-shadow: inset -20px 0 0 0 var(--terra), 0 0 16px rgba(184, 98, 63, 0.4);
-    transform: translate(-50%, -50%) rotate(-45deg) scale(1.1);
+    transform: translate(-50%, -50%) rotate(90deg);
   }
 }
