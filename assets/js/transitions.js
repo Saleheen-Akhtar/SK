@@ -60,13 +60,41 @@
               node.id === 'sk-sidenav' ||
               node.id === 'sk-hamburger' ||
               node.id === 'sk-sidenav-backdrop' ||
+              node.id === 'sk-footer' || // Exclude footer so it stays at the body level for sticky parallax reveal
               (node.classList && (node.classList.contains('sk-progress') || node.classList.contains('sk-cursor')))) {
               return; // keep these at body level
           }
           siteWrap.appendChild(node);
       });
-      document.body.appendChild(siteWrap);
+      // Insert siteWrap before the footer if footer exists, otherwise append
+      const footer = document.getElementById('sk-footer');
+      if (footer) {
+          document.body.insertBefore(siteWrap, footer);
+      } else {
+          document.body.appendChild(siteWrap);
+      }
     }
+
+    // Set wrapper margin bottom to match footer height for parallax reveal
+    function updateFooterMargin() {
+      const footer = document.getElementById('sk-footer');
+      // If mobile layout, footer is relative, so no margin is needed
+      if (window.innerWidth <= 768) {
+          if (siteWrap) siteWrap.style.marginBottom = '0px';
+          if (footer) footer.style.visibility = 'visible';
+          return;
+      }
+
+      if (footer && siteWrap) {
+        siteWrap.style.marginBottom = `${footer.offsetHeight}px`;
+        // Make footer visible only after layout is stable
+        footer.style.visibility = 'visible';
+      }
+    }
+
+    // Ensure accurate height measurement by waiting a moment after DOM builds
+    setTimeout(updateFooterMargin, 50);
+    window.addEventListener('resize', updateFooterMargin, { passive: true });
 
     /* — ENTRY: page just loaded — fade the overlay OUT — */
 

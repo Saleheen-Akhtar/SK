@@ -557,7 +557,9 @@
 
       headlines.forEach(el => {
         const inHero = el.closest('.sk-home-hero, .hero--split, .hero-left');
-        const split = new SplitType(el, { types: 'words, chars' });
+
+        // Split by lines and words so we can mask the words perfectly using the generated line wrappers
+        const split = new SplitType(el, { types: 'lines, words' });
         splits.push(split);
 
         // If this heading was already revealed, preserve its visible state and do not re-animate
@@ -571,9 +573,8 @@
         gsap.set(el, { opacity: 0, y: 0, scale: 1 });
 
         // Set initial state of words for a cleaner, premium slide-up effect
-        // We will animate words instead of chars for better performance and a more elegant look.
-        // To achieve a mask reveal, we add overflow hidden to the parent (or lines)
-        el.style.overflow = 'hidden';
+        // Wrap each line in a hidden overflow mask so words slide up individually from their own baselines
+        gsap.set(split.lines, { overflow: 'hidden' });
         gsap.set(split.words, { opacity: 0, yPercent: 120, rotationZ: 2 });
 
         const triggerConfig = inHero

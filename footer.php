@@ -45,26 +45,29 @@ $footer_art = get_posts([
     'no_found_rows'  => true,
 ]);
 ?>
-<footer class="footer sk-footer-v2" role="contentinfo">
+<footer class="footer sk-footer-v2" role="contentinfo" id="sk-footer">
 
-  <!-- Top: large brand wordmark -->
-  <div class="sk-foot-top wrap">
-    <div class="sk-foot-brand-row">
-      <div class="sk-foot-wordmark-wrap">
-        <?php
-          $foot_logo = sk_logo_html('sk-foot-logo-img');
-          if ($foot_logo) echo $foot_logo;
-        ?>
-        <span class="sk-foot-wordmark">Sacred <em>Kompass</em></span>
-      </div>
+  <!-- Dramatic Cosmic Top: Massive Brand Name & Tagline -->
+  <div class="sk-foot-dramatic wrap-wide">
+    <div class="sk-foot-massive-wrap">
+      <?php
+        $foot_logo = sk_logo_html('sk-foot-logo-img-massive');
+        if ($foot_logo) echo $foot_logo;
+      ?>
+      <h2 class="sk-foot-massive-wordmark split-words">Sacred <em>Kompass</em></h2>
     </div>
-    <p class="sk-foot-tagline"><?php echo esc_html($tagline); ?></p>
+    <p class="sk-foot-massive-tagline"><?php echo esc_html($tagline); ?></p>
+    <div class="sk-foot-dramatic-cta">
+        <a href="<?php echo esc_url(sk_option('contact_url', home_url('/#contact'))); ?>" class="btn sk-magnetic">
+            <?php esc_html_e('Begin Your Journey', 'sacred-kompass'); ?>
+        </a>
+    </div>
   </div>
 
   <div class="sk-foot-divider"></div>
 
-  <!-- Mid: nav columns -->
-  <div class="sk-foot-mid wrap">
+  <!-- Mid: Minimalist nav columns -->
+  <div class="sk-foot-mid wrap-wide">
 
     <div class="sk-foot-col">
       <p class="sk-foot-col-label"><?php echo esc_html($footer_col_navigate); ?></p>
