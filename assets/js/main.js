@@ -541,22 +541,24 @@
       return;
     }
 
-    /* Mobile & Desktop: hide pill and hamburger while hero is still dominating the initial viewport */
+    /* Mobile & Desktop: transition navbar state based on scroll */
     function checkHeroEnd() {
-      // Keep visible if currently open to prevent scroll jitter or menu disappearance
-      if (panel.classList.contains('open')) {
-        panel.classList.add('sk-sidenav--visible');
-        if (hamburger) hamburger.classList.add('sk-hamburger--visible');
-        return;
+      // Desktop docked-to-floating logic (kick in after 10px scroll)
+      if (window.scrollY > 10) {
+        panel.classList.add('is-floating');
+      } else {
+        panel.classList.remove('is-floating');
       }
+
+      // Mobile hamburger logic (hidden while in hero to prevent clash, shown after)
       var heroH     = heroEl.offsetHeight || window.innerHeight;
       var threshold = Math.min(heroH * 0.5, 300);
-      if (window.scrollY >= threshold) {
-        panel.classList.add('sk-sidenav--visible');
-        if (hamburger) hamburger.classList.add('sk-hamburger--visible');
-      } else {
-        panel.classList.remove('sk-sidenav--visible');
-        if (hamburger) hamburger.classList.remove('sk-hamburger--visible');
+      if (hamburger) {
+        if (window.scrollY >= threshold || panel.classList.contains('open')) {
+          hamburger.classList.add('sk-hamburger--visible');
+        } else {
+          hamburger.classList.remove('sk-hamburger--visible');
+        }
       }
     }
 
@@ -774,12 +776,9 @@
   function render() {
     cursorX += (mouseX - cursorX) * 0.15;
     cursorY += (mouseY - cursorY) * 0.15;
-    // Maintain the rotation class if hovering, otherwise just translate
-    if (cursor.classList.contains('is-hovering')) {
-      cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%) rotate(45deg)`;
-    } else {
-      cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%) rotate(0deg)`;
-    }
+    // Use CSS vars for position so CSS transforms (like hover rotation/scale) aren't continually overwritten by JS
+    cursor.style.left = `${cursorX}px`;
+    cursor.style.top = `${cursorY}px`;
     requestAnimationFrame(render);
   }
   requestAnimationFrame(render);

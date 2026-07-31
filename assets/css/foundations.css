@@ -360,26 +360,25 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
     position: fixed;
     top: 0;
     left: 0;
-    width: 28px;
-    height: 28px;
-    /* Eight-pointed star representing the compass and Vedic astrology */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23B8623F'%3E%3Cpath d='M12 0l2.3 8.3L22.5 6l-5.4 6.7 5.4 6.7-8.2-2.3L12 24l-2.3-8.3L1.5 18l5.4-6.7-5.4-6.7 8.2 2.3z'/%3E%3C/svg%3E");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    width: 24px;
+    height: 24px;
+    /* Pure CSS Crescent Moon / Eclipse */
     background-color: transparent;
-    border-radius: 0;
+    border-radius: 50%;
+    box-shadow: inset -4px 0 0 0 var(--terra);
     pointer-events: none;
     z-index: 100000;
-    transform: translate(-50%, -50%);
-    transition: width 0.3s var(--ease-spring), height 0.3s var(--ease-spring), transform 0.3s var(--ease), opacity 0.3s var(--ease);
-    /* mix-blend-mode removed so the colored star is always clearly visible */
+    /* CSS handles the origin offset and rotation, JS handles top/left */
+    transform: translate(-50%, -50%) rotate(0deg);
+    transition: width 0.4s var(--ease-spring), height 0.4s var(--ease-spring), box-shadow 0.4s var(--ease-spring), transform 0.4s var(--ease-spring), opacity 0.4s ease;
   }
 
   .sk-cursor.is-hovering {
-    width: 44px;
-    height: 44px;
-    opacity: 0.8;
-    transform: translate(-50%, -50%) rotate(45deg);
+    width: 40px;
+    height: 40px;
+    opacity: 0.9;
+    /* Morph into a full eclipse circle with a soft inner glow */
+    box-shadow: inset -20px 0 0 0 var(--terra), 0 0 16px rgba(184, 98, 63, 0.4);
+    transform: translate(-50%, -50%) rotate(-45deg) scale(1.1);
   }
 }
