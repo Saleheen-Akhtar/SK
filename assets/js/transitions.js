@@ -51,9 +51,15 @@
       siteWrap = document.createElement('div');
       siteWrap.id = 'sk-site-wrap';
 
-      // Move all children except the overlay, progress bar, and cursor into the wrapper
+      // Move all children except the overlay, progress bar, side nav, and cursor into the wrapper
       Array.from(document.body.childNodes).forEach(node => {
+          // Explicitly exclude script tags, standard fixed UI, and WordPress admin bar
+          if (node.nodeName === 'SCRIPT' || node.id === 'wpadminbar') return;
+
           if (node.id === 'sk-page-overlay' ||
+              node.id === 'sk-sidenav' ||
+              node.id === 'sk-hamburger' ||
+              node.id === 'sk-sidenav-backdrop' ||
               (node.classList && (node.classList.contains('sk-progress') || node.classList.contains('sk-cursor')))) {
               return; // keep these at body level
           }
