@@ -1,15 +1,7 @@
 <?php
 /**
- * Template Name: Stories Archive
- *
- * Redesigned to match img3:
- * - Two-column hero header (text left, woman image right)
- * - "Real Journeys | Heartfelt Transformations | Lasting Impact" badge pills
- * - Filter pills + "Newest First" sort
- * - 4-column card grid (cover photo, quote badge, category, title, excerpt, "Read Her Story →")
- * - CTA banner at bottom: "Your story can inspire change. Share Your Story"
+ * Template Name: Stories Archive (Podium Style)
  */
-
 get_header();
 
 $all_stories_query = new WP_Query( [
@@ -65,81 +57,60 @@ if ( $all_stories_query->have_posts() ) {
 }
 
 $has_stories = ! empty( $all_stories );
-
-/* Hero image — editable via Settings or fallback */
-$hero_img = sk_option( 'stories_page_hero_image', '' );
 ?>
 
-<main class="sk-stories-pg" id="stories-archive">
+<main class="sk-stories-pg" id="stories-archive" style="background-color:var(--color-surface-base); min-height:100vh;">
 
-  <!-- ══ HERO MASTHEAD: text left, image right ══ -->
-  <?php get_template_part('template-parts/stories/hero'); ?>
+  <section class="sk-stories-hero" style="padding:var(--space-3) 0 var(--space-2);">
+    <div class="wrap">
+      <span class="eyebrow">Journeys</span>
+      <h1 class="display-impact">Stories of Transformation</h1>
+      <p class="body-serif" style="margin-top:var(--space-1); max-width:800px;">
+        Real experiences from the community.
+      </p>
+    </div>
+  </section>
 
   <?php if ( ! $has_stories ) : ?>
-  <div class="wrap sk-stories-empty" style="padding: 5rem 0; text-align: center;">
-    <p><?php echo esc_html(sk_option('sk_stories_no_results', 'No stories in this category yet.')); ?></p>
-    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="btn btn-primary" style="margin-top:1.5rem">Back to Home</a>
+  <div class="wrap sk-stories-empty" style="padding:var(--space-2) 0;">
+    <p class="body-ui">No stories published yet.</p>
   </div>
-
   <?php else : ?>
 
-  <!-- ══ FILTER BAR ══ -->
-  <div class="sk-spg-filter-wrap">
-    <div class="wrap sk-spg-filter-inner">
-      <nav class="sk-spg-filter" aria-label="Filter by category">
-        <button class="sk-spg-filter-btn active" data-filter="all">All Stories</button>
-        <?php foreach ( $categories as $cat ) : ?>
-        <button class="sk-spg-filter-btn" data-filter="<?php echo esc_attr( sanitize_title( $cat ) ); ?>"><?php echo esc_html( $cat ); ?></button>
-        <?php endforeach; ?>
-      </nav>
-      <div class="sk-spg-filter-right">
-        <!-- Real-time Search -->
-        <div class="sk-spg-search-wrap">
-          <input type="text" id="sk-stories-search" class="sk-spg-search-input" placeholder="Search stories..." aria-label="Search stories" />
-          <span class="sk-spg-search-icon" aria-hidden="true">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
-            </svg>
-          </span>
-        </div>
-
-        <!-- Sort Dropdown -->
-        <div class="sk-spg-sort-container">
-          <button class="sk-spg-sort" id="sort-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Sort stories">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="21" y1="10" x2="7" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="21" y1="18" x2="7" y2="18"/></svg>
-            <span id="sort-label">Newest First</span>
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <ul class="sk-spg-sort-dropdown" role="listbox" aria-labelledby="sort-trigger" id="sort-dropdown" style="display:none">
-            <li class="sk-spg-sort-option active" role="option" data-value="newest" aria-selected="true">Newest First</li>
-            <li class="sk-spg-sort-option" role="option" data-value="oldest" aria-selected="false">Oldest First</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ STORY CARDS GRID ══ -->
-  <div class="wrap sk-spg-body">
-    <div class="sk-spg-grid" id="sk-spg-grid">
+  <!-- Grid -->
+  <div class="wrap" style="padding-bottom:var(--space-3);">
+    <div class="sk-stories-grid" id="sk-spg-grid" style="display:grid; grid-template-columns:1fr; gap:var(--space-2);">
       <?php foreach ( $all_stories as $s ) : ?>
-        <?php get_template_part('template-parts/stories/card', null, ['story' => $s]); ?>
+        <a href="<?php echo esc_url($s['url']); ?>" class="sk-story-card klimt-hover-reveal" data-category="<?php echo esc_attr(sanitize_title($s['category'])); ?>" style="display:block; text-decoration:none;">
+          <div class="klimt-image-wrapper" style="aspect-ratio:3/4;">
+            <?php if ($s['cover']): ?>
+              <img src="<?php echo esc_url($s['cover']); ?>" alt="<?php echo esc_attr($s['title']); ?>" />
+            <?php else: ?>
+              <div class="placeholder-img"></div>
+            <?php endif; ?>
+          </div>
+          <div class="sk-story-meta" style="margin-top:var(--space-1);">
+            <?php if ($s['category']): ?>
+              <span class="body-small" style="text-transform:uppercase; display:block; margin-bottom:0.5rem;"><?php echo esc_html($s['category']); ?></span>
+            <?php endif; ?>
+            <h3 class="body-ui" style="margin-bottom:0.5rem;"><?php echo esc_html($s['title']); ?></h3>
+            <p class="body-serif" style="font-size:var(--font-size-sm);"><?php echo esc_html($s['excerpt']); ?></p>
+          </div>
+        </a>
       <?php endforeach; ?>
     </div>
-
-    <!-- No results message -->
-    <div class="sk-spg-no-results" id="sk-spg-no-results" style="display:none">
-      <p><?php echo esc_html(sk_option('sk_stories_no_results', 'No stories in this category yet.')); ?></p>
-    </div>
   </div>
-
-  <!-- ══ SHARE YOUR STORY CTA BANNER ══ -->
-  <?php get_template_part('template-parts/stories/cta'); ?>
-
   <?php endif; ?>
 
 </main>
 
-<?php get_footer(); ?>
+<style>
+@media (min-width: 768px) {
+  .sk-stories-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (min-width: 1024px) {
+  .sk-stories-grid { grid-template-columns: repeat(3, 1fr) !important; }
+}
+</style>
 
-<!-- Stories filter script enqueued via setup.php -->
+<?php get_footer(); ?>

@@ -67,132 +67,49 @@ if (count($parts) === 2 && strtolower($parts[0]) === 'the') {
 $all_members = array_merge($founders, $others);
 ?>
 
-<!-- ── Page Hero ── -->
-<section class="sk-collective-hero">
-  <div class="wrap sk-collective-hero-inner">
-    <p class="eyebrow eyebrow-c reveal"><?php echo esc_html($col_hero_eyebrow); ?></p>
-    <h1 class="display-xl reveal" data-delay="0.1"><?php echo $hero_title_html; ?></h1>
-    <p class="body-serif sk-collective-hero-sub reveal" data-delay="0.2">
-      <?php echo esc_html($col_hero_sub); ?>
-    </p>
-  </div>
-  <div class="sk-home-hero-ornament" aria-hidden="true"><?php echo esc_html($watermark_text); ?></div>
-</section>
+<!-- Page Hero -->
+<main class="sk-page-main sk-collective-page" style="background-color:var(--color-surface-base); min-height:100vh;">
 
-<!-- ── Founders — 3-column testimonial slider ── -->
-<?php if (!empty($founders)): ?>
-<section class="sk-collective-founders-section">
-  <div class="wrap">
-    <div class="eyebrow reveal sk-collective-section-eyebrow">
-      <?php echo esc_html($col_founders_eyebrow); ?>
+  <section class="sk-collective-hero" style="padding:var(--space-3) 0 var(--space-2);">
+    <div class="wrap">
+      <span class="eyebrow"><?php echo esc_html($col_hero_eyebrow); ?></span>
+      <h1 class="display-impact"><?php echo $hero_title_html; ?></h1>
+      <p class="body-serif" style="margin-top:var(--space-1); max-width:800px;">
+        <?php echo esc_html($col_hero_sub); ?>
+      </p>
     </div>
+  </section>
 
-    <!-- 3-col slider: thumbnails | photo | text+nav -->
-    <div class="sk-fts" id="sk-fts" aria-label="<?php esc_attr_e('Founders','sacred-kompass'); ?>">
+  <!-- Founders Grid -->
+  <?php if (!empty($founders)): ?>
+  <section class="sk-collective-founders" style="padding:var(--space-2) 0;">
+    <div class="wrap">
+      <h2 class="display-h3" style="margin-bottom:var(--space-2);"><?php echo esc_html($col_founders_eyebrow); ?></h2>
 
-      <!-- COL 1: pagination + thumbnail stack -->
-      <div class="sk-fts-col sk-fts-col--meta">
-
-        <div class="sk-fts-meta-top">
-          <!-- Pagination counter -->
-          <span class="sk-fts-count" id="sk-fts-count" aria-live="polite">
-            <span id="sk-fts-cur">01</span> / <span id="sk-fts-total"><?php echo sprintf('%02d', count($founders)); ?></span>
-          </span>
-          <!-- Rotated label -->
-          <span class="sk-fts-label" aria-hidden="true"><?php esc_html_e('Founders','sacred-kompass'); ?></span>
-        </div>
-
-        <!-- Thumbnail strip -->
-        <div class="sk-fts-thumbs" id="sk-fts-thumbs" aria-label="<?php esc_attr_e('Navigate to founder','sacred-kompass'); ?>">
-          <?php foreach ($founders as $idx => $m):
-            $thumb_src = $m['image'] ?: '';
-            $initial   = esc_html(strtoupper(mb_substr($m['name'], 0, 1)));
-          ?>
-          <button class="sk-fts-thumb<?php echo $idx === 0 ? ' is-active' : ''; ?>"
-                  data-slide="<?php echo $idx; ?>"
-                  aria-label="<?php echo esc_attr($m['name']); ?>"
-                  type="button">
-            <?php if ($thumb_src): ?>
-              <img src="<?php echo esc_url($thumb_src); ?>" alt="<?php echo esc_attr($m['name']); ?>" loading="lazy" />
-            <?php else: ?>
-              <span class="sk-fts-thumb-initial"><?php echo esc_html($initial); ?></span>
-            <?php endif; ?>
-          </button>
-          <?php endforeach; ?>
-        </div>
-
-      </div><!-- /sk-fts-col--meta -->
-
-      <!-- COL 2: main photo -->
-      <div class="sk-fts-col sk-fts-col--photo">
-        <div class="sk-fts-photo-stage" id="sk-fts-photo-stage" aria-hidden="true">
-          <?php foreach ($founders as $idx => $m):
-            $src     = $m['image'] ?: '';
-            $initial = esc_html(strtoupper(mb_substr($m['name'], 0, 1)));
-          ?>
-          <div class="sk-fts-photo-frame<?php echo $idx === 0 ? ' is-active' : ''; ?>" data-index="<?php echo $idx; ?>">
-            <?php if ($src): ?>
-              <img src="<?php echo esc_url($src); ?>" alt="<?php echo esc_attr($m['name']); ?>" loading="lazy" />
-            <?php else: ?>
-              <div class="sk-fts-photo-initial"><?php echo esc_html($initial); ?></div>
-            <?php endif; ?>
-            <div class="sk-fts-photo-badge"><?php echo esc_html($col_founder_badge); ?></div>
-          </div>
-          <?php endforeach; ?>
-        </div>
-        <div class="sk-fts-swipe-hint" aria-hidden="true">← swipe →</div>
-      </div><!-- /sk-fts-col--photo -->
-
-      <!-- COL 3: text content + navigation -->
-      <div class="sk-fts-col sk-fts-col--text">
-
-        <!-- Animated text panel -->
-        <div class="sk-fts-text-stage" id="sk-fts-text-stage">
-          <?php foreach ($founders as $idx => $m): ?>
-          <div class="sk-fts-panel<?php echo $idx === 0 ? ' is-active' : ''; ?>" data-index="<?php echo $idx; ?>">
-
-            <?php if ($m['origin']): ?>
-            <span class="sk-fts-origin">
-              <svg width="8" height="8" viewBox="0 0 10 10" fill="none" aria-hidden="true">
-                <circle cx="5" cy="5" r="4" stroke="currentColor" stroke-width="1.2"/>
-                <circle cx="5" cy="5" r="1.5" fill="currentColor"/>
-              </svg>
-              <?php echo esc_html($m['origin']); ?>
-            </span>
-            <?php endif; ?>
-
-            <h2 class="sk-fts-name"><?php echo esc_html($m['name']); ?></h2>
-
-            <?php if ($m['role']): ?>
-            <span class="sk-fts-role"><?php echo esc_html($m['role']); ?></span>
-            <?php endif; ?>
-
-            <?php if ($m['bio']): ?>
-            <blockquote class="sk-fts-bio"><?php echo esc_html($m['bio']); ?></blockquote>
-            <?php endif; ?>
-
-            <?php if (!empty($m['tags'])): ?>
-            <div class="sk-collective-tags sk-fts-tags">
-              <?php foreach ($m['tags'] as $tag): ?>
-                <span class="trad-tag"><?php echo esc_html($tag); ?></span>
-              <?php endforeach; ?>
+      <div class="sk-team-grid" style="display:grid; grid-template-columns:1fr; gap:var(--space-2);">
+        <?php foreach ($founders as $f): ?>
+          <div class="sk-team-card klimt-hover-reveal">
+            <div class="klimt-image-wrapper" style="aspect-ratio:3/4;">
+              <?php if ($f['image']): ?>
+                <img src="<?php echo esc_url($f['image']); ?>" alt="<?php echo esc_attr($f['name']); ?>" />
+              <?php else: ?>
+                <div class="placeholder-img"></div>
+              <?php endif; ?>
             </div>
-            <?php endif; ?>
-
+            <div class="sk-team-meta" style="margin-top:var(--space-1);">
+              <h3 class="body-ui"><?php echo esc_html($f['name']); ?></h3>
+              <?php if ($f['role']): ?>
+                <span class="body-small" style="display:block; margin-bottom:0.5rem;"><?php echo esc_html($f['role']); ?></span>
+              <?php endif; ?>
+              <?php if ($f['bio']): ?>
+                <p class="body-small"><?php echo esc_html($f['bio']); ?></p>
+              <?php endif; ?>
+            </div>
           </div>
-          <?php endforeach; ?>
-        </div><!-- /sk-fts-text-stage -->
-
-
-
-      </div><!-- /sk-fts-col--text -->
-
-    </div><!-- /sk-fts -->
-
-  </div>
-</section>
-
-<!-- Founder slider script enqueued via setup.php -->
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </section>
 <?php else: ?>
 <section class="sk-collective-founders-section sk-collective-empty-founders">
   <div class="wrap" style="text-align: center; padding: 5rem 0;">
@@ -276,5 +193,6 @@ $all_members = array_merge($founders, $others);
 </section>
 <?php endif; ?>
 
+</main>
 
 <?php get_footer(); ?>

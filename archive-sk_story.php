@@ -1,13 +1,9 @@
 <?php
 /**
- * Archive: sk_story — Stories of the Soul
- * WordPress routes /stories/ here automatically (CPT archive).
- * Uses the main WP_Query (already set up by WordPress for the archive).
+ * Archive: sk_story — Stories of the Soul (Podium Style)
  */
-
 get_header();
 
-/* ── Pull all stories via secondary query (main query may be paginated) ── */
 $all_stories_query = new WP_Query( [
     'post_type'      => 'sk_story',
     'post_status'    => 'publish',
@@ -18,16 +14,12 @@ $all_stories_query = new WP_Query( [
 ] );
 
 $all_stories = [];
-$categories  = [];
 
 if ( $all_stories_query->have_posts() ) {
     while ( $all_stories_query->have_posts() ) {
         $all_stories_query->the_post();
         $id  = get_the_ID();
         $cat = get_post_meta( $id, 'story_category', true );
-        if ( $cat && ! in_array( $cat, $categories, true ) ) {
-            $categories[] = $cat;
-        }
 
         $cover_id  = (int) get_post_meta( $id, 'story_cover_image_id', true );
         $cover_url = $cover_id
@@ -37,22 +29,11 @@ if ( $all_stories_query->have_posts() ) {
             $cover_url = get_the_post_thumbnail_url( $id, 'large' );
         }
 
-        $author_name = get_post_meta( $id, 'story_author_name', true );
-        if ( ! $author_name ) {
-            $disp = get_the_author_meta('display_name');
-            $author_name = ( $disp && ! str_contains( strtolower( $disp ), 'saleheen' ) && ! str_contains( strtolower( $disp ), 'admin' ) ) ? $disp : 'Anonymous';
-        }
-
         $all_stories[] = [
-            'id'           => $id,
             'title'        => get_the_title(),
-            'pull_quote'   => get_post_meta( $id, 'story_pull_quote',      true ),
             'excerpt'      => wp_trim_words( get_the_excerpt() ?: strip_tags( get_the_content() ), 22, '…' ),
             'category'     => $cat,
-            'author_name'  => $author_name,
-            'author_location' => get_post_meta( $id, 'story_author_location', true ),
             'cover'        => $cover_url,
-            'date'         => get_the_date( 'M Y' ),
             'url'          => get_permalink(),
         ];
     }
@@ -60,78 +41,59 @@ if ( $all_stories_query->have_posts() ) {
 }
 
 $has_stories = ! empty( $all_stories );
-/* Read hero image — saved without sk_ prefix in settings */
-$hero_img    = get_option( 'options_sk_stories_page_hero_image', '' ) ?: sk_option( 'stories_page_hero_image', '' );
 ?>
 
-<main class="sk-stories-pg" id="stories-archive">
+<main class="sk-stories-pg" id="stories-archive" style="background-color:var(--color-surface-base); min-height:100vh;">
 
-  <!-- ══ HERO MASTHEAD: text left, image right ══ -->
-  <?php get_template_part('template-parts/stories/hero'); ?>
+  <section class="sk-stories-hero" style="padding:var(--space-3) 0 var(--space-2);">
+    <div class="wrap">
+      <span class="eyebrow">Journeys</span>
+      <h1 class="display-impact">Stories of Transformation</h1>
+      <p class="body-serif" style="margin-top:var(--space-1); max-width:800px;">
+        Real experiences from the community.
+      </p>
+    </div>
+  </section>
 
   <?php if ( ! $has_stories ) : ?>
-  <div class="wrap sk-stories-empty" style="padding: 5rem 0; text-align: center;">
-    <p><?php echo esc_html(sk_option('sk_stories_no_results', 'No stories in this category yet.')); ?></p>
-    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="btn btn-primary" style="margin-top:1.5rem">Back to Home</a>
+  <div class="wrap sk-stories-empty" style="padding:var(--space-2) 0;">
+    <p class="body-ui">No stories published yet.</p>
   </div>
-
   <?php else : ?>
 
-  <!-- ══ FILTER BAR ══ -->
-  <div class="sk-spg-filter-wrap" id="sk-spg-filters">
-    <div class="wrap sk-spg-filter-inner">
-      <nav class="sk-spg-filter" aria-label="Filter stories by category">
-        <button class="sk-spg-filter-btn active" data-filter="all">All Stories</button>
-        <?php foreach ( $categories as $cat ) : ?>
-        <button class="sk-spg-filter-btn" data-filter="<?php echo esc_attr( sanitize_title( $cat ) ); ?>"><?php echo esc_html( $cat ); ?></button>
-        <?php endforeach; ?>
-      </nav>
-      <div class="sk-spg-filter-right">
-        <!-- Real-time Search -->
-        <div class="sk-spg-search-wrap">
-          <input type="text" id="sk-stories-search" class="sk-spg-search-input" placeholder="Search stories..." aria-label="Search stories" />
-          <span class="sk-spg-search-icon" aria-hidden="true">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
-            </svg>
-          </span>
-        </div>
-
-        <!-- Sort Dropdown -->
-        <div class="sk-spg-sort-container">
-          <button class="sk-spg-sort" id="sort-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Sort stories">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><line x1="21" y1="10" x2="7" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="21" y1="18" x2="7" y2="18"/></svg>
-            <span id="sort-label">Newest First</span>
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <ul class="sk-spg-sort-dropdown" role="listbox" aria-labelledby="sort-trigger" id="sort-dropdown" style="display:none">
-            <li class="sk-spg-sort-option active" role="option" data-value="newest" aria-selected="true">Newest First</li>
-            <li class="sk-spg-sort-option" role="option" data-value="oldest" aria-selected="false">Oldest First</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ STORY GRID ══ -->
-  <div class="wrap sk-spg-body">
-    <div class="sk-spg-grid" id="sk-spg-grid">
+  <div class="wrap" style="padding-bottom:var(--space-3);">
+    <div class="sk-stories-grid" id="sk-spg-grid" style="display:grid; grid-template-columns:1fr; gap:var(--space-2);">
       <?php foreach ( $all_stories as $s ) : ?>
-        <?php get_template_part('template-parts/stories/card', null, ['story' => $s]); ?>
+        <a href="<?php echo esc_url($s['url']); ?>" class="sk-story-card klimt-hover-reveal" style="display:block; text-decoration:none;">
+          <div class="klimt-image-wrapper" style="aspect-ratio:3/4;">
+            <?php if ($s['cover']): ?>
+              <img src="<?php echo esc_url($s['cover']); ?>" alt="<?php echo esc_attr($s['title']); ?>" />
+            <?php else: ?>
+              <div class="placeholder-img"></div>
+            <?php endif; ?>
+          </div>
+          <div class="sk-story-meta" style="margin-top:var(--space-1);">
+            <?php if ($s['category']): ?>
+              <span class="body-small" style="text-transform:uppercase; display:block; margin-bottom:0.5rem;"><?php echo esc_html($s['category']); ?></span>
+            <?php endif; ?>
+            <h3 class="body-ui" style="margin-bottom:0.5rem;"><?php echo esc_html($s['title']); ?></h3>
+            <p class="body-serif" style="font-size:var(--font-size-sm);"><?php echo esc_html($s['excerpt']); ?></p>
+          </div>
+        </a>
       <?php endforeach; ?>
     </div>
-    <div class="sk-spg-no-results" id="sk-spg-no-results" hidden>
-      <p><?php echo esc_html(sk_option('sk_stories_no_results', 'No stories in this category yet.')); ?></p>
-    </div>
   </div>
 
-  <!-- ══ CTA BANNER ══ -->
-  <?php get_template_part('template-parts/stories/cta'); ?>
-
   <?php endif; ?>
-
 </main>
 
-<?php get_footer(); ?>
+<style>
+@media (min-width: 768px) {
+  .sk-stories-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (min-width: 1024px) {
+  .sk-stories-grid { grid-template-columns: repeat(3, 1fr) !important; }
+}
+</style>
 
-<!-- Stories filter script enqueued via setup.php -->
+<?php get_footer(); ?>

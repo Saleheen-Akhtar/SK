@@ -1,61 +1,26 @@
 /* ── TYPOGRAPHY ──────────────────────────────────────────── */
-.eyebrow{font-family:var(--font-ui);font-size:var(--label-size-floor);font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--terra);display:flex;align-items:center;gap:.75rem}
-.eyebrow::before{content:'';width:20px;height:1px;background:currentColor;flex-shrink:0}
-.eyebrow-c,.eyebrow-center{justify-content:center}
-.eyebrow-c::before,.eyebrow-center::before{display:none}
-.eyebrow-light{color:var(--blush)}
-.eyebrow-light::before{display:none}
-.display-xl{font-family:var(--font-display);font-size:clamp(3.5rem,7vw,6.5rem);font-weight:700;line-height:1.02;letter-spacing:-.02em}
-/* display-impact: large-format single-phrase display. Used as second visual
-   crescendo after hero (e.g. quote band pull phrase). 6–8rem, ultra-light weight
-   so mass comes from size, not stroke — opposite of stage-calm. */
-.display-impact{font-family:var(--font-display);font-size:clamp(5rem,9vw,8rem);font-weight:200;line-height:.9;letter-spacing:-.03em;font-style:italic}
-.display-impact em{font-style:normal;font-weight:800;color:var(--terra)}
-/* Quote band impact phrase — centered, blush-white, large breathing room below */
-.quote-band-impact{color:rgba(255,255,255,.9);text-align:center;margin:0 auto 3.5rem;max-width:none;line-height:1.05}
-.quote-band-impact em{color:var(--blush)}
-.display-xl em{font-style:italic;font-weight:700;color:var(--terra)}
-.display-h2{ font-family:var(--font-display);
-  font-size:clamp(4.5rem,6vw,6.5rem);
-  font-weight:700;
-  line-height:.95;
-  letter-spacing:-.03em;}
-.display-h2 em{font-style:italic;color:var(--terra);padding-right:0.06em}
-.display-mid{font-family:var(--font-display);font-size:var(--font-size-display-mid);font-weight:400;line-height:1.15;letter-spacing:-.01em}
-.display-h3{font-family:var(--font-display);font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:400;line-height:1.2}
-.body-serif{font-family:var(--font-display);font-size:var(--body-size);font-weight:300;line-height:1.85;color:var(--ink-muted);max-width:62ch}
+/* Podium Tokens */
+.eyebrow{font-family:var(--font-family-primary);font-size:var(--font-size-sm);font-weight:var(--font-weight-base);letter-spacing:0;text-transform:none;color:var(--color-text-tertiary);display:block;margin-bottom:var(--space-1)}
+.eyebrow-c,.eyebrow-center{text-align:center}
 
-/* Fluid mobile responsive typography adjustments for screen widths 768px and below */
-@media (max-width: 768px) {
-  /* About section tagline & descriptor, philosophy intro (Target: 19px to 26px fluid) */
-  body .av16-tagline-inner,
-  body .av16-org-desc,
-  body .philosophy-strip-intro {
-    font-size: clamp(1.187rem, 1.56vw + 0.875rem, 1.625rem);
-  }
-  
-  /* About section bridge, stories sub, story index intro (Target: 18px to 24px fluid) */
-  body .av16-bridge,
-  body .sk-sp-v4-sub,
-  body .sk-rc-header .body-serif {
-    font-size: clamp(1.125rem, 1.34vw + 0.857rem, 1.5rem);
-  }
-  
-  /* About body/welcome, testimonials, stories card, quotes (Target: 17px to 22px fluid) */
-  body .av16-body,
-  body .av16-welcome,
-  body .ct-quote,
-  body .ct-quote .ct-word,
-  body .sk-rc-card-desc,
-  body .sk-sp-v4-qtext {
-    font-size: clamp(1.06rem, 1.1vw + 0.84rem, 1.375rem);
-  }
+.display-xl{font-family:var(--font-family-primary);font-size:var(--font-size-4xl);font-weight:var(--font-weight-base);line-height:var(--font-line-height-base);color:var(--color-text-primary)}
+.display-impact{font-family:var(--font-family-primary);font-size:var(--font-size-3xl);font-weight:var(--font-weight-base);line-height:var(--font-line-height-base);color:var(--color-text-primary)}
+.display-h2{font-family:var(--font-family-primary);font-size:var(--font-size-2xl);font-weight:var(--font-weight-base);line-height:var(--font-line-height-base);color:var(--color-text-primary)}
+.display-mid{font-family:var(--font-family-primary);font-size:var(--font-size-xl);font-weight:var(--font-weight-base);line-height:var(--font-line-height-base);color:var(--color-text-primary)}
+.display-h3{font-family:var(--font-family-primary);font-size:var(--font-size-lg);font-weight:var(--font-weight-base);line-height:var(--font-line-height-base);color:var(--color-text-primary)}
 
-  body .eyebrow {
-    font-size: var(--label-size-floor);
-    font-weight: 600;
-  }
+/* Base body styles */
+.body-serif{font-family:var(--font-family-primary);font-size:var(--font-size-md);font-weight:var(--font-weight-base);line-height:var(--font-line-height-base);color:var(--color-text-tertiary);max-width:65ch}
+.body-ui{font-family:var(--font-family-primary);font-size:var(--font-size-md);font-weight:var(--font-weight-base);line-height:var(--font-line-height-base);color:var(--color-text-primary)}
+.body-small{font-family:var(--font-family-primary);font-size:var(--font-size-sm);font-weight:var(--font-weight-base);line-height:var(--font-line-height-base);color:var(--color-text-tertiary)}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: var(--space-1);
+    color: var(--color-text-primary);
 }
 
+p {
+    margin-bottom: var(--space-1);
+}
 
-
+/* Fluid adjustments removed per Podium guidelines (no one-off typography exceptions) */

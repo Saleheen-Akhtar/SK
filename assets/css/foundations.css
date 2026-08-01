@@ -8,200 +8,89 @@ Text Domain: sacred-kompass
 Description: Luxury spiritual wellness. ACF + CPT. Fully free stack. Zero paid plugins.
 */
 
-/* ── SELF-HOSTED FONTS ──────────────────────────────────── */
-
-/* Cormorant Garamond */
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url('../fonts/cormorant-garamond-v21-latin-300.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: italic;
-  font-weight: 300;
-  font-display: swap;
-  src: url('../fonts/cormorant-garamond-v21-latin-300italic.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../fonts/cormorant-garamond-v21-latin-regular.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../fonts/cormorant-garamond-v21-latin-italic.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('../fonts/cormorant-garamond-v21-latin-500.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-  src: url('../fonts/cormorant-garamond-v21-latin-500italic.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('../fonts/cormorant-garamond-v21-latin-600.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: italic;
-  font-weight: 600;
-  font-display: swap;
-  src: url('../fonts/cormorant-garamond-v21-latin-600italic.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url('../fonts/cormorant-garamond-v21-latin-700.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Cormorant Garamond';
-  font-style: italic;
-  font-weight: 700;
-  font-display: swap;
-  src: url('../fonts/cormorant-garamond-v21-latin-700italic.woff2') format('woff2');
-}
-
-/* Cormorant */
-@font-face {
-  font-family: 'Cormorant';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url('../fonts/cormorant-v24-latin-300.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Cormorant';
-  font-style: italic;
-  font-weight: 300;
-  font-display: swap;
-  src: url('../fonts/cormorant-v24-latin-300italic.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Cormorant';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../fonts/cormorant-v24-latin-regular.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Cormorant';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../fonts/cormorant-v24-latin-italic.woff2') format('woff2');
-}
-
-/* Jost */
-@font-face {
-  font-family: 'Jost';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url('../fonts/jost-v20-latin-300.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Jost';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../fonts/jost-v20-latin-regular.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Jost';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('../fonts/jost-v20-latin-500.woff2') format('woff2');
-}
-
-/* ── TOKENS ─────────────────────────────────────────────── */
+/* ── TOKENS (Podium Inspired) ────────────────────────────── */
 :root {
-  /* Dynamic sidenav offset — updated by JS to match actual pill width + gap.
-     Applied to all page sections so content never hides behind the pill. */
+  /* Dynamic sidenav offset — updated by JS */
   --sidenav-offset: 0px;
 
-  --ivory:          #FBFAF6;
-  --ivory-warm:     #F6F0E7;
-  --parchment:      #EDE3D2;
-  --parchment-deep: #E3D5C0;
-  --border:         #E0D5C4;
-  --border-light:   #EDE5D8;
-  --terra:          #B8623F;
-  --terra-dark:     #9A4D2E;
-  --terra-soft:     rgba(184,98,63,.10);
-  --rose-maroon:    #8A0303; /* Blood red color */
-  --blush:          #E4BDA0;
-  --sage:           #7A9579;
-  --gold:           #C4902A;
-  --gold-light:     #D4AF6A;
-  --gold-pale:      rgba(212,175,106,.12);
-  --gold-glow:      rgba(196,144,42,.07);
-  --ink:            #1A1612;
-  --ink-mid:        #3A332C;
-  --ink-muted:      #78695A;
-  --ink-ghost:      #7E7063;
-  --footer-bg:      #130F0C;
-  --celestial:      #FDFBF5;
+  /* Colors */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #f3f0eb;
+  --color-text-tertiary: #c4c4c4;
+  --color-surface-base: #000000;
+  --color-surface-muted: #111111;
+  --color-surface-strong: #222222;
 
-  --body-size-floor:    1rem;
-  --label-size-floor:   0.875rem;
-  --micro-size-floor:   0.75rem;
+  --bg: var(--color-surface-base);
+  --ink: var(--color-text-primary);
+  --ink-muted: var(--color-text-tertiary);
 
-  --body-size:          1.15rem;
-  --body-size-ui:       1rem;
-  --body-size-small:    0.95rem;
-  --font-size-display-mid: clamp(2.4rem, 4vw, 3.2rem);
+  /* Missing legacy variables mapped for backwards compatibility during migration */
+  --ivory: var(--color-surface-base);
+  --ivory-warm: var(--color-surface-base);
+  --parchment: var(--color-surface-muted);
+  --parchment-deep: var(--color-surface-strong);
+  --border: #333333;
+  --border-light: #222222;
+  --terra: #ffffff;
+  --terra-dark: #cccccc;
+  --terra-soft: rgba(255,255,255,0.1);
+  --gold: #ffffff;
+  --footer-bg: var(--color-surface-muted);
 
-  --font-display: 'Cormorant Garamond','Times New Roman',serif;
-  --font-alt:     'Cormorant',serif;
-  --font-ui:      'Jost',system-ui,sans-serif;
+  /* Typography */
+  --font-family-primary: Futura, system-ui, sans-serif;
+  --font-family-stack: Futura, system-ui, sans-serif;
 
-  --max-w:       1360px;
-  --section-py:  10rem;
-  --r-card:      18px;
-  --r-pill:      100px;
-  --r-btn:       8px;
-  --shadow-card: 0 4px 24px rgba(26,22,18,.07), 0 1px 4px rgba(26,22,18,.04);
-  --shadow-lift: 0 12px 40px rgba(26,22,18,.11), 0 2px 8px rgba(26,22,18,.05);
+  --font-size-base: 10px;
+  --font-weight-base: 400;
+  --font-line-height-base: 1.5;
 
-  --ease:        cubic-bezier(.25,.46,.45,.94);
+  --font-size-xs: 10px;
+  --font-size-sm: 12.19px;
+  --font-size-md: 14.22px;
+  --font-size-lg: 16.25px;
+  --font-size-xl: 20.32px;
+  --font-size-2xl: 24.38px;
+  --font-size-3xl: 56.89px;
+  --font-size-4xl: 65.02px;
+
+  --font-ui: var(--font-family-primary);
+  --font-display: var(--font-family-primary);
+  --font-alt: var(--font-family-primary);
+  --font-body: var(--font-family-primary);
+  --font-serif: var(--font-family-primary);
+
+  /* Spacing */
+  --space-1: 24px;
+  --space-2: 24.38px;
+  --space-3: 130.03px;
+  --space-4: 333.21px;
+
+  /* Legacy spacing mapping */
+  --max-w: 1360px;
+  --section-py: var(--space-3);
+
+  /* Motion */
+  --motion-duration-instant: 160ms;
+  --motion-duration-fast: 400ms;
+
+  --ease: cubic-bezier(.25,.46,.45,.94);
   --ease-spring: cubic-bezier(.34,1.56,.64,1);
-  --ease-soft:   cubic-bezier(.22,1,.36,1);
-  --ease-expo:   cubic-bezier(.16,1,.3,1);
-  --ease-quart:  cubic-bezier(.77,0,.175,1);
-  --ease-back:   cubic-bezier(.22,.68,0,1.2);
+  --ease-soft: cubic-bezier(.22,1,.36,1);
 
-  /* Missing Variables mapped to design system tokens */
-  --font-body:          var(--font-ui);
-  --font-serif:         var(--font-display);
-  --bg:                 var(--ivory);
-  --shadow-card-hover:  0 12px 40px rgba(26,22,18,.12);
+  /* Legacy radiuses/shadows mapped to minimal */
+  --r-card: 0px;
+  --r-pill: 0px;
+  --r-btn: 0px;
+  --shadow-card: none;
+  --shadow-lift: none;
+  --shadow-card-hover: none;
 }
 
 /* ── RESET ───────────────────────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{background-color:var(--ivory) !important;scroll-behavior:auto;font-size:16px;scroll-padding-top:80px;overscroll-behavior-y:none}
+html{background-color:var(--color-surface-base) !important;scroll-behavior:auto;font-size:16px;scroll-padding-top:80px;overscroll-behavior-y:none}
 /* Lenis smooth scroll — requires html to not have overflow:hidden */
 html.lenis,html.lenis body{height:auto}
 img{display:block;max-width:100%}
@@ -209,11 +98,11 @@ a{color:inherit;text-decoration:none}
 button{border:none;background:none;cursor:pointer;font:inherit}
 
 /* ── PROGRESS BAR ────────────────────────────────────────── */
-.sk-progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--terra),var(--blush));z-index:10000;width:100%;transform:scaleX(0);transform-origin:left center;pointer-events:none;transition:opacity 0.2s ease}
+.sk-progress{position:fixed;top:0;left:0;height:2px;background:var(--color-text-primary);z-index:10000;width:100%;transform:scaleX(0);transform-origin:left center;pointer-events:none;transition:opacity var(--motion-duration-fast) ease}
 .sk-progress[style*="width: 0%"],
 .sk-progress[style*="width: 0px"]{opacity:0 !important}
 
-/* ── SUBPIXEL SEAM SEALING (Eliminates 1px hairline gap artifacts across all screens) ── */
+/* ── SUBPIXEL SEAM SEALING ── */
 section, header, footer, .sk-announcement-bar, .hero {
   box-sizing: border-box;
   background-clip: padding-box;
@@ -226,24 +115,15 @@ section + section {
 }
 
 /* ── BODY ────────────────────────────────────────────────── */
-body{background:var(--ivory);color:var(--ink);font-family:var(--font-ui);font-weight:300;line-height:1.75;overflow-x:clip !important;min-height:100vh;-webkit-font-smoothing:antialiased}
-/* Grain texture: position:fixed + will-change:transform promotes to own GPU layer,
-   preventing repaint on every scroll frame. contain:strict isolates layout/paint. */
-body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.022;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;will-change:transform;contain:strict;transform:translateZ(0)}
+body{background:var(--color-surface-base);color:var(--color-text-primary);font-family:var(--font-family-primary);font-weight:var(--font-weight-base);line-height:var(--font-line-height-base);overflow-x:clip !important;min-height:100vh;-webkit-font-smoothing:antialiased}
 
 /* ── LAYOUT ──────────────────────────────────────────────── */
-.wrap       {max-width:var(--max-w);margin:0 auto;padding:0 3rem}
-.wrap-narrow{max-width:800px;margin:0 auto;padding:0 3rem}
-.wrap-wide  {max-width:1560px;margin:0 auto;padding:0 3rem}
+.wrap       {max-width:var(--max-w);margin:0 auto;padding:0 var(--space-1)}
+.wrap-narrow{max-width:800px;margin:0 auto;padding:0 var(--space-1)}
+.wrap-wide  {max-width:1560px;margin:0 auto;padding:0 var(--space-1)}
 
-/* Responsive .wrap padding — prevent content from touching screen edges on phones */
+/* Responsive .wrap padding */
 @media (max-width: 768px) {
-  .wrap, .wrap-narrow, .wrap-wide {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-  }
-}
-@media (max-width: 480px) {
   .wrap, .wrap-narrow, .wrap-wide {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -251,25 +131,14 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
 }
 
 /* ── REVEAL / ANIMATION ──────────────────────────────────── */
-/* ── GSAP-OWNED REVEAL CLASSES ───────────────────────────────
-   CSS only sets the initial hidden state; transitions are
-   intentionally removed — GSAP / ScrollTrigger drives all
-   motion. The .visible class is no longer needed for CSS
-   transitions but is still toggled by IntersectionObserver
-   in main.js as a progressive enhancement fallback.
-   ──────────────────────────────────────────────────────────── */
-.reveal        { opacity: 0; transform: translateY(40px) scale(0.99);  transition: none; }
-.reveal-left   { opacity: 0; transform: translateX(-40px) scale(0.99); transition: none; }
-.reveal-right  { opacity: 0; transform: translateX(40px) scale(0.99);  transition: none; }
-.reveal-scale  { opacity: 0; transform: scale(.94) translateY(20px);   transition: none; }
-.section-enter { opacity: 0; transform: translateY(60px) scale(0.98);  transition: none; }
+.reveal        { opacity: 0; transform: translateY(20px);  transition: none; }
+.reveal-left   { opacity: 0; transform: translateX(-20px); transition: none; }
+.reveal-right  { opacity: 0; transform: translateX(20px);  transition: none; }
+.reveal-scale  { opacity: 0; transform: scale(.98) translateY(10px); transition: none; }
+.section-enter { opacity: 0; transform: translateY(30px); transition: none; }
 
-/* Stagger children — hidden until GSAP fires */
-.stagger-children > * { opacity: 0; transform: translateY(28px) scale(0.98); transition: none; }
+.stagger-children > * { opacity: 0; transform: translateY(15px); transition: none; }
 
-
-
-/* Fallback: if GSAP fails to load, .visible restores visibility */
 .no-gsap .reveal.visible,
 .no-gsap .reveal-left.visible,
 .no-gsap .reveal-right.visible,
@@ -279,9 +148,9 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
 
 /* ── KEYBOARD FOCUS ACCESSIBILITY ────────────────────────── */
 :focus-visible {
-  outline: 2px solid var(--terra) !important;
+  outline: 2px solid var(--color-text-primary) !important;
   outline-offset: 3px !important;
-  border-radius: 2px !important;
+  border-radius: 0 !important;
 }
 
 /* ── SCREEN READER ONLY UTILITY ────────────────────────────── */
@@ -297,7 +166,6 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
 }
 
 /* ── CUSTOM SCROLLBAR ────────────────────────────────────── */
-/* Hide scrollbar on mobile and tablet */
 @media (max-width: 1024px) {
   ::-webkit-scrollbar {
     display: none !important;
@@ -310,7 +178,6 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
   }
 }
 
-/* Custom Scrollbar for Desktop */
 @media (min-width: 1025px) {
   ::-webkit-scrollbar {
     display: block !important;
@@ -327,27 +194,27 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
   ::-webkit-scrollbar-track,
   ::-webkit-scrollbar-track-piece,
   ::-webkit-scrollbar-corner {
-    background: var(--ivory) !important; /* matches document background so no white strip shows on Windows */
-    background-color: var(--ivory) !important;
+    background: var(--color-surface-base) !important;
+    background-color: var(--color-surface-base) !important;
     border: none !important;
     box-shadow: none !important;
   }
   ::-webkit-scrollbar-thumb {
-    background: #d47a52 !important; /* Light terra pill scroller */
-    border-radius: 100px !important;
+    background: var(--color-surface-strong) !important;
+    border-radius: 0 !important;
     border: none !important;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #b8623f !important; /* Rich terra on hover */
+    background: var(--color-text-tertiary) !important;
   }
   
   html, body {
     scrollbar-width: thin !important;
-    scrollbar-color: #d47a52 transparent !important; /* Light terra scroller handle, transparent track */
+    scrollbar-color: var(--color-surface-strong) transparent !important;
   }
 }
 
-/* ── PREMIUM CUSTOM CURSOR ────────────────────────────────── */
+/* ── CUSTOM CURSOR (Minimal Dot) ────────────────────────────────── */
 @media (pointer: fine) {
   body {
     cursor: none !important;
@@ -356,36 +223,25 @@ body::after{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;o
     cursor: none !important;
   }
 
-  @keyframes sk-cursor-float {
-    0%, 100% { transform: translate(-50%, -50%) translateY(0) rotate(0deg); filter: drop-shadow(0 4px 6px rgba(184,98,63,0.3)); }
-    50% { transform: translate(-50%, -50%) translateY(-6px) rotate(15deg); filter: drop-shadow(0 12px 10px rgba(184,98,63,0.15)); }
-  }
-
   .sk-cursor {
     position: fixed;
     top: 0;
     left: 0;
-    width: 38px;
-    height: 38px;
-    /* 3D 8-faced star */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='N_L' x1='50%25' y1='0%25' x2='50%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23FDFBF5'/%3E%3Cstop offset='100%25' stop-color='%23E4BDA0'/%3E%3C/linearGradient%3E%3ClinearGradient id='N_R' x1='50%25' y1='0%25' x2='50%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23E4BDA0'/%3E%3Cstop offset='100%25' stop-color='%23D4AF6A'/%3E%3C/linearGradient%3E%3ClinearGradient id='E_U' x1='100%25' y1='50%25' x2='0%25' y2='50%25'%3E%3Cstop offset='0%25' stop-color='%23E4BDA0'/%3E%3Cstop offset='100%25' stop-color='%23D4AF6A'/%3E%3C/linearGradient%3E%3ClinearGradient id='E_D' x1='100%25' y1='50%25' x2='0%25' y2='50%25'%3E%3Cstop offset='0%25' stop-color='%23D4AF6A'/%3E%3Cstop offset='100%25' stop-color='%23B8623F'/%3E%3C/linearGradient%3E%3ClinearGradient id='S_R' x1='50%25' y1='100%25' x2='50%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%23D4AF6A'/%3E%3Cstop offset='100%25' stop-color='%23B8623F'/%3E%3C/linearGradient%3E%3ClinearGradient id='S_L' x1='50%25' y1='100%25' x2='50%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%23B8623F'/%3E%3Cstop offset='100%25' stop-color='%239A4D2E'/%3E%3C/linearGradient%3E%3ClinearGradient id='W_D' x1='0%25' y1='50%25' x2='100%25' y2='50%25'%3E%3Cstop offset='0%25' stop-color='%23D4AF6A'/%3E%3Cstop offset='100%25' stop-color='%23B8623F'/%3E%3C/linearGradient%3E%3ClinearGradient id='W_U' x1='0%25' y1='50%25' x2='100%25' y2='50%25'%3E%3Cstop offset='0%25' stop-color='%23E4BDA0'/%3E%3Cstop offset='100%25' stop-color='%23D4AF6A'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpolygon points='50,5 50,50 35,35' fill='url(%23N_L)'/%3E%3Cpolygon points='50,5 65,35 50,50' fill='url(%23N_R)'/%3E%3Cpolygon points='95,50 50,50 65,35' fill='url(%23E_U)'/%3E%3Cpolygon points='95,50 65,65 50,50' fill='url(%23E_D)'/%3E%3Cpolygon points='50,95 65,65 50,50' fill='url(%23S_R)'/%3E%3Cpolygon points='50,95 50,50 35,65' fill='url(%23S_L)'/%3E%3Cpolygon points='5,50 35,65 50,50' fill='url(%23W_D)'/%3E%3Cpolygon points='5,50 50,50 35,35' fill='url(%23W_U)'/%3E%3C/svg%3E");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    width: 12px;
+    height: 12px;
+    background-color: var(--color-text-primary);
+    border-radius: 50%;
     pointer-events: none;
     z-index: 100000;
     transform: translate(-50%, -50%);
-    animation: sk-cursor-float 4s ease-in-out infinite;
-    transition: width 0.5s var(--ease-spring), height 0.5s var(--ease-spring), filter 0.5s var(--ease-soft), opacity 0.4s ease;
+    transition: width var(--motion-duration-instant) var(--ease), height var(--motion-duration-instant) var(--ease), background-color var(--motion-duration-instant) var(--ease);
   }
 
   .sk-cursor.is-hovering {
-    width: 64px;
-    height: 64px;
-    opacity: 0.95;
-    animation: none; /* Pause floating while hovering to focus on interaction */
-    transform: translate(-50%, -50%) rotate(180deg) scale(1.1);
-    filter: drop-shadow(0 20px 24px rgba(212,175,106,0.4)) brightness(1.1);
-    transition: width 0.4s var(--ease-spring), height 0.4s var(--ease-spring), transform 0.4s var(--ease-spring), filter 0.4s var(--ease-soft);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: invert(1);
+    mix-blend-mode: difference;
   }
 }
