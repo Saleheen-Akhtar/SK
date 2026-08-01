@@ -12,7 +12,7 @@
   left: 0;
   right: 0;
   z-index: 0;
-  visibility: hidden; /* Prevent flash on load before JS sets margin, will be made visible dynamically via JS when scrolled down or when margin is applied */
+  visibility: visible;
 }
 
 /* Ensure the main site wrapper (created in transitions.js) overlaps the fixed footer */
