@@ -61,130 +61,21 @@ if (!function_exists('sk_format_about_text')) {
 }
 ?>
 
-<section class="about-section about-v16" id="about"<?php echo $about_style; ?>
-         aria-labelledby="about-heading"
-         itemscope itemtype="https://schema.org/Organization">
-
-  <meta itemprop="name" content="Sacred Kompass Collective" />
-
-  <div class="about-v16-inner wrap">
-
-    <!-- LEFT: Brand name + tagline -->
-    <div class="av16-left reveal d1" itemprop="legalName">
-
-      <div class="av16-brand-wrap">
-        <!-- Radial Light Rays (God Rays) Background -->
-        <!-- <div class="av16-brand-rays" aria-hidden="true"></div> -->
-        <!-- Background Layer: Only for the shadow! -->
-        <div class="av16-brand av16-brand--shadow" aria-hidden="true">
-          <span class="av16-sacred">SACRE<span class="av16-glow-d">D</span></span>
-          <span class="av16-kompass">KOMPASS</span>
-        </div>
-        
-        <!-- Foreground Layer 1: Panning Cloud Background -->
-        <div class="av16-brand av16-brand--clouds" id="av16-brand-clouds"<?php echo $brand_bg_style; ?>>
-          <span class="av16-sacred">SACRED</span>
-          <span class="av16-kompass">KOMPASS</span>
-        </div>
-
-        <!-- Foreground Layer 2: Sweeping Silver Shimmer (Overlaid) -->
-        <div class="av16-brand av16-brand--shimmer" id="av16-brand-shimmer">
-          <span class="av16-sacred">SACRED</span>
-          <span class="av16-kompass">KOMPASS</span>
-        </div>
+<section id="about" class="sk-podium-about section-py">
+  <div class="wrap stagger-children">
+    <span class="eyebrow"><?php echo esc_html($eyebrow); ?></span>
+    <h2 class="display-h2">
+      <?php echo wp_kses_post($welcome); ?>
+    </h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="body-serif">
+          <?php echo wpautop(wp_kses_post($body)); ?>
+        </p>
+        <p class="body-serif" style="margin-top:var(--space-1);">
+          <?php echo esc_html($org_desc); ?>
+        </p>
       </div>
-		<div class="sk-sp-v4-rule" aria-hidden="true">
-  <span></span>
-  <svg width="4" height="4" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="2" cy="2" r="2" fill="currentColor"/>
-  </svg>
-  <svg class="av16-star-svg" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <filter id="star-right-glow" x="-30%" y="-30%" width="160%" height="160%">
-        <!-- Golden-white glow filter shifted to the right -->
-        <feDropShadow dx="2.5" dy="-1" stdDeviation="1.5" flood-color="#dfb76c" flood-opacity="0.85"/>
-        <feDropShadow dx="1" dy="-0.5" stdDeviation="0.5" flood-color="#ffffff" flood-opacity="0.95"/>
-      </filter>
-    </defs>
-    <g fill="currentColor">
-      <!-- 4 long cardinal points (thickened) -->
-      <path d="M14 0 C11.5 7 11.5 10 14 14 C16.5 10 16.5 7 14 0Z" />
-      <path d="M14 28 C11.5 21 11.5 18 14 14 C16.5 18 16.5 21 14 28Z" />
-      <path d="M0 14 C7 11.5 10 11.5 14 14 C10 16.5 7 16.5 0 14Z" />
-      <path d="M28 14 C21 11.5 18 11.5 14 14 C18 16.5 21 16.5 28 14Z" />
-      <!-- 4 shorter diagonal points (thickened) -->
-      <path d="M14 4 C12.0 9 12.0 11 14 14 C16.0 11 16.0 9 14 4Z" opacity="0.75" transform="rotate(45 14 14)" />
-      <path d="M14 4 C12.0 9 12.0 11 14 14 C16.0 11 16.0 9 14 4Z" opacity="0.75" transform="rotate(135 14 14)" />
-      <path d="M14 4 C12.0 9 12.0 11 14 14 C16.0 11 16.0 9 14 4Z" opacity="0.75" transform="rotate(225 14 14)" />
-      <path d="M14 4 C12.0 9 12.0 11 14 14 C16.0 11 16.0 9 14 4Z" opacity="0.75" transform="rotate(315 14 14)" />
-    </g>
-  </svg>
-  <svg width="4" height="4" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="2" cy="2" r="2" fill="currentColor"/>
-  </svg>
-  <span></span>
-</div>
-
-      <?php if ( $tagline ) : ?>
-      <p class="av16-tagline" style="padding-top: 1.2rem; margin-top: 1.2rem;">
-        <span class="av16-tagline-inner" id="av16-tagline-inner"><?php echo esc_html( $tagline ); ?></span>
-      </p>
-      <?php endif; ?>
-
     </div>
-
-    <!-- RIGHT: Three stacked rows -->
-    <div class="av16-right">
-
-      <?php if ( $eyebrow ) : ?>
-      <div class="av16-row av16-row--eyebrow reveal d2">
-        <div class="eyebrow"><?php echo esc_html( $eyebrow ); ?></div>
-      </div>
-      <?php endif; ?>
-
-      <?php if ( $org_desc ) : ?>
-      <div class="av16-row av16-row--top reveal d2">
-        <p class="av16-org-desc" itemprop="description"><?php echo esc_html( $org_desc ); ?></p>
-      </div>
-      <?php endif; ?>
-
-      <?php if ( $heading || $bridge || $body ) : ?>
-      <div class="av16-row av16-row--mid reveal d3">
-        <div class="av16-content-card">
-        <?php if ( $heading ) : ?>
-        <h2 class="av16-heading" id="about-heading"><?php echo esc_html( $heading ); ?></h2>
-        <?php endif; ?>
-        <?php if ( $bridge ) : ?>
-        <?php echo sk_format_about_text($bridge, 'av16-bridge'); ?>
-        <?php endif; ?>
-        <?php if ( $body ) : ?>
-        <?php echo sk_format_about_text($body, 'av16-body'); ?>
-        <?php endif; ?>
-        </div>
-      </div>
-      <?php endif; ?>
-
-      <?php if ( $welcome ) : ?>
-      <div class="av16-row av16-row--btm reveal d4">
-        <?php
-        $brand_domain = sk_option('about_brand_domain', 'sacredkompass.org');
-        if ( ! empty( $brand_domain ) ) {
-            $domain_esc = preg_quote($brand_domain, '/');
-            // Auto-link home url if domain is present in welcome text
-            $welcome_linked = preg_replace(
-              '/\b' . $domain_esc . '\b/i',
-              '<a href="' . esc_url(home_url()) . '" class="av16-site-link" target="_blank" rel="noopener noreferrer">' . esc_html($brand_domain) . '</a>',
-              esc_html( $welcome )
-            );
-        } else {
-            $welcome_linked = esc_html( $welcome );
-        }
-        ?>
-        <p class="av16-welcome"><?php echo $welcome_linked; ?></p>
-      </div>
-      <?php endif; ?>
-
-    </div><!-- /.av16-right -->
-
-  </div><!-- /.about-v16-inner -->
+  </div>
 </section>

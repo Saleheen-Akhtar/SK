@@ -621,6 +621,48 @@
   });
 })();
 
+/* ── KLIMT WINE HOVER REVEAL EFFECT (GSAP) ── */
+// Applied to items with class .klimt-hover-reveal (using modern pointer detection for mobile safety)
+(function () {
+  if (typeof gsap !== 'undefined' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.matchMedia('(pointer: fine)').matches) {
+     const revealItems = document.querySelectorAll('.klimt-hover-reveal');
+
+     revealItems.forEach(item => {
+        const imageWrapper = item.querySelector('.klimt-image-wrapper');
+        const image = item.querySelector('img');
+
+        if (imageWrapper && image) {
+           // Initial state
+           gsap.set(imageWrapper, {
+              clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)'
+           });
+           gsap.set(image, { scale: 1.2, transformOrigin: 'center center' });
+
+           item.addEventListener('mouseenter', () => {
+              gsap.to(imageWrapper, {
+                 clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+                 duration: 0.6,
+                 ease: 'power3.out'
+              });
+              gsap.to(image, {
+                 scale: 1,
+                 duration: 1.2,
+                 ease: 'power2.out'
+              });
+           });
+
+           item.addEventListener('mouseleave', () => {
+              gsap.to(imageWrapper, {
+                 clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)',
+                 duration: 0.5,
+                 ease: 'power3.inOut'
+              });
+           });
+        }
+     });
+  }
+})();
+
 /* ── NEWSLETTER SPOTLIGHT EFFECT (Framer Motion Style) ── */
 (function () {
   'use strict';

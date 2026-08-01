@@ -1,202 +1,66 @@
-/* ── FOOTER v3 — Dramatic Cosmic Parallax Reveal ─── */
-.footer.sk-footer-v2 {
-  background: var(--ink); /* Deepest dark for cosmic void feel */
-  color: rgba(255,255,255,.55);
+/* Footer (Podium Style) */
+.sk-podium-footer {
+  background-color: var(--color-surface-base);
+  padding: var(--space-3) 0 var(--space-1);
+  border-top: 1px solid var(--color-surface-strong);
+  color: var(--color-text-tertiary);
+}
+
+.sk-footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .sk-footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.sk-footer-col h3 {
+  margin-bottom: var(--space-1);
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.05em;
+}
+
+.sk-footer-links {
+  list-style: none;
   padding: 0;
-  border: none !important;
-  border-top: none !important;
-  box-shadow: none !important;
-  /* Fixed to the bottom behind the page wrapper for a true parallax reveal */
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 0;
-  visibility: visible;
+  margin: 0;
 }
 
-/* Ensure the main site wrapper (created in transitions.js) overlaps the fixed footer */
-#sk-site-wrap {
-  position: relative;
-  z-index: 2;
-  background: var(--ivory); /* Matches html background */
-  margin-bottom: 0; /* JS will dynamically set this to the footer's height */
+.sk-footer-links li {
+  margin-bottom: 0.5rem;
 }
 
-/* Fallback margin for when transitions.js hasn't fired yet or JS is disabled */
-body {
-  background-color: var(--ivory);
+.sk-footer-links a {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-md);
+  color: var(--color-text-tertiary);
+  transition: color var(--motion-duration-instant) var(--ease);
 }
 
-.footer.sk-footer-v2::before,
-.footer.sk-footer-v2::after { display: none !important; }
+.sk-footer-links a:hover,
+.sk-footer-links a:focus-visible {
+  color: var(--color-text-primary);
+}
 
-/* Dramatic Top Section */
-.sk-foot-dramatic {
-  padding: clamp(6rem, 12vw, 12rem) 0 clamp(4rem, 8vw, 6rem);
-  text-align: center;
+.sk-footer-bottom {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  gap: 1rem;
+  padding-top: var(--space-1);
+  border-top: 1px solid var(--color-surface-strong);
 }
 
-.sk-foot-massive-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.sk-foot-logo-img-massive {
-  display: block;
-  height: clamp(64px, 8vw, 100px);
-  width: auto;
-  object-fit: contain;
-  opacity: 0.8;
-}
-
-.sk-foot-massive-wordmark {
-  font-family: var(--font-display);
-  font-size: clamp(4rem, 12vw, 12rem);
-  font-weight: 700;
-  line-height: 0.9;
-  letter-spacing: -0.04em;
-  color: #fff;
-  margin: 0;
-}
-.sk-foot-massive-wordmark em {
-  font-style: italic;
-  color: var(--blush);
-  font-weight: 400;
-}
-
-.sk-foot-massive-tagline {
-  font-family: var(--font-display);
-  font-size: clamp(1.2rem, 2vw, 1.8rem);
-  font-weight: 300;
-  letter-spacing: 0.02em;
-  color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 3.5rem;
-}
-
-.sk-foot-dramatic-cta .btn {
-  background: var(--terra);
-  color: #fff;
-  font-size: clamp(0.75rem, 1vw, 0.9rem);
-  padding: 1.2rem 3rem;
-  border-radius: 100px;
-}
-
-/* Horizontal rule */
-.sk-foot-divider {
-  width: 100%;
-  height: 1px;
-  background: rgba(255,255,255,.08);
-}
-/* Hide ALL dividers on desktop — the column border-tops provide enough separation */
-@media(min-width:769px){
-  .sk-foot-divider{display:none}
-}
-/* On mobile keep dividers visible for structure */
-@media(max-width:768px){
-  .sk-foot-divider{display:block}
-  .sk-foot-divider:first-of-type{display:none}
-}
-
-/* Mid columns */
-.sk-foot-mid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1.25rem, 2.5vw, 2.5rem);padding:clamp(1.8rem, 3.5vw, 3.5rem) 0}
-.sk-foot-col{padding-top:clamp(1rem, 1.6vw, 1.6rem);border-top:1px solid rgba(255,255,255,.1)}
-.sk-foot-col-label{font-family:var(--font-ui);font-size:clamp(0.5rem, 0.56vw, 0.56rem);font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.48);margin-bottom:clamp(0.8rem, 1.4vw, 1.4rem)}
-.sk-foot-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
-.sk-foot-col a{font-family:var(--font-display);font-size:clamp(0.8rem, 0.95vw, 0.95rem);font-weight:300;color:rgba(255,255,255,.58);transition:color .22s;text-decoration:none;position:relative;display:inline-block}
-.sk-foot-col a::after{content:'';position:absolute;bottom:-1px;left:0;right:100%;height:1px;background:rgba(255,255,255,.35);transition:right .35s var(--ease)}
-.sk-foot-col a:hover,
-.sk-foot-col a:focus-visible{color:rgba(255,255,255,.82)}
-.sk-foot-col a:hover::after,
-.sk-foot-col a:focus-visible::after{right:0}
-
-/* Bottom bar */
-.sk-foot-bottom{display:flex;align-items:center;justify-content:space-between;padding:clamp(1.25rem, 2vw, 2rem) 0 clamp(1.5rem, 3vw, 3rem);gap:clamp(0.75rem, 1vw, 1rem)}
-.sk-foot-copy{font-family:var(--font-ui);font-size:clamp(0.55rem, 0.6vw, 0.6rem);letter-spacing:.08em;color:rgba(255,255,255,.46)}
-.sk-foot-location{font-family:var(--font-ui);font-size:clamp(0.55rem, 0.6vw, 0.6rem);letter-spacing:.1em;color:rgba(255,255,255,.2)}
-
-
-/* ── FIXES FOR FOOTER ALIGNMENT ── */
-body{
-  margin: 0;
-  padding-bottom: 0;
-}
-html {
-  margin: 0;
-  padding: 0;
-}
-body footer.footer.sk-footer-v2{
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-.site-content,
-body .site,
-body #page,
-body .page-wrap,
-body main{
-  padding-bottom: 0;
-  margin-bottom: 0;
-}
-.sk-foot-bottom{
-  padding-bottom: 2rem;
-}
-
-/* ── RESPONSIVE MOBILE OVERRIDES ── */
-@media(max-width:768px){
-  .footer.sk-footer-v2{
-    width:100%;
-    max-width:100vw;
-    overflow-x:clip;
-  }
-  .sk-foot-dramatic{padding:4rem 0 3rem}
-  .sk-foot-massive-wordmark{font-size:clamp(3.5rem,14vw,5rem)}
-  .sk-foot-massive-tagline{font-size:1rem; margin-bottom:2rem;}
-  .sk-foot-mid{
-    grid-template-columns:1fr 1fr;
-    gap:2.2rem 1.5rem;
-    padding:2rem 0;
-  }
-  .sk-foot-col-label{margin-bottom:1rem}
-  .sk-foot-col a{font-size:.88rem}
-  .sk-foot-col ul{gap:.75rem}
-  .sk-foot-massive-wrap{gap:1rem}
-  .sk-foot-bottom{
-    flex-direction:column;
-    gap:.65rem;
-    text-align:center;
-    padding:1.5rem 0 2.5rem;
-  }
-  .sk-foot-location{display:none;}
-  /* On mobile, disable the sticky parallax reveal because mobile browsers handle position:sticky and vh poorly when scrolling */
-  .footer.sk-footer-v2 { position: relative; z-index: 1; }
-  #sk-site-wrap { margin-bottom: 0 !important; }
-}
-
-@media(max-width:480px){
-  .sk-foot-mid{grid-template-columns:1fr 1fr;gap:1.8rem 1.2rem;padding:1.8rem 0}
-  .sk-foot-col{padding-top:1.2rem}
-  .sk-foot-massive-wordmark{font-size:clamp(2.8rem,16vw,4rem)}
-  .sk-foot-dramatic{padding:3rem 0 2rem}
-  .sk-foot-bottom{padding:1.2rem 0 2rem;gap:.5rem}
-  .sk-foot-col a{font-size:.8rem}
-  .sk-foot-col ul{gap:.55rem}
-  .sk-foot-copy,
-  .sk-foot-location{
-    max-width:100%;
-    overflow-wrap:anywhere;
-  }
-}
-
-/* iOS home bar safe area — prevents copyright being hidden behind home indicator */
-@media (max-width: 768px) {
-  .sk-foot-bottom {
-    padding-bottom: max(2.5rem, calc(1.5rem + env(safe-area-inset-bottom))) !important;
+@media (min-width: 768px) {
+  .sk-footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 }

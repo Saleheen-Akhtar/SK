@@ -3,13 +3,10 @@
  * Template Name: Privacy Policy
  * Content is now editable via WP Admin → ★ Sacred Kompass → Legal Pages
  * (post slug: privacy-policy)
- *
- * Falls back to empty state if no sk_legal post exists (run "Install Demo Content" in admin settings to seed default legal copy).
  */
 get_header();
 
 $legal = sk_get_legal_page('privacy-policy');
-
 $eyebrow        = $legal['eyebrow']        ?? 'Sacred Kompass Collective';
 $title          = $legal['title']          ?: 'Privacy Policy';
 $effective_date = $legal['effective_date'] ?? '24 March 2026';
@@ -17,20 +14,21 @@ $location       = $legal['location']       ?? 'Singapore';
 $content        = $legal['content']        ?? '';
 ?>
 
+<main class="sk-page-main" style="padding:var(--space-3) 0 var(--space-2);min-height:80vh;background-color:var(--color-surface-base);">
+  <div class="wrap-narrow">
+    <div class="legal-hero" style="margin-bottom:var(--space-2);">
+      <span class="eyebrow"><?php echo esc_html($eyebrow); ?></span>
+      <h1 class="display-h2"><?php echo esc_html($title); ?></h1>
+      <p class="body-small">
+        <?php echo esc_html__('Effective Date:', 'sacred-kompass'); ?> <?php echo esc_html($effective_date); ?>
+        &nbsp;·&nbsp; <?php echo esc_html($location); ?>
+      </p>
+    </div>
 
-<section class="legal-hero">
-  <div class="wrap">
-    <div class="eyebrow eyebrow-center"><?php echo esc_html($eyebrow); ?></div>
-    <h1><?php echo esc_html($title); ?></h1>
-    <p class="legal-meta">
-      <?php echo esc_html__('Effective Date:', 'sacred-kompass'); ?> <?php echo esc_html($effective_date); ?>
-      &nbsp;·&nbsp; <?php echo esc_html($location); ?>
-    </p>
+    <article class="legal-body body-ui">
+      <?php echo wp_kses_post($content); ?>
+    </article>
   </div>
-</section>
-
-<article class="legal-body">
-  <?php echo wp_kses_post($content); ?>
-</article>
+</main>
 
 <?php get_footer(); ?>

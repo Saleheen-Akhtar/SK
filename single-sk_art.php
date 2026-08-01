@@ -1,7 +1,6 @@
 <?php
 /**
- * Standalone Single Artwork Template — sk_art CPT.
- * URL: /art-for-peace/{slug}/
+ * Standalone Single Artwork Template (Podium Style)
  */
 get_header();
 
@@ -46,36 +45,37 @@ if ($cta_url) {
 }
 ?>
 
-<article class="sk-art-single" id="artwork-<?php echo $id; ?>">
-  <div class="wrap sk-art-single-wrap">
+<article class="sk-art-single" id="artwork-<?php echo $id; ?>" style="background-color:var(--color-surface-base); padding:var(--space-3) 0; min-height:100vh;">
+  <div class="wrap sk-art-single-wrap" style="display:grid; grid-template-columns:1fr; gap:var(--space-2);">
     
     <!-- Left Column: Artwork Image -->
     <div class="sk-art-single-image-col">
-      <a href="<?php echo esc_url( home_url( '/#art' ) ); ?>" class="sk-art-back-link">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-        <?php esc_html_e( 'Back to Gallery', 'sacred-kompass' ); ?>
+      <a href="<?php echo esc_url( home_url( '/#art' ) ); ?>" class="body-small" style="display:inline-flex; align-items:center; gap:0.5rem; margin-bottom:var(--space-1); text-decoration:underline;">
+        &larr; <?php esc_html_e( 'Back to Gallery', 'sacred-kompass' ); ?>
       </a>
       
       <?php if ( $image_url ) : ?>
         <div class="sk-art-single-frame">
-          <img src="<?php echo esc_url( $image_url ); ?>" alt="<?php echo esc_attr( $title ); ?>" loading="eager" />
+          <div style="aspect-ratio:4/5; overflow:hidden;">
+             <img src="<?php echo esc_url( $image_url ); ?>" alt="<?php echo esc_attr( $title ); ?>" loading="eager" style="width:100%; height:100%; object-fit:cover;" />
+          </div>
         </div>
       <?php endif; ?>
     </div>
 
-    <!-- Right Column: Editorial & Context Details -->
-    <div class="sk-art-single-details-col">
-      <header class="sk-art-single-header">
+    <!-- Right Column: Details -->
+    <div class="sk-art-single-details-col body-ui">
+      <header class="sk-art-single-header" style="margin-bottom:var(--space-2);">
         <?php if ( $tag ) : ?>
-          <span class="sk-art-single-tag"><?php echo esc_html( $tag ); ?></span>
+          <span class="eyebrow"><?php echo esc_html( $tag ); ?></span>
         <?php endif; ?>
-        <h1 class="sk-art-single-title"><?php echo esc_html( $title ); ?></h1>
+        <h1 class="display-h2"><?php echo esc_html( $title ); ?></h1>
       </header>
 
       <?php if ( $desc ) : ?>
-        <div class="sk-art-single-story">
-          <h2 class="sk-art-story-label"><?php esc_html_e( 'The Creation Story & Therapeutic Value', 'sacred-kompass' ); ?></h2>
-          <div class="sk-art-story-content">
+        <div class="sk-art-single-story" style="margin-bottom:var(--space-2);">
+          <h2 class="display-h3" style="margin-bottom:var(--space-1);"><?php esc_html_e( 'The Creation Story', 'sacred-kompass' ); ?></h2>
+          <div class="sk-art-story-content body-serif">
             <?php echo wpautop( esc_html( $desc ) ); ?>
           </div>
         </div>
@@ -83,24 +83,24 @@ if ($cta_url) {
 
       <!-- Specifications Table -->
       <?php if ( $medium || $dimensions || $price ) : ?>
-        <div class="sk-art-specifications">
-          <table class="sk-art-spec-table">
+        <div class="sk-art-specifications" style="margin-bottom:var(--space-2);">
+          <table class="sk-art-spec-table body-ui" style="width:100%; text-align:left; border-collapse:collapse;">
             <?php if ( $medium ) : ?>
-              <tr>
-                <th><?php esc_html_e( 'Medium', 'sacred-kompass' ); ?></th>
-                <td><?php echo esc_html( $medium ); ?></td>
+              <tr style="border-bottom:1px solid var(--color-surface-strong);">
+                <th style="padding:0.5rem 0; font-weight:var(--font-weight-base); color:var(--color-text-tertiary);"><?php esc_html_e( 'Medium', 'sacred-kompass' ); ?></th>
+                <td style="padding:0.5rem 0; text-align:right;"><?php echo esc_html( $medium ); ?></td>
               </tr>
             <?php endif; ?>
             <?php if ( $dimensions ) : ?>
-              <tr>
-                <th><?php esc_html_e( 'Dimensions', 'sacred-kompass' ); ?></th>
-                <td><?php echo esc_html( $dimensions ); ?></td>
+              <tr style="border-bottom:1px solid var(--color-surface-strong);">
+                <th style="padding:0.5rem 0; font-weight:var(--font-weight-base); color:var(--color-text-tertiary);"><?php esc_html_e( 'Dimensions', 'sacred-kompass' ); ?></th>
+                <td style="padding:0.5rem 0; text-align:right;"><?php echo esc_html( $dimensions ); ?></td>
               </tr>
             <?php endif; ?>
             <?php if ( $price ) : ?>
-              <tr>
-                <th><?php esc_html_e( 'Exchange Value', 'sacred-kompass' ); ?></th>
-                <td><?php echo esc_html( $price ); ?></td>
+              <tr style="border-bottom:1px solid var(--color-surface-strong);">
+                <th style="padding:0.5rem 0; font-weight:var(--font-weight-base); color:var(--color-text-tertiary);"><?php esc_html_e( 'Value', 'sacred-kompass' ); ?></th>
+                <td style="padding:0.5rem 0; text-align:right;"><?php echo esc_html( $price ); ?></td>
               </tr>
             <?php endif; ?>
           </table>
@@ -109,9 +109,8 @@ if ($cta_url) {
 
       <!-- Inquiry Action Button -->
       <div class="sk-art-single-cta">
-        <a href="<?php echo esc_url( $inquiry_url ); ?>" class="btn btn-primary sk-art-inquire-btn">
+        <a href="<?php echo esc_url( $inquiry_url ); ?>" class="btn-outline">
           <?php esc_html_e( 'Inquire About This Piece', 'sacred-kompass' ); ?>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
     </div>
