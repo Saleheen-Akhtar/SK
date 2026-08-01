@@ -101,7 +101,7 @@
     // Animate the internal content parallaxing in, leaving the body tag untouched
     gsap.fromTo(siteWrap,
        { y: 50, scale: 0.98, opacity: 0 },
-       { y: 0, scale: 1, opacity: 1, duration: 1.2, ease: 'power4.out', delay: 0.1, clearProps: 'all' }
+       { y: 0, scale: 1, opacity: 1, duration: 1.2, ease: 'power4.out', delay: 0.1, clearProps: 'transform,opacity' }
     );
 
     gsap.fromTo(overlay,
