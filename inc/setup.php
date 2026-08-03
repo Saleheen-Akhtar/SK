@@ -116,98 +116,19 @@ add_action('wp_enqueue_scripts', function(): void {
     // Enqueue the root stylesheet (header metadata only)
     wp_enqueue_style('sacred-kompass-style', get_stylesheet_uri(), [], sk_asset_version('style.css'));
 
-    // Register and Enqueue modular stylesheets conditionally
+    // Register and Enqueue modular stylesheets
+    // Legacy stylesheets have been pruned in favor of the unified minimal Podium theme styles
     $modules = [
         'foundations'       => 'foundations.css',
         'typography'        => 'typography.css',
-        'buttons'           => 'buttons.css',
         'navigation'        => 'navigation.css',
-        'components'        => 'components.css',
-        'utilities'         => 'utilities.css',
         'footer'            => 'footer.css',
-        'admin'             => 'admin.css',
-        'modals'            => 'modals.css',
-        'announcement'      => 'announcement.css',
         'home-hero'         => 'home-hero.css',
         'home-about'        => 'home-about.css',
-        'home-philosophy'   => 'home-philosophy.css',
-        'home-art'          => 'home-art.css',
-        'home-founders'     => 'home-founders.css',
-        'home-stories'      => 'home-stories.css',
-        'home-faq'          => 'home-faq.css',
-        'home-cta'          => 'home-cta.css',
-        'events'            => 'events.css',
-        'journal-index'     => 'journal-index.css',
-        'post-single'       => 'post-single.css',
-        'collective'        => 'collective.css',
-        'stories-archive'   => 'stories-archive.css',
-        'story-single'      => 'story-single.css',
+        'home-art'          => 'home-art.css'
     ];
 
     foreach ($modules as $handle => $filename) {
-        // 1. Admin bar spacing only enqueued when admin bar is active
-        if ($handle === 'admin' && !is_admin_bar_showing()) {
-            continue;
-        }
-
-        // 2. Modals loaded on front page, collective template, or single story/event layouts where modals are active
-        if ($handle === 'modals' && !is_front_page() && !is_home() && !is_page_template('page-collective.php') && !is_singular('sk_story') && !is_singular('sk_event')) {
-            continue;
-        }
-
-        // 3. Announcement bar loaded only if announcement functionality is active
-        if ($handle === 'announcement') {
-            $sk_ann = function_exists('sk_get_active_announcement') ? sk_get_active_announcement() : null;
-            if (!$sk_ann || empty($sk_ann['message'])) {
-                continue;
-            }
-        }
-
-        // 4. Events CPT styles only on events archive or single event pages
-        if ($handle === 'events' && !is_post_type_archive('sk_event') && !is_singular('sk_event')) {
-            continue;
-        }
-
-        // 5. Journal Index archive styles
-        if ($handle === 'journal-index' && !is_home() && !is_category() && !is_archive() && !is_search()) {
-            continue;
-        }
-
-        // 6. Singular post styles
-        if ($handle === 'post-single' && !is_singular('post')) {
-            continue;
-        }
-
-        // 7. Collective profiles template styles
-        if ($handle === 'collective' && !is_page_template('page-collective.php')) {
-            continue;
-        }
-
-        // 8. Stories Archive/Page/Previews
-        if ($handle === 'stories-archive' && !is_page_template('page-stories.php') && !is_post_type_archive('sk_story') && !is_front_page() && !is_home()) {
-            continue;
-        }
-
-        // 9. Singular story pages
-        if ($handle === 'story-single' && !is_singular('sk_story')) {
-            continue;
-        }
-        
-        // 10. Homepage components only on home or front page (except founders layout which also loads on collective page, and stories layout on events pages)
-        $homepage_only = ['home-hero', 'home-about', 'home-philosophy', 'home-faq', 'home-cta'];
-        if (in_array($handle, $homepage_only, true) && !is_front_page() && !is_home()) {
-            continue;
-        }
-        if ($handle === 'home-art' && !is_front_page() && !is_home() && !is_singular('sk_art') && !is_page_template('page-art.php')) {
-            continue;
-        }
-        if ($handle === 'home-stories' && !is_front_page() && !is_home() && !is_post_type_archive('sk_event') && !is_singular('sk_event')) {
-            continue;
-        }
-        if ($handle === 'home-founders' && !is_front_page() && !is_home() && !is_page_template('page-collective.php')) {
-            continue;
-        }
-
         wp_enqueue_style(
             'sk-' . $handle,
             get_template_directory_uri() . '/assets/css/' . $filename,

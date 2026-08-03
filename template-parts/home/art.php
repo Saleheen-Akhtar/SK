@@ -14,18 +14,8 @@ $bg_image_mobile = sk_option('art_bg_image_mobile', '');
 // Fetch art posts data from centralized cache helper
 $art_posts_data = function_exists('sk_get_art_data') ? sk_get_art_data(24) : [];
 
-$art_styles = [];
-if ($bg_image) {
-    $art_styles[] = 'background-image:url(\'' . esc_url($bg_image) . '\')';
-    $art_styles[] = '--art-bg:url(\'' . esc_url($bg_image) . '\')';
-}
-if ($bg_image_mobile) {
-    $art_styles[] = '--art-bg-mobile:url(\'' . esc_url($bg_image_mobile) . '\')';
-}
-$section_style = !empty($art_styles) ? ' style="' . implode(';', $art_styles) . ';"' : '';
-
 ?>
-<section id="art" class="sk-podium-art section-py">
+<section id="art" class="sk-podium-art section-py" style="background-color:var(--color-surface-base); border-top:1px solid var(--color-surface-strong);">
   <div class="wrap stagger-children">
     <span class="eyebrow"><?php echo esc_html($eyebrow); ?></span>
     <h2 class="display-h3"><?php echo esc_html($heading); ?> <?php echo esc_html($heading_em); ?></h2>

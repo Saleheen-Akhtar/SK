@@ -27,19 +27,6 @@ $about_bg            = sk_option('about_bg_image', '');
 $about_bg_mobile     = sk_option('about_bg_image_mobile', '');
 $founders_bg         = sk_option('founders_bg_image', '');
 
-$about_styles = [];
-if ($about_bg) {
-    $about_styles[] = 'background-image:url(\'' . esc_url($about_bg) . '\')';
-    $about_styles[] = '--about-bg:url(\'' . esc_url($about_bg) . '\')';
-}
-if ($about_bg_mobile) {
-    $about_styles[] = '--about-bg-mobile:url(\'' . esc_url($about_bg_mobile) . '\')';
-}
-$about_style = !empty($about_styles) ? ' style="' . implode(';', $about_styles) . ';"' : '';
-
-$brand_bg_style = $brand_bg_img ? ' style="--brand-bg-url:url(\'' . esc_url($brand_bg_img) . '\');"' : '';
-$card_bg_style = $founders_bg ? ' style="background-image: linear-gradient(rgba(255, 251, 243, 0.82), rgba(255, 251, 243, 0.82)), url(\'' . esc_url($founders_bg) . '\'); background-size: 300%; background-position: center;"' : '';
-
 if (!function_exists('sk_format_about_text')) {
     function sk_format_about_text($text, $base_class) {
         if (preg_match('/^\s*[\*\-]\s+/m', $text)) {
@@ -61,7 +48,7 @@ if (!function_exists('sk_format_about_text')) {
 }
 ?>
 
-<section id="about" class="sk-podium-about section-py">
+<section id="about" class="sk-podium-about section-py" style="background-color:var(--color-surface-base); border-top:1px solid var(--color-surface-strong);">
   <div class="wrap stagger-children">
     <span class="eyebrow"><?php echo esc_html($eyebrow); ?></span>
     <h2 class="display-h2">

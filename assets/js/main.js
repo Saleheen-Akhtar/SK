@@ -106,7 +106,8 @@
   // Only wire up fallback scroll if Lenis did NOT initialise
   // (gsap-animations.js sets window.skLenisReady = true when Lenis starts)
   if (!window.skLenisReady) {
-    const nav = document.getElementById('sk-sidenav');
+    const nav = document.getElementById('sk-header-nav');
+    const header = document.querySelector('.sk-header');
     document.querySelectorAll('a[href^="#"], a[href^="/#"], a[href*="/#"]').forEach((a) => {
       a.addEventListener('click', (e) => {
         const href = a.getAttribute('href') || '';
@@ -120,7 +121,7 @@
         if (!el) return;
         e.preventDefault();
         if (typeof closeMenu === 'function') closeMenu();
-        const navH = nav ? nav.offsetHeight : 64;
+        const navH = header ? header.offsetHeight : 64;
         const top  = el.getBoundingClientRect().top + window.scrollY - navH;
         skEasedScrollTo(top, 480);
       });
@@ -129,7 +130,7 @@
 
   /* ── Active nav link ──────────────────────── */
   const sections     = ['about','offerings','philosophy','founders','journal-preview','faq','contact'];
-  const navLinksAll  = document.querySelectorAll('.sk-sidenav-links a, .sk-sidenav-cta-btn');
+  const navLinksAll  = document.querySelectorAll('.sk-header-links a');
 
   // Mark "The Collective" nav link active when on the collective page
   const isCollectivePage = document.body.classList.contains('page-template-page-collective') ||
@@ -522,144 +523,67 @@
 })();
 
 
-/* ── Side panel nav — floating pill ── */
+/* ── Header visibility on scroll & Mobile Nav (Podium Style) ── */
 (function () {
   'use strict';
-  var panel    = document.getElementById('sk-sidenav');
-  var backdrop = document.getElementById('sk-sidenav-backdrop');
-  var hamburger= document.getElementById('sk-hamburger');
-  if (!panel) return;
 
-  /* ── Show pill only after the hero section ── */
-  (function initPillVisibility() {
-    var heroEl = document.querySelector('.hero--fullscreen, .hero--split, #hero, .hero-section');
+  const header = document.querySelector('.sk-header');
+  let lastScrollY = window.scrollY;
+  let ticking = false;
 
-    if (!heroEl) {
-      /* No hero on this page — show navbar immediately */
-      panel.classList.add('sk-sidenav--visible');
-      if (hamburger) hamburger.classList.add('sk-hamburger--visible');
-      return;
-    }
-
-    /* Mobile & Desktop: transition navbar state based on scroll */
-    function checkHeroEnd() {
-      // Desktop docked-to-floating logic (kick in after 10px scroll)
-      if (window.scrollY > 10) {
-        panel.classList.add('is-floating');
-      } else {
-        panel.classList.remove('is-floating');
-      }
-
-      // Mobile hamburger logic (hidden while in hero to prevent clash, shown after)
-      var heroH     = heroEl.offsetHeight || window.innerHeight;
-      var threshold = Math.min(heroH * 0.5, 300);
-      if (hamburger) {
-        if (window.scrollY >= threshold || panel.classList.contains('open')) {
-          hamburger.classList.add('sk-hamburger--visible');
-        } else {
-          hamburger.classList.remove('sk-hamburger--visible');
-        }
-      }
-    }
-
-    checkHeroEnd();
-    window.addEventListener('scroll', checkHeroEnd, { passive: true });
-    window.addEventListener('resize', checkHeroEnd, { passive: true });
-  })();
-
-  if (!hamburger) return;
-
-  function openPanel() {
-    panel.classList.add('open');
-    panel.style.pointerEvents = 'auto';
-    if (backdrop) { backdrop.classList.add('visible'); }
-    hamburger.classList.add('open');
-    hamburger.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
+  function updateHeader() {
+    if (!header) return;
+    const currentScrollY = window.scrollY;
     
-    // Pause Lenis scroll to block background touch/scroll movement
-    if (typeof window.skLenisPause === 'function') {
-      window.skLenisPause();
+    if (currentScrollY > 64 && currentScrollY > lastScrollY) {
+      header.classList.add('is-hidden');
+    } else {
+      header.classList.remove('is-hidden');
     }
+
+    lastScrollY = currentScrollY;
+    ticking = false;
   }
 
-  function closePanel() {
-    panel.classList.remove('open');
-    panel.style.pointerEvents = '';
-    if (backdrop) { backdrop.classList.remove('visible'); }
-    hamburger.classList.remove('open');
-    hamburger.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-    
-    // Resume Lenis scroll
-    if (typeof window.skLenisResume === 'function') {
-      window.skLenisResume();
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateHeader);
+      ticking = true;
     }
+  }, { passive: true });
+
+  const hamburger = document.getElementById('sk-hamburger');
+  const mobileNav = document.getElementById('sk-header-nav');
+
+  function openMobileMenu() {
+      if (!hamburger || !mobileNav) return;
+      hamburger.classList.add('is-open');
+      mobileNav.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
   }
 
-  /* Expose for the closeMenu() stub in the main IIFE above */
-  window.skCloseSidenav = closePanel;
-
-  hamburger.addEventListener('click', function () {
-    panel.classList.contains('open') ? closePanel() : openPanel();
-  });
-
-  if (backdrop) {
-    backdrop.addEventListener('click', closePanel);
+  function closeMobileMenu() {
+      if (!hamburger || !mobileNav) return;
+      hamburger.classList.remove('is-open');
+      mobileNav.classList.remove('is-open');
+      document.body.style.overflow = '';
   }
 
-  /* Close when a nav link is clicked (smooth scroll / single-page) */
-  panel.querySelectorAll('a').forEach(function (a) {
-    a.addEventListener('click', function () {
-      closePanel();
+  window.skCloseSidenav = closeMobileMenu;
+
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.contains('is-open');
+      isOpen ? closeMobileMenu() : openMobileMenu();
     });
-  });
 
-  /* Close on Escape */
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closePanel();
-  });
-})();
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
 
-/* ── KLIMT WINE HOVER REVEAL EFFECT (GSAP) ── */
-// Applied to items with class .klimt-hover-reveal (using modern pointer detection for mobile safety)
-(function () {
-  if (typeof gsap !== 'undefined' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.matchMedia('(pointer: fine)').matches) {
-     const revealItems = document.querySelectorAll('.klimt-hover-reveal');
-
-     revealItems.forEach(item => {
-        const imageWrapper = item.querySelector('.klimt-image-wrapper');
-        const image = item.querySelector('img');
-
-        if (imageWrapper && image) {
-           // Initial state
-           gsap.set(imageWrapper, {
-              clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)'
-           });
-           gsap.set(image, { scale: 1.2, transformOrigin: 'center center' });
-
-           item.addEventListener('mouseenter', () => {
-              gsap.to(imageWrapper, {
-                 clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
-                 duration: 0.6,
-                 ease: 'power3.out'
-              });
-              gsap.to(image, {
-                 scale: 1,
-                 duration: 1.2,
-                 ease: 'power2.out'
-              });
-           });
-
-           item.addEventListener('mouseleave', () => {
-              gsap.to(imageWrapper, {
-                 clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)',
-                 duration: 0.5,
-                 ease: 'power3.inOut'
-              });
-           });
-        }
-     });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMobileMenu();
+    });
   }
 })();
 
